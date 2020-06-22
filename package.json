@@ -1,0 +1,15 @@
+{
+  "name": "kyc",
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "~4.16.0",
+    "forever": "^0.15.3",
+    "http-errors": "^1.6.3",
+    "validate": "^4.4.1"
+  }
+}
