@@ -19,27 +19,9 @@
 
     <!-- jQuery -->
     <script src="assets/vendor/jquery-1.11.1.min.js"></script>
-
     <!-- Stylesheet -->
     <link href="assets/css/devportal.css" rel="stylesheet" />
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45576805-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-45576805-2');
-      gtag('config', 'UA-157720658-3', { 'linker': {
-        'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
-        } }
-      );
-    </script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
-
-
 
 </head>
 
@@ -52,28 +34,14 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
       <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
+          <li class="nav-item">
               <a class="nav-link" href="dev-tools.html">Dev Tools</a>
             </li>
+            
         <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-      </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/references/rippled-api/api-conventions/api-conventions.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+            <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+          </li>
+      </ul>
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -110,10 +78,6 @@
     <article class="content">
       <h1 id="api-conventions">API Conventions</h1>
 <p>This section describes data types and formats of the <code>rippled</code> APIs, including JSON-RPC and WebSocket interfaces.</p>
-<p>Some of these data types also appear in higher-level APIs, including the <a href="data-api.html">Data API</a>.</p>
-
-
-
 
 
 <div class="children-display">
@@ -137,10 +101,6 @@
         <li class="level-1"><a href="response-formatting.html">Response Formatting</a><p class="blurb child-blurb">Standard response format, with examples, for the WebSocket, JSON-RPC, and Commandline interfaces.</p></li>
 
         <li class="level-1"><a href="rippled-server-states.html">rippled Server States</a><p class="blurb child-blurb">Definitions of state information reported in some API methods.</p></li>
-
-        <li class="level-1"><a href="serialization.html">Serialization Format</a><p class="blurb child-blurb">Conversion between JSON and canonical binary format for XRP Ledger transactions and other objects.</p></li>
-
-
 
   </ul>
 </div>    </article>
@@ -181,7 +141,7 @@
                         <li><a class="nosubcat-page" href="request-formatting.html">Request Formatting</a></li>
                         <li><a class="nosubcat-page" href="response-formatting.html">Response Formatting</a></li>
                         <li><a class="nosubcat-page" href="rippled-server-states.html">rippled Server States</a></li>
-                        <li><a class="nosubcat-page" href="serialization.html">Serialization Format</a></li>
+                       
 
                   </ul>
                 </div><!-- /.card-body -->
@@ -463,133 +423,6 @@
 </div><!-- /.tree_nav -->      </aside>
     </div><!--/.row (main layout)-->
   </div>
-
-<footer class="xrpl-footer" role="contentinfo">
-  <section class="container-fluid card-grid card-grid-Nx1">
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
-  </section>
-
-  <section class="container-fluid p-5 pl-sm-0">
-
-    <nav role="navigation" class="d-flex mb-3 language-selector">
-      <img class="language_selector_icon" src="assets/img/icon-language-selector.svg" width="32" height="40" alt="language selection icon" />
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="/api-conventions.html"><i class="fa fa-check-circle"></i> English</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/ja/api-conventions.html">日本語</a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
-      <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
-    </div><!-- /.absolute_bottom_footer -->
-
-  </section>
-</footer>
-
 <!-- Jump to top button -->
 <a href="#main_content_wrapper" class="jump-to-top btn btn-primary btn-lg" role="button" title="Jump to top of page">Top</a>
 <script type="text/javascript" src="assets/js/jump-to-top.js"></script>
@@ -602,17 +435,5 @@
 
 <!-- Algolia DocSearch -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-<script type="text/javascript"> docsearch({
-apiKey: '70de5b9b8ef95460f3c6e04054b325b2',
-indexName: 'xrpl',
-inputSelector: '#topsearchbar',
-algoliaOptions: { 'facetFilters': ["lang:en"] },
-debug: false
-});
-</script>
-
-<script type="application/javascript">
-  gtag('set', {'content_group1': 'Hub Pages'});
-</script>
 </body>
 </html>
