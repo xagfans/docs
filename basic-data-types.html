@@ -23,20 +23,6 @@
     <!-- Stylesheet -->
     <link href="assets/css/devportal.css" rel="stylesheet" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45576805-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-45576805-2');
-      gtag('config', 'UA-157720658-3', { 'linker': {
-        'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
-        } }
-      );
-    </script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 
@@ -69,28 +55,14 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
       <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
+          <li class="nav-item">
               <a class="nav-link" href="dev-tools.html">Dev Tools</a>
             </li>
+            
         <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-      </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/references/rippled-api/api-conventions/basic-data-types.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+            <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+          </li>
+      </ul>
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -98,7 +70,7 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="language_selector_header_btn">
             <a class="dropdown-item" href="/basic-data-types.html">English</a>
-            <a class="dropdown-item" href="/ja/basic-data-types.html">日本語</a>
+            <a class="dropdown-item" href="/cn/basic-data-types.html">中文</a>
           </div><!--/.dropdown-menu-->
         </div><!--/.dropdown-->
       </div><!--/.language-selector-->
@@ -148,12 +120,11 @@
 <p><a href="transaction-formats.html">Transactions</a> are identified by a <a href="basic-data-types.html#hashes">Hash</a> of the transaction's binary format. You can also identify a transaction by its sending account and <a href="basic-data-types.html#account-sequence">Sequence Number</a>.</p>
 <p>Each closed <a href="ledger-data-formats.html">Ledger</a> has a <a href="basic-data-types.html#ledger-index">Ledger Index</a> and a <a href="basic-data-types.html#hashes">Hash</a> value. When <a href="basic-data-types.html#specifying-ledgers">Specifying Ledgers</a> you can use either one.</p>
 <h2 id="addresses">Addresses</h2>
-<p>Accounts in the XRP Ledger are identified by an address in the XRP Ledger's <a href="base58-encodings.html">base58</a> format. The address is derived from the account's master <a class="external-link" href="https://en.wikipedia.org/wiki/Public-key_cryptography" target="_blank">public key <i aria-hidden="true" class="fa fa-external-link"></i></a>, which is in turn derived from a secret key. An address is represented as a string in JSON and has the following characteristics:</p>
+<p>Accounts in the XAG Ledger are identified by an address in the XAG Ledger's <a href="base58-encodings.html">base58</a> format. The address is derived from the account's master <a class="external-link" href="https://en.wikipedia.org/wiki/Public-key_cryptography" target="_blank">public key <i aria-hidden="true" class="fa fa-external-link"></i></a>, which is in turn derived from a secret key. An address is represented as a string in JSON and has the following characteristics:</p>
 <ul>
 <li>Between 25 and 35 characters in length</li>
 <li>
 <p>Starts with the character <code>r</code></p>
-<p class="devportal-callout note"><strong>Note:</strong> The XRP community has <a class="external-link" href="https://github.com/xrp-community/standards-drafts/issues/6" target="_blank">proposed <i aria-hidden="true" class="fa fa-external-link"></i></a> (and developed a <a class="external-link" href="https://github.com/xrp-community/xrpl-tagged-address-codec" target="_blank">codec <i aria-hidden="true" class="fa fa-external-link"></i></a> to support) a new <strong>X</strong>-address format that exchanges and wallets could use instead of <a class="external-link" href="https://xrpl.org/source-and-destination-tags.html" target="_blank">destination tags <i aria-hidden="true" class="fa fa-external-link"></i></a>. These "packed" addresses start with an <code>X</code> instead of an <code>r</code>. For more information, see the <a class="external-link" href="https://xrpaddress.info/" target="_blank">XRPL 𝗫-address format <i aria-hidden="true" class="fa fa-external-link"></i></a> site.</p>
 </li>
 <li>
 <p>Uses alphanumeric characters, excluding the number "<code>0</code>" capital letter "<code>O</code>", capital letter "<code>I</code>", and lowercase letter "<code>l</code>"</p>
@@ -164,19 +135,19 @@
 <p>For more information, see <a href="accounts.html">Accounts</a> and <a href="base58-encodings.html">base58 Encodings</a>.</p>
 <!-- -->
 <h2 id="hashes">Hashes</h2>
-<p>Many objects in the XRP Ledger, particularly transactions and ledgers, are uniquely identified by a 256-bit hash value. This value is typically calculated as a "SHA-512Half", which calculates a <a class="external-link" href="http://dx.doi.org/10.6028/NIST.FIPS.180-4" target="_blank">SHA-512 <i aria-hidden="true" class="fa fa-external-link"></i></a> hash from some contents, then takes the first half of the output. (That's 256 bits, which is 32 bytes, or 64 characters of the hexadecimal representation.) Since the hash of an object is derived from the contents in a way that is extremely unlikely to produce collisions, two objects with the same hash can be considered the same.</p>
-<p>An XRP Ledger hash value has the following characteristics:</p>
+<p>Many objects in the XAG Ledger, particularly transactions and ledgers, are uniquely identified by a 256-bit hash value. This value is typically calculated as a "SHA-512Half", which calculates a <a class="external-link" href="http://dx.doi.org/10.6028/NIST.FIPS.180-4" target="_blank">SHA-512 <i aria-hidden="true" class="fa fa-external-link"></i></a> hash from some contents, then takes the first half of the output. (That's 256 bits, which is 32 bytes, or 64 characters of the hexadecimal representation.) Since the hash of an object is derived from the contents in a way that is extremely unlikely to produce collisions, two objects with the same hash can be considered the same.</p>
+<p>An XAG Ledger hash value has the following characteristics:</p>
 <ul>
 <li>Exactly 64 characters in length</li>
 <li><a class="external-link" href="https://en.wikipedia.org/wiki/Hexadecimal" target="_blank">Hexadecimal <i aria-hidden="true" class="fa fa-external-link"></i></a> character set: 0-9 and A-F.</li>
 <li>Typically written in upper case.</li>
 </ul>
-<p class="devportal-callout note"><strong>Note:</strong> SHA-512Half has similar security to the officially-defined <em>SHA-512/256</em> hash function. However, the XRP Ledger's usage predates SHA-512/256 and is also easier to implement on top of an existing SHA-512 function. (As of this writing, SHA-512 support in cryptographic libraries is much more common than for SHA-512/256.)
+<p class="devportal-callout note"><strong>Note:</strong> SHA-512Half has similar security to the officially-defined <em>SHA-512/256</em> hash function. However, the XAG Ledger's usage predates SHA-512/256 and is also easier to implement on top of an existing SHA-512 function. (As of this writing, SHA-512 support in cryptographic libraries is much more common than for SHA-512/256.)
 <!-- --></p>
 <h3 id="hash-prefixes">Hash Prefixes</h3>
 <p><a class="external-link" href="https://github.com/ripple/rippled/blob/master/src/ripple/protocol/HashPrefix.h" target="_blank" title="Source">[Source] <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
-<p>In many cases, the XRP Ledger prefixes an object's binary data with a 4-byte code before calculating its hash, so that objects of different types have different hashes even if their binary formats are the same. The existing 4-byte codes are structured as three alphabetic characters, encoded as ASCII, followed by a zero byte.</p>
-<p>Some types of hash appear in API requests and responses. Others are only calculated as the first step of signing a certain type of data, or calculating a higher-level hash. The following table shows all 4-byte hash prefixes the XRP Ledger uses:</p>
+<p>In many cases, the XAG Ledger prefixes an object's binary data with a 4-byte code before calculating its hash, so that objects of different types have different hashes even if their binary formats are the same. The existing 4-byte codes are structured as three alphabetic characters, encoded as ASCII, followed by a zero byte.</p>
+<p>Some types of hash appear in API requests and responses. Others are only calculated as the first step of signing a certain type of data, or calculating a higher-level hash. The following table shows all 4-byte hash prefixes the XAG Ledger uses:</p>
 <table>
 <thead>
 <tr>
@@ -264,7 +235,7 @@
 <p><a href="ledger-object-ids.html">Ledger objects IDs</a> are calculated in a similar way, but they use a 2-byte prefix called a "space key" instead of a prefix in the form described here.</p>
 <h2 id="account-sequence">Account Sequence</h2>
 <p>A sequence number is a 32-bit unsigned integer that is used to make sure transactions from a given sender execute only once each, and in the correct order.</p>
-<p>Every <a href="accounts.html">account in the XRP Ledger</a> has a sequence number in its <code>Sequence</code> field, which increases by 1 whenever that account sends a transaction and that transaction gets included in a <a href="ledgers.html">validated ledger</a>. Each <a href="transaction-basics.html">transaction</a> also has a sequence number in its <code>Sequence</code> field, which must match the account's current sequence number when the transaction executes. For each account, each sequence number can only be used once, in numerical order.</p>
+<p>Every <a href="accounts.html">account in the XAG Ledger</a> has a sequence number in its <code>Sequence</code> field, which increases by 1 whenever that account sends a transaction and that transaction gets included in a <a href="ledgers.html">validated ledger</a>. Each <a href="transaction-basics.html">transaction</a> also has a sequence number in its <code>Sequence</code> field, which must match the account's current sequence number when the transaction executes. For each account, each sequence number can only be used once, in numerical order.</p>
 <p>With the <a href="known-amendments.html#deletableaccounts">DeletableAccounts amendment</a>, the starting <code>Sequence</code> number for an account matches the <a href="basic-data-types.html#ledger-index">Ledger Index</a> of the ledger version where the account was created. Before DeletableAccounts, every account started with <code>Sequence</code> number 1.</p>
 <p>Whenever a transaction is included in a ledger, it uses up a sequence number regardless of whether the transaction executed successfully or failed with a <a href="tec-codes.html"><code>tec</code>-class error code</a>. Other transaction failures don't get included in ledgers, so they don't change the sender's sequence number (or have any other effects).</p>
 <p>Within the ledger, an <a href="basic-data-types.html#addresses">Address</a> and a sequence number are sometimes used together to identify an object that was created by the validated transaction with that sender and sequence number. <a href="escrow.html">Escrows</a> and <a href="offers.html">Offers</a> are examples of objects identified this way.</p>
@@ -295,12 +266,12 @@
 <p>If you do not specify a ledger, the <code>current</code> (in-progress) ledger is chosen by default. If you provide more than one field specifying ledgers, the deprecated <code>ledger</code> field is used first if it exists, falling back to <code>ledger_hash</code>. The <code>ledger_index</code> field is ignored unless neither of the other two are present.</p>
 <p class="devportal-callout note"><strong>Note:</strong> Do not rely on this default behavior for specifying a ledger; it is subject to change. Always specify a ledger version in the request if you can.</p>
 <h2 id="specifying-currency-amounts">Specifying Currency Amounts</h2>
-<p>There are two kinds of currencies in the XRP Ledger: XRP, and issued currencies. These two types of currencies are specified in different formats, with different precision and rounding behavior.</p>
-<p>Some fields, such as the destination <code>Amount</code> of a <a href="payment.html">Payment transaction</a>, can be either type. Some fields only accept XRP specifically, such as the <code>Fee</code> field (<a href="transaction-cost.html">transaction cost</a>).</p>
-<p>XRP is specified as a string containing an integer number of "drops" of XRP, where 1 million drops equals 1 XRP. Issued currencies are instead specified as an object with fields for the decimal amount, currency code, and issuer. For example:</p>
+<p>There are two kinds of currencies in the XAG Ledger: XAG, and issued currencies. These two types of currencies are specified in different formats, with different precision and rounding behavior.</p>
+<p>Some fields, such as the destination <code>Amount</code> of a <a href="payment.html">Payment transaction</a>, can be either type. Some fields only accept XAG specifically, such as the <code>Fee</code> field (<a href="transaction-cost.html">transaction cost</a>).</p>
+<p>XAG is specified as a string containing an integer number of "drops" of XAG, where 1 million drops equals 1 XAG. Issued currencies are instead specified as an object with fields for the decimal amount, currency code, and issuer. For example:</p>
 <ul>
 <li>
-<p><strong>XRP</strong> - To specify an <code>Amount</code> field with a value of 13.1 XRP:</p>
+<p><strong>XAG</strong> - To specify an <code>Amount</code> field with a value of 13.1 XAG:</p>
 <pre><code>"Amount": "13100000"
 </code></pre>
 </li>
@@ -646,108 +617,7 @@
   </div>
 
 <footer class="xrpl-footer" role="contentinfo">
-  <section class="container-fluid card-grid card-grid-Nx1">
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
-  </section>
+  
 
   <section class="container-fluid p-5 pl-sm-0">
 
@@ -758,13 +628,14 @@
           <a class="nav-link active" href="/basic-data-types.html"><i class="fa fa-check-circle"></i> English</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/ja/basic-data-types.html">日本語</a>
+          <a class="nav-link" href="/ja/basic-data-types.html">中文
+          </a>
         </li>
       </ul>
     </nav>
 
     <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
+      <span>&copy; XAG Ledger Project 2020</span>
       <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
     </div><!-- /.absolute_bottom_footer -->
 
