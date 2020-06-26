@@ -23,19 +23,6 @@
     <!-- Stylesheet -->
     <link href="assets/css/devportal.css" rel="stylesheet" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45576805-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-45576805-2');
-      gtag('config', 'UA-157720658-3', { 'linker': {
-        'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
-        } }
-      );
-    </script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -69,28 +56,14 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
       <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
+          <li class="nav-item">
               <a class="nav-link" href="dev-tools.html">Dev Tools</a>
             </li>
+            
         <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-      </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/references/rippled-api/api-conventions/response-formatting.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+            <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+          </li>
+      </ul>
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -294,7 +267,7 @@
   }
 ]
 </code></pre>
-<p>This warning indicates that the one or more <a href="amendments.html">amendments</a> to the XRP Ledger protocol are scheduled to become enabled, but the current server does not have an implementation for those amendments. If those amendments become enabled, the current server will become <a href="amendments.html#amendment-blocked">amendment blocked</a>, so you should <a href="install-rippled.html">upgrade to the latest <code>rippled</code> version</a> as soon as possible.</p>
+<p>This warning indicates that the one or more <a href="amendments.html">amendments</a> to the XAG  Ledger protocol are scheduled to become enabled, but the current server does not have an implementation for those amendments. If those amendments become enabled, the current server will become <a href="amendments.html#amendment-blocked">amendment blocked</a>, so you should <a href="install-rippled.html">upgrade to the latest <code>rippled</code> version</a> as soon as possible.</p>
 <p>The server only sends this warning if the client is <a href="get-started-with-the-rippled-api.html#admin-access">connected as an admin</a>.</p>
 <p>This warning includes a <code>details</code> field with the following fields:</p>
 <table>
@@ -328,30 +301,9 @@
   }
 ]
 </code></pre>
-<p>This warning indicates that the server is <a href="amendments.html#amendment-blocked">amendment blocked</a> and can no longer remain synced with the XRP Ledger.</p>
+<p>This warning indicates that the server is <a href="amendments.html#amendment-blocked">amendment blocked</a> and can no longer remain synced with the XAG  Ledger.</p>
 <p>The server administrator must <a href="install-rippled.html">upgrade <code>rippled</code></a> to a version that supports the activated amendments.</p>
-<h2 id="see-also">See Also</h2>
-<ul>
-<li><strong>Concepts:</strong><ul>
-<li><a href="the-rippled-server.html">The <code>rippled</code> Server</a></li>
-<li><a href="intro-to-consensus.html">Introduction to Consensus</a></li>
-<li><a href="amendments.html">Amendments</a><ul>
-<li><a href="known-amendments.html">Known Amendments</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Tutorials:</strong><ul>
-<li><a href="get-started-with-the-rippled-api.html">Get Started with XRP Ledger APIs</a></li>
-<li><a href="install-rippled.html">Install and Update <code>rippled</code></a></li>
-</ul>
-</li>
-<li><strong>References:</strong><ul>
-<li><a href="feature.html">feature method</a></li>
-<li><a href="server_info.html">server_info method</a></li>
-</ul>
-</li>
-</ul>
+
 <!-- -->
 <!-- -->
 <!-- API object types -->
@@ -680,109 +632,7 @@
   </div>
 
 <footer class="xrpl-footer" role="contentinfo">
-  <section class="container-fluid card-grid card-grid-Nx1">
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
-  </section>
-
+  
   <section class="container-fluid p-5 pl-sm-0">
 
     <nav role="navigation" class="d-flex mb-3 language-selector">
@@ -798,8 +648,8 @@
     </nav>
 
     <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
-      <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
+      <span>&copy; XAG  Ledger Project 2020</span>
+      
     </div><!-- /.absolute_bottom_footer -->
 
   </section>
