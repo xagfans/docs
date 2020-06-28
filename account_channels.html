@@ -23,19 +23,7 @@
     <!-- Stylesheet -->
     <link href="assets/css/devportal.css" rel="stylesheet" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45576805-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-45576805-2');
-      gtag('config', 'UA-157720658-3', { 'linker': {
-        'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
-        } }
-      );
-    </script>
+   
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -69,28 +57,14 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
       <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
+          <li class="nav-item">
               <a class="nav-link" href="dev-tools.html">Dev Tools</a>
             </li>
+            
         <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-      </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/references/rippled-api/public-rippled-methods/account-methods/account_channels.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+            <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+          </li>
+      </ul>
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -115,7 +89,7 @@
       <h4>In this document</h4>
     </div>
     <ul class="card-body">
-      <li class="level-1"><a href="#account_channels">account_channels</a></li>
+      
 <li class="level-2"><a href="#request-format">Request Format</a></li>
 <li class="level-2"><a href="#response-format">Response Format</a></li>
 <li class="level-2"><a href="#possible-errors">Possible Errors</a></li>
@@ -140,7 +114,6 @@
     <div class="content">
         <h1 id="account_channels">account_channels</h1>
 <p><a class="external-link" href="https://github.com/ripple/rippled/blob/release/src/ripple/rpc/handlers/AccountChannels.cpp" target="_blank" title="Source">[Source] <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
-<p><em>(Added by the <a href="known-amendments.html#paychan">PayChan amendment</a>. <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/0.33.0" target="_blank" title="New in: rippled 0.33.0"><img alt="New in: rippled 0.33.0" class="dactyl_badge" src="https://img.shields.io/badge/New%20in-rippled%200.33.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a>)</em></p>
 <p>The <code>account_channels</code> method returns information about an account's Payment Channels. This includes only channels where the specified account is the channel's source, not the destination. (A channel's "source" and "owner" are the same.) All information retrieved is relative to a particular version of the ledger.</p>
 <h2 id="request-format">Request Format</h2>
 <p>An example of the request format:</p>

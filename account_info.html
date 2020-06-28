@@ -23,19 +23,6 @@
     <!-- Stylesheet -->
     <link href="assets/css/devportal.css" rel="stylesheet" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45576805-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-45576805-2');
-      gtag('config', 'UA-157720658-3', { 'linker': {
-        'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
-        } }
-      );
-    </script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -69,28 +56,14 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
       <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
+          <li class="nav-item">
               <a class="nav-link" href="dev-tools.html">Dev Tools</a>
             </li>
+            
         <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-      </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/references/rippled-api/public-rippled-methods/account-methods/account_info.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+            <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+          </li>
+      </ul>
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -140,7 +113,7 @@
     <div class="content">
         <h1 id="account_info">account_info</h1>
 <p><a class="external-link" href="https://github.com/ripple/rippled/blob/master/src/ripple/rpc/handlers/AccountInfo.cpp" target="_blank" title="Source">[Source] <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
-<p>The <code>account_info</code> command retrieves information about an account, its activity, and its XRP balance. All information retrieved is relative to a particular version of the ledger.</p>
+<p>The <code>account_info</code> command retrieves information about an account, its activity, and its XAG  balance. All information retrieved is relative to a particular version of the ledger.</p>
 <h2 id="request-format">Request Format</h2>
 <p>An example of an account_info request:</p>
 <div class="multicode" id="code-0"><ul class="codetabs"><li><a href="#code-0-0">WebSocket</a></li><li><a href="#code-0-1">JSON-RPC</a></li><li><a href="#code-0-2">Commandline</a></li></ul>
@@ -211,7 +184,7 @@ rippled account_info rG1QQv2nh2gr7RCZ1P8YYcBUKCCN633jCn validated strict
 <tr>
 <td align="left"><code>strict</code></td>
 <td align="left">Boolean</td>
-<td align="left"><em>(Optional)</em> If <code>true</code>, then the <code>account</code> field only accepts a public key or XRP Ledger address. Otherwise, <code>account</code> can be a secret or passphrase (not recommended). The default is <code>false</code>.</td>
+<td align="left"><em>(Optional)</em> If <code>true</code>, then the <code>account</code> field only accepts a public key or XAG  Ledger address. Otherwise, <code>account</code> can be a secret or passphrase (not recommended). The default is <code>false</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -345,7 +318,7 @@ rippled account_info rG1QQv2nh2gr7RCZ1P8YYcBUKCCN633jCn validated strict
 <tr>
 <td align="left"><code>queue_data</code></td>
 <td align="left">Object</td>
-<td align="left"><em>(Omitted unless <code>queue</code> specified as <code>true</code> and querying the current open ledger.)</em> Information about <a href="transaction-cost.html#queued-transactions">queued transactions</a> sent by this account. This information describes the state of the local <code>rippled</code> server, which may be different from other servers in the <a href="consensus-network.html">peer-to-peer XRP Ledger network</a>. Some fields may be omitted because the values are calculated "lazily" by the queuing mechanism.</td>
+<td align="left"><em>(Omitted unless <code>queue</code> specified as <code>true</code> and querying the current open ledger.)</em> Information about <a href="transaction-cost.html#queued-transactions">queued transactions</a> sent by this account. This information describes the state of the local <code>rippled</code> server, which may be different from other servers in the <a href="consensus-network.html">peer-to-peer XAG  Ledger network</a>. Some fields may be omitted because the values are calculated "lazily" by the queuing mechanism.</td>
 </tr>
 <tr>
 <td align="left"><code>validated</code></td>
@@ -387,7 +360,7 @@ rippled account_info rG1QQv2nh2gr7RCZ1P8YYcBUKCCN633jCn validated strict
 <tr>
 <td align="left"><code>max_spend_drops_total</code></td>
 <td align="left">String</td>
-<td align="left">(May be omitted) Integer amount of <a href="basic-data-types.html#specifying-currency-amounts">drops of XRP</a> that could be debited from this address if every transaction in the queue consumes the maximum amount of XRP possible.</td>
+<td align="left">(May be omitted) Integer amount of <a href="basic-data-types.html#specifying-currency-amounts">drops of XAG </a> that could be debited from this address if every transaction in the queue consumes the maximum amount of XAG  possible.</td>
 </tr>
 <tr>
 <td align="left"><code>transactions</code></td>
@@ -414,7 +387,7 @@ rippled account_info rG1QQv2nh2gr7RCZ1P8YYcBUKCCN633jCn validated strict
 <tr>
 <td align="left"><code>fee</code></td>
 <td align="left">String</td>
-<td align="left">The <a href="transaction-cost.html">Transaction Cost</a> of this transaction, in <a href="basic-data-types.html#specifying-currency-amounts">drops of XRP</a>.</td>
+<td align="left">The <a href="transaction-cost.html">Transaction Cost</a> of this transaction, in <a href="basic-data-types.html#specifying-currency-amounts">drops of XAG </a>.</td>
 </tr>
 <tr>
 <td align="left"><code>fee_level</code></td>
@@ -424,7 +397,7 @@ rippled account_info rG1QQv2nh2gr7RCZ1P8YYcBUKCCN633jCn validated strict
 <tr>
 <td align="left"><code>max_spend_drops</code></td>
 <td align="left">String</td>
-<td align="left">The maximum amount of <a href="basic-data-types.html#specifying-currency-amounts">XRP, in drops</a>, this transaction could send or destroy.</td>
+<td align="left">The maximum amount of <a href="basic-data-types.html#specifying-currency-amounts">XAG , in drops</a>, this transaction could send or destroy.</td>
 </tr>
 <tr>
 <td align="left"><code>seq</code></td>
@@ -503,7 +476,7 @@ rippled account_info rG1QQv2nh2gr7RCZ1P8YYcBUKCCN633jCn validated strict
                   <ul class="sidebar_pagelist">
                         <li><a class="subcat-title active-parent" href="account-methods.html">Account Methods</a></li>
 
-                            <li><a class="subpage" href="account_channels.html">account_channels</a></li>
+                            
                             <li><a class="subpage" href="account_currencies.html">account_currencies</a></li>
                             <li><a class="active subpage" href="#main_content_body">account_info</a></li>
                             <li><a class="subpage" href="account_lines.html">account_lines</a></li>
@@ -538,10 +511,7 @@ rippled account_info rG1QQv2nh2gr7RCZ1P8YYcBUKCCN633jCn validated strict
                             <li><a class="subpage" href="path_find.html">path_find</a></li>
                             <li><a class="subpage" href="ripple_path_find.html">ripple_path_find</a></li>
 
-                        <li><a class="subcat-title" href="payment-channel-methods.html">Payment Channel Methods</a></li>
-
-                            <li><a class="subpage" href="channel_authorize.html">channel_authorize</a></li>
-                            <li><a class="subpage" href="channel_verify.html">channel_verify</a></li>
+                      
 
                         <li><a class="subcat-title" href="subscription-methods.html">Subscription Methods</a></li>
 
@@ -711,55 +681,7 @@ rippled account_info rG1QQv2nh2gr7RCZ1P8YYcBUKCCN633jCn validated strict
                 </div><!-- /.card-body -->
               </div><!-- /#sidenav_collapse18 -->
 
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_19">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="commandline-usage.html">rippled Commandline Usage Reference</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_19" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_19">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse19 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_20">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="peer-crawler.html">Peer Crawler</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse20 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_21">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="validator-list.html">Validator List Method</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_21" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_21">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse21 -->
-
-            </div><!-- /.panel -->
+            </div>
     </div><!-- /#sidenav -->
 
 </div><!-- /.tree_nav -->      </aside>
@@ -769,105 +691,6 @@ rippled account_info rG1QQv2nh2gr7RCZ1P8YYcBUKCCN633jCn validated strict
 <footer class="xrpl-footer" role="contentinfo">
   <section class="container-fluid card-grid card-grid-Nx1">
 
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
   </section>
 
   <section class="container-fluid p-5 pl-sm-0">
@@ -885,7 +708,7 @@ rippled account_info rG1QQv2nh2gr7RCZ1P8YYcBUKCCN633jCn validated strict
     </nav>
 
     <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
+      <span>&copy; XAG  Ledger Project 2019</span>
       <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
     </div><!-- /.absolute_bottom_footer -->
 

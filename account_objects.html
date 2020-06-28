@@ -69,28 +69,14 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
       <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
+          <li class="nav-item">
               <a class="nav-link" href="dev-tools.html">Dev Tools</a>
             </li>
+            
         <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-      </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/references/rippled-api/public-rippled-methods/account-methods/account_objects.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+            <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+          </li>
+      </ul>
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -146,11 +132,6 @@
 <li><a href="offer.html">Offer objects</a> for orders that are currently live, unfunded, or expired but not yet removed. (See <a href="offers.html#lifecycle-of-an-offer">Lifecycle of an Offer</a> for more information.)</li>
 <li><a href="ripplestate.html">RippleState objects</a> for trust lines where this account's side is not in the default state.</li>
 <li>The account's <a href="signerlist.html">SignerList</a>, if the account has <a href="multi-signing.html">multi-signing</a> enabled.</li>
-<li><a href="escrow.html">Escrow objects</a> for held payments that have not yet been executed or canceled.</li>
-<li><a href="paychannel.html">PayChannel objects</a> for open payment channels.</li>
-<li><a href="check.html">Check objects</a> for pending Checks.</li>
-<li><a href="depositpreauth-object.html">DepositPreauth objects</a> for deposit preauthorizations. <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/1.1.0" target="_blank" title="New in: rippled 1.1.0"><img alt="New in: rippled 1.1.0" class="dactyl_badge" src="https://img.shields.io/badge/New%20in-rippled%201.1.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
-<li><a href="known-amendments.html#tickets">Ticket objects</a> <span class="status not_enabled" title="This feature is not currently enabled on the production XRP Ledger."><i class="fa fa-flask"></i></span> for tickets.</li>
 </ul>
 <h2 id="request-format">Request Format</h2>
 <p>An example of the request format:</p>
@@ -203,7 +184,7 @@ rippled account_objects r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59 validated
 <tr>
 <td align="left"><code>type</code></td>
 <td align="left">String</td>
-<td align="left"><em>(Optional)</em> If included, filter results to include only this type of ledger object. The valid types are: <code>check</code> <span class="status not_enabled" title="This feature is not currently enabled on the production XRP Ledger."><i class="fa fa-flask"></i></span>, <code>deposit_preauth</code>, <code>escrow</code>, <code>offer</code>, <code>payment_channel</code>, <code>signer_list</code>, <code>ticket</code> <span class="status not_enabled" title="This feature is not currently enabled on the production XRP Ledger."><i class="fa fa-flask"></i></span>, and <code>state</code> (trust line). <!-- Author's note: Omitted types that can't be owned by an account --></td>
+<td align="left"><em>(Optional)</em> If included, filter results to include only this type of ledger object. The valid types are: <code>check</code> <span class="status not_enabled" title="This feature is not currently enabled on the production XAG  Ledger."><i class="fa fa-flask"></i></span>, <code>deposit_preauth</code>, <code>escrow</code>, <code>offer</code>, <code>payment_channel</code>, <code>signer_list</code>, <code>ticket</code> <span class="status not_enabled" title="This feature is not currently enabled on the production XAG  Ledger."><i class="fa fa-flask"></i></span>, and <code>state</code> (trust line). <!-- Author's note: Omitted types that can't be owned by an account --></td>
 </tr>
 <tr>
 <td align="left"><code>deletion_blockers_only</code></td>
@@ -872,7 +853,7 @@ rippled account_objects r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59 validated
                   <ul class="sidebar_pagelist">
                         <li><a class="subcat-title active-parent" href="account-methods.html">Account Methods</a></li>
 
-                            <li><a class="subpage" href="account_channels.html">account_channels</a></li>
+                           
                             <li><a class="subpage" href="account_currencies.html">account_currencies</a></li>
                             <li><a class="subpage" href="account_info.html">account_info</a></li>
                             <li><a class="subpage" href="account_lines.html">account_lines</a></li>
@@ -1138,105 +1119,6 @@ rippled account_objects r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59 validated
 <footer class="xrpl-footer" role="contentinfo">
   <section class="container-fluid card-grid card-grid-Nx1">
 
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
   </section>
 
   <section class="container-fluid p-5 pl-sm-0">
@@ -1254,7 +1136,7 @@ rippled account_objects r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59 validated
     </nav>
 
     <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
+      <span>&copy; XAG  Ledger Project 2019</span>
       <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
     </div><!-- /.absolute_bottom_footer -->
 

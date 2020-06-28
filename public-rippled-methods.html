@@ -23,19 +23,7 @@
     <!-- Stylesheet -->
     <link href="assets/css/devportal.css" rel="stylesheet" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45576805-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-45576805-2');
-      gtag('config', 'UA-157720658-3', { 'linker': {
-        'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
-        } }
-      );
-    </script>
+    
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -69,28 +57,14 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
       <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
+          <li class="nav-item">
               <a class="nav-link" href="dev-tools.html">Dev Tools</a>
             </li>
+            
         <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-      </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/references/rippled-api/public-rippled-methods/public-rippled-methods.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+            <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+          </li>
+      </ul>
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -120,7 +94,6 @@
 <li class="level-2"><a href="#ledger-methods">Ledger Methods</a></li>
 <li class="level-2"><a href="#transaction-methods">Transaction Methods</a></li>
 <li class="level-2"><a href="#path-and-order-book-methods">Path and Order Book Methods</a></li>
-<li class="level-2"><a href="#payment-channel-methods">Payment Channel Methods</a></li>
 <li class="level-2"><a href="#subscription-methods">Subscription Methods</a></li>
 <li class="level-2"><a href="#server-info-methods">Server Info Methods</a></li>
 <li class="level-2"><a href="#utility-methods">Utility Methods</a></li>
@@ -145,9 +118,8 @@
         <h1 id="public-rippled-methods">Public rippled Methods</h1>
 <p>Communicate directly with a <code>rippled</code> server using the following public API methods. Public methods are not necessarily meant for the general public, but they are used by any client attached to the server. Think of public methods as being for members or customers of the organization running the server.</p>
 <h2 id="account-methods"><a href="account-methods.html">Account Methods</a></h2>
-<p>An account in the XRP Ledger represents a holder of XRP and a sender of transactions. Use these methods to work with account info.</p>
+<p>An account in the XAG  Ledger represents a holder of XAG  and a sender of transactions. Use these methods to work with account info.</p>
 <ul>
-<li><strong><a href="account_channels.html"><code>account_channels</code></a></strong> - Get a list of payment channels where the account is the source of the channel.</li>
 <li><strong><a href="account_currencies.html"><code>account_currencies</code></a></strong> - Get a list of currencies an account can send or receive.</li>
 <li><strong><a href="account_info.html"><code>account_info</code></a></strong> - Get basic data about an account.</li>
 <li><strong><a href="account_lines.html"><code>account_lines</code></a></strong> - Get info about an account's trust lines.</li>
@@ -167,7 +139,7 @@
 <li><strong><a href="ledger_entry.html"><code>ledger_entry</code></a></strong> - Get one element from a ledger version.</li>
 </ul>
 <h2 id="transaction-methods"><a href="transaction-methods.html">Transaction Methods</a></h2>
-<p>Transactions are the only thing that can modify the shared state of the XRP Ledger. All business on the XRP Ledger takes the form of transactions. Use these methods to work with transactions.</p>
+<p>Transactions are the only thing that can modify the shared state of the XAG  Ledger. All business on the XAG  Ledger takes the form of transactions. Use these methods to work with transactions.</p>
 <ul>
 <li><strong><a href="sign.html"><code>sign</code></a></strong> - Cryptographically sign a transaction.</li>
 <li><strong><a href="sign_for.html"><code>sign_for</code></a></strong> - Contribute to a multi-signature.</li>
@@ -185,12 +157,7 @@
 <li><strong><a href="path_find.html"><code>path_find</code></a></strong> - Find a path for a payment between two accounts and receive updates.</li>
 <li><strong><a href="ripple_path_find.html"><code>ripple_path_find</code></a></strong> - Find a path for payment between two accounts, once.</li>
 </ul>
-<h2 id="payment-channel-methods"><a href="payment-channel-methods.html">Payment Channel Methods</a></h2>
-<p>Payment channels are a tool for facilitating repeated, unidirectional payments, or temporary credit between two parties. Use these methods to work with payment channels.</p>
-<ul>
-<li><strong><a href="channel_authorize.html"><code>channel_authorize</code></a></strong> - Sign a claim for money from a payment channel.</li>
-<li><strong><a href="channel_verify.html"><code>channel_verify</code></a></strong> - Check a payment channel claim's signature.</li>
-</ul>
+
 <h2 id="subscription-methods"><a href="subscription-methods.html">Subscription Methods</a></h2>
 <p>Use these methods to enable the server to push updates to your client when various events happen, so that you can know and react right away. <em>WebSocket API only.</em></p>
 <ul>
@@ -270,7 +237,7 @@
                   <ul class="sidebar_pagelist">
                         <li><a class="subcat-title" href="account-methods.html">Account Methods</a></li>
 
-                            <li><a class="subpage" href="account_channels.html">account_channels</a></li>
+                           
                             <li><a class="subpage" href="account_currencies.html">account_currencies</a></li>
                             <li><a class="subpage" href="account_info.html">account_info</a></li>
                             <li><a class="subpage" href="account_lines.html">account_lines</a></li>
@@ -305,10 +272,7 @@
                             <li><a class="subpage" href="path_find.html">path_find</a></li>
                             <li><a class="subpage" href="ripple_path_find.html">ripple_path_find</a></li>
 
-                        <li><a class="subcat-title" href="payment-channel-methods.html">Payment Channel Methods</a></li>
-
-                            <li><a class="subpage" href="channel_authorize.html">channel_authorize</a></li>
-                            <li><a class="subpage" href="channel_verify.html">channel_verify</a></li>
+                        
 
                         <li><a class="subcat-title" href="subscription-methods.html">Subscription Methods</a></li>
 
@@ -479,54 +443,9 @@
               </div><!-- /#sidenav_collapse18 -->
 
             </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_19">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="commandline-usage.html">rippled Commandline Usage Reference</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_19" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_19">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse19 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_20">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="peer-crawler.html">Peer Crawler</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse20 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_21">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="validator-list.html">Validator List Method</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_21" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_21">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse21 -->
-
-            </div><!-- /.panel -->
+           
+           
+            
     </div><!-- /#sidenav -->
 
 </div><!-- /.tree_nav -->      </aside>
@@ -535,106 +454,6 @@
 
 <footer class="xrpl-footer" role="contentinfo">
   <section class="container-fluid card-grid card-grid-Nx1">
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
   </section>
 
   <section class="container-fluid p-5 pl-sm-0">
@@ -652,7 +471,7 @@
     </nav>
 
     <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
+      <span>&copy; XAG  Ledger Project 2020</span>
       <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
     </div><!-- /.absolute_bottom_footer -->
 
