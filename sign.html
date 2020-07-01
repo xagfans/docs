@@ -19,26 +19,9 @@
 
     <!-- jQuery -->
     <script src="assets/vendor/jquery-1.11.1.min.js"></script>
-
     <!-- Stylesheet -->
     <link href="assets/css/devportal.css" rel="stylesheet" />
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45576805-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-45576805-2');
-      gtag('config', 'UA-157720658-3', { 'linker': {
-        'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
-        } }
-      );
-    </script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
-
 
     <!-- syntax highlighting -->
     <link rel="stylesheet" href="assets/vendor/docco.min.css" />
@@ -69,28 +52,14 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
       <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
+          <li class="nav-item">
               <a class="nav-link" href="dev-tools.html">Dev Tools</a>
             </li>
+            
         <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-      </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/references/rippled-api/public-rippled-methods/transaction-methods/sign.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+            <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+          </li>
+      </ul>
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -196,7 +165,7 @@ rippled sign s██████████████████████
 </div>
 <p>To sign a transaction, you must provide a secret key that can <a href="transaction-basics.html#authorizing-transactions">authorize the transaction</a>. Typically you provide a seed value that the server derives the secret key from. You can do this in a few ways:</p>
 <ul>
-<li>Provide the seed in the <code>secret</code> field and omit the <code>key_type</code> field. This value can be formatted as an XRP Ledger <a href="base58-encodings.html">base58</a> seed, RFC-1751, hexadecimal, or as a string passphrase. (secp256k1 keys only)</li>
+<li>Provide the seed in the <code>secret</code> field and omit the <code>key_type</code> field. This value can be formatted as an XAG  Ledger <a href="base58-encodings.html">base58</a> seed, RFC-1751, hexadecimal, or as a string passphrase. (secp256k1 keys only)</li>
 <li>Provide a <code>key_type</code> value and exactly one of <code>seed</code>, <code>seed_hex</code>, or <code>passphrase</code>. Omit the <code>secret</code> field. (Not supported by the commandline syntax.)</li>
 </ul>
 <p>The request includes the following parameters:</p>
@@ -222,7 +191,7 @@ rippled sign s██████████████████████
 <tr>
 <td align="left"><code>seed</code></td>
 <td align="left">String</td>
-<td align="left"><em>(Optional)</em> The secret seed of the account supplying the transaction, used to sign it. Must be in the XRP Ledger's <a href="base58-encodings.html">base58</a> format. If provided, you must also specify the <code>key_type</code>. Cannot be used with <code>secret</code>, <code>seed_hex</code>, or <code>passphrase</code>.</td>
+<td align="left"><em>(Optional)</em> The secret seed of the account supplying the transaction, used to sign it. Must be in the XAG  Ledger's <a href="base58-encodings.html">base58</a> format. If provided, you must also specify the <code>key_type</code>. Cannot be used with <code>secret</code>, <code>seed_hex</code>, or <code>passphrase</code>.</td>
 </tr>
 <tr>
 <td align="left"><code>seed_hex</code></td>
@@ -247,7 +216,7 @@ rippled sign s██████████████████████
 <tr>
 <td align="left"><code>build_path</code></td>
 <td align="left">Boolean</td>
-<td align="left"><em>(Optional)</em> If this field is provided, the server <a href="transaction-common-fields.html#auto-fillable-fields">auto-fills</a> the <code>Paths</code> field of a <a href="payment.html">Payment transaction</a> before signing. You must omit this field if the transaction is a <a href="direct-xrp-payments.html">direct XRP payment</a> or if it is not a Payment-type transaction. <strong>Caution:</strong> The server looks for the presence or absence of this field, not its value. This behavior may change. (<a class="external-link" href="https://github.com/ripple/rippled/issues/3272" target="_blank">Issue #3272 <i aria-hidden="true" class="fa fa-external-link"></i></a>)</td>
+<td align="left"><em>(Optional)</em> If this field is provided, the server <a href="transaction-common-fields.html#auto-fillable-fields">auto-fills</a> the <code>Paths</code> field of a <a href="payment.html">Payment transaction</a> before signing. You must omit this field if the transaction is a <a href="direct-xrp-payments.html">direct XAG  payment</a> or if it is not a Payment-type transaction. <strong>Caution:</strong> The server looks for the presence or absence of this field, not its value. This behavior may change. (<a class="external-link" href="https://github.com/ripple/rippled/issues/3272" target="_blank">Issue #3272 <i aria-hidden="true" class="fa fa-external-link"></i></a>)</td>
 </tr>
 <tr>
 <td align="left"><code>fee_mult_max</code></td>
@@ -268,13 +237,13 @@ rippled sign s██████████████████████
 <li class="devportal-callout caution"><strong>Caution:</strong> The next sequence number for the account is not incremented until this transaction is applied. If you sign multiple transactions without submitting and waiting for the response to each one, you must manually provide the correct sequence numbers for each transaction after the first.</li>
 </ul>
 </li>
-<li><code>Fee</code> - If you omit the <code>Fee</code> parameter, the server tries to fill in an appropriate transaction cost automatically. On the production XRP Ledger, this fails with <code>rpcHIGH_FEE</code> unless you provide an appropriate <code>fee_mult_max</code> value.<ul>
-<li>The <code>fee_mult_max</code> and <code>fee_div_max</code> parameters limit how high the automatically-provided transaction cost can be, in terms of the load-scaling multiplier that gets applied to the <a href="transaction-cost.html#reference-transaction-cost">reference transaction cost</a>. The default settings return an error if the automatically-provided value would use greater than a 10× multiplier. However, the production XRP Ledger <a href="transaction-cost.html#current-transaction-cost">typically has a 1000× load multiplier</a>.</li>
-<li>The commandline syntax does not support <code>fee_mult_max</code> and <code>fee_div_max</code>. For the production XRP Ledger, you must provide a <code>Fee</code> value.</li>
+<li><code>Fee</code> - If you omit the <code>Fee</code> parameter, the server tries to fill in an appropriate transaction cost automatically. On the production XAG  Ledger, this fails with <code>rpcHIGH_FEE</code> unless you provide an appropriate <code>fee_mult_max</code> value.<ul>
+<li>The <code>fee_mult_max</code> and <code>fee_div_max</code> parameters limit how high the automatically-provided transaction cost can be, in terms of the load-scaling multiplier that gets applied to the <a href="transaction-cost.html#reference-transaction-cost">reference transaction cost</a>. The default settings return an error if the automatically-provided value would use greater than a 10× multiplier. However, the production XAG  Ledger <a href="transaction-cost.html#current-transaction-cost">typically has a 1000× load multiplier</a>.</li>
+<li>The commandline syntax does not support <code>fee_mult_max</code> and <code>fee_div_max</code>. For the production XAG  Ledger, you must provide a <code>Fee</code> value.</li>
 <li class="devportal-callout caution"><strong>Caution:</strong> A malicious server can specify an excessively high transaction cost, ignoring the values of <code>fee_mult_max</code> and <code>fee_div_max</code>.</li>
 </ul>
 </li>
-<li><code>Paths</code> - For Payment-type transactions (excluding XRP-to-XRP transfers), the Paths field can be automatically filled, as if you used the <a href="ripple_path_find.html">ripple_path_find method</a>. Only filled if <code>build_path</code> is provided.</li>
+<li><code>Paths</code> - For Payment-type transactions (excluding XAG -to-XAG  transfers), the Paths field can be automatically filled, as if you used the <a href="ripple_path_find.html">ripple_path_find method</a>. Only filled if <code>build_path</code> is provided.</li>
 </ul>
 <h2 id="response-format">Response Format</h2>
 <p>An example of a successful response:</p>
@@ -457,7 +426,6 @@ Connecting to 127.0.0.1:5005
                   <ul class="sidebar_pagelist">
                         <li><a class="subcat-title" href="account-methods.html">Account Methods</a></li>
 
-                            <li><a class="subpage" href="account_channels.html">account_channels</a></li>
                             <li><a class="subpage" href="account_currencies.html">account_currencies</a></li>
                             <li><a class="subpage" href="account_info.html">account_info</a></li>
                             <li><a class="subpage" href="account_lines.html">account_lines</a></li>
@@ -492,10 +460,7 @@ Connecting to 127.0.0.1:5005
                             <li><a class="subpage" href="path_find.html">path_find</a></li>
                             <li><a class="subpage" href="ripple_path_find.html">ripple_path_find</a></li>
 
-                        <li><a class="subcat-title" href="payment-channel-methods.html">Payment Channel Methods</a></li>
-
-                            <li><a class="subpage" href="channel_authorize.html">channel_authorize</a></li>
-                            <li><a class="subpage" href="channel_verify.html">channel_verify</a></li>
+                        
 
                         <li><a class="subcat-title" href="subscription-methods.html">Subscription Methods</a></li>
 
@@ -595,14 +560,14 @@ Connecting to 127.0.0.1:5005
 
                             <li><a class="subpage" href="accountroot.html">AccountRoot</a></li>
                             <li><a class="subpage" href="amendments-object.html">Amendments</a></li>
-                            <li><a class="subpage" href="check.html">Check</a></li>
+                           
                             <li><a class="subpage" href="depositpreauth-object.html">DepositPreauth</a></li>
                             <li><a class="subpage" href="directorynode.html">DirectoryNode</a></li>
-                            <li><a class="subpage" href="escrow-object.html">Escrow</a></li>
+                           
                             <li><a class="subpage" href="feesettings.html">FeeSettings</a></li>
                             <li><a class="subpage" href="ledgerhashes.html">LedgerHashes</a></li>
                             <li><a class="subpage" href="offer.html">Offer</a></li>
-                            <li><a class="subpage" href="paychannel.html">PayChannel</a></li>
+                           
                             <li><a class="subpage" href="ripplestate.html">RippleState</a></li>
                             <li><a class="subpage" href="signerlist.html">SignerList</a></li>
 
@@ -628,19 +593,13 @@ Connecting to 127.0.0.1:5005
 
                             <li><a class="subpage" href="accountset.html">AccountSet</a></li>
                             <li><a class="subpage" href="accountdelete.html">AccountDelete</a></li>
-                            <li><a class="subpage" href="checkcancel.html">CheckCancel</a></li>
-                            <li><a class="subpage" href="checkcash.html">CheckCash</a></li>
-                            <li><a class="subpage" href="checkcreate.html">CheckCreate</a></li>
+                           
                             <li><a class="subpage" href="depositpreauth.html">DepositPreauth</a></li>
-                            <li><a class="subpage" href="escrowcancel.html">EscrowCancel</a></li>
-                            <li><a class="subpage" href="escrowcreate.html">EscrowCreate</a></li>
-                            <li><a class="subpage" href="escrowfinish.html">EscrowFinish</a></li>
+                           
                             <li><a class="subpage" href="offercancel.html">OfferCancel</a></li>
                             <li><a class="subpage" href="offercreate.html">OfferCreate</a></li>
                             <li><a class="subpage" href="payment.html">Payment</a></li>
-                            <li><a class="subpage" href="paymentchannelclaim.html">PaymentChannelClaim</a></li>
-                            <li><a class="subpage" href="paymentchannelcreate.html">PaymentChannelCreate</a></li>
-                            <li><a class="subpage" href="paymentchannelfund.html">PaymentChannelFund</a></li>
+                           
                             <li><a class="subpage" href="setregularkey.html">SetRegularKey</a></li>
                             <li><a class="subpage" href="signerlistset.html">SignerListSet</a></li>
                             <li><a class="subpage" href="trustset.html">TrustSet</a></li>
@@ -666,54 +625,7 @@ Connecting to 127.0.0.1:5005
               </div><!-- /#sidenav_collapse18 -->
 
             </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_19">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="commandline-usage.html">rippled Commandline Usage Reference</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_19" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_19">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse19 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_20">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="peer-crawler.html">Peer Crawler</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse20 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_21">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="validator-list.html">Validator List Method</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_21" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_21">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse21 -->
-
-            </div><!-- /.panel -->
+            
     </div><!-- /#sidenav -->
 
 </div><!-- /.tree_nav -->      </aside>
@@ -721,108 +633,7 @@ Connecting to 127.0.0.1:5005
   </div>
 
 <footer class="xrpl-footer" role="contentinfo">
-  <section class="container-fluid card-grid card-grid-Nx1">
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
-  </section>
+ 
 
   <section class="container-fluid p-5 pl-sm-0">
 
@@ -839,8 +650,8 @@ Connecting to 127.0.0.1:5005
     </nav>
 
     <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
-      <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
+      <span>&copy; XAG  Ledger Project 2020</span>
+      
     </div><!-- /.absolute_bottom_footer -->
 
   </section>
