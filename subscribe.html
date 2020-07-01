@@ -23,19 +23,7 @@
     <!-- Stylesheet -->
     <link href="assets/css/devportal.css" rel="stylesheet" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45576805-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-45576805-2');
-      gtag('config', 'UA-157720658-3', { 'linker': {
-        'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
-        } }
-      );
-    </script>
+   
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -69,28 +57,16 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
       <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
+          <li class="nav-item">
               <a class="nav-link" href="dev-tools.html">Dev Tools</a>
             </li>
+            
         <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-      </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/references/rippled-api/public-rippled-methods/subscription-methods/subscribe.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+            <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+          </li>
+
+
+      </ul>
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -160,12 +136,12 @@
 </code></pre></div>
 
 <div class="code_sample" id="code-0-1" style="position: static;"><pre><code>{
-    "id": "Example subscribe to XRP/GateHub USD order book",
+    "id": "Example subscribe to XAG /GateHub USD order book",
     "command": "subscribe",
     "books": [
         {
             "taker_pays": {
-                "currency": "XRP"
+                "currency": "XAG "
             },
             "taker_gets": {
                 "currency": "USD",
@@ -203,7 +179,7 @@
 <tr>
 <td align="left"><code>accounts</code></td>
 <td align="left">Array</td>
-<td align="left"><em>(Optional)</em> Array with the unique addresses of accounts to monitor for validated transactions. The addresses must be in the XRP Ledger's <a href="base58-encodings.html">base58</a> format. The server sends a notification for any transaction that affects at least one of these accounts.</td>
+<td align="left"><em>(Optional)</em> Array with the unique addresses of accounts to monitor for validated transactions. The addresses must be in the XAG  Ledger's <a href="base58-encodings.html">base58</a> format. The server sends a notification for any transaction that affects at least one of these accounts.</td>
 </tr>
 <tr>
 <td align="left"><code>accounts_proposed</code></td>
@@ -267,7 +243,7 @@
 <tr>
 <td align="left"><code>taker</code></td>
 <td align="left">String</td>
-<td align="left">Unique <a href="accounts.html">account address</a> to use as a perspective for viewing offers, in the XRP Ledger's <a href="base58-encodings.html">base58</a> format. (This affects the funding status and fees of <a href="offers.html">Offers</a>.)</td>
+<td align="left">Unique <a href="accounts.html">account address</a> to use as a perspective for viewing offers, in the XAG  Ledger's <a href="base58-encodings.html">base58</a> format. (This affects the funding status and fees of <a href="offers.html">Offers</a>.)</td>
 </tr>
 <tr>
 <td align="left"><code>snapshot</code></td>
@@ -308,7 +284,7 @@
 <li><code>noPermission</code> - The request included the <code>url</code> field, but you are not connected as an admin.</li>
 <li><code>unknownStream</code> - One or more the members of the <code>streams</code> field of the request is not a valid stream name.</li>
 <li><code>malformedStream</code> - The <code>streams</code> field of the request is not formatted properly.</li>
-<li><code>malformedAccount</code> - One of the addresses in the <code>accounts</code> or <code>accounts_proposed</code> fields of the request is not a properly-formatted XRP Ledger address. (<strong>Note:</strong>: You <em>can</em> subscribe to the stream of an address that does not yet have an entry in the global ledger to get a message when that address becomes funded.)</li>
+<li><code>malformedAccount</code> - One of the addresses in the <code>accounts</code> or <code>accounts_proposed</code> fields of the request is not a properly-formatted XAG  Ledger address. (<strong>Note:</strong>: You <em>can</em> subscribe to the stream of an address that does not yet have an entry in the global ledger to get a message when that address becomes funded.)</li>
 <li><code>srcCurMalformed</code> - One or more <code>taker_pays</code> sub-fields of the <code>books</code> field in the request is not formatted properly.</li>
 <li><code>dstAmtMalformed</code> - One or more <code>taker_gets</code> sub-fields of the <code>books</code> field in the request is not formatted properly.</li>
 <li><code>srcIsrMalformed</code> - The <code>issuer</code> field of one or more <code>taker_pays</code> sub-fields of the <code>books</code> field in the request is not valid.</li>
@@ -349,7 +325,7 @@
 <tr>
 <td align="left"><code>fee_base</code></td>
 <td align="left">Number</td>
-<td align="left">The <a href="transaction-cost.html#reference-transaction-cost">reference transaction cost</a> as of this ledger version, in <a href="basic-data-types.html#specifying-currency-amounts">drops of XRP</a>. If this ledger version includes a <a href="setfee.html">SetFee pseudo-transaction</a> the new transaction cost applies starting with the following ledger version.</td>
+<td align="left">The <a href="transaction-cost.html#reference-transaction-cost">reference transaction cost</a> as of this ledger version, in <a href="basic-data-types.html#specifying-currency-amounts">drops of XAG </a>. If this ledger version includes a <a href="setfee.html">SetFee pseudo-transaction</a> the new transaction cost applies starting with the following ledger version.</td>
 </tr>
 <tr>
 <td align="left"><code>fee_ref</code></td>
@@ -374,12 +350,12 @@
 <tr>
 <td align="left"><code>reserve_base</code></td>
 <td align="left">Number</td>
-<td align="left">The minimum <a href="reserves.html">reserve</a>, in <a href="basic-data-types.html#specifying-currency-amounts">drops of XRP</a>, that is required for an account. If this ledger version includes a <a href="setfee.html">SetFee pseudo-transaction</a> the new base reserve applies starting with the following ledger version.</td>
+<td align="left">The minimum <a href="reserves.html">reserve</a>, in <a href="basic-data-types.html#specifying-currency-amounts">drops of XAG </a>, that is required for an account. If this ledger version includes a <a href="setfee.html">SetFee pseudo-transaction</a> the new base reserve applies starting with the following ledger version.</td>
 </tr>
 <tr>
 <td align="left"><code>reserve_inc</code></td>
 <td align="left">Number</td>
-<td align="left">The <a href="reserves.html#owner-reserves">owner reserve</a> for each object an account owns in the ledger, in <a href="basic-data-types.html#specifying-currency-amounts">drops of XRP</a>. If the ledger includes a <a href="setfee.html">SetFee pseudo-transaction</a> the new owner reserve applies after this ledger.</td>
+<td align="left">The <a href="reserves.html#owner-reserves">owner reserve</a> for each object an account owns in the ledger, in <a href="basic-data-types.html#specifying-currency-amounts">drops of XAG </a>. If the ledger includes a <a href="setfee.html">SetFee pseudo-transaction</a> the new owner reserve applies after this ledger.</td>
 </tr>
 <tr>
 <td align="left"><code>txn_count</code></td>
@@ -472,7 +448,7 @@
 <tr>
 <td align="left"><code>master_key</code></td>
 <td align="left">String</td>
-<td align="left"><em>(May be omitted)</em> The validator's master public key, if the validator is using a validator token, in the XRP Ledger's <a href="base58-encodings.html">base58</a> format. (See also: <a href="run-rippled-as-a-validator.html#3-enable-validation-on-your-rippled-server">Enable Validation on your <code>rippled</code> Server</a>.) <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/1.4.0" target="_blank" title="New in: rippled 1.4.0"><img alt="New in: rippled 1.4.0" class="dactyl_badge" src="https://img.shields.io/badge/New%20in-rippled%201.4.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
+<td align="left"><em>(May be omitted)</em> The validator's master public key, if the validator is using a validator token, in the XAG  Ledger's <a href="base58-encodings.html">base58</a> format. (See also: <a href="run-rippled-as-a-validator.html#3-enable-validation-on-your-rippled-server">Enable Validation on your <code>rippled</code> Server</a>.) <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/1.4.0" target="_blank" title="New in: rippled 1.4.0"><img alt="New in: rippled 1.4.0" class="dactyl_badge" src="https://img.shields.io/badge/New%20in-rippled%201.4.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
 </tr>
 <tr>
 <td align="left"><code>reserve_base</code></td>
@@ -497,7 +473,7 @@
 <tr>
 <td align="left"><code>validation_public_key</code></td>
 <td align="left">String</td>
-<td align="left">The public key from the key-pair that the validator used to sign the message, in the XRP Ledger's <a href="base58-encodings.html">base58</a> format. This identifies the validator sending the message and can also be used to verify the <code>signature</code>. If the validator is using a token, this is an ephemeral public key.</td>
+<td align="left">The public key from the key-pair that the validator used to sign the message, in the XAG  Ledger's <a href="base58-encodings.html">base58</a> format. This identifies the validator sending the message and can also be used to verify the <code>signature</code>. If the validator is using a token, this is an ephemeral public key.</td>
 </tr>
 </tbody>
 </table>
@@ -1003,7 +979,7 @@
                   <ul class="sidebar_pagelist">
                         <li><a class="subcat-title" href="account-methods.html">Account Methods</a></li>
 
-                            <li><a class="subpage" href="account_channels.html">account_channels</a></li>
+                           
                             <li><a class="subpage" href="account_currencies.html">account_currencies</a></li>
                             <li><a class="subpage" href="account_info.html">account_info</a></li>
                             <li><a class="subpage" href="account_lines.html">account_lines</a></li>
@@ -1038,27 +1014,14 @@
                             <li><a class="subpage" href="path_find.html">path_find</a></li>
                             <li><a class="subpage" href="ripple_path_find.html">ripple_path_find</a></li>
 
-                        <li><a class="subcat-title" href="payment-channel-methods.html">Payment Channel Methods</a></li>
-
-                            <li><a class="subpage" href="channel_authorize.html">channel_authorize</a></li>
-                            <li><a class="subpage" href="channel_verify.html">channel_verify</a></li>
+                       
 
                         <li><a class="subcat-title active-parent" href="subscription-methods.html">Subscription Methods</a></li>
 
                             <li><a class="active subpage" href="#main_content_body">subscribe</a></li>
                             <li><a class="subpage" href="unsubscribe.html">unsubscribe</a></li>
 
-                        <li><a class="subcat-title" href="server-info-methods.html">Server Info Methods</a></li>
-
-                            <li><a class="subpage" href="fee.html">fee</a></li>
-                            <li><a class="subpage" href="server_info.html">server_info</a></li>
-                            <li><a class="subpage" href="server_state.html">server_state</a></li>
-
-                        <li><a class="subcat-title" href="utility-methods.html">Utility Methods</a></li>
-
-                            <li><a class="subpage" href="json.html">json</a></li>
-                            <li><a class="subpage" href="ping.html">ping</a></li>
-                            <li><a class="subpage" href="random.html">random</a></li>
+                      
 
 
                   </ul>
@@ -1066,200 +1029,8 @@
               </div><!-- /#sidenav_collapse15 -->
 
             </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_16">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_16" aria-expanded="true" aria-controls="sidenav_collapse_16"></a>
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="admin-rippled-methods.html">Admin rippled Methods</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_16" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_16">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-                        <li><a class="subcat-title" href="key-generation-methods.html">Key Generation Methods</a></li>
-
-                            <li><a class="subpage" href="validation_create.html">validation_create</a></li>
-                            <li><a class="subpage" href="wallet_propose.html">wallet_propose</a></li>
-
-                        <li><a class="subcat-title" href="logging-and-data-management-methods.html">Logging and Data Management Methods</a></li>
-
-                            <li><a class="subpage" href="can_delete.html">can_delete</a></li>
-                            <li><a class="subpage" href="crawl_shards.html">crawl_shards</a></li>
-                            <li><a class="subpage" href="download_shard.html">download_shard</a></li>
-                            <li><a class="subpage" href="ledger_cleaner.html">ledger_cleaner</a></li>
-                            <li><a class="subpage" href="ledger_request.html">ledger_request</a></li>
-                            <li><a class="subpage" href="log_level.html">log_level</a></li>
-                            <li><a class="subpage" href="logrotate.html">logrotate</a></li>
-
-                        <li><a class="subcat-title" href="server-control-methods.html">Server Control Methods</a></li>
-
-                            <li><a class="subpage" href="ledger_accept.html">ledger_accept</a></li>
-                            <li><a class="subpage" href="stop.html">stop</a></li>
-                            <li><a class="subpage" href="validation_seed.html">validation_seed</a></li>
-
-                        <li><a class="subcat-title" href="peer-management-methods.html">Peer Management Methods</a></li>
-
-                            <li><a class="subpage" href="connect.html">connect</a></li>
-                            <li><a class="subpage" href="peer_reservations_add.html">peer_reservations_add</a></li>
-                            <li><a class="subpage" href="peer_reservations_del.html">peer_reservations_del</a></li>
-                            <li><a class="subpage" href="peer_reservations_list.html">peer_reservations_list</a></li>
-                            <li><a class="subpage" href="peers.html">peers</a></li>
-
-                        <li><a class="subcat-title" href="status-and-debugging-methods.html">Status and Debugging Methods</a></li>
-
-                            <li><a class="subpage" href="consensus_info.html">consensus_info</a></li>
-                            <li><a class="subpage" href="feature.html">feature</a></li>
-                            <li><a class="subpage" href="fetch_info.html">fetch_info</a></li>
-                            <li><a class="subpage" href="get_counts.html">get_counts</a></li>
-                            <li><a class="subpage" href="manifest.html">manifest</a></li>
-                            <li><a class="subpage" href="print.html">print</a></li>
-                            <li><a class="subpage" href="validator_info.html">validator_info</a></li>
-                            <li><a class="subpage" href="validator_list_sites.html">validator_list_sites</a></li>
-                            <li><a class="subpage" href="validators.html">validators</a></li>
-
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse16 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_17">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_17" aria-expanded="true" aria-controls="sidenav_collapse_17"></a>
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="ledger-data-formats.html">Ledger Data Formats</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_17" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_17">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-                        <li><a class="nosubcat-page" href="ledger-header.html">Ledger Header</a></li>
-                        <li><a class="nosubcat-page" href="ledger-object-ids.html">Ledger Object IDs</a></li>
-                        <li><a class="subcat-title" href="ledger-object-types.html">Ledger Object Types</a></li>
-
-                            <li><a class="subpage" href="accountroot.html">AccountRoot</a></li>
-                            <li><a class="subpage" href="amendments-object.html">Amendments</a></li>
-                            <li><a class="subpage" href="check.html">Check</a></li>
-                            <li><a class="subpage" href="depositpreauth-object.html">DepositPreauth</a></li>
-                            <li><a class="subpage" href="directorynode.html">DirectoryNode</a></li>
-                            <li><a class="subpage" href="escrow-object.html">Escrow</a></li>
-                            <li><a class="subpage" href="feesettings.html">FeeSettings</a></li>
-                            <li><a class="subpage" href="ledgerhashes.html">LedgerHashes</a></li>
-                            <li><a class="subpage" href="offer.html">Offer</a></li>
-                            <li><a class="subpage" href="paychannel.html">PayChannel</a></li>
-                            <li><a class="subpage" href="ripplestate.html">RippleState</a></li>
-                            <li><a class="subpage" href="signerlist.html">SignerList</a></li>
-
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse17 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_18">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_18" aria-expanded="true" aria-controls="sidenav_collapse_18"></a>
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="transaction-formats.html">Transaction Formats</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_18" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_18">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-                        <li><a class="nosubcat-page" href="transaction-common-fields.html">Transaction Common Fields</a></li>
-                        <li><a class="subcat-title" href="transaction-types.html">Transaction Types</a></li>
-
-                            <li><a class="subpage" href="accountset.html">AccountSet</a></li>
-                            <li><a class="subpage" href="accountdelete.html">AccountDelete</a></li>
-                            <li><a class="subpage" href="checkcancel.html">CheckCancel</a></li>
-                            <li><a class="subpage" href="checkcash.html">CheckCash</a></li>
-                            <li><a class="subpage" href="checkcreate.html">CheckCreate</a></li>
-                            <li><a class="subpage" href="depositpreauth.html">DepositPreauth</a></li>
-                            <li><a class="subpage" href="escrowcancel.html">EscrowCancel</a></li>
-                            <li><a class="subpage" href="escrowcreate.html">EscrowCreate</a></li>
-                            <li><a class="subpage" href="escrowfinish.html">EscrowFinish</a></li>
-                            <li><a class="subpage" href="offercancel.html">OfferCancel</a></li>
-                            <li><a class="subpage" href="offercreate.html">OfferCreate</a></li>
-                            <li><a class="subpage" href="payment.html">Payment</a></li>
-                            <li><a class="subpage" href="paymentchannelclaim.html">PaymentChannelClaim</a></li>
-                            <li><a class="subpage" href="paymentchannelcreate.html">PaymentChannelCreate</a></li>
-                            <li><a class="subpage" href="paymentchannelfund.html">PaymentChannelFund</a></li>
-                            <li><a class="subpage" href="setregularkey.html">SetRegularKey</a></li>
-                            <li><a class="subpage" href="signerlistset.html">SignerListSet</a></li>
-                            <li><a class="subpage" href="trustset.html">TrustSet</a></li>
-
-                        <li><a class="subcat-title" href="pseudo-transaction-types.html">Pseudo-Transactions</a></li>
-
-                            <li><a class="subpage" href="enableamendment.html">EnableAmendment</a></li>
-                            <li><a class="subpage" href="setfee.html">SetFee</a></li>
-
-                        <li><a class="subcat-title" href="transaction-results.html">Transaction Results</a></li>
-
-                            <li><a class="subpage" href="tec-codes.html">tec Codes</a></li>
-                            <li><a class="subpage" href="tef-codes.html">tef Codes</a></li>
-                            <li><a class="subpage" href="tel-codes.html">tel Codes</a></li>
-                            <li><a class="subpage" href="tem-codes.html">tem Codes</a></li>
-                            <li><a class="subpage" href="ter-codes.html">ter Codes</a></li>
-                            <li><a class="subpage" href="tes-success.html">tes Success</a></li>
-
-                        <li><a class="nosubcat-page" href="transaction-metadata.html">Transaction Metadata</a></li>
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse18 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_19">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="commandline-usage.html">rippled Commandline Usage Reference</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_19" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_19">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse19 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_20">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="peer-crawler.html">Peer Crawler</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse20 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_21">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="validator-list.html">Validator List Method</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_21" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_21">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse21 -->
-
-            </div><!-- /.panel -->
+           
+            
     </div><!-- /#sidenav -->
 
 </div><!-- /.tree_nav -->      </aside>
@@ -1267,108 +1038,7 @@
   </div>
 
 <footer class="xrpl-footer" role="contentinfo">
-  <section class="container-fluid card-grid card-grid-Nx1">
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
-  </section>
+ 
 
   <section class="container-fluid p-5 pl-sm-0">
 
@@ -1385,8 +1055,8 @@
     </nav>
 
     <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
-      <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
+      <span>&copy; XAG  Ledger Project 2020</span>
+      
     </div><!-- /.absolute_bottom_footer -->
 
   </section>
