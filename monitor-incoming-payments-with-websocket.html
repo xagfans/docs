@@ -32,7 +32,7 @@
       gtag('config', 'UA-45576805-2');
       gtag('config', 'UA-157720658-3', { 'linker': {
         'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
+                    'XAGl.org', 'explorer.XAGl.org', 'testnet.XAGl.org']
         } }
       );
     </script>
@@ -60,7 +60,7 @@
 
 </head>
 
-<body class="xrp-ledger-dev-portal sidebar-primary lang-en ">
+<body class="XAG-ledger-dev-portal sidebar-primary lang-en ">
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
     <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" class="logo"  height="44" alt="XAG Ledger Dev Portal" /></a>
@@ -69,28 +69,15 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
       <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dev-tools.html">Dev Tools</a>
-            </li>
         <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
+          <a class="nav-link" href="dev-tools.html">Dev Tools</a>
         </li>
+        
+    <li class="nav-item">
+        <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+      </li>
       </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/tutorials/get-started/monitor-incoming-payments-with-websocket.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -109,26 +96,7 @@
   <div class="container-fluid" role="document" id="main_content_wrapper">
     <div class="row">
       <!-- Right sidebar first so it's at the beginning for mobile layouts -->
-      <aside class="right-sidebar col-lg-3 order-lg-4 p-0" role="complementary">
-  <div class="card" id="page-toc-wrapper">
-    <div class="card-header">
-      <h4>In this document</h4>
-    </div>
-    <ul class="card-body">
-      <li class="level-1"><a href="#monitor-incoming-payments-with-websocket">Monitor Incoming Payments with WebSocket</a></li>
-<li class="level-2"><a href="#prerequisites">Prerequisites</a></li>
-<li class="level-2"><a href="#1-connect-to-the-xrp-ledger">1. Connect to the XRP Ledger</a></li>
-<li class="level-2"><a href="#2-dispatch-incoming-messages-to-handlers">2. Dispatch Incoming Messages to Handlers</a></li>
-<li class="level-2"><a href="#3-subscribe-to-the-account">3. Subscribe to the Account</a></li>
-<li class="level-2"><a href="#4-read-incoming-payments">4. Read Incoming Payments</a></li>
-<li class="level-2"><a href="#next-steps">Next Steps</a></li>
-<li class="level-2"><a href="#other-programming-languages">Other Programming Languages</a></li>
-<li class="level-2"><a href="#footnotes">Footnotes</a></li>
-<li class="level-2"><a href="#see-also">See Also</a></li>
-
-    </ul>
-  </div>
-      </aside>
+      
 
       <!-- main column -->
       <main class="main col-md-7 col-lg-6 order-md-3  " role="main" id="main_content_body">
@@ -143,14 +111,14 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="monitor-incoming-payments-with-websocket">Monitor Incoming Payments with WebSocket</h1>
-<p>This tutorial shows how to monitor for incoming <a href="payment-types.html">payments</a> using the <a href="rippled-api.html">WebSocket <code>rippled</code> API</a>. Since all XRP Ledger transactions are public, anyone can monitor incoming payments to any address.</p>
+<p>This tutorial shows how to monitor for incoming <a href="payment-types.html">payments</a> using the <a href="rippled-api.html">WebSocket <code>rippled</code> API</a>. Since all XAG Ledger transactions are public, anyone can monitor incoming payments to any address.</p>
 <p>WebSocket follows a model where the client and server establish one connection, then send messages both ways through the same connection, which remains open until explicitly closed (or until the connection fails). This is in contrast to the HTTP-based API model (including JSON-RPC and RESTful APIs), where the client opens and closes a new connection for each request.<a href="#footnote-1">¹</a><a id="from-footnote-1"></a></p>
 <p class="devportal-callout tip"><strong>Tip:</strong> The examples in this page use JavaScript so that the examples can run natively in a web browser. If you are developing in JavaScript, you can also use the <a href="rippleapi-reference.html">RippleAPI library for JavaScript</a> to simplify some tasks. This tutorial shows how to monitor for transactions <em>without</em> using RippleAPI so that you can translate the steps to other programming languages that don't have RippleAPI.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>The examples in this page use JavaScript and the WebSocket protocol, which are available in all major modern browsers. If you have some JavaScript knowledge and expertise in another programming language with a WebSocket client, you can follow along while adapting the instructions to the language of your choice.</li>
 <li>You need a stable internet connection and access to a <code>rippled</code> server. The embedded examples connect to Ripple's pool of public servers. If you <a href="install-rippled.html">run your own <code>rippled</code> server</a>, you can also connect to that server locally.</li>
-<li>To properly handle XRP values without rounding errors, you need access to a number type that can do math on 64-bit unsigned integers. The examples in this tutorial use <a class="external-link" href="https://github.com/MikeMcl/big.js/" target="_blank">big.js <i aria-hidden="true" class="fa fa-external-link"></i></a>. If you are working with <a href="issued-currencies.html">issued currencies</a>, you need even more precision. For more information, see <a href="currency-formats.html#xrp-precision">Currency Precision</a>.</li>
+<li>To properly handle XAG values without rounding errors, you need access to a number type that can do math on 64-bit unsigned integers. The examples in this tutorial use <a class="external-link" href="https://github.com/MikeMcl/big.js/" target="_blank">big.js <i aria-hidden="true" class="fa fa-external-link"></i></a>. If you are working with <a href="issued-currencies.html">issued currencies</a>, you need even more precision. For more information, see <a href="currency-formats.html#XAG-precision">Currency Precision</a>.</li>
 </ul>
 <!-- Helper for interactive tutorial breadcrumbs -->
 <script src="assets/vendor/big.min.js" type="application/javascript"></script>
@@ -166,8 +134,8 @@ function writeToConsole(console_selector, message) {
 }
 
 </script>
-<h2 id="1-connect-to-the-xrp-ledger">1. Connect to the XRP Ledger</h2>
-<p>The first step of monitoring for incoming payments is to connect to the XRP Ledger, specifically a <code>rippled</code> server.</p>
+<h2 id="1-connect-to-the-XAG-ledger">1. Connect to the XAG Ledger</h2>
+<p>The first step of monitoring for incoming payments is to connect to the XAG Ledger, specifically a <code>rippled</code> server.</p>
 <p>The following JavaScript code connects to one of Ripple's public server clusters. It then logs a message to the console, sends a request using the <a href="ping.html">ping method</a> and sets up a handler to log to the console again when it receives any message from the server side.</p>
 <pre><code class="js">const socket = new WebSocket('wss://s.altnet.rippletest.net:51233')
 socket.addEventListener('open', (event) =&gt; {
@@ -188,7 +156,7 @@ socket.addEventListener('close', (event) =&gt; {
   console.log('Disconnected...')
 })
 </code></pre>
-<p>The above example opens a secure connection (<code>wss://</code>) to one of Ripple's public API servers on the <a href="xrp-test-net-faucet.html">Test Net</a>. To connect to a locally-running <code>rippled</code> server with the default configuration instead, open an <em>unsecured</em> connection (<code>ws://</code>) on port <strong>6006</strong> locally, using the following first line:</p>
+<p>The above example opens a secure connection (<code>wss://</code>) to one of Ripple's public API servers on the <a href="XAG-test-net-faucet.html">Test Net</a>. To connect to a locally-running <code>rippled</code> server with the default configuration instead, open an <em>unsecured</em> connection (<code>ws://</code>) on port <strong>6006</strong> locally, using the following first line:</p>
 <pre><code class="js">const socket = new WebSocket('ws://localhost:6006')
 </code></pre>
 <p class="devportal-callout tip"><strong>Tip:</strong> By default, connecting to a local <code>rippled</code> server gives you access to the full set of <a href="admin-rippled-methods.html">admin methods</a> and admin-only data in some responses such as <a href="server_info.html">server_info</a>, in addition to the <a href="public-rippled-methods.html">public methods</a> that are available when you connect to public servers over the internet.</p>
@@ -203,7 +171,7 @@ socket.addEventListener('close', (event) =&gt; {
 <button class="btn btn-primary" id="connect-button">Connect</button>
 <strong>Connection status:</strong>
 <span id="connection-status">Not connected</span>
-<div id="loader-2" style="display: none;"><img class="throbber" src="assets/img/xrp-loader-96.png"/></div>
+<div id="loader-2" style="display: none;"><img class="throbber" src="assets/img/XAG-loader-96.png"/></div>
 <h5 id="console">Console:</h5>
 <div class="ws-console" id="monitor-console-connect"><span class="placeholder">(Log is empty)</span></div>
 </div><!--/.interactive-block-ui-->
@@ -475,23 +443,23 @@ WS_HANDLERS["transaction"] = log_tx
 <p>The <strong><code>transaction.TransactionType</code> field</strong> is the type of transaction. The transaction types that can possibly deliver currency to an account are as follows:</p>
 <ul>
 <li>
-<p><strong><a href="payment.html">Payment transactions</a></strong> can deliver XRP or <a href="issued-currencies.html">issued currencies</a>. Filter these by the <code>transaction.Destination</code> field, which contains the address of the recipient, and always use the <code>meta.delivered_amount</code> to see how much the payment actually delivered. XRP amounts are <a href="basic-data-types.html#specifying-currency-amounts">formatted as strings</a>.</p>
+<p><strong><a href="payment.html">Payment transactions</a></strong> can deliver XAG or <a href="issued-currencies.html">issued currencies</a>. Filter these by the <code>transaction.Destination</code> field, which contains the address of the recipient, and always use the <code>meta.delivered_amount</code> to see how much the payment actually delivered. XAG amounts are <a href="basic-data-types.html#specifying-currency-amounts">formatted as strings</a>.</p>
 <p class="devportal-callout warning"><strong>Warning:</strong> If you use the <code>transaction.Amount</code> field instead, you may be vulnerable to the <a href="partial-payments.html#partial-payments-exploit">partial payments exploit</a>. Malicious users can use this exploit to trick you into allowing the malicious user to trade or withdraw more money than they paid you.</p>
 </li>
 <li>
 <p><strong><a href="checkcash.html">CheckCash transactions</a></strong> allow an account to receive money authorized by a different account's <a href="checkcreate.html">CheckCreate transaction</a>. Look at the metadata of a <strong>CheckCash transaction</strong> to see how much currency the account received.</p>
 </li>
 <li>
-<p><strong><a href="escrowfinish.html">EscrowFinish transactions</a></strong> can deliver XRP by finishing an <a href="escrow.html">Escrow</a> created by a previous <a href="escrowcreate.html">EscrowCreate transaction</a>. Look at the metadata of the <strong>EscrowFinish transaction</strong> to see which account received XRP from the escrow and how much.</p>
+<p><strong><a href="escrowfinish.html">EscrowFinish transactions</a></strong> can deliver XAG by finishing an <a href="escrow.html">Escrow</a> created by a previous <a href="escrowcreate.html">EscrowCreate transaction</a>. Look at the metadata of the <strong>EscrowFinish transaction</strong> to see which account received XAG from the escrow and how much.</p>
 </li>
 <li>
-<p><strong><a href="offercreate.html">OfferCreate transactions</a></strong> can deliver XRP or issued currencies by consuming offers your account has previously placed in the XRP Ledger's <a href="decentralized-exchange.html">decentralized exchange</a>. If you never place offers, you cannot receive money this way. Look at the metadata to see what currency the account received, if any, and how much.</p>
+<p><strong><a href="offercreate.html">OfferCreate transactions</a></strong> can deliver XAG or issued currencies by consuming offers your account has previously placed in the XAG Ledger's <a href="decentralized-exchange.html">decentralized exchange</a>. If you never place offers, you cannot receive money this way. Look at the metadata to see what currency the account received, if any, and how much.</p>
 </li>
 <li>
-<p><strong><a href="paymentchannelclaim.html">PaymentChannelClaim transactions</a></strong> can deliver XRP from a <a href="payment-channels.html">payment channel</a>. Look at the metadata to see which accounts, if any, received XRP from the transaction.</p>
+<p><strong><a href="paymentchannelclaim.html">PaymentChannelClaim transactions</a></strong> can deliver XAG from a <a href="payment-channels.html">payment channel</a>. Look at the metadata to see which accounts, if any, received XAG from the transaction.</p>
 </li>
 <li>
-<p><strong><a href="paymentchannelfund.html">PaymentChannelFund transactions</a></strong> can return XRP from a closed (expired) payment channel to the sender.</p>
+<p><strong><a href="paymentchannelfund.html">PaymentChannelFund transactions</a></strong> can return XAG from a closed (expired) payment channel to the sender.</p>
 </li>
 </ul>
 </li>
@@ -499,14 +467,14 @@ WS_HANDLERS["transaction"] = log_tx
 <p>The <strong><code>meta</code> field</strong> contains <a href="transaction-metadata.html">transaction metadata</a>, including exactly how much of which currency or currencies was delivered where. See <a href="look-up-transaction-results.html">Look Up transaction Results</a> for more information on how to understand transaction metadata.</p>
 </li>
 </ul>
-<p>The following sample code looks at transaction metadata of all the above transaction types to report how much XRP an account received:</p>
-<pre><code class="js">function CountXRPDifference(affected_nodes, address) {
+<p>The following sample code looks at transaction metadata of all the above transaction types to report how much XAG an account received:</p>
+<pre><code class="js">function CountXAGDifference(affected_nodes, address) {
   // Helper to find an account in an AffectedNodes array and see how much
   // its balance changed, if at all. Fortunately, each account appears at most
   // once in the AffectedNodes array, so we can return as soon as we find it.
 
   // Note: this reports the net balance change. If the address is the sender,
-  // the transaction cost is deducted and combined with XRP sent/received
+  // the transaction cost is deducted and combined with XAG sent/received
 
   for (let i=0; i&lt;affected_nodes.length; i++) {
     if ((affected_nodes[i].hasOwnProperty("ModifiedNode"))) {
@@ -515,19 +483,19 @@ WS_HANDLERS["transaction"] = log_tx
       if (ledger_entry.LedgerEntryType === "AccountRoot" &amp;&amp;
           ledger_entry.FinalFields.Account === address) {
         if (!ledger_entry.PreviousFields.hasOwnProperty("Balance")) {
-          console.log("XRP balance did not change.")
+          console.log("XAG balance did not change.")
         }
         // Balance is in PreviousFields, so it changed. Time for
         // high-precision math!
         const old_balance = new Big(ledger_entry.PreviousFields.Balance)
         const new_balance = new Big(ledger_entry.FinalFields.Balance)
         const diff_in_drops = new_balance.minus(old_balance)
-        const xrp_amount = diff_in_drops.div(1e6)
-        if (xrp_amount.gte(0)) {
-          console.log("Received " + xrp_amount.toString() + " XRP.")
+        const XAG_amount = diff_in_drops.div(1e6)
+        if (XAG_amount.gte(0)) {
+          console.log("Received " + XAG_amount.toString() + " XAG.")
           return
         } else {
-          console.log("Spent " + xrp_amount.abs().toString() + " XRP.")
+          console.log("Spent " + XAG_amount.abs().toString() + " XAG.")
           return
         }
       }
@@ -537,8 +505,8 @@ WS_HANDLERS["transaction"] = log_tx
       if (ledger_entry.LedgerEntryType === "AccountRoot" &amp;&amp;
           ledger_entry.NewFields.Account === address) {
         const balance_drops = new Big(ledger_entry.NewFields.Balance)
-        const xrp_amount = balance_drops.div(1e6)
-        console.log("Received " + xrp_amount.toString() + " XRP (account funded).")
+        const XAG_amount = balance_drops.div(1e6)
+        console.log("Received " + XAG_amount.toString() + " XAG (account funded).")
         return
       }
     } // accounts cannot be deleted at this time, so we ignore DeletedNode
@@ -548,7 +516,7 @@ WS_HANDLERS["transaction"] = log_tx
   return
 }
 
-function CountXRPReceived(tx, address) {
+function CountXAGReceived(tx, address) {
   if (tx.meta.TransactionResult !== "tesSUCCESS") {
     console.log("Transaction failed.")
     return
@@ -560,17 +528,17 @@ function CountXRPReceived(tx, address) {
     }
     if (typeof tx.meta.delivered_amount === "string") {
       const amount_in_drops = new Big(tx.meta.delivered_amount)
-      const xrp_amount = amount_in_drops.div(1e6)
-      console.log("Received " + xrp_amount.toString() + " XRP.")
+      const XAG_amount = amount_in_drops.div(1e6)
+      console.log("Received " + XAG_amount.toString() + " XAG.")
       return
     } else {
-      console.log("Received non-XRP currency.")
+      console.log("Received non-XAG currency.")
       return
     }
   } else if (["PaymentChannelClaim", "PaymentChannelFund", "OfferCreate",
           "CheckCash", "EscrowFinish"].includes(
           tx.transaction.TransactionType)) {
-    CountXRPDifference(tx.meta.AffectedNodes, address)
+    CountXAGDifference(tx.meta.AffectedNodes, address)
   } else {
     console.log("Not a currency-delivering transaction type (" +
                 tx.transaction.TransactionType + ").")
@@ -592,13 +560,13 @@ function CountXRPReceived(tx, address) {
 </div>
 <!--/.interactive-block-->
 <script type="application/javascript">
-function CountXRPDifference(affected_nodes, address) {
+function CountXAGDifference(affected_nodes, address) {
   // Helper to find an account in an AffectedNodes array and see how much
   // its balance changed, if at all. Fortunately, each account appears at most
   // once in the AffectedNodes array, so we can return as soon as we find it.
 
   // Note: this reports the net balance change. If the address is the sender,
-  // any XRP balance changes combined with the transaction cost.
+  // any XAG balance changes combined with the transaction cost.
 
   for (let i=0; i<affected_nodes.length; i++) {
     if ((affected_nodes[i].hasOwnProperty("ModifiedNode"))) {
@@ -607,19 +575,19 @@ function CountXRPDifference(affected_nodes, address) {
       if (ledger_entry.LedgerEntryType === "AccountRoot" &&
           ledger_entry.FinalFields.Account === address) {
         if (!ledger_entry.PreviousFields.hasOwnProperty("Balance")) {
-          writeToConsole("#monitor-console-read", "XRP balance did not change.")
+          writeToConsole("#monitor-console-read", "XAG balance did not change.")
         }
         // Balance is in PreviousFields, so it changed. Time for
         // high-precision math!
         const old_balance = new Big(ledger_entry.PreviousFields.Balance)
         const new_balance = new Big(ledger_entry.FinalFields.Balance)
         const diff_in_drops = new_balance.minus(old_balance)
-        const xrp_amount = diff_in_drops.div(1e6)
-        if (xrp_amount.gte(0)) {
-          writeToConsole("#monitor-console-read", "Received " + xrp_amount.toString()+" XRP.")
+        const XAG_amount = diff_in_drops.div(1e6)
+        if (XAG_amount.gte(0)) {
+          writeToConsole("#monitor-console-read", "Received " + XAG_amount.toString()+" XAG.")
           return
         } else {
-          writeToConsole("#monitor-console-read", "Spent " + xrp_amount.abs().toString() + " XRP.")
+          writeToConsole("#monitor-console-read", "Spent " + XAG_amount.abs().toString() + " XAG.")
           return
         }
       }
@@ -629,8 +597,8 @@ function CountXRPDifference(affected_nodes, address) {
       if (ledger_entry.LedgerEntryType === "AccountRoot" &&
           ledger_entry.NewFields.Account === address) {
         const balance_drops = new Big(ledger_entry.NewFields.Balance)
-        const xrp_amount = balance_drops.div(1e6)
-        writeToConsole("#monitor-console-read", "Received " + xrp_amount.toString() + " XRP (account funded).")
+        const XAG_amount = balance_drops.div(1e6)
+        writeToConsole("#monitor-console-read", "Received " + XAG_amount.toString() + " XAG (account funded).")
         return
       }
     } // accounts cannot be deleted at this time, so we ignore DeletedNode
@@ -640,7 +608,7 @@ function CountXRPDifference(affected_nodes, address) {
   return
 }
 
-function CountXRPReceived(tx, address) {
+function CountXAGReceived(tx, address) {
   if (tx.meta.TransactionResult !== "tesSUCCESS") {
     writeToConsole("#monitor-console-read", "Transaction failed.")
     return
@@ -653,17 +621,17 @@ function CountXRPReceived(tx, address) {
     }
     if (typeof tx.meta.delivered_amount === "string") {
       const amount_in_drops = new Big(tx.meta.delivered_amount)
-      const xrp_amount = amount_in_drops.div(1e6)
-      writeToConsole("#monitor-console-read", "Received " + xrp_amount.toString() + " XRP.")
+      const XAG_amount = amount_in_drops.div(1e6)
+      writeToConsole("#monitor-console-read", "Received " + XAG_amount.toString() + " XAG.")
       return
     } else {
-      writeToConsole("#monitor-console-read", "Received non-XRP currency.")
+      writeToConsole("#monitor-console-read", "Received non-XAG currency.")
       return
     }
   } else if (["PaymentChannelClaim", "PaymentChannelFund", "OfferCreate",
           "CheckCash", "EscrowFinish"].includes(
           tx.transaction.TransactionType)) {
-    CountXRPDifference(tx.meta.AffectedNodes, address)
+    CountXAGDifference(tx.meta.AffectedNodes, address)
   } else {
     writeToConsole("#monitor-console-read", "Not a currency-delivering transaction type (" +
                 tx.transaction.TransactionType + ").")
@@ -672,12 +640,12 @@ function CountXRPReceived(tx, address) {
 
 $("#tx_read").click((event) => {
   // Wrap the existing "transaction" handler to do the old thing and also
-  // do the CountXRPReceived thing
+  // do the CountXAGReceived thing
   const sub_address = $("#subscribe_address").val()
   const old_handler = WS_HANDLERS["transaction"]
   const new_handler = function(data) {
     old_handler(data)
-    CountXRPReceived(data, sub_address)
+    CountXAGReceived(data, sub_address)
   }
   WS_HANDLERS["transaction"] = new_handler
   // Disable the button so you can't stack up multiple levels of the new handler
@@ -688,7 +656,7 @@ $("#tx_read").click((event) => {
 <h2 id="next-steps">Next Steps</h2>
 <ul>
 <li><a href="look-up-transaction-results.html">Look Up Transaction Results</a> to see exactly what a transaction did, and build your software to react appropriately.</li>
-<li>Try <a href="send-xrp.html">Sending XRP</a> from your own address.</li>
+<li>Try <a href="send-XAG.html">Sending XAG</a> from your own address.</li>
 <li>Try monitoring for transactions of advanced types like <a href="escrow.html">Escrows</a>, <a href="checks.html">Checks</a>, or <a href="payment-channels.html">Payment Channels</a>, and responding to incoming notifications.
 <!-- --></li>
 </ul>
@@ -698,7 +666,7 @@ $("#tx_read").click((event) => {
 
 <div class="code_sample" id="code-0-0" style="position: static;"><pre><code class="go">package main
 
-// Connect to the XRPL Ledger using websocket and subscribe to an account
+// Connect to the XAGL Ledger using websocket and subscribe to an account
 // translation from the JavaScript example to Go
 // https://developers.ripple.com/monitor-incoming-payments-with-websocket.html
 // This example uses the Gorilla websocket library to create a websocket client
@@ -748,7 +716,7 @@ func main() {
 
     done := make(chan struct{})
 
-    // send a subscribe command and a target XRPL account
+    // send a subscribe command and a target XAGL account
     m.Command = "subscribe"
     m.Accounts = append(m.Accounts, "rUCzEr6jrEyMpjhs4wSdQdz4g8Y382NxfM")
 
@@ -767,7 +735,7 @@ func main() {
         log.Println("read:", err)
         return
     }
-    // print the response from the XRP Ledger
+    // print the response from the XAG Ledger
     log.Printf("recv: %s", message)
 
     // handle interrupt
@@ -798,25 +766,7 @@ func main() {
 <p class="devportal-callout tip"><strong>Tip:</strong> Don't see the programming language of your choice? Click the "Edit on GitHub" link at the top of this page and contribute your own sample code!</p>
 <h2 id="footnotes">Footnotes</h2>
 <p><a href="#from-footnote-1">1.</a> <a id="footnote-1"></a> In practice, when calling an HTTP-based API multiple times, the client and server may reuse the same connection for several requests and responses. This practice is called <a class="external-link" href="https://en.wikipedia.org/wiki/HTTP_persistent_connection" target="_blank">HTTP persistent connection, or keep-alive <i aria-hidden="true" class="fa fa-external-link"></i></a>. From a development standpoint, the code to use an HTTP-based API is the same regardless of whether the underlying connection is new or reused.</p>
-<h2 id="see-also">See Also</h2>
-<ul>
-<li><strong>Concepts:</strong><ul>
-<li><a href="transaction-basics.html">Transaction Basics</a></li>
-<li><a href="finality-of-results.html">Finality of Results</a> - How to know when a transaction's success or failure is final. (Short version: if a transaction is in a validated ledger, its outcome and metadata are final.)</li>
-</ul>
-</li>
-<li><strong>Tutorials:</strong><ul>
-<li><a href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
-<li><a href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
-</ul>
-</li>
-<li><strong>References:</strong><ul>
-<li><a href="transaction-types.html">Transaction Types</a></li>
-<li><a href="transaction-metadata.html">Transaction Metadata</a> - Summary of the metadata format and fields that appear in metadata</li>
-<li><a href="transaction-results.html">Transaction Results</a> - Tables of all possible result codes for transactions.</li>
-</ul>
-</li>
-</ul>
+
 <!-- -->
 <!-- -->
 <!-- API object types -->
@@ -853,7 +803,7 @@ func main() {
             <div id="sidenav_collapse_2" class="collapse show" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XRP Ledger APIs</a></li>
+                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XAG Ledger APIs</a></li>
                       <li><a class="nosubcat-page" href="set-up-secure-signing.html">Set Up Secure Signing</a></li>
                       <li><a class="nosubcat-page" href="get-started-with-rippleapi-for-javascript.html">Get Started with RippleAPI for JavaScript</a></li>
                       <li><a class="nosubcat-page" href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
@@ -869,16 +819,13 @@ func main() {
           <div class="card">
             <div class="card-header" role="tab" id="sidenav_cat_head_8">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_8" aria-expanded="true" aria-controls="sidenav_collapse_8"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Direct XRP Payments</a>
-                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XRP Payments</a> -->
-              </h5>
+              
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_8" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_8">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="send-xrp.html">Send XRP</a></li>
+                      <li><a class="nosubcat-page" href="send-XAG.html">Send XAG</a></li>
                       <li><a class="nosubcat-page" href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
 
                 </ul>
@@ -915,58 +862,24 @@ func main() {
           </div><!-- /.card -->
 
         <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_20">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_20" aria-expanded="true" aria-controls="sidenav_collapse_20"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="use-specialized-payment-types.html">Use Specialized Payment Types</a>
-                <!-- <a class="sidenav_cat_title" href="use-specialized-payment-types.html">Use Specialized Payment Types</a> -->
-              </h5>
-            </div><!-- /.card-header -->
-
-            <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="subcat-title" href="use-escrows.html">Use Escrows</a></li>
-
-                          <li><a class="subpage" href="send-a-time-held-escrow.html">Send a Time-Held Escrow</a></li>
-                          <li><a class="subpage" href="send-a-conditionally-held-escrow.html">Send a Conditionally-Held Escrow</a></li>
-                          <li><a class="subpage" href="cancel-an-expired-escrow.html">Cancel an Expired Escrow</a></li>
-                          <li><a class="subpage" href="look-up-escrows.html">Look up escrows</a></li>
-
-                      <li><a class="nosubcat-page" href="use-payment-channels.html">Use Payment Channels</a></li>
-                      <li><a class="subcat-title" href="use-checks.html">Use Checks</a></li>
-
-                          <li><a class="subpage" href="send-a-check.html">Send a Check</a></li>
-                          <li><a class="subpage" href="cash-a-check-for-an-exact-amount.html">Cash a Check for an Exact Amount</a></li>
-                          <li><a class="subpage" href="cash-a-check-for-a-flexible-amount.html">Cash a Check for a Flexible Amount</a></li>
-                          <li><a class="subpage" href="cancel-a-check.html">Cancel a Check</a></li>
-                          <li><a class="subpage" href="look-up-checks-by-sender.html">Look Up Checks by Sender</a></li>
-                          <li><a class="subpage" href="look-up-checks-by-recipient.html">Look Up Checks by Recipient</a></li>
-
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse20 -->
-
-          </div><!-- /.card -->
+        
 
         <!---->
           <div class="card">
             <div class="card-header" role="tab" id="sidenav_cat_head_35">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_35" aria-expanded="true" aria-controls="sidenav_collapse_35"></a>
               <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a>
-                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a> -->
+                  <a class="sidenav_cat_title" href="XAG-ledger-businesses.html">XAG Ledger Businesses</a>
+                <!-- <a class="sidenav_cat_title" href="XAG-ledger-businesses.html">XAG Ledger Businesses</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_35" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_35">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XRP as an Exchange</a></li>
-                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XRP Charts</a></li>
-                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XRP Ledger Gateway</a></li>
+                      <li><a class="nosubcat-page" href="list-XAG-as-an-exchange.html">List XAG as an Exchange</a></li>
+                      <li><a class="nosubcat-page" href="list-your-exchange-on-XAG-charts.html">List Your Exchange on XAG Charts</a></li>
+                      <li><a class="nosubcat-page" href="become-an-XAG-ledger-gateway.html">Become an XAG Ledger Gateway</a></li>
 
                 </ul>
               </div><!-- /.card-body -->
@@ -975,205 +888,12 @@ func main() {
           </div><!-- /.card -->
 
         <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_39">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_39" aria-expanded="true" aria-controls="sidenav_collapse_39"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="manage-the-rippled-server.html">Manage the rippled Server</a>
-                <!-- <a class="sidenav_cat_title" href="manage-the-rippled-server.html">Manage the rippled Server</a> -->
-              </h5>
-            </div><!-- /.card-header -->
 
-            <div id="sidenav_collapse_39" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_39">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="subcat-title" href="install-rippled.html">Install rippled</a></li>
-
-                          <li><a class="subpage" href="system-requirements.html">System Requirements</a></li>
-                          <li><a class="subpage" href="install-rippled-on-centos-rhel-with-yum.html">Install on CentOS/Red Hat with yum</a></li>
-                          <li><a class="subpage" href="install-rippled-on-ubuntu.html">Install on Ubuntu or Debian Linux</a></li>
-                          <li><a class="subpage" href="update-rippled-automatically-on-linux.html">Update Automatically on Linux</a></li>
-                          <li><a class="subpage" href="update-rippled-manually-on-centos-rhel.html">Update Manually on CentOS/Red Hat</a></li>
-                          <li><a class="subpage" href="update-rippled-manually-on-ubuntu.html">Update Manually on Ubuntu or Debian</a></li>
-                          <li><a class="subpage" href="build-run-rippled-ubuntu.html">Build and Run rippled on Ubuntu</a></li>
-                          <li><a class="subpage" href="build-run-rippled-macos.html">Build and Run rippled on macOS</a></li>
-                          <li><a class="subpage" href="capacity-planning.html">Capacity Planning</a></li>
-                          <li><a class="subpage" href="rippled-1-3-migration-instructions.html">rippled v1.3.x Migration Instructions</a></li>
-
-                      <li><a class="subcat-title" href="configure-rippled.html">Configure rippled</a></li>
-
-                          <li><a class="subpage" href="run-rippled-as-a-validator.html">Run rippled as a Validator</a></li>
-                          <li><a class="subpage" href="run-rippled-as-a-wallet-server.html">Run rippled as a Wallet Server</a></li>
-                          <li><a class="subpage" href="configure-statsd.html">Configure StatsD</a></li>
-                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XRPL Altnet</a></li>
-                          <li><a class="subpage" href="configure-online-deletion.html">Configure Online Deletion</a></li>
-                          <li><a class="subpage" href="configure-advisory-deletion.html">Configure Advisory Deletion</a></li>
-                          <li><a class="subpage" href="configure-history-sharding.html">Configure History Sharding</a></li>
-                          <li><a class="subpage" href="configure-full-history.html">Configure Full History</a></li>
-                          <li><a class="subpage" href="configure-grpc.html">Configure gRPC</a></li>
-                          <li><a class="subpage" href="enable-public-signing.html">Enable Public Signing</a></li>
-
-                      <li><a class="subcat-title" href="configure-peering.html">Configure Peering</a></li>
-
-                          <li><a class="subpage" href="cluster-rippled-servers.html">Cluster rippled Servers</a></li>
-                          <li><a class="subpage" href="configure-a-private-server.html">Configure a Private Server</a></li>
-                          <li><a class="subpage" href="configure-the-peer-crawler.html">Configure the Peer Crawler</a></li>
-                          <li><a class="subpage" href="forward-ports-for-peering.html">Forward Ports for Peering</a></li>
-                          <li><a class="subpage" href="manually-connect-to-a-specific-peer.html">Manually Connect to a Specific Peer</a></li>
-                          <li><a class="subpage" href="set-max-number-of-peers.html">Set Maximum Number of Peers</a></li>
-                          <li><a class="subpage" href="use-a-peer-reservation.html">Use a Peer Reservation</a></li>
-
-                      <li><a class="subcat-title" href="use-stand-alone-mode.html">Test rippled Functionality in Stand-Alone Mode</a></li>
-
-                          <li><a class="subpage" href="start-a-new-genesis-ledger-in-stand-alone-mode.html">Start a New Genesis Ledger in Stand-Alone Mode</a></li>
-                          <li><a class="subpage" href="load-a-saved-ledger-in-stand-alone-mode.html">Load a Saved Ledger in Stand-Alone Mode</a></li>
-                          <li><a class="subpage" href="advance-the-ledger-in-stand-alone-mode.html">Advance the Ledger in Stand-Alone Mode</a></li>
-
-                      <li><a class="subcat-title" href="troubleshoot-the-rippled-server.html">Troubleshooting rippled</a></li>
-
-                          <li><a class="subpage" href="diagnosing-problems.html">Diagnosing Problems with rippled</a></li>
-                          <li><a class="subpage" href="understanding-log-messages.html">Understanding Log Messages</a></li>
-                          <li><a class="subpage" href="server-doesnt-sync.html">rippled Server Doesn't Sync</a></li>
-                          <li><a class="subpage" href="server-wont-start.html">rippled Server Won't Start</a></li>
-                          <li><a class="subpage" href="fix-sqlite-tx-db-page-size-issue.html">Fix SQLite Transaction Database Page Size Issue</a></li>
-
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse39 -->
-
-          </div><!-- /.card -->
 
     </div><!-- /#sidenav -->
 </div><!-- /.tree_nav -->      </aside>
     </div><!--/.row (main layout)-->
   </div>
-
-<footer class="xrpl-footer" role="contentinfo">
-  <section class="container-fluid card-grid card-grid-Nx1">
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
-  </section>
-
-  <section class="container-fluid p-5 pl-sm-0">
-
-    <nav role="navigation" class="d-flex mb-3 language-selector">
-      <img class="language_selector_icon" src="assets/img/icon-language-selector.svg" width="32" height="40" alt="language selection icon" />
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="/monitor-incoming-payments-with-websocket.html"><i class="fa fa-check-circle"></i> English</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/ja/monitor-incoming-payments-with-websocket.html">日本語</a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
-      <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
-    </div><!-- /.absolute_bottom_footer -->
-
-  </section>
-</footer>
 
 <!-- Jump to top button -->
 <a href="#main_content_wrapper" class="jump-to-top btn btn-primary btn-lg" role="button" title="Jump to top of page">Top</a>
@@ -1189,7 +909,7 @@ func main() {
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script type="text/javascript"> docsearch({
 apiKey: '70de5b9b8ef95460f3c6e04054b325b2',
-indexName: 'xrpl',
+indexName: 'XAGl',
 inputSelector: '#topsearchbar',
 algoliaOptions: { 'facetFilters': ["lang:en"] },
 debug: false
