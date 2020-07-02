@@ -32,7 +32,7 @@
       gtag('config', 'UA-45576805-2');
       gtag('config', 'UA-157720658-3', { 'linker': {
         'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
+                    'XAGl.org', 'explorer.XAGl.org', 'testnet.XAGl.org']
         } }
       );
     </script>
@@ -60,7 +60,7 @@
 
 </head>
 
-<body class="xrp-ledger-dev-portal sidebar-primary lang-en ">
+<body class="XAG-ledger-dev-portal sidebar-primary lang-en ">
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
     <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" class="logo"  height="44" alt="XAG Ledger Dev Portal" /></a>
@@ -69,28 +69,16 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
       <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dev-tools.html">Dev Tools</a>
-            </li>
+           
         <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
+          <a class="nav-link" href="dev-tools.html">Dev Tools</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
         </li>
       </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/tutorials/get-started/get-started-with-rippleapi-for-javascript.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -111,37 +99,7 @@
       <!-- Right sidebar first so it's at the beginning for mobile layouts -->
       <aside class="right-sidebar col-lg-3 order-lg-4 p-0" role="complementary">
   <div class="card" id="page-toc-wrapper">
-    <div class="card-header">
-      <h4>In this document</h4>
-    </div>
-    <ul class="card-body">
-      <li class="level-1"><a href="#get-started-with-rippleapi-for-javascript">Get Started with RippleAPI for JavaScript</a></li>
-<li class="level-1"><a href="#environment-setup">Environment Setup</a></li>
-<li class="level-2"><a href="#install-nodejs-and-npm">Install Node.js and npm</a></li>
-<li class="level-2"><a href="#install-yarn">Install Yarn</a></li>
-<li class="level-2"><a href="#install-rippleapi-and-dependencies">Install RippleAPI and Dependencies</a></li>
-<li class="level-3"><a href="#1-create-a-new-directory-for-your-project">1. Create a new directory for your project</a></li>
-<li class="level-3"><a href="#2-create-a-new-packagejson-file-for-your-project">2. Create a new package.json file for your project</a></li>
-<li class="level-3"><a href="#3-use-yarn-to-install-rippleapi-and-dependencies">3. Use Yarn to install RippleAPI and dependencies</a></li>
-<li class="level-1"><a href="#first-rippleapi-script">First RippleAPI Script</a></li>
-<li class="level-2"><a href="#run-the-script">Run the Script</a></li>
-<li class="level-2"><a href="#understand-the-script">Understand the Script</a></li>
-<li class="level-3"><a href="#script-opening">Script opening</a></li>
-<li class="level-3"><a href="#instantiating-the-api">Instantiating the API</a></li>
-<li class="level-3"><a href="#connecting-and-promises">Connecting and Promises</a></li>
-<li class="level-3"><a href="#custom-code">Custom code</a></li>
-<li class="level-3"><a href="#cleanup">Cleanup</a></li>
-<li class="level-1"><a href="#waiting-for-validation">Waiting for Validation</a></li>
-<li class="level-1"><a href="#rippleapi-in-web-browsers">RippleAPI in Web Browsers</a></li>
-<li class="level-2"><a href="#build-a-browser-compatible-version-of-rippleapi">Build a Browser-Compatible Version of RippleAPI</a></li>
-<li class="level-3"><a href="#1-download-a-copy-of-the-rippleapi-git-repository">1. Download a copy of the RippleAPI git repository</a></li>
-<li class="level-3"><a href="#2-install-yarn">2. Install Yarn</a></li>
-<li class="level-3"><a href="#3-install-dependencies-using-yarn">3. Install dependencies using Yarn</a></li>
-<li class="level-3"><a href="#4-use-gulp-to-build-a-single-javascript-output">4. Use Gulp to build a single JavaScript output</a></li>
-<li class="level-2"><a href="#demo-rippleapi-in-a-browser">Demo RippleAPI in a Browser</a></li>
-<li class="level-2"><a href="#see-also">See Also</a></li>
-
-    </ul>
+    
   </div>
       </aside>
 
@@ -158,7 +116,7 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="get-started-with-rippleapi-for-javascript">Get Started with RippleAPI for JavaScript</h1>
-<p>This tutorial guides you through the basics of building an XRP Ledger-connected application using <a class="external-link" href="http://nodejs.org/" target="_blank">Node.js <i aria-hidden="true" class="fa fa-external-link"></i></a> and <a href="rippleapi-reference.html">RippleAPI</a>, a JavaScript API for accessing the XRP Ledger.</p>
+<p>This tutorial guides you through the basics of building an XAG Ledger-connected application using <a class="external-link" href="http://nodejs.org/" target="_blank">Node.js <i aria-hidden="true" class="fa fa-external-link"></i></a> and <a href="rippleapi-reference.html">RippleAPI</a>, a JavaScript API for accessing the XAG Ledger.</p>
 <p>The scripts and config files used in this guide are <a class="external-link" href="https://github.com/ripple/ripple-dev-portal/tree/master/content/_code-samples/rippleapi_quickstart" target="_blank">available in the Ripple Dev Portal GitHub Repository <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <!--#{ keep multiple H1s so that all steps are surfaced in sidebar. Do not change H1 titles unless they provide a clear improvement bc they are linked to on external sites. }# -->
 <h1 id="environment-setup">Environment Setup</h1>
@@ -253,7 +211,7 @@ api.connect().then(() =&gt; {
 <p>Output:</p>
 <pre><code>getting account info for rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn
 { sequence: 359,
-  xrpBalance: '75.181663',
+  XAGBalance: '75.181663',
   ownerCount: 4,
   previousInitiatedTransactionID: 'E5C6DD25B2DCF534056D98A2EFE3B7CFAE4EBC624854DE3FA436F733A56D8BD9',
   previousAffectingTransactionID: 'E5C6DD25B2DCF534056D98A2EFE3B7CFAE4EBC624854DE3FA436F733A56D8BD9',
@@ -279,13 +237,13 @@ const RippleAPI = require('ripple-lib').RippleAPI;
 <ul>
 <li>The example <code>server</code> setting uses a secure WebSocket connection to connect to one of the public servers that Ripple (the company) operates.</li>
 <li>If you don't include the <code>server</code> option, RippleAPI runs in <a href="rippleapi-reference.html#offline-functionality">offline mode</a> instead, which only provides methods that don't need network connectivity.</li>
-<li>You can specify a <a href="xrp-test-net-faucet.html">XRP Ledger Test Net</a> server instead to connect to the parallel-world Test Network instead of the production XRP Ledger.</li>
+<li>You can specify a <a href="XAG-test-net-faucet.html">XAG Ledger Test Net</a> server instead to connect to the parallel-world Test Network instead of the production XAG Ledger.</li>
 <li>If you <a href="install-rippled.html">run your own <code>rippled</code></a>, you can instruct it to connect to your local server. For example, you might say <code>server: 'ws://localhost:5005'</code> instead.</li>
 </ul>
 <h3 id="connecting-and-promises">Connecting and Promises</h3>
 <pre><code>api.connect().then(() =&gt; {
 </code></pre>
-<p>The <a href="rippleapi-reference.html#connect">connect() method</a> is one of many RippleAPI methods that returns a <a class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promise <i aria-hidden="true" class="fa fa-external-link"></i></a>, which is a special kind of JavaScript object. A Promise is designed to do an asynchronous operation that returns a value later, such as querying the XRP Ledger.</p>
+<p>The <a href="rippleapi-reference.html#connect">connect() method</a> is one of many RippleAPI methods that returns a <a class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promise <i aria-hidden="true" class="fa fa-external-link"></i></a>, which is a special kind of JavaScript object. A Promise is designed to do an asynchronous operation that returns a value later, such as querying the XAG Ledger.</p>
 <p>When you get a Promise back from some expression (like <code>api.connect()</code>), you call the Promise's <code>then</code> method and pass in a callback function. Passing a function as an argument is conventional in JavaScript, taking advantage of how JavaScript functions are <a class="external-link" href="https://en.wikipedia.org/wiki/First-class_function" target="_blank">first-class objects <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <p>When a Promise finishes with its asynchronous operations, the Promise runs the callback function you passed it. The return value from the <code>then</code> method is another Promise object, so you can "chain" that into another <code>then</code> method, or the Promise's <code>catch</code> method, which also takes a callback. The callback you pass to <code>catch</code> gets called if something goes wrong.</p>
 <p>The example uses <a class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank">arrow function <i aria-hidden="true" class="fa fa-external-link"></i></a>, a shorter way of defining anonymous functions. This is convenient for defining lots of one-off functions as callbacks. The syntax <code>()=&gt; {...}</code> is mostly equivalent to <code>function() {...}</code>. If you want an anonymous function with one parameter, you can use a syntax like <code>info =&gt; {...}</code> instead, which is almost the same as <code>function(info) {...}</code> syntax.</p>
@@ -303,7 +261,7 @@ const RippleAPI = require('ripple-lib').RippleAPI;
   /* end custom code -------------------------------------- */
 </code></pre>
 <p>This is the part that you change to do whatever you want the script to do.</p>
-<p>The example code looks up an XRP Ledger account by its address. Try running the code with different addresses to see different results.</p>
+<p>The example code looks up an XAG Ledger account by its address. Try running the code with different addresses to see different results.</p>
 <p>The <code>console.log()</code> function is built into both Node.js and web browsers, and writes out to the console. This example includes lots of console output to make it easier to understand what the code is doing.</p>
 <p>Keep in mind that the example code starts in the middle of a callback function (called when RippleAPI finishes connecting). That function calls RippleAPI's <a href="rippleapi-reference.html#getaccountinfo"><code>getAccountInfo</code></a> method, and returns the results.</p>
 <p>The <code>getAccountInfo</code> API method returns another Promise, so the line <code>}).then( info =&gt; {</code> defines another anonymous callback function to run when this Promise's asynchronous work is done. Unlike the previous case, this callback function takes one argument, called <code>info</code>, which holds the asynchronous return value from the <code>getAccountInfo</code> API method. The rest of this callback function outputs that return value to the console.</p>
@@ -314,10 +272,10 @@ const RippleAPI = require('ripple-lib').RippleAPI;
   console.log('done and disconnected.');
 }).catch(console.error);
 </code></pre>
-<p>The rest of the sample code is mostly more <a href="rippleapi-reference.html#boilerplate">boilerplate code</a>. The first line ends the previous callback function, then chains to another callback to run when it ends. That method disconnects cleanly from the XRP Ledger, and has yet another callback which writes to the console when it finishes. If your script waits on <a href="rippleapi-reference.html#api-events">RippleAPI events</a>, do not disconnect until you are done waiting for events.</p>
+<p>The rest of the sample code is mostly more <a href="rippleapi-reference.html#boilerplate">boilerplate code</a>. The first line ends the previous callback function, then chains to another callback to run when it ends. That method disconnects cleanly from the XAG Ledger, and has yet another callback which writes to the console when it finishes. If your script waits on <a href="rippleapi-reference.html#api-events">RippleAPI events</a>, do not disconnect until you are done waiting for events.</p>
 <p>The <code>catch</code> method ends this Promise chain. The callback provided here runs if any of the Promises or their callback functions encounters an error. In this case, we pass the standard <code>console.error</code> function, which writes to the console, instead of defining a custom callback. You could define a smarter callback function here to intelligently catch certain error types.</p>
 <h1 id="waiting-for-validation">Waiting for Validation</h1>
-<p>One of the biggest challenges in using the XRP Ledger (or any decentralized system) is knowing the final, immutable transaction results. Even if you <a href="reliable-transaction-submission.html">follow the best practices</a> you still have to wait for the <a href="consensus.html">consensus process</a> to finally accept or reject your transaction. The following example code demonstrates how to wait for the final outcome of a transaction:</p>
+<p>One of the biggest challenges in using the XAG Ledger (or any decentralized system) is knowing the final, immutable transaction results. Even if you <a href="reliable-transaction-submission.html">follow the best practices</a> you still have to wait for the <a href="consensus.html">consensus process</a> to finally accept or reject your transaction. The following example code demonstrates how to wait for the final outcome of a transaction:</p>
 <pre><code>'use strict';
 /* import RippleAPI and support libraries */
 const RippleAPI = require('ripple-lib').RippleAPI;
@@ -335,7 +293,7 @@ const myOrder = {
     'value': '100'
   },
   'totalPrice': {
-    'currency': 'XRP',
+    'currency': 'XAG',
     'value': '1000'
   }
 };
@@ -349,7 +307,7 @@ const ledgerOffset = 5;
 const myInstructions = {maxLedgerVersionOffset: ledgerOffset};
 
 
-/* Verify a transaction is in a validated XRP Ledger version */
+/* Verify a transaction is in a validated XAG Ledger version */
 function verifyTransaction(hash, options) {
   console.log('Verifying Transaction');
   return api.getTransaction(hash, options).then(data =&gt; {
@@ -371,7 +329,7 @@ function verifyTransaction(hash, options) {
 }
 
 
-/* Function to prepare, sign, and submit a transaction to the XRP Ledger. */
+/* Function to prepare, sign, and submit a transaction to the XAG Ledger. */
 function submitTransaction(lastClosedLedgerVersion, prepared, secret) {
   const signedData = api.sign(prepared.txJSON, secret);
   return api.submit(signedData.signedTransaction).then(data =&gt; {
@@ -490,27 +448,7 @@ git checkout master
 &lt;/html&gt;
 </code></pre>
 <p>This demo HTML loads Lodash v4.17.11 from CDNJS on Cloudflare and then loads ripple-lib v1.1.2, but you could also download and load a variant of Lodash locally. <!--#{ no specific recommended or required version at this time. Update this once we have some guidance to provide here. }#--></p>
-<h2 id="see-also">See Also</h2>
-<ul>
-<li><strong>Concepts:</strong><ul>
-<li><a href="xrp-ledger-overview.html">XRP Ledger Overview</a></li>
-<li><a href="software-ecosystem.html">Software Ecosystem</a></li>
-</ul>
-</li>
-<li><strong>Tutorials:</strong><ul>
-<li><a href="send-xrp.html">Send XRP</a></li>
-</ul>
-</li>
-<li><strong>References:</strong><ul>
-<li><a href="rippleapi-reference.html">RippleAPI Reference</a></li>
-<li><a href="api-conventions.html">rippled API Conventions</a><ul>
-<li><a href="base58-encodings.html">base58 Encodings</a></li>
-</ul>
-</li>
-<li><a href="transaction-formats.html">rippled Transaction Formats</a></li>
-</ul>
-</li>
-</ul>
+
     </div>
   </article>
       </main>
@@ -540,7 +478,7 @@ git checkout master
             <div id="sidenav_collapse_2" class="collapse show" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XRP Ledger APIs</a></li>
+                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XAG Ledger APIs</a></li>
                       <li><a class="nosubcat-page" href="set-up-secure-signing.html">Set Up Secure Signing</a></li>
                       <li><a class="active nosubcat-page" href="get-started-with-rippleapi-for-javascript.html">Get Started with RippleAPI for JavaScript</a></li>
                       <li><a class="nosubcat-page" href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
@@ -556,16 +494,13 @@ git checkout master
           <div class="card">
             <div class="card-header" role="tab" id="sidenav_cat_head_8">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_8" aria-expanded="true" aria-controls="sidenav_collapse_8"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Direct XRP Payments</a>
-                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XRP Payments</a> -->
-              </h5>
+              
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_8" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_8">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="send-xrp.html">Send XRP</a></li>
+                      <li><a class="nosubcat-page" href="send-XAG.html">Send XAG</a></li>
                       <li><a class="nosubcat-page" href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
 
                 </ul>
@@ -602,58 +537,24 @@ git checkout master
           </div><!-- /.card -->
 
         <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_20">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_20" aria-expanded="true" aria-controls="sidenav_collapse_20"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="use-specialized-payment-types.html">Use Specialized Payment Types</a>
-                <!-- <a class="sidenav_cat_title" href="use-specialized-payment-types.html">Use Specialized Payment Types</a> -->
-              </h5>
-            </div><!-- /.card-header -->
-
-            <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="subcat-title" href="use-escrows.html">Use Escrows</a></li>
-
-                          <li><a class="subpage" href="send-a-time-held-escrow.html">Send a Time-Held Escrow</a></li>
-                          <li><a class="subpage" href="send-a-conditionally-held-escrow.html">Send a Conditionally-Held Escrow</a></li>
-                          <li><a class="subpage" href="cancel-an-expired-escrow.html">Cancel an Expired Escrow</a></li>
-                          <li><a class="subpage" href="look-up-escrows.html">Look up escrows</a></li>
-
-                      <li><a class="nosubcat-page" href="use-payment-channels.html">Use Payment Channels</a></li>
-                      <li><a class="subcat-title" href="use-checks.html">Use Checks</a></li>
-
-                          <li><a class="subpage" href="send-a-check.html">Send a Check</a></li>
-                          <li><a class="subpage" href="cash-a-check-for-an-exact-amount.html">Cash a Check for an Exact Amount</a></li>
-                          <li><a class="subpage" href="cash-a-check-for-a-flexible-amount.html">Cash a Check for a Flexible Amount</a></li>
-                          <li><a class="subpage" href="cancel-a-check.html">Cancel a Check</a></li>
-                          <li><a class="subpage" href="look-up-checks-by-sender.html">Look Up Checks by Sender</a></li>
-                          <li><a class="subpage" href="look-up-checks-by-recipient.html">Look Up Checks by Recipient</a></li>
-
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse20 -->
-
-          </div><!-- /.card -->
+          
 
         <!---->
           <div class="card">
             <div class="card-header" role="tab" id="sidenav_cat_head_35">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_35" aria-expanded="true" aria-controls="sidenav_collapse_35"></a>
               <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a>
-                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a> -->
+                  <a class="sidenav_cat_title" href="XAG-ledger-businesses.html">XAG Ledger Businesses</a>
+                <!-- <a class="sidenav_cat_title" href="XAG-ledger-businesses.html">XAG Ledger Businesses</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_35" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_35">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XRP as an Exchange</a></li>
-                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XRP Charts</a></li>
-                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XRP Ledger Gateway</a></li>
+                      <li><a class="nosubcat-page" href="list-XAG-as-an-exchange.html">List XAG as an Exchange</a></li>
+                      <li><a class="nosubcat-page" href="list-your-exchange-on-XAG-charts.html">List Your Exchange on XAG Charts</a></li>
+                      <li><a class="nosubcat-page" href="become-an-XAG-ledger-gateway.html">Become an XAG Ledger Gateway</a></li>
 
                 </ul>
               </div><!-- /.card-body -->
@@ -662,205 +563,12 @@ git checkout master
           </div><!-- /.card -->
 
         <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_39">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_39" aria-expanded="true" aria-controls="sidenav_collapse_39"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="manage-the-rippled-server.html">Manage the rippled Server</a>
-                <!-- <a class="sidenav_cat_title" href="manage-the-rippled-server.html">Manage the rippled Server</a> -->
-              </h5>
-            </div><!-- /.card-header -->
-
-            <div id="sidenav_collapse_39" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_39">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="subcat-title" href="install-rippled.html">Install rippled</a></li>
-
-                          <li><a class="subpage" href="system-requirements.html">System Requirements</a></li>
-                          <li><a class="subpage" href="install-rippled-on-centos-rhel-with-yum.html">Install on CentOS/Red Hat with yum</a></li>
-                          <li><a class="subpage" href="install-rippled-on-ubuntu.html">Install on Ubuntu or Debian Linux</a></li>
-                          <li><a class="subpage" href="update-rippled-automatically-on-linux.html">Update Automatically on Linux</a></li>
-                          <li><a class="subpage" href="update-rippled-manually-on-centos-rhel.html">Update Manually on CentOS/Red Hat</a></li>
-                          <li><a class="subpage" href="update-rippled-manually-on-ubuntu.html">Update Manually on Ubuntu or Debian</a></li>
-                          <li><a class="subpage" href="build-run-rippled-ubuntu.html">Build and Run rippled on Ubuntu</a></li>
-                          <li><a class="subpage" href="build-run-rippled-macos.html">Build and Run rippled on macOS</a></li>
-                          <li><a class="subpage" href="capacity-planning.html">Capacity Planning</a></li>
-                          <li><a class="subpage" href="rippled-1-3-migration-instructions.html">rippled v1.3.x Migration Instructions</a></li>
-
-                      <li><a class="subcat-title" href="configure-rippled.html">Configure rippled</a></li>
-
-                          <li><a class="subpage" href="run-rippled-as-a-validator.html">Run rippled as a Validator</a></li>
-                          <li><a class="subpage" href="run-rippled-as-a-wallet-server.html">Run rippled as a Wallet Server</a></li>
-                          <li><a class="subpage" href="configure-statsd.html">Configure StatsD</a></li>
-                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XRPL Altnet</a></li>
-                          <li><a class="subpage" href="configure-online-deletion.html">Configure Online Deletion</a></li>
-                          <li><a class="subpage" href="configure-advisory-deletion.html">Configure Advisory Deletion</a></li>
-                          <li><a class="subpage" href="configure-history-sharding.html">Configure History Sharding</a></li>
-                          <li><a class="subpage" href="configure-full-history.html">Configure Full History</a></li>
-                          <li><a class="subpage" href="configure-grpc.html">Configure gRPC</a></li>
-                          <li><a class="subpage" href="enable-public-signing.html">Enable Public Signing</a></li>
-
-                      <li><a class="subcat-title" href="configure-peering.html">Configure Peering</a></li>
-
-                          <li><a class="subpage" href="cluster-rippled-servers.html">Cluster rippled Servers</a></li>
-                          <li><a class="subpage" href="configure-a-private-server.html">Configure a Private Server</a></li>
-                          <li><a class="subpage" href="configure-the-peer-crawler.html">Configure the Peer Crawler</a></li>
-                          <li><a class="subpage" href="forward-ports-for-peering.html">Forward Ports for Peering</a></li>
-                          <li><a class="subpage" href="manually-connect-to-a-specific-peer.html">Manually Connect to a Specific Peer</a></li>
-                          <li><a class="subpage" href="set-max-number-of-peers.html">Set Maximum Number of Peers</a></li>
-                          <li><a class="subpage" href="use-a-peer-reservation.html">Use a Peer Reservation</a></li>
-
-                      <li><a class="subcat-title" href="use-stand-alone-mode.html">Test rippled Functionality in Stand-Alone Mode</a></li>
-
-                          <li><a class="subpage" href="start-a-new-genesis-ledger-in-stand-alone-mode.html">Start a New Genesis Ledger in Stand-Alone Mode</a></li>
-                          <li><a class="subpage" href="load-a-saved-ledger-in-stand-alone-mode.html">Load a Saved Ledger in Stand-Alone Mode</a></li>
-                          <li><a class="subpage" href="advance-the-ledger-in-stand-alone-mode.html">Advance the Ledger in Stand-Alone Mode</a></li>
-
-                      <li><a class="subcat-title" href="troubleshoot-the-rippled-server.html">Troubleshooting rippled</a></li>
-
-                          <li><a class="subpage" href="diagnosing-problems.html">Diagnosing Problems with rippled</a></li>
-                          <li><a class="subpage" href="understanding-log-messages.html">Understanding Log Messages</a></li>
-                          <li><a class="subpage" href="server-doesnt-sync.html">rippled Server Doesn't Sync</a></li>
-                          <li><a class="subpage" href="server-wont-start.html">rippled Server Won't Start</a></li>
-                          <li><a class="subpage" href="fix-sqlite-tx-db-page-size-issue.html">Fix SQLite Transaction Database Page Size Issue</a></li>
-
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse39 -->
-
-          </div><!-- /.card -->
 
     </div><!-- /#sidenav -->
 </div><!-- /.tree_nav -->      </aside>
     </div><!--/.row (main layout)-->
   </div>
 
-<footer class="xrpl-footer" role="contentinfo">
-  <section class="container-fluid card-grid card-grid-Nx1">
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
-  </section>
-
-  <section class="container-fluid p-5 pl-sm-0">
-
-    <nav role="navigation" class="d-flex mb-3 language-selector">
-      <img class="language_selector_icon" src="assets/img/icon-language-selector.svg" width="32" height="40" alt="language selection icon" />
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="/get-started-with-rippleapi-for-javascript.html"><i class="fa fa-check-circle"></i> English</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/ja/get-started-with-rippleapi-for-javascript.html">日本語</a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
-      <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
-    </div><!-- /.absolute_bottom_footer -->
-
-  </section>
-</footer>
 
 <!-- Jump to top button -->
 <a href="#main_content_wrapper" class="jump-to-top btn btn-primary btn-lg" role="button" title="Jump to top of page">Top</a>
@@ -876,7 +584,7 @@ git checkout master
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script type="text/javascript"> docsearch({
 apiKey: '70de5b9b8ef95460f3c6e04054b325b2',
-indexName: 'xrpl',
+indexName: 'XAGl',
 inputSelector: '#topsearchbar',
 algoliaOptions: { 'facetFilters': ["lang:en"] },
 debug: false

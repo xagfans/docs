@@ -32,7 +32,7 @@
       gtag('config', 'UA-45576805-2');
       gtag('config', 'UA-157720658-3', { 'linker': {
         'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
+                    'XAGl.org', 'explorer.XAGl.org', 'testnet.XAGl.org']
         } }
       );
     </script>
@@ -60,7 +60,7 @@
 
 </head>
 
-<body class="xrp-ledger-dev-portal sidebar-primary lang-en ">
+<body class="XAG-ledger-dev-portal sidebar-primary lang-en ">
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
     <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" class="logo"  height="44" alt="XAG Ledger Dev Portal" /></a>
@@ -69,28 +69,15 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
       <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dev-tools.html">Dev Tools</a>
-            </li>
         <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
+          <a class="nav-link" href="dev-tools.html">Dev Tools</a>
         </li>
+        
+    <li class="nav-item">
+        <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+      </li>
       </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/tutorials/manage-account-settings/offline-account-setup.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -109,30 +96,7 @@
   <div class="container-fluid" role="document" id="main_content_wrapper">
     <div class="row">
       <!-- Right sidebar first so it's at the beginning for mobile layouts -->
-      <aside class="right-sidebar col-lg-3 order-lg-4 p-0" role="complementary">
-  <div class="card" id="page-toc-wrapper">
-    <div class="card-header">
-      <h4>In this document</h4>
-    </div>
-    <ul class="card-body">
-      <li class="level-1"><a href="#offline-account-setup-tutorial">Offline Account Setup Tutorial</a></li>
-<li class="level-2"><a href="#prerequisites">Prerequisites</a></li>
-<li class="level-2"><a href="#steps">Steps</a></li>
-<li class="level-3"><a href="#1-set-up-offline-machine">1. Set up offline machine</a></li>
-<li class="level-3"><a href="#2-generate-cryptographic-keys">2. Generate cryptographic keys</a></li>
-<li class="level-3"><a href="#3-fund-the-new-address">3. Fund the new address</a></li>
-<li class="level-3"><a href="#4-confirm-account-details">4. Confirm account details</a></li>
-<li class="level-3"><a href="#5-enter-the-sequence-number-on-the-offline-machine">5. Enter the sequence number on the offline machine.</a></li>
-<li class="level-3"><a href="#6-sign-initial-setup-transactions-if-any">6. Sign initial setup transactions, if any.</a></li>
-<li class="level-3"><a href="#7-copy-transactions-to-online-machine">7. Copy transactions to online machine.</a></li>
-<li class="level-3"><a href="#8-submit-setup-transactions">8. Submit setup transactions.</a></li>
-<li class="level-3"><a href="#9-confirm-the-final-status-of-the-transactions">9. Confirm the final status of the transactions.</a></li>
-<li class="level-3"><a href="#10-reconcile-offline-machine-status">10. Reconcile offline machine status.</a></li>
-<li class="level-2"><a href="#see-also">See Also</a></li>
-
-    </ul>
-  </div>
-      </aside>
+     
 
       <!-- main column -->
       <main class="main col-md-7 col-lg-6 order-md-3  " role="main" id="main_content_body">
@@ -147,13 +111,13 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="offline-account-setup-tutorial">Offline Account Setup Tutorial</h1>
-<p>A highly secure <a href="set-up-secure-signing.html">signing configuration</a> involves keeping an XRP Ledger <a href="accounts.html">account</a>'s <a href="cryptographic-keys.html">cryptographic keys</a> securely on an offline, air-gapped machine. After setting up this configuration, you can sign a variety of transactions, transfer only the signed transactions to an online computer, and submit them to the XRP Ledger network without ever exposing your secret key to malicious actors online.</p>
+<p>A highly secure <a href="set-up-secure-signing.html">signing configuration</a> involves keeping an XAG Ledger <a href="accounts.html">account</a>'s <a href="cryptographic-keys.html">cryptographic keys</a> securely on an offline, air-gapped machine. After setting up this configuration, you can sign a variety of transactions, transfer only the signed transactions to an online computer, and submit them to the XAG Ledger network without ever exposing your secret key to malicious actors online.</p>
 <p class="devportal-callout caution"><strong>Caution:</strong> Proper operational security is necessary to protect your offline machine. For example, the offline machine must be physically located where untrusted people cannot get access to it, and trusted operators must be careful not to transfer compromised software onto the machine. (For example, do not use a USB drive that was previously attached to a network-connected computer.)</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>To use offline signing, you must meet the following prerequisites:</p>
 <ul>
 <li>You must have one computer to use as an offline machine. This machine must be set up with a <a href="system-requirements.html">supported operating system</a>. See your operating system's support for offline setup instructions. (For example, <a class="external-link" href="https://access.redhat.com/solutions/7227" target="_blank">Red Hat Enterprise Linux DVD ISO installation instructions <i aria-hidden="true" class="fa fa-external-link"></i></a>.) Be sure that the software and physical media you use are not infected with malware.</li>
-<li>You must have a separate computer to use as an online machine. This machine does not need to run <code>rippled</code> but it must be able to connect to the XRP Ledger network and receive accurate information about the state of the shared ledger. For example, you can use a <a href="get-started-with-the-rippled-api.html">WebSocket connection to a public server</a>.</li>
+<li>You must have a separate computer to use as an online machine. This machine does not need to run <code>rippled</code> but it must be able to connect to the XAG Ledger network and receive accurate information about the state of the shared ledger. For example, you can use a <a href="get-started-with-the-rippled-api.html">WebSocket connection to a public server</a>.</li>
 <li>You must have a secure way to transfer signed transaction binary data from the offline machine to the online machine.<ul>
 <li>One way to do this is with a QR code generator on the offline machine, and a QR code scanner on the online machine. (In this case, your "online machine" could be a handheld device such as a smartphone.)</li>
 <li>Another way is to copy files from the offline machine to an online machine using physical media. If you use this method, be sure not to use physical media that could infect your offline machine with malicious software. (For example, do not reuse the same USB drive on both online and offline machines.)</li>
@@ -164,7 +128,7 @@
 <h2 id="steps">Steps</h2>
 <h3 id="1-set-up-offline-machine">1. Set up offline machine</h3>
 <p>The offline machine needs secure persistent storage (for example, an encrypted disk drive) and a way to <a href="set-up-secure-signing.html">sign transactions</a>. For an offline machine, you typically use physical media to transfer any necessary software after downloading it from an online machine. You must be sure that the online machine, the physical media, and the software itself are not infected with malware.</p>
-<p>Software options for signing on the XRP Ledger include:</p>
+<p>Software options for signing on the XAG Ledger include:</p>
 <ul>
 <li><a href="install-rippled.html">Install <code>rippled</code></a> from a package (<code>.deb</code> or <code>.rpm</code> depending on which Linux distribution you use) file, then <a href="rippled-server-modes.html">run it in stand-alone mode</a>.</li>
 <li>Install <a href="rippleapi-reference.html">ripple-lib</a> and its dependencies offline. The Yarn package manager, for example, has <a class="external-link" href="https://yarnpkg.com/blog/2016/11/24/offline-mirror/" target="_blank">recommended instructions for offline usage <i aria-hidden="true" class="fa fa-external-link"></i></a>.</li>
@@ -195,14 +159,14 @@ Loading: "/etc/opt/ripple/rippled.cfg"
 </div>
 <p>Take note of the following values:</p>
 <ul>
-<li><strong><code>account_id</code></strong>. This is the address associated with the key pair, which will become your <strong><a href="accounts.html">account</a> address</strong> in the XRP Ledger after you fund it with XRP (later in this process). It is safe to share your <code>account_id</code> publicly.</li>
+<li><strong><code>account_id</code></strong>. This is the address associated with the key pair, which will become your <strong><a href="accounts.html">account</a> address</strong> in the XAG Ledger after you fund it with XAG (later in this process). It is safe to share your <code>account_id</code> publicly.</li>
 <li><strong><code>master_seed</code></strong>. This is the secret seed value for the keypair, which you'll use to sign transactions from the account. For best security, encrypt this value before writing it to disk on the offline machine. As an encryption key, use a secure passphrase that human operators can memorize or write down somewhere physically secure, such as a <a class="external-link" href="http://world.std.com/~reinhold/diceware.html" target="_blank">diceware passphrase <i aria-hidden="true" class="fa fa-external-link"></i></a> created with properly weighted dice. You may also want to use a physical security key as a second factor. The extent of the precautions to take at this stage is up to you.</li>
 <li><strong><code>key_type</code></strong>. This is the cryptographic algorithm used for this key pair. You need to know what type of key pair you have in order to sign valid transactions. The default is <code>secp256k1</code>.</li>
 </ul>
 <p><strong>Do not</strong> share the <code>master_key</code>, <code>master_seed</code>, or <code>master_seed_hex</code> values anywhere. Any of these can be used to reconstruct the private key associated with this address.</p>
 <h3 id="3-fund-the-new-address">3. Fund the new address</h3>
-<p>From an online machine, send enough XRP to the <strong>account address</strong> you noted in step 1. For more information, see <a href="accounts.html#creating-accounts">Creating Accounts</a>.</p>
-<p class="devportal-callout tip"><strong>Tip:</strong> For testing purposes, you can use the <a href="xrp-testnet-faucet.html">Testnet Faucet</a> to get a new account with Test XRP, then use that account to fund the address you generated offline.</p>
+<p>From an online machine, send enough XAG to the <strong>account address</strong> you noted in step 1. For more information, see <a href="accounts.html#creating-accounts">Creating Accounts</a>.</p>
+<p class="devportal-callout tip"><strong>Tip:</strong> For testing purposes, you can use the <a href="XAG-testnet-faucet.html">Testnet Faucet</a> to get a new account with Test XAG, then use that account to fund the address you generated offline.</p>
 <h3 id="4-confirm-account-details">4. Confirm account details</h3>
 <p>When the transaction from the previous step is validated by consensus, your account has been created. From the online machine, you can confirm the status of the account with the <a href="account_info.html">account_info method</a>. Make sure the response contains <code>"validated": true</code> to confirm that this result is final.</p>
 <p>Take note of the sequence number of the account, in the <code>Sequence</code> field of the result's <code>account_data</code>. You need to know the sequence number to sign transactions from the account in future steps.</p>
@@ -235,7 +199,7 @@ Loading: "/etc/opt/ripple/rippled.cfg"
 </div>
 <h3 id="5-enter-the-sequence-number-on-the-offline-machine">5. Enter the sequence number on the offline machine.</h3>
 <p>Save the account's starting sequence number on the offline machine. Whenever you prepare a transaction using the offline machine, use the saved sequence number, then increase the sequence number by 1 and save the new value.</p>
-<p>You can prepare several transactions in advance this way, then transfer the signed transactions to the online machine all at once and submit them. As long as each transaction is validly formed and pays a sufficient <a href="transaction-cost.html">transaction cost</a>, the XRP Ledger network should eventually include those transactions in validated ledgers, keeping the account's sequence number in the shared XRP Ledger in sync with the "current" sequence number you are tracking on the offline machine. (Most transactions get a final, validated result within 15 seconds or less after being submitted to the network.)</p>
+<p>You can prepare several transactions in advance this way, then transfer the signed transactions to the online machine all at once and submit them. As long as each transaction is validly formed and pays a sufficient <a href="transaction-cost.html">transaction cost</a>, the XAG Ledger network should eventually include those transactions in validated ledgers, keeping the account's sequence number in the shared XAG Ledger in sync with the "current" sequence number you are tracking on the offline machine. (Most transactions get a final, validated result within 15 seconds or less after being submitted to the network.)</p>
 <p>Optionally, save the current ledger index to the offline machine. You can use this value to choose an appropriate <code>LastLedgerSequence</code> value for upcoming transactions.</p>
 <h3 id="6-sign-initial-setup-transactions-if-any">6. Sign initial setup transactions, if any.</h3>
 <p>On the offline machine, prepare and sign transactions for configuring your account. The details depend on how you intend to use your account. Some examples of things you might want to do include:</p>
@@ -244,10 +208,10 @@ Loading: "/etc/opt/ripple/rippled.cfg"
 <li><a href="require-destination-tags.html">Require destination tags</a> so that users can't send you payments without tagging the reason they sent it or the customer it's intended for.</li>
 <li><a href="set-up-multi-signing.html">Set Up Multi-Signing</a> for a higher bar of account security.</li>
 <li><a href="depositauth.html">Enable DepositAuth</a> so you can only receive payments you've explicitly accepted or from parties you've pre-approved.</li>
-<li><a href="become-an-xrp-ledger-gateway.html#enabling-requireauth">Enable RequireAuth</a> so that users can't open <a href="trust-lines-and-issuing.html">trust lines</a> to you without your permission. If you don't plan to use the XRP Ledger's decentralized exchange or issued currency features, you may want to do this as a precaution.</li>
-<li>Issued currency <a href="become-an-xrp-ledger-gateway.html">Gateways</a> may have additional setup, such as:<ul>
-<li><a href="become-an-xrp-ledger-gateway.html#transferrate">Set a TransferRate</a> for users transferring your issued currencies.</li>
-<li><a href="become-an-xrp-ledger-gateway.html#disallowxrp">Disallow XRP payments</a> if you plan to use this address for issued currencies only.</li>
+<li><a href="become-an-XAG-ledger-gateway.html#enabling-requireauth">Enable RequireAuth</a> so that users can't open <a href="trust-lines-and-issuing.html">trust lines</a> to you without your permission. If you don't plan to use the XAG Ledger's decentralized exchange or issued currency features, you may want to do this as a precaution.</li>
+<li>Issued currency <a href="become-an-XAG-ledger-gateway.html">Gateways</a> may have additional setup, such as:<ul>
+<li><a href="become-an-XAG-ledger-gateway.html#transferrate">Set a TransferRate</a> for users transferring your issued currencies.</li>
+<li><a href="become-an-XAG-ledger-gateway.html#disallowXAG">Disallow XAG payments</a> if you plan to use this address for issued currencies only.</li>
 </ul>
 </li>
 </ul>
@@ -371,10 +335,10 @@ Loading: "/etc/opt/ripple/rippled.cfg"
 }
 </code></pre></div>
 </div>
-<p>You may also find it useful to check the <a href="account_info.html">account_info</a> of the sending account after all transactions have processed. Note the account's current sequence number (<code>Sequence</code> field) and, optionally, XRP balance.</p>
+<p>You may also find it useful to check the <a href="account_info.html">account_info</a> of the sending account after all transactions have processed. Note the account's current sequence number (<code>Sequence</code> field) and, optionally, XAG balance.</p>
 <p>For any transactions that failed, you should decide what to do:</p>
 <ul>
-<li>If the transaction failed with a <code>tefMAX_LEDGER</code> code, you may need to specify a higher <a href="transaction-cost.html">transaction cost</a> to get the transaction processed. (This likely indicates that the XRP Ledger network is under load.) You may decide to replace the transaction with a new version that pays a higher cost and has a higher <code>LastLedgerSequence</code> parameter (if any).</li>
+<li>If the transaction failed with a <code>tefMAX_LEDGER</code> code, you may need to specify a higher <a href="transaction-cost.html">transaction cost</a> to get the transaction processed. (This likely indicates that the XAG Ledger network is under load.) You may decide to replace the transaction with a new version that pays a higher cost and has a higher <code>LastLedgerSequence</code> parameter (if any).</li>
 <li>If the transaction failed with any <a href="tem-codes.html"><code>tem</code>-class code</a>, you probably made a typo or another error in constructing the transaction. Double-check the transaction so that you can replace it with a validly-formed one.</li>
 <li>If the transaction failed with a <a href="tec-codes.html"><code>tec</code>-class code</a>, you should address it on a case-by-case basis depending on the exact reason it failed.</li>
 </ul>
@@ -384,32 +348,10 @@ Loading: "/etc/opt/ripple/rippled.cfg"
 <ul>
 <li>Updating the account's current <code>Sequence</code> number. If all transactions were included in validated ledgers (successfully or with <code>tec</code> codes), then the offline machine's saved sequence number should already be accurate. Otherwise, you may need to change the saved sequence number to match the <code>Sequence</code> value you noted in the previous step.</li>
 <li>Updating the current ledger index so that you can use appropriate <code>LastLedgerSequence</code> values in any new transactions. (You should always do this shortly before constructing any new transactions.)</li>
-<li><em>(Optional)</em> Updating your actual amount of XRP available, if you are tracking it in the offline machine.</li>
+<li><em>(Optional)</em> Updating your actual amount of XAG available, if you are tracking it in the offline machine.</li>
 </ul>
 <p>Then adjust and sign any replacement transactions for transactions that failed in the previous step. Repeat the previous steps for constructing transactions on the offline machine, transferring them, and submitting them from the online machine.</p>
-<h2 id="see-also">See Also</h2>
-<ul>
-<li><strong>Concepts:</strong><ul>
-<li><a href="accounts.html">Accounts</a></li>
-<li><a href="cryptographic-keys.html">Cryptographic Keys</a></li>
-</ul>
-</li>
-<li><strong>Tutorials:</strong><ul>
-<li><a href="set-up-secure-signing.html">Set Up Secure Signing</a></li>
-<li><a href="assign-a-regular-key-pair.html">Assign a Regular Key Pair</a></li>
-<li><a href="set-up-multi-signing.html">Set Up Multi-Signing</a></li>
-</ul>
-</li>
-<li><strong>References:</strong><ul>
-<li><a href="basic-data-types.html#account-sequence">Basic Data Types: Account Sequence</a></li>
-<li><a href="account_info.html">account_info method</a></li>
-<li><a href="sign.html">sign method</a></li>
-<li><a href="submit.html">submit method</a></li>
-<li><a href="tx.html">tx method</a></li>
-<li><a href="accountset.html">AccountSet transaction</a></li>
-</ul>
-</li>
-</ul>
+
 <!-- -->
 <!-- -->
 <!-- API object types -->
@@ -446,7 +388,7 @@ Loading: "/etc/opt/ripple/rippled.cfg"
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XRP Ledger APIs</a></li>
+                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XAG Ledger APIs</a></li>
                       <li><a class="nosubcat-page" href="set-up-secure-signing.html">Set Up Secure Signing</a></li>
                       <li><a class="nosubcat-page" href="get-started-with-rippleapi-for-javascript.html">Get Started with RippleAPI for JavaScript</a></li>
                       <li><a class="nosubcat-page" href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
@@ -463,15 +405,15 @@ Loading: "/etc/opt/ripple/rippled.cfg"
             <div class="card-header" role="tab" id="sidenav_cat_head_8">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_8" aria-expanded="true" aria-controls="sidenav_collapse_8"></a>
               <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Direct XRP Payments</a>
-                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XRP Payments</a> -->
+                  <a class="sidenav_cat_title" href="use-simple-XAG-payments.html">Use Direct XAG Payments</a>
+                <!-- <a class="sidenav_cat_title" href="use-simple-XAG-payments.html">Use Simple XAG Payments</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_8" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_8">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="send-xrp.html">Send XRP</a></li>
+                      <li><a class="nosubcat-page" href="send-XAG.html">Send XAG</a></li>
                       <li><a class="nosubcat-page" href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
 
                 </ul>
@@ -508,58 +450,24 @@ Loading: "/etc/opt/ripple/rippled.cfg"
           </div><!-- /.card -->
 
         <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_20">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_20" aria-expanded="true" aria-controls="sidenav_collapse_20"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="use-specialized-payment-types.html">Use Specialized Payment Types</a>
-                <!-- <a class="sidenav_cat_title" href="use-specialized-payment-types.html">Use Specialized Payment Types</a> -->
-              </h5>
-            </div><!-- /.card-header -->
-
-            <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="subcat-title" href="use-escrows.html">Use Escrows</a></li>
-
-                          <li><a class="subpage" href="send-a-time-held-escrow.html">Send a Time-Held Escrow</a></li>
-                          <li><a class="subpage" href="send-a-conditionally-held-escrow.html">Send a Conditionally-Held Escrow</a></li>
-                          <li><a class="subpage" href="cancel-an-expired-escrow.html">Cancel an Expired Escrow</a></li>
-                          <li><a class="subpage" href="look-up-escrows.html">Look up escrows</a></li>
-
-                      <li><a class="nosubcat-page" href="use-payment-channels.html">Use Payment Channels</a></li>
-                      <li><a class="subcat-title" href="use-checks.html">Use Checks</a></li>
-
-                          <li><a class="subpage" href="send-a-check.html">Send a Check</a></li>
-                          <li><a class="subpage" href="cash-a-check-for-an-exact-amount.html">Cash a Check for an Exact Amount</a></li>
-                          <li><a class="subpage" href="cash-a-check-for-a-flexible-amount.html">Cash a Check for a Flexible Amount</a></li>
-                          <li><a class="subpage" href="cancel-a-check.html">Cancel a Check</a></li>
-                          <li><a class="subpage" href="look-up-checks-by-sender.html">Look Up Checks by Sender</a></li>
-                          <li><a class="subpage" href="look-up-checks-by-recipient.html">Look Up Checks by Recipient</a></li>
-
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse20 -->
-
-          </div><!-- /.card -->
+ 
 
         <!---->
           <div class="card">
             <div class="card-header" role="tab" id="sidenav_cat_head_35">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_35" aria-expanded="true" aria-controls="sidenav_collapse_35"></a>
               <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a>
-                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a> -->
+                  <a class="sidenav_cat_title" href="XAG-ledger-businesses.html">XAG Ledger Businesses</a>
+                <!-- <a class="sidenav_cat_title" href="XAG-ledger-businesses.html">XAG Ledger Businesses</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_35" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_35">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XRP as an Exchange</a></li>
-                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XRP Charts</a></li>
-                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XRP Ledger Gateway</a></li>
+                      <li><a class="nosubcat-page" href="list-XAG-as-an-exchange.html">List XAG as an Exchange</a></li>
+                      <li><a class="nosubcat-page" href="list-your-exchange-on-XAG-charts.html">List Your Exchange on XAG Charts</a></li>
+                      <li><a class="nosubcat-page" href="become-an-XAG-ledger-gateway.html">Become an XAG Ledger Gateway</a></li>
 
                 </ul>
               </div><!-- /.card-body -->
@@ -568,205 +476,13 @@ Loading: "/etc/opt/ripple/rippled.cfg"
           </div><!-- /.card -->
 
         <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_39">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_39" aria-expanded="true" aria-controls="sidenav_collapse_39"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="manage-the-rippled-server.html">Manage the rippled Server</a>
-                <!-- <a class="sidenav_cat_title" href="manage-the-rippled-server.html">Manage the rippled Server</a> -->
-              </h5>
-            </div><!-- /.card-header -->
 
-            <div id="sidenav_collapse_39" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_39">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="subcat-title" href="install-rippled.html">Install rippled</a></li>
-
-                          <li><a class="subpage" href="system-requirements.html">System Requirements</a></li>
-                          <li><a class="subpage" href="install-rippled-on-centos-rhel-with-yum.html">Install on CentOS/Red Hat with yum</a></li>
-                          <li><a class="subpage" href="install-rippled-on-ubuntu.html">Install on Ubuntu or Debian Linux</a></li>
-                          <li><a class="subpage" href="update-rippled-automatically-on-linux.html">Update Automatically on Linux</a></li>
-                          <li><a class="subpage" href="update-rippled-manually-on-centos-rhel.html">Update Manually on CentOS/Red Hat</a></li>
-                          <li><a class="subpage" href="update-rippled-manually-on-ubuntu.html">Update Manually on Ubuntu or Debian</a></li>
-                          <li><a class="subpage" href="build-run-rippled-ubuntu.html">Build and Run rippled on Ubuntu</a></li>
-                          <li><a class="subpage" href="build-run-rippled-macos.html">Build and Run rippled on macOS</a></li>
-                          <li><a class="subpage" href="capacity-planning.html">Capacity Planning</a></li>
-                          <li><a class="subpage" href="rippled-1-3-migration-instructions.html">rippled v1.3.x Migration Instructions</a></li>
-
-                      <li><a class="subcat-title" href="configure-rippled.html">Configure rippled</a></li>
-
-                          <li><a class="subpage" href="run-rippled-as-a-validator.html">Run rippled as a Validator</a></li>
-                          <li><a class="subpage" href="run-rippled-as-a-wallet-server.html">Run rippled as a Wallet Server</a></li>
-                          <li><a class="subpage" href="configure-statsd.html">Configure StatsD</a></li>
-                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XRPL Altnet</a></li>
-                          <li><a class="subpage" href="configure-online-deletion.html">Configure Online Deletion</a></li>
-                          <li><a class="subpage" href="configure-advisory-deletion.html">Configure Advisory Deletion</a></li>
-                          <li><a class="subpage" href="configure-history-sharding.html">Configure History Sharding</a></li>
-                          <li><a class="subpage" href="configure-full-history.html">Configure Full History</a></li>
-                          <li><a class="subpage" href="configure-grpc.html">Configure gRPC</a></li>
-                          <li><a class="subpage" href="enable-public-signing.html">Enable Public Signing</a></li>
-
-                      <li><a class="subcat-title" href="configure-peering.html">Configure Peering</a></li>
-
-                          <li><a class="subpage" href="cluster-rippled-servers.html">Cluster rippled Servers</a></li>
-                          <li><a class="subpage" href="configure-a-private-server.html">Configure a Private Server</a></li>
-                          <li><a class="subpage" href="configure-the-peer-crawler.html">Configure the Peer Crawler</a></li>
-                          <li><a class="subpage" href="forward-ports-for-peering.html">Forward Ports for Peering</a></li>
-                          <li><a class="subpage" href="manually-connect-to-a-specific-peer.html">Manually Connect to a Specific Peer</a></li>
-                          <li><a class="subpage" href="set-max-number-of-peers.html">Set Maximum Number of Peers</a></li>
-                          <li><a class="subpage" href="use-a-peer-reservation.html">Use a Peer Reservation</a></li>
-
-                      <li><a class="subcat-title" href="use-stand-alone-mode.html">Test rippled Functionality in Stand-Alone Mode</a></li>
-
-                          <li><a class="subpage" href="start-a-new-genesis-ledger-in-stand-alone-mode.html">Start a New Genesis Ledger in Stand-Alone Mode</a></li>
-                          <li><a class="subpage" href="load-a-saved-ledger-in-stand-alone-mode.html">Load a Saved Ledger in Stand-Alone Mode</a></li>
-                          <li><a class="subpage" href="advance-the-ledger-in-stand-alone-mode.html">Advance the Ledger in Stand-Alone Mode</a></li>
-
-                      <li><a class="subcat-title" href="troubleshoot-the-rippled-server.html">Troubleshooting rippled</a></li>
-
-                          <li><a class="subpage" href="diagnosing-problems.html">Diagnosing Problems with rippled</a></li>
-                          <li><a class="subpage" href="understanding-log-messages.html">Understanding Log Messages</a></li>
-                          <li><a class="subpage" href="server-doesnt-sync.html">rippled Server Doesn't Sync</a></li>
-                          <li><a class="subpage" href="server-wont-start.html">rippled Server Won't Start</a></li>
-                          <li><a class="subpage" href="fix-sqlite-tx-db-page-size-issue.html">Fix SQLite Transaction Database Page Size Issue</a></li>
-
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse39 -->
-
-          </div><!-- /.card -->
 
     </div><!-- /#sidenav -->
 </div><!-- /.tree_nav -->      </aside>
     </div><!--/.row (main layout)-->
   </div>
 
-<footer class="xrpl-footer" role="contentinfo">
-  <section class="container-fluid card-grid card-grid-Nx1">
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
-  </section>
-
-  <section class="container-fluid p-5 pl-sm-0">
-
-    <nav role="navigation" class="d-flex mb-3 language-selector">
-      <img class="language_selector_icon" src="assets/img/icon-language-selector.svg" width="32" height="40" alt="language selection icon" />
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="/offline-account-setup.html"><i class="fa fa-check-circle"></i> English</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/ja/offline-account-setup.html">日本語</a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
-      <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
-    </div><!-- /.absolute_bottom_footer -->
-
-  </section>
-</footer>
 
 <!-- Jump to top button -->
 <a href="#main_content_wrapper" class="jump-to-top btn btn-primary btn-lg" role="button" title="Jump to top of page">Top</a>
@@ -782,7 +498,7 @@ Loading: "/etc/opt/ripple/rippled.cfg"
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script type="text/javascript"> docsearch({
 apiKey: '70de5b9b8ef95460f3c6e04054b325b2',
-indexName: 'xrpl',
+indexName: 'XAGl',
 inputSelector: '#topsearchbar',
 algoliaOptions: { 'facetFilters': ["lang:en"] },
 debug: false

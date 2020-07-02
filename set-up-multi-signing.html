@@ -32,7 +32,7 @@
       gtag('config', 'UA-45576805-2');
       gtag('config', 'UA-157720658-3', { 'linker': {
         'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
+                    'XAGl.org', 'explorer.XAGl.org', 'testnet.XAGl.org']
         } }
       );
     </script>
@@ -60,7 +60,7 @@
 
 </head>
 
-<body class="xrp-ledger-dev-portal sidebar-primary lang-en ">
+<body class="XAG-ledger-dev-portal sidebar-primary lang-en ">
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
     <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" class="logo"  height="44" alt="XAG Ledger Dev Portal" /></a>
@@ -83,7 +83,7 @@
         </li>
       </ul><!-- /.navbar-nav -->
 <div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/tutorials/manage-account-settings/set-up-multi-signing.md" target="_blank" class="github-edit">Edit</a>
+    <a href="https://github.com/ripple/XAGl-dev-portal/edit/master/content/tutorials/manage-account-settings/set-up-multi-signing.md" target="_blank" class="github-edit">Edit</a>
 </div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
         <div class="form-inline">
           <label class="sr-only" for="topsearchbar">Search site...</label>
@@ -142,35 +142,35 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="set-up-multi-signing">Set Up Multi-Signing</h1>
-<p><a href="multi-signing.html">Multi-signing</a> is one of three ways to authorize <a href="transaction-basics.html">transactions</a> for the XRP Ledger, alongside signing with <a href="cryptographic-keys.html">regular keys and master keys</a>. You can configure your <a href="accounts.html">address</a> to allow any combination of the three methods to authorize transactions.</p>
+<p><a href="multi-signing.html">Multi-signing</a> is one of three ways to authorize <a href="transaction-basics.html">transactions</a> for the XAG Ledger, alongside signing with <a href="cryptographic-keys.html">regular keys and master keys</a>. You can configure your <a href="accounts.html">address</a> to allow any combination of the three methods to authorize transactions.</p>
 <p>This tutorial demonstrates how to enable multi-signing for an address.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>
-<p>You must have a funded XRP Ledger <a href="accounts.html">address</a> with enough spare XRP to send transactions and meet the <a href="reserves.html">reserve requirement</a> of a new signer list.</p>
+<p>You must have a funded XAG Ledger <a href="accounts.html">address</a> with enough spare XAG to send transactions and meet the <a href="reserves.html">reserve requirement</a> of a new signer list.</p>
 <ul>
 <li>
-<p>With the <a href="known-amendments.html#multisignreserve">MultiSignReserve amendment</a> enabled, multi-signing requires 5 XRP for the account reserve, regardless of the number of signers and signatures you use. (The MultiSignReserve amendment has been enabled in the production XRP Ledger since <strong>2019-04-07</strong>.)</p>
+<p>With the <a href="known-amendments.html#multisignreserve">MultiSignReserve amendment</a> enabled, multi-signing requires 5 XAG for the account reserve, regardless of the number of signers and signatures you use. (The MultiSignReserve amendment has been enabled in the production XAG Ledger since <strong>2019-04-07</strong>.)</p>
 </li>
 <li>
-<p>If you are on a test network that does not have the <a href="known-amendments.html#multisignreserve">MultiSignReserve amendment</a> enabled, multi-signing requires more than the usual amount of XRP for the <a href="reserves.html">account reserve</a>, increasing with the number of signers in the list.</p>
+<p>If you are on a test network that does not have the <a href="known-amendments.html#multisignreserve">MultiSignReserve amendment</a> enabled, multi-signing requires more than the usual amount of XAG for the <a href="reserves.html">account reserve</a>, increasing with the number of signers in the list.</p>
 </li>
 </ul>
 </li>
 <li>
-<p>You must have access to a tool that can generate key pairs in the XRP Ledger format. If you are using a <code>rippled</code> server for this, you must have admin access because the <a href="wallet_propose.html">wallet_propose method</a> is admin-only.</p>
+<p>You must have access to a tool that can generate key pairs in the XAG Ledger format. If you are using a <code>rippled</code> server for this, you must have admin access because the <a href="wallet_propose.html">wallet_propose method</a> is admin-only.</p>
 <ul>
-<li>Alternatively, if you are authorizing others who already have XRP Ledger addresses to be signers for your address, you only need to know the account addresses of those people or entities.</li>
+<li>Alternatively, if you are authorizing others who already have XAG Ledger addresses to be signers for your address, you only need to know the account addresses of those people or entities.</li>
 </ul>
 </li>
 <li>
-<p>Multi-signing must be available. (The MultiSign amendment has been enabled in the production XRP Ledger since <strong>2016-06-27</strong>.)</p>
+<p>Multi-signing must be available. (The MultiSign amendment has been enabled in the production XAG Ledger since <strong>2016-06-27</strong>.)</p>
 </li>
 </ul>
 <h2 id="1-design-your-configuration">1. Design Your Configuration</h2>
 <p>Decide how many signers you want to include (up to 8). Choose a quorum number for your signer list and weights for your signers based on how many signatures you want to require for a given transaction. For a straightforward "M-of-N" signing setup, assign each signer weight <strong><code>1</code></strong> and set your list's quorum to be "M", the number of signatures to require.</p>
 <h2 id="2-prepare-member-keys">2. Prepare member keys</h2>
-<p>You need one or more validly-formed XRP Ledger addresses to include as members of  your signer list. You or your chosen signers must know the secret keys associated with these addresses. The addresses can be funded accounts that exist in the ledger, but they do not need to be.</p>
+<p>You need one or more validly-formed XAG Ledger addresses to include as members of  your signer list. You or your chosen signers must know the secret keys associated with these addresses. The addresses can be funded accounts that exist in the ledger, but they do not need to be.</p>
 <p>You can generate new addresses using the <a href="wallet_propose.html">wallet_propose method</a>. For example:</p>
 <pre><code>$ rippled wallet_propose
 Loading: "/etc/opt/ripple/rippled.cfg"
@@ -188,9 +188,9 @@ Connecting to 127.0.0.1:5005
     }
 }
 </code></pre>
-<p>Take note of the <code>account_id</code> (XRP Ledger Address) and <code>master_seed</code> (secret key) for each one you generate.</p>
+<p>Take note of the <code>account_id</code> (XAG Ledger Address) and <code>master_seed</code> (secret key) for each one you generate.</p>
 <h2 id="3-send-signerlistset-transaction">3. Send SignerListSet transaction</h2>
-<p><a href="transaction-basics.html#signing-and-submitting-transactions">Sign and submit</a> a <a href="signerlistset.html">SignerListSet transaction</a> in the normal (single-signature) way. This associates a SignerList with your XRP Ledger address, so that a combination of signatures from the members of that SignerList can multi-sign later transactions on your behalf.</p>
+<p><a href="transaction-basics.html#signing-and-submitting-transactions">Sign and submit</a> a <a href="signerlistset.html">SignerListSet transaction</a> in the normal (single-signature) way. This associates a SignerList with your XAG Ledger address, so that a combination of signatures from the members of that SignerList can multi-sign later transactions on your behalf.</p>
 <p>In this example, the SignerList has 3 members, with the weights and quorum set up such that multi-signed transactions need a signature from rsA2LpzuawewSBQXkiju3YQTMzW13pAAdW plus at least one signature from the other two members of the list.</p>
 <p class="devportal-callout caution"><strong>Caution:</strong> Never submit a secret key to a server you do not control. Do not send a secret key unencrypted over the network.
 <!-- --></p>
@@ -265,7 +265,7 @@ Connecting to 127.0.0.1:5005
 }
 </code></pre>
 <p>Make sure that the <a href="transaction-results.html">Transaction Result</a> is <a href="tes-success.html"><strong>tesSUCCESS</strong></a>. Otherwise, the transaction failed. If you have a problem in stand-alone mode or a non-production network, check that <a href="start-a-new-genesis-ledger-in-stand-alone-mode.html#settings-in-new-genesis-ledgers">multi-sign is enabled</a>.</p>
-<p class="devportal-callout note"><strong>Note:</strong> Without the <a href="known-amendments.html#multisignreserve">MultiSignReserve amendment</a>, the more members in the SignerList, the more XRP your address must have for purposes of the <a href="reserves.html#owner-reserves">owner reserve</a>. If your address does not have enough XRP, the transaction fails with <a href="tec-codes.html">tecINSUFFICIENT_RESERVE</a>. With the <a href="known-amendments.html#multisignreserve">MultiSignReserve amendment</a> enabled, the XRP your address must have for purposes of the <a href="reserves.html#owner-reserves">owner reserve</a> is 5 XRP, regardless of the number of members in the SignerList. See also: <a href="signerlist.html#signerlists-and-reserves">SignerLists and Reserves</a>.</p>
+<p class="devportal-callout note"><strong>Note:</strong> Without the <a href="known-amendments.html#multisignreserve">MultiSignReserve amendment</a>, the more members in the SignerList, the more XAG your address must have for purposes of the <a href="reserves.html#owner-reserves">owner reserve</a>. If your address does not have enough XAG, the transaction fails with <a href="tec-codes.html">tecINSUFFICIENT_RESERVE</a>. With the <a href="known-amendments.html#multisignreserve">MultiSignReserve amendment</a> enabled, the XAG your address must have for purposes of the <a href="reserves.html#owner-reserves">owner reserve</a> is 5 XAG, regardless of the number of members in the SignerList. See also: <a href="signerlist.html#signerlists-and-reserves">SignerLists and Reserves</a>.</p>
 <h2 id="4-wait-for-validation">4. Wait for validation</h2>
 <p>On the live network or the Ripple Test Net, you can wait 4-7 seconds for the ledger to close automatically.</p>
 <p>If you're running <code>rippled</code> in stand-alone mode, use the <a href="ledger_accept.html">ledger_accept method</a> to manually close the ledger. <!--#{ fix md highlighting_ #}--></p>
@@ -384,7 +384,7 @@ Connecting to 127.0.0.1:5005
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XRP Ledger APIs</a></li>
+                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XAG Ledger APIs</a></li>
                       <li><a class="nosubcat-page" href="set-up-secure-signing.html">Set Up Secure Signing</a></li>
                       <li><a class="nosubcat-page" href="get-started-with-rippleapi-for-javascript.html">Get Started with RippleAPI for JavaScript</a></li>
                       <li><a class="nosubcat-page" href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
@@ -401,15 +401,15 @@ Connecting to 127.0.0.1:5005
             <div class="card-header" role="tab" id="sidenav_cat_head_8">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_8" aria-expanded="true" aria-controls="sidenav_collapse_8"></a>
               <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Direct XRP Payments</a>
-                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XRP Payments</a> -->
+                  <a class="sidenav_cat_title" href="use-simple-XAG-payments.html">Use Direct XAG Payments</a>
+                <!-- <a class="sidenav_cat_title" href="use-simple-XAG-payments.html">Use Simple XAG Payments</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_8" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_8">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="send-xrp.html">Send XRP</a></li>
+                      <li><a class="nosubcat-page" href="send-XAG.html">Send XAG</a></li>
                       <li><a class="nosubcat-page" href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
 
                 </ul>
@@ -445,59 +445,24 @@ Connecting to 127.0.0.1:5005
 
           </div><!-- /.card -->
 
-        <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_20">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_20" aria-expanded="true" aria-controls="sidenav_collapse_20"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="use-specialized-payment-types.html">Use Specialized Payment Types</a>
-                <!-- <a class="sidenav_cat_title" href="use-specialized-payment-types.html">Use Specialized Payment Types</a> -->
-              </h5>
-            </div><!-- /.card-header -->
-
-            <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="subcat-title" href="use-escrows.html">Use Escrows</a></li>
-
-                          <li><a class="subpage" href="send-a-time-held-escrow.html">Send a Time-Held Escrow</a></li>
-                          <li><a class="subpage" href="send-a-conditionally-held-escrow.html">Send a Conditionally-Held Escrow</a></li>
-                          <li><a class="subpage" href="cancel-an-expired-escrow.html">Cancel an Expired Escrow</a></li>
-                          <li><a class="subpage" href="look-up-escrows.html">Look up escrows</a></li>
-
-                      <li><a class="nosubcat-page" href="use-payment-channels.html">Use Payment Channels</a></li>
-                      <li><a class="subcat-title" href="use-checks.html">Use Checks</a></li>
-
-                          <li><a class="subpage" href="send-a-check.html">Send a Check</a></li>
-                          <li><a class="subpage" href="cash-a-check-for-an-exact-amount.html">Cash a Check for an Exact Amount</a></li>
-                          <li><a class="subpage" href="cash-a-check-for-a-flexible-amount.html">Cash a Check for a Flexible Amount</a></li>
-                          <li><a class="subpage" href="cancel-a-check.html">Cancel a Check</a></li>
-                          <li><a class="subpage" href="look-up-checks-by-sender.html">Look Up Checks by Sender</a></li>
-                          <li><a class="subpage" href="look-up-checks-by-recipient.html">Look Up Checks by Recipient</a></li>
-
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse20 -->
-
-          </div><!-- /.card -->
+      
 
         <!---->
           <div class="card">
             <div class="card-header" role="tab" id="sidenav_cat_head_35">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_35" aria-expanded="true" aria-controls="sidenav_collapse_35"></a>
               <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a>
-                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a> -->
+                  <a class="sidenav_cat_title" href="XAG-ledger-businesses.html">XAG Ledger Businesses</a>
+                <!-- <a class="sidenav_cat_title" href="XAG-ledger-businesses.html">XAG Ledger Businesses</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_35" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_35">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XRP as an Exchange</a></li>
-                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XRP Charts</a></li>
-                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XRP Ledger Gateway</a></li>
+                      <li><a class="nosubcat-page" href="list-XAG-as-an-exchange.html">List XAG as an Exchange</a></li>
+                      <li><a class="nosubcat-page" href="list-your-exchange-on-XAG-charts.html">List Your Exchange on XAG Charts</a></li>
+                      <li><a class="nosubcat-page" href="become-an-XAG-ledger-gateway.html">Become an XAG Ledger Gateway</a></li>
 
                 </ul>
               </div><!-- /.card-body -->
@@ -505,82 +470,14 @@ Connecting to 127.0.0.1:5005
 
           </div><!-- /.card -->
 
-        <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_39">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_39" aria-expanded="true" aria-controls="sidenav_collapse_39"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="manage-the-rippled-server.html">Manage the rippled Server</a>
-                <!-- <a class="sidenav_cat_title" href="manage-the-rippled-server.html">Manage the rippled Server</a> -->
-              </h5>
-            </div><!-- /.card-header -->
 
-            <div id="sidenav_collapse_39" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_39">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="subcat-title" href="install-rippled.html">Install rippled</a></li>
-
-                          <li><a class="subpage" href="system-requirements.html">System Requirements</a></li>
-                          <li><a class="subpage" href="install-rippled-on-centos-rhel-with-yum.html">Install on CentOS/Red Hat with yum</a></li>
-                          <li><a class="subpage" href="install-rippled-on-ubuntu.html">Install on Ubuntu or Debian Linux</a></li>
-                          <li><a class="subpage" href="update-rippled-automatically-on-linux.html">Update Automatically on Linux</a></li>
-                          <li><a class="subpage" href="update-rippled-manually-on-centos-rhel.html">Update Manually on CentOS/Red Hat</a></li>
-                          <li><a class="subpage" href="update-rippled-manually-on-ubuntu.html">Update Manually on Ubuntu or Debian</a></li>
-                          <li><a class="subpage" href="build-run-rippled-ubuntu.html">Build and Run rippled on Ubuntu</a></li>
-                          <li><a class="subpage" href="build-run-rippled-macos.html">Build and Run rippled on macOS</a></li>
-                          <li><a class="subpage" href="capacity-planning.html">Capacity Planning</a></li>
-                          <li><a class="subpage" href="rippled-1-3-migration-instructions.html">rippled v1.3.x Migration Instructions</a></li>
-
-                      <li><a class="subcat-title" href="configure-rippled.html">Configure rippled</a></li>
-
-                          <li><a class="subpage" href="run-rippled-as-a-validator.html">Run rippled as a Validator</a></li>
-                          <li><a class="subpage" href="run-rippled-as-a-wallet-server.html">Run rippled as a Wallet Server</a></li>
-                          <li><a class="subpage" href="configure-statsd.html">Configure StatsD</a></li>
-                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XRPL Altnet</a></li>
-                          <li><a class="subpage" href="configure-online-deletion.html">Configure Online Deletion</a></li>
-                          <li><a class="subpage" href="configure-advisory-deletion.html">Configure Advisory Deletion</a></li>
-                          <li><a class="subpage" href="configure-history-sharding.html">Configure History Sharding</a></li>
-                          <li><a class="subpage" href="configure-full-history.html">Configure Full History</a></li>
-                          <li><a class="subpage" href="configure-grpc.html">Configure gRPC</a></li>
-                          <li><a class="subpage" href="enable-public-signing.html">Enable Public Signing</a></li>
-
-                      <li><a class="subcat-title" href="configure-peering.html">Configure Peering</a></li>
-
-                          <li><a class="subpage" href="cluster-rippled-servers.html">Cluster rippled Servers</a></li>
-                          <li><a class="subpage" href="configure-a-private-server.html">Configure a Private Server</a></li>
-                          <li><a class="subpage" href="configure-the-peer-crawler.html">Configure the Peer Crawler</a></li>
-                          <li><a class="subpage" href="forward-ports-for-peering.html">Forward Ports for Peering</a></li>
-                          <li><a class="subpage" href="manually-connect-to-a-specific-peer.html">Manually Connect to a Specific Peer</a></li>
-                          <li><a class="subpage" href="set-max-number-of-peers.html">Set Maximum Number of Peers</a></li>
-                          <li><a class="subpage" href="use-a-peer-reservation.html">Use a Peer Reservation</a></li>
-
-                      <li><a class="subcat-title" href="use-stand-alone-mode.html">Test rippled Functionality in Stand-Alone Mode</a></li>
-
-                          <li><a class="subpage" href="start-a-new-genesis-ledger-in-stand-alone-mode.html">Start a New Genesis Ledger in Stand-Alone Mode</a></li>
-                          <li><a class="subpage" href="load-a-saved-ledger-in-stand-alone-mode.html">Load a Saved Ledger in Stand-Alone Mode</a></li>
-                          <li><a class="subpage" href="advance-the-ledger-in-stand-alone-mode.html">Advance the Ledger in Stand-Alone Mode</a></li>
-
-                      <li><a class="subcat-title" href="troubleshoot-the-rippled-server.html">Troubleshooting rippled</a></li>
-
-                          <li><a class="subpage" href="diagnosing-problems.html">Diagnosing Problems with rippled</a></li>
-                          <li><a class="subpage" href="understanding-log-messages.html">Understanding Log Messages</a></li>
-                          <li><a class="subpage" href="server-doesnt-sync.html">rippled Server Doesn't Sync</a></li>
-                          <li><a class="subpage" href="server-wont-start.html">rippled Server Won't Start</a></li>
-                          <li><a class="subpage" href="fix-sqlite-tx-db-page-size-issue.html">Fix SQLite Transaction Database Page Size Issue</a></li>
-
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse39 -->
-
-          </div><!-- /.card -->
 
     </div><!-- /#sidenav -->
 </div><!-- /.tree_nav -->      </aside>
     </div><!--/.row (main layout)-->
   </div>
 
-<footer class="xrpl-footer" role="contentinfo">
+<footer class="XAGl-footer" role="contentinfo">
   <section class="container-fluid card-grid card-grid-Nx1">
 
         <div class="card">
@@ -618,7 +515,7 @@ Connecting to 127.0.0.1:5005
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-XAG-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 
@@ -646,20 +543,20 @@ Connecting to 127.0.0.1:5005
 
 <div class="children-display">
   <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
+            <li class="level-1"><a href="XAG-ledger-rpc-tool.html">RPC Tool</a></li>
 
         <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
 
         <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
 
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
+        <li class="level-1"><a href="XAG-ledger-toml-checker.html">XAG-ledger.toml Checker</a></li>
 
         <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
 
 
 
 
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
+  <li class="level-1"><a target="_blank" href="https://livenet.XAGl.org/">XAG Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
 
   </ul>
 </div>          </div><!--/.card-body-->
@@ -676,7 +573,7 @@ Connecting to 127.0.0.1:5005
               <ul>
                 <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
                 <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
+                <li class="level-1"><a href="https://ripple.com/collateral/#XAG" target="_blank">XAG Resources <i class="fa fa-external-link"></i></a></li>
               </ul>
             </div>
           </div><!--/.card-body-->
@@ -699,7 +596,7 @@ Connecting to 127.0.0.1:5005
     </nav>
 
     <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
+      <span>&copy; XAG Ledger Project 2019</span>
       <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
     </div><!-- /.absolute_bottom_footer -->
 
@@ -720,7 +617,7 @@ Connecting to 127.0.0.1:5005
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script type="text/javascript"> docsearch({
 apiKey: '70de5b9b8ef95460f3c6e04054b325b2',
-indexName: 'xrpl',
+indexName: 'XAGl',
 inputSelector: '#topsearchbar',
 algoliaOptions: { 'facetFilters': ["lang:en"] },
 debug: false
