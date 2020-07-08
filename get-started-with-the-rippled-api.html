@@ -115,7 +115,7 @@
 <p>The quickest way to dive into the API is with the <a href="websocket-api-tool.html"><strong>WebSocket API Tool</strong></a>, or use the <a class="external-link" href="https://livenet.xrpl.org/" target="_blank">XAG Ledger Explorer <i aria-hidden="true" class="fa fa-external-link"></i></a> to watch the progress of the ledger live.</p>
 <p>You can also <a href="install-rippled.html">run your own instance of <code>rippled</code></a> or use a <a href="#public-servers">public server</a>.</p>
 <h2 id="public-servers">Public Servers</h2>
-<p>Ripple provides several public servers for the benefit of the XRP Ledger community:</p>
+<p>Xrpgen provides several public servers for the benefit of the XAG Ledger community:</p>
 <table>
 <thead>
 <tr>
@@ -128,17 +128,17 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">Ripple</td>
+<td align="left">Xrpgen</td>
 <td align="left"><strong>Mainnet</strong></td>
-<td align="left"><code>https://s1.ripple.com:51234/</code></td>
-<td align="left"><code>wss://s1.ripple.com/</code></td>
+<td align="left"><code>https://g4.xrpgen.com:5005/</code></td>
+<td align="left"><code>wss://g4.xrpgen.com/</code></td>
 <td align="left">General purpose server cluster</td>
 </tr>
 <tr>
-<td align="left">Ripple</td>
+<td align="left">Xrpgen</td>
 <td align="left"><strong>Mainnet</strong></td>
-<td align="left"><code>https://s2.ripple.com:51234/</code></td>
-<td align="left"><code>wss://s2.ripple.com/</code></td>
+<td align="left"><code>https://g1.xrpgen.com:5005/</code></td>
+<td align="left"><code>wss://g1.xrpgen.com/</code></td>
 <td align="left"><a href="ledger-history.html#full-history">Full-history server</a> cluster</td>
 </tr>
 </tbody>
@@ -160,7 +160,7 @@
 <h2 id="json-rpc">JSON-RPC</h2>
 <p>You can use any HTTP client (like <a class="external-link" href="https://addons.mozilla.org/en-US/firefox/addon/rested/" target="_blank">RESTED for Firefox <i aria-hidden="true" class="fa fa-external-link"></i></a>, <a class="external-link" href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en" target="_blank">Postman for Chrome <i aria-hidden="true" class="fa fa-external-link"></i></a> or <a class="external-link" href="https://extendsclass.com/rest-client-online.html" target="_blank">Online HTTP client ExtendsClass <i aria-hidden="true" class="fa fa-external-link"></i></a>) to make JSON-RPC calls a <code>rippled</code> server. Most programming languages have a library for making HTTP requests built in.</p>
 <p>Example JSON-RPC request:</p>
-<pre><code class="json">POST http://s1.ripple.com:51234/
+<pre><code class="json">POST https://g1.xrpgen.com:5005/
 Content-Type: application/json
 
 {

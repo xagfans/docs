@@ -117,7 +117,6 @@
 <ul>
 <li><a href="#run-rippled-locally">Run <code>rippled</code> locally</a>, or <a href="#run-rippled-on-the-same-lan">in the same LAN</a>.</li>
 <li><a href="#use-a-client-library-with-local-signing">Use a client library</a> that can do local signing.</li>
-<li><a href="#use-a-dedicated-signing-device">Use a dedicated signing device</a> that supports XAG Ledger signatures.</li>
 <li><a href="#use-a-secure-vpn-with-a-remote-rippled-server">Use a secure VPN to connect to a remote <code>rippled</code> machine</a> you trust.</li>
 </ul>
 <!-- Source for all diagrams in this article: https://docs.google.com/presentation/d/1BfGyWgC0njoPiKUZz3gXHMVSUINE3Q-_lHqY_D0TGwg/ -->
@@ -195,10 +194,6 @@ console.log("tx_blob is:", signed.signedTransaction)
 console.log("tx hash is:", signed.id)
 </code></pre>
 <p>For greater security, you can load your secret keys from a management tool such as <a class="external-link" href="https://www.vaultproject.io/" target="_blank">Vault <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
-<h2 id="use-a-dedicated-signing-device">Use a Dedicated Signing Device</h2>
-<p><a href="img/secure-signing-dedicated-hardware.png"><img alt="Diagram of using dedicated signing hardware" src="img/secure-signing-dedicated-hardware.png"/></a></p>
-<p>Some companies sell dedicated signing devices, such as the <a class="external-link" href="https://www.ledger.com/products/ledger-nano-s" target="_blank">Ledger Nano S <i aria-hidden="true" class="fa fa-external-link"></i></a>, which are capable of signing XAG Ledger transactions using a secret key that never leaves the device. Some devices may not support all types of transactions.</p>
-<p>Setting up this configuration depends on the specific device. You may need to run a "manager" application on your machine to interact with the signing device. See the manufacturer's instructions for how to set up and use such a device.</p>
 <h2 id="use-a-secure-vpn-with-a-remote-rippled-server">Use a Secure VPN with a Remote rippled Server</h2>
 <p><a href="img/secure-signing-over-vpn.png"><img alt="Diagram of connecting securely to a remote rippled over VPN" src="img/secure-signing-over-vpn.png"/></a></p>
 <p>This configuration uses a <code>rippled</code> server hosted remotely, such as in a colocation facility or a distant datacenter, but connects to it securely using an encrypted VPN.</p>
