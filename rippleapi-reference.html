@@ -23,19 +23,7 @@
     <!-- Stylesheet -->
     <link href="assets/css/devportal.css" rel="stylesheet" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45576805-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-45576805-2');
-      gtag('config', 'UA-157720658-3', { 'linker': {
-        'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
-        } }
-      );
-    </script>
+    
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -69,28 +57,15 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
       <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
+          <li class="nav-item">
               <a class="nav-link" href="dev-tools.html">Dev Tools</a>
             </li>
+            
         <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-      </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+            <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+          </li>
+
+      </ul>
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -122,8 +97,6 @@
 <li class="level-2"><a href="#offline-functionality">Offline functionality</a></li>
 <li class="level-1"><a href="#basic-types">Basic Types</a></li>
 <li class="level-2"><a href="#address">Address</a></li>
-<li class="level-3"><a href="#classic-address">Classic Address</a></li>
-<li class="level-3"><a href="#x-address">X-address</a></li>
 <li class="level-2"><a href="#account-sequence-number">Account Sequence Number</a></li>
 <li class="level-2"><a href="#currency">Currency</a></li>
 <li class="level-2"><a href="#value">Value</a></li>
@@ -146,24 +119,7 @@
 <li class="level-3"><a href="#example-3">Example</a></li>
 <li class="level-2"><a href="#settings">Settings</a></li>
 <li class="level-3"><a href="#example-4">Example</a></li>
-<li class="level-2"><a href="#escrow-creation">Escrow Creation</a></li>
-<li class="level-3"><a href="#example-5">Example</a></li>
-<li class="level-2"><a href="#escrow-cancellation">Escrow Cancellation</a></li>
-<li class="level-3"><a href="#example-6">Example</a></li>
-<li class="level-2"><a href="#escrow-execution">Escrow Execution</a></li>
-<li class="level-3"><a href="#example-7">Example</a></li>
-<li class="level-2"><a href="#check-create">Check Create</a></li>
-<li class="level-3"><a href="#example-8">Example</a></li>
-<li class="level-2"><a href="#check-cancel">Check Cancel</a></li>
-<li class="level-3"><a href="#example-9">Example</a></li>
-<li class="level-2"><a href="#check-cash">Check Cash</a></li>
-<li class="level-3"><a href="#example-10">Example</a></li>
-<li class="level-2"><a href="#payment-channel-create">Payment Channel Create</a></li>
-<li class="level-3"><a href="#example-11">Example</a></li>
-<li class="level-2"><a href="#payment-channel-fund">Payment Channel Fund</a></li>
-<li class="level-3"><a href="#example-12">Example</a></li>
-<li class="level-2"><a href="#payment-channel-claim">Payment Channel Claim</a></li>
-<li class="level-3"><a href="#example-13">Example</a></li>
+
 <li class="level-1"><a href="#rippled-apis">rippled APIs</a></li>
 <li class="level-2"><a href="#listening-to-streams">Listening to streams</a></li>
 <li class="level-2"><a href="#request">request</a></li>
@@ -257,7 +213,7 @@
 <li class="level-3"><a href="#parameters-20">Parameters</a></li>
 <li class="level-3"><a href="#return-value-22">Return Value</a></li>
 <li class="level-3"><a href="#example-36">Example</a></li>
-<li class="level-2"><a href="#getpaymentchannel">getPaymentChannel</a></li>
+
 <li class="level-3"><a href="#parameters-21">Parameters</a></li>
 <li class="level-3"><a href="#return-value-23">Return Value</a></li>
 <li class="level-3"><a href="#example-37">Example</a></li>
@@ -293,42 +249,10 @@
 <li class="level-3"><a href="#parameters-29">Parameters</a></li>
 <li class="level-3"><a href="#return-value-31">Return Value</a></li>
 <li class="level-3"><a href="#example-45">Example</a></li>
-<li class="level-2"><a href="#prepareescrowcreation">prepareEscrowCreation</a></li>
 <li class="level-3"><a href="#parameters-30">Parameters</a></li>
 <li class="level-3"><a href="#return-value-32">Return Value</a></li>
 <li class="level-3"><a href="#example-46">Example</a></li>
-<li class="level-2"><a href="#prepareescrowcancellation">prepareEscrowCancellation</a></li>
-<li class="level-3"><a href="#parameters-31">Parameters</a></li>
-<li class="level-3"><a href="#return-value-33">Return Value</a></li>
-<li class="level-3"><a href="#example-47">Example</a></li>
-<li class="level-2"><a href="#prepareescrowexecution">prepareEscrowExecution</a></li>
-<li class="level-3"><a href="#parameters-32">Parameters</a></li>
-<li class="level-3"><a href="#return-value-34">Return Value</a></li>
-<li class="level-3"><a href="#example-48">Example</a></li>
-<li class="level-2"><a href="#preparepaymentchannelcreate">preparePaymentChannelCreate</a></li>
-<li class="level-3"><a href="#parameters-33">Parameters</a></li>
-<li class="level-3"><a href="#return-value-35">Return Value</a></li>
-<li class="level-3"><a href="#example-49">Example</a></li>
-<li class="level-2"><a href="#preparepaymentchannelclaim">preparePaymentChannelClaim</a></li>
-<li class="level-3"><a href="#parameters-34">Parameters</a></li>
-<li class="level-3"><a href="#return-value-36">Return Value</a></li>
-<li class="level-3"><a href="#example-50">Example</a></li>
-<li class="level-2"><a href="#preparepaymentchannelfund">preparePaymentChannelFund</a></li>
-<li class="level-3"><a href="#parameters-35">Parameters</a></li>
-<li class="level-3"><a href="#return-value-37">Return Value</a></li>
-<li class="level-3"><a href="#example-51">Example</a></li>
-<li class="level-2"><a href="#preparecheckcreate">prepareCheckCreate</a></li>
-<li class="level-3"><a href="#parameters-36">Parameters</a></li>
-<li class="level-3"><a href="#return-value-38">Return Value</a></li>
-<li class="level-3"><a href="#example-52">Example</a></li>
-<li class="level-2"><a href="#preparecheckcancel">prepareCheckCancel</a></li>
-<li class="level-3"><a href="#parameters-37">Parameters</a></li>
-<li class="level-3"><a href="#return-value-39">Return Value</a></li>
-<li class="level-3"><a href="#example-53">Example</a></li>
-<li class="level-2"><a href="#preparecheckcash">prepareCheckCash</a></li>
-<li class="level-3"><a href="#parameters-38">Parameters</a></li>
-<li class="level-3"><a href="#return-value-40">Return Value</a></li>
-<li class="level-3"><a href="#example-54">Example</a></li>
+<
 <li class="level-2"><a href="#sign">sign</a></li>
 <li class="level-3"><a href="#parameters-39">Parameters</a></li>
 <li class="level-3"><a href="#return-value-41">Return Value</a></li>
@@ -342,7 +266,7 @@
 <li class="level-3"><a href="#parameters-41">Parameters</a></li>
 <li class="level-3"><a href="#return-value-43">Return Value</a></li>
 <li class="level-3"><a href="#example-57">Example</a></li>
-<li class="level-2"><a href="#generatexaddress">generateXAddress</a></li>
+
 <li class="level-3"><a href="#parameters-42">Parameters</a></li>
 <li class="level-3"><a href="#return-value-44">Return Value</a></li>
 <li class="level-3"><a href="#example-58">Example</a></li>
@@ -366,12 +290,7 @@
 <li class="level-3"><a href="#parameters-47">Parameters</a></li>
 <li class="level-3"><a href="#return-value-49">Return Value</a></li>
 <li class="level-3"><a href="#example-63">Example</a></li>
-<li class="level-2"><a href="#signpaymentchannelclaim">signPaymentChannelClaim</a></li>
-<li class="level-3"><a href="#parameters-48">Parameters</a></li>
-<li class="level-3"><a href="#return-value-50">Return Value</a></li>
-<li class="level-3"><a href="#example-64">Example</a></li>
-<li class="level-2"><a href="#verifypaymentchannelclaim">verifyPaymentChannelClaim</a></li>
-<li class="level-3"><a href="#parameters-49">Parameters</a></li>
+
 <li class="level-3"><a href="#return-value-51">Return Value</a></li>
 <li class="level-3"><a href="#example-65">Example</a></li>
 <li class="level-2"><a href="#computeledgerhash">computeLedgerHash</a></li>
@@ -400,7 +319,7 @@
 <li class="level-3"><a href="#offercreate-flags">OfferCreate Flags</a></li>
 <li class="level-3"><a href="#trustset-flags">TrustSet Flags</a></li>
 <li class="level-3"><a href="#accountset-flags">AccountSet Flags</a></li>
-<li class="level-3"><a href="#paymentchannelclaim-flags">PaymentChannelClaim Flags</a></li>
+
 <li class="level-3"><a href="#other-transaction-types">Other Transaction Types</a></li>
 <li class="level-2"><a href="#schemavalidator">schemaValidator</a></li>
 <li class="level-2"><a href="#schemavalidate">schemaValidate</a></li>
@@ -433,15 +352,14 @@
   </ul>
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
-        <p style="margin-top: 1em; font-style: italic">Updated for <a class="external-link" href="https://github.com/ripple/ripple-lib/releases/1.7.1" target="_blank" title="view on GitHub">version 1.7.1 <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
-<h1 id="introduction">Introduction</h1>
-<p>RippleAPI (ripple-lib) is the official client library to the XRP Ledger. Currently, RippleAPI is only available in JavaScript/TypeScript.</p>
+    <h1 id="introduction">Introduction</h1>
+<p>RippleAPI (ripple-lib) is the official client library to the XAG Ledger. Currently, RippleAPI is only available in JavaScript/TypeScript.</p>
 <p>Using RippleAPI, you can:</p>
 <ul>
-<li><a href="#gettransaction">Query transactions from the XRP Ledger history</a></li>
+<li><a href="#gettransaction">Query transactions from the XAG Ledger history</a></li>
 <li><a href="#sign">Sign</a> transactions securely without connecting to any server</li>
-<li><a href="#submit">Submit</a> transactions to the XRP Ledger, including <a href="#payment">Payments</a>, <a href="#order">Orders</a>, <a href="#settings">Settings changes</a>, and <a href="#transaction-types">other types</a></li>
-<li><a href="#generateaddress">Generate a new XRP Ledger Address</a></li>
+<li><a href="#submit">Submit</a> transactions to the XAG Ledger, including <a href="#payment">Payments</a>, <a href="#order">Orders</a>, <a href="#settings">Settings changes</a>, and <a href="#transaction-types">other types</a></li>
+<li><a href="#generateaddress">Generate a new XAG Ledger Address</a></li>
 <li>... and <a href="#api-methods">much more</a>.</li>
 </ul>
 <p>This page contains documentation for ripple-lib. To use ripple-lib with npm/yarn, begin with the <a class="external-link" href="https://github.com/ripple/ripple-lib#getting-started" target="_blank">Getting Started <i aria-hidden="true" class="fa fa-external-link"></i></a> steps.</p>
@@ -451,7 +369,7 @@
 <pre><code class="javascript">const RippleAPI = require('ripple-lib').RippleAPI;
 
 const api = new RippleAPI({
-  server: 'wss://s1.ripple.com' // Public rippled server hosted by Ripple, Inc.
+  server: 'wss://g1.xrpgen.com' // Public rippled server hosted by Ripple, Inc.
 });
 api.on('error', (errorCode, errorMessage) =&gt; {
   console.log(errorCode + ': ' + errorMessage);
@@ -513,9 +431,9 @@ The "error" event is emitted whenever an error occurs that cannot be associated 
 <td><em>Optional</em> A string containing the private key of the client in PEM format. (Can be an array of keys).</td>
 </tr>
 <tr>
-<td>maxFeeXRP</td>
+<td>maxFeeXAG</td>
 <td>string</td>
-<td><em>Optional</em> Maximum fee to use with transactions, in XRP. Must be a string-encoded number. Defaults to <code>'2'</code>.</td>
+<td><em>Optional</em> Maximum fee to use with transactions, in XAG. Must be a string-encoded number. Defaults to <code>'2'</code>.</td>
 </tr>
 <tr>
 <td>passphrase</td>
@@ -572,19 +490,16 @@ The "error" event is emitted whenever an error occurs that cannot be associated 
 const api = new RippleAPI();
 /* insert code here */
 </code></pre>
-<p>Methods that depend on the state of the XRP Ledger are unavailable in offline mode. To prepare transactions offline, you <strong>must</strong> specify  the <code>fee</code>, <code>sequence</code>, and <code>maxLedgerVersion</code> parameters in the <a href="#transaction-instructions">transaction instructions</a>. You can use the following methods while offline:</p>
+<p>Methods that depend on the state of the XAG Ledger are unavailable in offline mode. To prepare transactions offline, you <strong>must</strong> specify  the <code>fee</code>, <code>sequence</code>, and <code>maxLedgerVersion</code> parameters in the <a href="#transaction-instructions">transaction instructions</a>. You can use the following methods while offline:</p>
 <ul>
 <li><a href="#preparepayment">preparePayment</a></li>
 <li><a href="#preparetrustline">prepareTrustline</a></li>
 <li><a href="#prepareorder">prepareOrder</a></li>
 <li><a href="#prepareordercancellation">prepareOrderCancellation</a></li>
 <li><a href="#preparesettings">prepareSettings</a></li>
-<li><a href="#prepareescrowcreation">prepareEscrowCreation</a></li>
-<li><a href="#prepareescrowcancellation">prepareEscrowCancellation</a></li>
-<li><a href="#prepareescrowexecution">prepareEscrowExecution</a></li>
+
 <li><a href="#sign">sign</a></li>
 <li><a href="#generateaddress">generateAddress</a></li>
-<li><a href="#generatexaddress">generateXAddress</a></li>
 <li><a href="#computeledgerhash">computeLedgerHash</a></li>
 </ul>
 <h1 id="basic-types">Basic Types</h1>
@@ -593,19 +508,15 @@ const api = new RippleAPI();
 </code></pre>
 <pre><code class="json">"X7AcgcsBL6XDcUb289X4mJ8djcdyKaB5hJDWMArnXr61cqZ"
 </code></pre>
-<p>An <em>address</em> refers to a specific XRP Ledger account. It is a base-58 encoding of a hash of the account's public key. There are two kinds of addresses in common use:</p>
-<h3 id="classic-address">Classic Address</h3>
-<p>A <em>classic address</em> encodes a hash of the account's public key and a checksum. It has no other data. This kind of address always starts with the lowercase letter <code>r</code>.</p>
-<h3 id="x-address">X-address</h3>
-<p>An <em>X-address</em> encodes a hash of the account's public key, a tag, and a checksum. This kind of address starts with the uppercase letter <code>X</code> if it is intended for use on the production XRP Ledger (mainnet). It starts with the uppercase letter <code>T</code> if it is intended for use on a test network such as Testnet or Devnet.</p>
+<p>An <em>address</em> refers to a specific XAG Ledger account. It is a base-58 encoding of a hash of the account's public key. There are two kinds of addresses in common use:</p>
 <h2 id="account-sequence-number">Account Sequence Number</h2>
-<p>Every XRP Ledger account has a <em>sequence number</em> that is used to keep transactions in order. Every transaction must have a sequence number. A transaction can only be executed if it has the next sequence number in order, of the account sending it. This prevents one transaction from executing twice and transactions executing out of order. The sequence number starts at <code>1</code> and increments for each transaction that the account makes.</p>
+<p>Every XAG Ledger account has a <em>sequence number</em> that is used to keep transactions in order. Every transaction must have a sequence number. A transaction can only be executed if it has the next sequence number in order, of the account sending it. This prevents one transaction from executing twice and transactions executing out of order. The sequence number starts at <code>1</code> and increments for each transaction that the account makes.</p>
 <h2 id="currency">Currency</h2>
-<p>Currencies are represented as either 3-character currency codes or 40-character uppercase hexadecimal strings. We recommend using uppercase <a class="external-link" href="http://www.xe.com/iso4217.php" target="_blank">ISO 4217 Currency Codes <i aria-hidden="true" class="fa fa-external-link"></i></a> only. The string "XRP" is disallowed on trustlines because it is reserved for the XRP Ledger's native currency. The following characters are permitted: all uppercase and lowercase letters, digits, as well as the symbols <code>?</code>, <code>!</code>, <code>@</code>, <code>#</code>, <code>$</code>, <code>%</code>, <code>^</code>, <code>&amp;</code>, <code>*</code>, <code>&lt;</code>, <code>&gt;</code>, <code>(</code>, <code>)</code>, <code>{</code>, <code>}</code>, <code>[</code>, <code>]</code>, and <code>|</code>.</p>
+<p>Currencies are represented as either 3-character currency codes or 40-character uppercase hexadecimal strings. We recommend using uppercase <a class="external-link" href="http://www.xe.com/iso4217.php" target="_blank">ISO 4217 Currency Codes <i aria-hidden="true" class="fa fa-external-link"></i></a> only. The string "XAG" is disallowed on trustlines because it is reserved for the XAG Ledger's native currency. The following characters are permitted: all uppercase and lowercase letters, digits, as well as the symbols <code>?</code>, <code>!</code>, <code>@</code>, <code>#</code>, <code>$</code>, <code>%</code>, <code>^</code>, <code>&amp;</code>, <code>*</code>, <code>&lt;</code>, <code>&gt;</code>, <code>(</code>, <code>)</code>, <code>{</code>, <code>}</code>, <code>[</code>, <code>]</code>, and <code>|</code>.</p>
 <h2 id="value">Value</h2>
-<p>A <em>value</em> is a quantity of a currency represented as a decimal string. Be careful: JavaScript's native number format does not have sufficient precision to represent all values. XRP has different precision from other currencies.</p>
-<p><strong>XRP</strong> has 6 significant digits past the decimal point. In other words, XRP cannot be divided into positive values smaller than <code>0.000001</code> (1e-6). This smallest unit is called a "drop". XRP has a maximum value of <code>100000000000</code> (1e11). Some RippleAPI methods accept XRP in order to maintain compatibility with older versions of the API. For consistency with the <code>rippled</code> APIs, we recommend formally specifying XRP values in <em>drops</em> in all API requests, and converting them to XRP for display. This is similar to Bitcoin's <em>satoshis</em> and Ethereum's <em>wei</em>. 1 XRP = 1,000,000 drops.</p>
-<p><strong>Non-XRP values</strong> have 16 decimal digits of precision, with a maximum value of <code>9999999999999999e80</code>. The smallest positive non-XRP value is <code>1e-81</code>.</p>
+<p>A <em>value</em> is a quantity of a currency represented as a decimal string. Be careful: JavaScript's native number format does not have sufficient precision to represent all values. XAG has different precision from other currencies.</p>
+<p><strong>XAG</strong> has 6 significant digits past the decimal point. In other words, XAG cannot be divided into positive values smaller than <code>0.000001</code> (1e-6). This smallest unit is called a "drop". XAG has a maximum value of <code>100000000000</code> (1e11). Some RippleAPI methods accept XAG in order to maintain compatibility with older versions of the API. For consistency with the <code>rippled</code> APIs, we recommend formally specifying XAG values in <em>drops</em> in all API requests, and converting them to XAG for display. This is similar to Bitcoin's <em>satoshis</em> and Ethereum's <em>wei</em>. 1 XAG = 1,000,000 drops.</p>
+<p><strong>Non-XAG values</strong> have 16 decimal digits of precision, with a maximum value of <code>9999999999999999e80</code>. The smallest positive non-XAG value is <code>1e-81</code>.</p>
 <h2 id="amount">Amount</h2>
 <p>Example 100.00 USD amount:</p>
 <pre><code class="json">{
@@ -614,14 +525,14 @@ const api = new RippleAPI();
   "value": "100"
 }
 </code></pre>
-<p>Example 3.0 XRP amount, in drops:</p>
+<p>Example 3.0 XAG amount, in drops:</p>
 <pre><code class="json">{
   "currency": "drops",
   "value": "3000000"
 }
 </code></pre>
 <p>(Requires <code>ripple-lib</code> version 1.0.0 or higher.)</p>
-<p>An <em>amount</em> is an object specifying a currency, a quantity of that currency, and the counterparty (issuer) on the trustline that holds the value. For XRP, there is no counterparty.</p>
+<p>An <em>amount</em> is an object specifying a currency, a quantity of that currency, and the counterparty (issuer) on the trustline that holds the value. For XAG, there is no counterparty.</p>
 <p>A <em>lax amount</em> allows the counterparty to be omitted for all currencies. If the counterparty is not specified in an amount within a transaction specification, then any counterparty may be used for that amount.</p>
 <p>A <em>lax lax amount</em> allows either or both the counterparty and value to be omitted.</p>
 <p>A <em>balance</em> is an amount than can have a negative value.</p>
@@ -637,12 +548,12 @@ const api = new RippleAPI();
 <tr>
 <td>currency</td>
 <td><a href="#currency">currency</a></td>
-<td>The three-character code or hexadecimal string used to denote currencies, or "drops" for the smallest unit of XRP.</td>
+<td>The three-character code or hexadecimal string used to denote currencies, or "drops" for the smallest unit of XAG.</td>
 </tr>
 <tr>
 <td>counterparty</td>
 <td><a href="#address">address</a></td>
-<td><em>Optional</em> The XRP Ledger address of the account that owes or is owed the funds (omitted if <code>currency</code> is "XRP" or "drops")</td>
+<td><em>Optional</em> The XAG Ledger address of the account that owes or is owed the funds (omitted if <code>currency</code> is "XAG" or "drops")</td>
 </tr>
 <tr>
 <td>value</td>
@@ -664,15 +575,15 @@ const api = new RippleAPI();
 <tbody>
 <tr>
 <td><a href="#payment">payment</a></td>
-<td>A <code>payment</code> transaction represents a transfer of value from one account to another. Depending on the <a class="external-link" href="https://ripple.com/build/paths/" target="_blank">path <i aria-hidden="true" class="fa fa-external-link"></i></a> taken, additional exchanges of value may occur atomically to facilitate the payment.</td>
+<td>A <code>payment</code> transaction represents a transfer of value from one account to another. Depending on the <a class="external-link" href="https://xrpgen.com/build/paths/" target="_blank">path <i aria-hidden="true" class="fa fa-external-link"></i></a> taken, additional exchanges of value may occur atomically to facilitate the payment.</td>
 </tr>
 <tr>
 <td><a href="#order">order</a></td>
-<td>An <code>order</code> transaction creates a limit order. It defines an intent to exchange currencies, and creates an order in the XRP Ledger's order book if not completely fulfilled when placed. Orders can be partially fulfilled.</td>
+<td>An <code>order</code> transaction creates a limit order. It defines an intent to exchange currencies, and creates an order in the XAG Ledger's order book if not completely fulfilled when placed. Orders can be partially fulfilled.</td>
 </tr>
 <tr>
 <td><a href="#order-cancellation">orderCancellation</a></td>
-<td>An <code>orderCancellation</code> transaction cancels an order in the XRP Ledger's order book.</td>
+<td>An <code>orderCancellation</code> transaction cancels an order in the XAG Ledger's order book.</td>
 </tr>
 <tr>
 <td><a href="#trustline">trustline</a></td>
@@ -680,44 +591,9 @@ const api = new RippleAPI();
 </tr>
 <tr>
 <td><a href="#settings">settings</a></td>
-<td>A <code>settings</code> transaction modifies the settings of an account in the XRP Ledger.</td>
+<td>A <code>settings</code> transaction modifies the settings of an account in the XAG Ledger.</td>
 </tr>
-<tr>
-<td><a href="#escrow-creation">escrowCreation</a></td>
-<td>An <code>escrowCreation</code> transaction creates an escrow on the ledger, which locks XRP until a cryptographic condition is met or it expires. It is like an escrow service where the XRP Ledger acts as the escrow agent.</td>
-</tr>
-<tr>
-<td><a href="#escrow-cancellation">escrowCancellation</a></td>
-<td>An <code>escrowCancellation</code> transaction unlocks the funds in an escrow and sends them back to the creator of the escrow, but it will only work after the escrow expires.</td>
-</tr>
-<tr>
-<td><a href="#escrow-execution">escrowExecution</a></td>
-<td>An <code>escrowExecution</code> transaction unlocks the funds in an escrow and sends them to the destination of the escrow, but it will only work if the cryptographic condition is provided.</td>
-</tr>
-<tr>
-<td><a href="#check-create">checkCreate</a></td>
-<td>A <code>checkCreate</code> transaction creates a check on the ledger, which is a deferred payment that can be cashed by its intended destination.</td>
-</tr>
-<tr>
-<td><a href="#check-cancel">checkCancel</a></td>
-<td>A <code>checkCancel</code> transaction cancels an unredeemed Check, removing it from the ledger without sending any money.</td>
-</tr>
-<tr>
-<td><a href="#check-cash">checkCash</a></td>
-<td>A <code>checkCash</code> transaction redeems a Check to receive up to the amount authorized by the corresponding <code>checkCreate</code> transaction. Only the <code>destination</code> address of a Check can cash it.</td>
-</tr>
-<tr>
-<td><a href="#payment-channel-create">paymentChannelCreate</a></td>
-<td>A <code>paymentChannelCreate</code> transaction opens a payment channel between two addresses with XRP set aside for asynchronous payments.</td>
-</tr>
-<tr>
-<td><a href="#payment-channel-fund">paymentChannelFund</a></td>
-<td>A <code>paymentChannelFund</code> transaction adds XRP to a payment channel and optionally sets a new expiration for the channel.</td>
-</tr>
-<tr>
-<td><a href="#payment-channel-claim">paymentChannelClaim</a></td>
-<td>A <code>paymentChannelClaim</code> transaction withdraws XRP from a channel and optionally requests to close it.</td>
-</tr>
+
 </tbody>
 </table>
 <h2 id="transaction-flow">Transaction Flow</h2>
@@ -729,12 +605,7 @@ const api = new RippleAPI();
 <li><a href="#prepareorder">prepareOrder</a></li>
 <li><a href="#prepareordercancellation">prepareOrderCancellation</a></li>
 <li><a href="#preparesettings">prepareSettings</a></li>
-<li><a href="#prepareescrowcreation">prepareEscrowCreation</a></li>
-<li><a href="#prepareescrowcancellation">prepareEscrowCancellation</a></li>
-<li><a href="#prepareescrowexecution">prepareEscrowExecution</a></li>
-<li><a href="#preparecheckcreate">prepareCheckCreate</a></li>
-<li><a href="#preparecheckcancel">prepareCheckCancel</a></li>
-<li><a href="#preparecheckcash">prepareCheckCash</a></li>
+
 </ul>
 </li>
 <li><a href="#sign">Sign</a> - Cryptographically sign the transaction locally and save the <a href="#transaction-id">transaction ID</a>. Signing is how the owner of an account authorizes a transaction to take place. For multisignature transactions, the <code>signedTransaction</code> fields returned by <code>sign</code> must be collected and passed to the <a href="#combine">combine</a> method.</li>
@@ -742,9 +613,9 @@ const api = new RippleAPI();
 <li>Verify - Verify that the transaction got validated by querying with <a href="#gettransaction">getTransaction</a>. This is necessary because transactions may fail even if they were successfully submitted.</li>
 </ol>
 <h2 id="transaction-fees">Transaction Fees</h2>
-<p>Every transaction must destroy a small amount of XRP as a cost to apply the transaction to the ledger. This is also called a <em>transaction fee</em>. The transaction cost is designed to increase along with the load on the XRP Ledger, making it very expensive to deliberately or inadvertently overload the peer-to-peer network that powers the XRP Ledger.</p>
+<p>Every transaction must destroy a small amount of XAG as a cost to apply the transaction to the ledger. This is also called a <em>transaction fee</em>. The transaction cost is designed to increase along with the load on the XAG Ledger, making it very expensive to deliberately or inadvertently overload the peer-to-peer network that powers the XAG Ledger.</p>
 <p>You can choose the size of the fee you want to pay or let a default be used. You can get an estimate of the fee required to be included in the next ledger closing with the <a href="#getfee">getFee</a> method.</p>
-<p>For a multi-signed transaction, ripple-lib automatically multiplies the <code>fee</code> by (1 + Number of Signatures Provided). For example, if you set <code>instructions.fee = '0.000020'</code> and <code>instructions.signersCount = 2</code>, the prepared transaction's <code>Fee</code> will be 20 drops × (1 + 2 Signatures) = 60 drops. See <a class="external-link" href="https://developers.ripple.com/transaction-cost.html" target="_blank">Transaction Cost <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>For a multi-signed transaction, ripple-lib automatically multiplies the <code>fee</code> by (1 + Number of Signatures Provided). For example, if you set <code>instructions.fee = '0.000020'</code> and <code>instructions.signersCount = 2</code>, the prepared transaction's <code>Fee</code> will be 20 drops × (1 + 2 Signatures) = 60 drops. See <a class="external-link" href="https://developers.xrpgen.com/transaction-cost.html" target="_blank">Transaction Cost <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <h2 id="transaction-instructions">Transaction Instructions</h2>
 <p>Transaction instructions indicate how to execute a transaction, complementary with the <a href="#transaction-specifications">transaction specification</a>.</p>
 <table>
@@ -764,7 +635,7 @@ const api = new RippleAPI();
 <tr>
 <td>maxFee</td>
 <td><a href="#value">value</a></td>
-<td><em>Optional</em> Deprecated: Use <code>maxFeeXRP</code> in the RippleAPI constructor instead. The maximum fee to pay for this transaction. If this exceeds <code>maxFeeXRP</code>, <code>maxFeeXRP</code> will be used instead. See <a href="#transaction-fees">Transaction Fees</a> for more information.</td>
+<td><em>Optional</em> Deprecated: Use <code>maxFeeXAG</code> in the RippleAPI constructor instead. The maximum fee to pay for this transaction. If this exceeds <code>maxFeeXAG</code>, <code>maxFeeXAG</code> will be used instead. See <a href="#transaction-fees">Transaction Fees</a> for more information.</td>
 </tr>
 <tr>
 <td>maxLedgerVersion</td>
@@ -793,7 +664,7 @@ const api = new RippleAPI();
 </tr>
 </tbody>
 </table>
-<p>We recommend that you specify a <code>maxLedgerVersion</code> so that you can quickly determine that a failed transaction will never succeed in the future. It is impossible for a transaction to succeed after the XRP Ledger's consensus-validated ledger version exceeds the transaction's <code>maxLedgerVersion</code>. If you omit <code>maxLedgerVersion</code>, the "prepare*" method automatically supplies a <code>maxLedgerVersion</code> equal to the current ledger plus 3, which it includes in the return value from the "prepare*" method.</p>
+<p>We recommend that you specify a <code>maxLedgerVersion</code> so that you can quickly determine that a failed transaction will never succeed in the future. It is impossible for a transaction to succeed after the XAG Ledger's consensus-validated ledger version exceeds the transaction's <code>maxLedgerVersion</code>. If you omit <code>maxLedgerVersion</code>, the "prepare*" method automatically supplies a <code>maxLedgerVersion</code> equal to the current ledger plus 3, which it includes in the return value from the "prepare*" method.</p>
 <h2 id="transaction-id">Transaction ID</h2>
 <pre><code class="json">"F4AB442A6D4CBB935D66E1DA7309A5FC71C7143ED4049053EC14E3875B0CF9BF"
 </code></pre>
@@ -913,7 +784,7 @@ const api = new RippleAPI();
 <tr>
 <td>noDirectRipple</td>
 <td>boolean</td>
-<td><em>Optional</em> If true and paths are specified, the sender would like the XRP Ledger to disregard any direct paths from the source account to the destination account. This may be used to take advantage of an arbitrage opportunity or by gateways wishing to issue balances from a hot wallet to a user who has mistakenly set a trustline directly to the hot wallet.</td>
+<td><em>Optional</em> If true and paths are specified, the sender would like the XAG Ledger to disregard any direct paths from the source account to the destination account. This may be used to take advantage of an arbitrage opportunity or by gateways wishing to issue balances from a hot wallet to a user who has mistakenly set a trustline directly to the hot wallet.</td>
 </tr>
 <tr>
 <td>paths</td>
@@ -1135,22 +1006,22 @@ const api = new RippleAPI();
 <tr>
 <td>defaultRipple</td>
 <td>boolean</td>
-<td><em>Optional</em> Enable <a class="external-link" href="https://ripple.com/build/understanding-the-noripple-flag/" target="_blank">rippling <i aria-hidden="true" class="fa fa-external-link"></i></a> on this account’s trust lines by default. (New in <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/0.27.3" target="_blank">rippled 0.27.3 <i aria-hidden="true" class="fa fa-external-link"></i></a>)</td>
+<td><em>Optional</em> Enable <a class="external-link" href="https://xrpgen.com/build/understanding-the-noripple-flag/" target="_blank">rippling <i aria-hidden="true" class="fa fa-external-link"></i></a> on this account’s trust lines by default. (New in <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/0.27.3" target="_blank">rippled 0.27.3 <i aria-hidden="true" class="fa fa-external-link"></i></a>)</td>
 </tr>
 <tr>
 <td>depositAuth</td>
 <td>boolean</td>
-<td><em>Optional</em> Enable <a class="external-link" href="https://ripple.com/build/deposit-authorization/" target="_blank">Deposit Authorization <i aria-hidden="true" class="fa fa-external-link"></i></a> on this account. If set, transactions cannot send value of any kind to this account unless the sender of those transactions is the account itself. (Requires the <a class="external-link" href="https://ripple.com/build/known-amendments/#depositauth" target="_blank">DepositAuth amendment <i aria-hidden="true" class="fa fa-external-link"></i></a>)</td>
+<td><em>Optional</em> Enable <a class="external-link" href="https://xrpgen.com/build/deposit-authorization/" target="_blank">Deposit Authorization <i aria-hidden="true" class="fa fa-external-link"></i></a> on this account. If set, transactions cannot send value of any kind to this account unless the sender of those transactions is the account itself. (Requires the <a class="external-link" href="https://xrpgen.com/build/known-amendments/#depositauth" target="_blank">DepositAuth amendment <i aria-hidden="true" class="fa fa-external-link"></i></a>)</td>
 </tr>
 <tr>
 <td>disableMasterKey</td>
 <td>boolean</td>
-<td><em>Optional</em> Disallows use of the master key to sign transactions for this account. To disable the master key, you must authorize the transaction by signing it with the master key pair. You cannot use a regular key pair or a multi-signature. You can re-enable the master key pair using a regular key pair or multi-signature. See <a class="external-link" href="https://developers.ripple.com/accountset.html" target="_blank">AccountSet <i aria-hidden="true" class="fa fa-external-link"></i></a>.</td>
+<td><em>Optional</em> Disallows use of the master key to sign transactions for this account. To disable the master key, you must authorize the transaction by signing it with the master key pair. You cannot use a regular key pair or a multi-signature. You can re-enable the master key pair using a regular key pair or multi-signature. See <a class="external-link" href="https://developers.xrpgen.com/accountset.html" target="_blank">AccountSet <i aria-hidden="true" class="fa fa-external-link"></i></a>.</td>
 </tr>
 <tr>
-<td>disallowIncomingXRP</td>
+<td>disallowIncomingXAG</td>
 <td>boolean</td>
-<td><em>Optional</em> Indicates that client applications should not send XRP to this account. Not enforced by rippled.</td>
+<td><em>Optional</em> Indicates that client applications should not send XAG to this account. Not enforced by rippled.</td>
 </tr>
 <tr>
 <td>domain</td>
@@ -1230,7 +1101,7 @@ const api = new RippleAPI();
 <tr>
 <td><em>signers.weights[].</em> address</td>
 <td><a href="#address">address</a></td>
-<td>An account address on the XRP Ledger</td>
+<td>An account address on the XAG Ledger</td>
 </tr>
 <tr>
 <td><em>signers.weights[].</em> weight</td>
@@ -1256,7 +1127,7 @@ const api = new RippleAPI();
 </table>
 <h3 id="example-4">Example</h3>
 <pre><code class="json">{
-  "domain": "ripple.com",
+  "domain": "xrpgen.com",
   "memos": [
     {
       "type": "test",
@@ -1266,412 +1137,9 @@ const api = new RippleAPI();
   ]
 }
 </code></pre>
-<h2 id="escrow-creation">Escrow Creation</h2>
-<p>See <a href="#transaction-types">Transaction Types</a> for a description.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>amount</td>
-<td><a href="#value">value</a></td>
-<td>Amount of XRP for sender to escrow.</td>
-</tr>
-<tr>
-<td>destination</td>
-<td><a href="#address">address</a></td>
-<td>Address to receive escrowed XRP.</td>
-</tr>
-<tr>
-<td>allowCancelAfter</td>
-<td>date-time string</td>
-<td><em>Optional</em> If present, the escrow may be cancelled after this time.</td>
-</tr>
-<tr>
-<td>allowExecuteAfter</td>
-<td>date-time string</td>
-<td><em>Optional</em> If present, the escrow can not be executed before this time.</td>
-</tr>
-<tr>
-<td>condition</td>
-<td>string</td>
-<td><em>Optional</em> A hex value representing a <a class="external-link" href="https://tools.ietf.org/html/draft-thomas-crypto-conditions-02#section-8.1" target="_blank">PREIMAGE-SHA-256 crypto-condition <i aria-hidden="true" class="fa fa-external-link"></i></a>. If present, <code>fulfillment</code> is required upon execution.</td>
-</tr>
-<tr>
-<td>destinationTag</td>
-<td>integer</td>
-<td><em>Optional</em> Destination tag.</td>
-</tr>
-<tr>
-<td>memos</td>
-<td><a href="#transaction-memos">memos</a></td>
-<td><em>Optional</em> Array of memos to attach to the transaction.</td>
-</tr>
-<tr>
-<td>sourceTag</td>
-<td>integer</td>
-<td><em>Optional</em> Source tag.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-5">Example</h3>
-<pre><code class="json">{
-  "destination": "rpZc4mVfWUif9CRoHRKKcmhu1nx2xktxBo",
-  "amount": "0.01",
-  "allowExecuteAfter": "2014-09-24T21:21:50.000Z",
-  "allowCancelAfter":  "2017-01-01T00:00:00.000Z"
-}
-</code></pre>
-<h2 id="escrow-cancellation">Escrow Cancellation</h2>
-<p>See <a href="#transaction-types">Transaction Types</a> for a description.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>owner</td>
-<td><a href="#address">address</a></td>
-<td>The address of the owner of the escrow to cancel.</td>
-</tr>
-<tr>
-<td>escrowSequence</td>
-<td><a href="#account-sequence-number">sequence</a></td>
-<td>The <a href="#account-sequence-number">account sequence number</a> of the <a href="#escrow-creation">Escrow Creation</a> transaction for the escrow to cancel.</td>
-</tr>
-<tr>
-<td>memos</td>
-<td><a href="#transaction-memos">memos</a></td>
-<td><em>Optional</em> Array of memos to attach to the transaction.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-6">Example</h3>
-<pre><code class="json">{
-  "owner": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
-  "escrowSequence": 1234
-}
-</code></pre>
-<h2 id="escrow-execution">Escrow Execution</h2>
-<p>See <a href="#transaction-types">Transaction Types</a> for a description.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>owner</td>
-<td><a href="#address">address</a></td>
-<td>The address of the owner of the escrow to execute.</td>
-</tr>
-<tr>
-<td>escrowSequence</td>
-<td><a href="#account-sequence-number">sequence</a></td>
-<td>The <a href="#account-sequence-number">account sequence number</a> of the <a href="#escrow-creation">Escrow Creation</a> transaction for the escrow to execute.</td>
-</tr>
-<tr>
-<td>condition</td>
-<td>string</td>
-<td><em>Optional</em> A hex value representing a <a class="external-link" href="https://tools.ietf.org/html/draft-thomas-crypto-conditions-02#section-8.1" target="_blank">PREIMAGE-SHA-256 crypto-condition <i aria-hidden="true" class="fa fa-external-link"></i></a>. This must match the original <code>condition</code> from the escrow creation transaction.</td>
-</tr>
-<tr>
-<td>fulfillment</td>
-<td>string</td>
-<td><em>Optional</em> A hex value representing the <a class="external-link" href="https://tools.ietf.org/html/draft-thomas-crypto-conditions-02#section-8.1" target="_blank">PREIMAGE-SHA-256 crypto-condition <i aria-hidden="true" class="fa fa-external-link"></i></a> fulfillment for <code>condition</code>.</td>
-</tr>
-<tr>
-<td>memos</td>
-<td><a href="#transaction-memos">memos</a></td>
-<td><em>Optional</em> Array of memos to attach to the transaction.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-7">Example</h3>
-<pre><code class="json">{
-  "owner": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
-  "escrowSequence": 1234,
-  "condition": "A0258020E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855810100",
-  "fulfillment": "A0028000"
-}
-</code></pre>
-<h2 id="check-create">Check Create</h2>
-<p>See <a href="#transaction-types">Transaction Types</a> for a description.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>destination</td>
-<td><a href="#address">address</a></td>
-<td>Address of the account that can cash the check.</td>
-</tr>
-<tr>
-<td>sendMax</td>
-<td><a href="#amount">laxAmount</a></td>
-<td>Amount of source currency the check is allowed to debit the sender, including transfer fees on non-XRP currencies.</td>
-</tr>
-<tr>
-<td>destinationTag</td>
-<td>integer</td>
-<td><em>Optional</em> Destination tag that identifies the reason for the check, or a hosted recipient to pay.</td>
-</tr>
-<tr>
-<td>expiration</td>
-<td>date-time string</td>
-<td><em>Optional</em> Time after which the check is no longer valid.</td>
-</tr>
-<tr>
-<td>invoiceID</td>
-<td>string</td>
-<td><em>Optional</em> 256-bit hash, as a 64-character hexadecimal string, representing a specific reason or identifier for this check.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-8">Example</h3>
-<pre><code class="json">{
-  "destination": "rsA2LpzuawewSBQXkiju3YQTMzW13pAAdW",
-  "sendMax": {
-    "currency": "drops",
-    "value": "1000000"
-  }
-}
-</code></pre>
-<h2 id="check-cancel">Check Cancel</h2>
-<p>See <a href="#transaction-types">Transaction Types</a> for a description.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>checkID</td>
-<td>string</td>
-<td>The ID of the Check ledger object to cancel, as a 64-character hexadecimal string.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-9">Example</h3>
-<pre><code class="json">{
-  "checkID": "49647F0D748DC3FE26BDACBC57F251AADEFFF391403EC9BF87C97F67E9977FB0"
-}
-</code></pre>
-<h2 id="check-cash">Check Cash</h2>
-<p>See <a href="#transaction-types">Transaction Types</a> for a description.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>checkID</td>
-<td>string</td>
-<td>The ID of the Check ledger object to cash, as a 64-character hexadecimal string.</td>
-</tr>
-<tr>
-<td>amount</td>
-<td><a href="#amount">laxAmount</a></td>
-<td><em>Optional</em> Redeem the Check for exactly this amount, if possible. The currency must match that of the sendMax of the corresponding CheckCreate transaction. You must provide either this field or deliverMin.</td>
-</tr>
-<tr>
-<td>deliverMin</td>
-<td><a href="#amount">laxAmount</a></td>
-<td><em>Optional</em> Redeem the Check for at least this amount and for as much as possible. The currency must match that of the sendMax of the corresponding CheckCreate transaction. You must provide either this field or amount.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-10">Example</h3>
-<pre><code class="json">{
-  "amount": {
-    "currency": "drops",
-    "value": "1000000"
-  },
-  "checkID": "838766BA2B995C00744175F69A1B11E32C3DBC40E64801A4056FCBD657F57334"
-}
-</code></pre>
-<h2 id="payment-channel-create">Payment Channel Create</h2>
-<p>See <a href="#transaction-types">Transaction Types</a> for a description.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>amount</td>
-<td><a href="#value">value</a></td>
-<td>Amount of XRP for sender to set aside in this channel.</td>
-</tr>
-<tr>
-<td>destination</td>
-<td><a href="#address">address</a></td>
-<td>Address to receive XRP claims against this channel.</td>
-</tr>
-<tr>
-<td>settleDelay</td>
-<td>number</td>
-<td>Amount of seconds the source address must wait before closing the channel if it has unclaimed XRP.</td>
-</tr>
-<tr>
-<td>publicKey</td>
-<td>string</td>
-<td>Public key of the key pair the source may use to sign claims against this channel.</td>
-</tr>
-<tr>
-<td>cancelAfter</td>
-<td>date-time string</td>
-<td><em>Optional</em> Time when this channel expires. This expiration cannot be changed after creating the channel.</td>
-</tr>
-<tr>
-<td>destinationTag</td>
-<td>integer</td>
-<td><em>Optional</em> Destination tag.</td>
-</tr>
-<tr>
-<td>sourceTag</td>
-<td>integer</td>
-<td><em>Optional</em> Source tag.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-11">Example</h3>
-<pre><code class="json">{
-  "amount": "1",
-  "destination": "rsA2LpzuawewSBQXkiju3YQTMzW13pAAdW",
-  "settleDelay": 86400,
-  "publicKey": "32D2471DB72B27E3310F355BB33E339BF26F8392D5A93D3BC0FC3B566612DA0F0A"
-}
-</code></pre>
-<h2 id="payment-channel-fund">Payment Channel Fund</h2>
-<p>See <a href="#transaction-types">Transaction Types</a> for a description.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>amount</td>
-<td><a href="#value">value</a></td>
-<td>Amount of XRP to fund the channel with.</td>
-</tr>
-<tr>
-<td>channel</td>
-<td>string</td>
-<td>256-bit hexadecimal channel identifier.</td>
-</tr>
-<tr>
-<td>expiration</td>
-<td>date-time string</td>
-<td><em>Optional</em> New expiration for this channel. (This does not change the cancelAfter expiration, if the channel has one.) Cannot move the expiration sooner than settleDelay seconds from time of the request.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-12">Example</h3>
-<pre><code class="json">{
-  "channel": "C1AE6DDDEEC05CF2978C0BAD6FE302948E9533691DC749DCDD3B9E5992CA6198",
-  "amount": "1"
-}
-</code></pre>
-<h2 id="payment-channel-claim">Payment Channel Claim</h2>
-<p>See <a href="#transaction-types">Transaction Types</a> for a description.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>channel</td>
-<td>string</td>
-<td>256-bit hexadecimal channel identifier.</td>
-</tr>
-<tr>
-<td>amount</td>
-<td><a href="#value">value</a></td>
-<td><em>Optional</em> Amount of XRP authorized by this signature.</td>
-</tr>
-<tr>
-<td>balance</td>
-<td><a href="#value">value</a></td>
-<td><em>Optional</em> Total XRP balance delivered by this channel after claim is processed.</td>
-</tr>
-<tr>
-<td>close</td>
-<td>boolean</td>
-<td><em>Optional</em> Request to close the channel. If the channel has no XRP remaining or the destination address requests it, closes the channel immediately (returning unclaimed XRP to the source address). Otherwise, sets the channel to expire after settleDelay seconds have passed.</td>
-</tr>
-<tr>
-<td>publicKey</td>
-<td>string</td>
-<td><em>Optional</em> Public key of the channel. (For verifying the signature.)</td>
-</tr>
-<tr>
-<td>renew</td>
-<td>boolean</td>
-<td><em>Optional</em> Clear the channel's expiration time.</td>
-</tr>
-<tr>
-<td>signature</td>
-<td>string</td>
-<td><em>Optional</em> Signed claim authorizing withdrawal of XRP from the channel. (Required except from the channel's source address.)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-13">Example</h3>
-<pre><code class="json">{
-  "channel": "C1AE6DDDEEC05CF2978C0BAD6FE302948E9533691DC749DCDD3B9E5992CA6198"
-}
-</code></pre>
-<h1 id="rippled-apis">rippled APIs</h1>
-<p>ripple-lib relies on <a class="external-link" href="https://ripple.com/build/rippled-apis/" target="_blank">rippled APIs <i aria-hidden="true" class="fa fa-external-link"></i></a> for online functionality. In addition to ripple-lib's own methods, you can also access rippled APIs through ripple-lib. Use the <code>request()</code>, <code>hasNextPage()</code>, and <code>requestNextPage()</code> methods:</p>
-<ul>
-<li>Use <code>request()</code> to issue any <code>rippled</code> command, including <code>account_currencies</code>, <code>subscribe</code>, and <code>unsubscribe</code>. <a class="external-link" href="https://ripple.com/build/rippled-apis/#api-methods" target="_blank">Full list of API Methods <i aria-hidden="true" class="fa fa-external-link"></i></a>.</li>
-<li>Use <code>hasNextPage()</code> to determine whether a response has more pages. This is true when the response includes a <a class="external-link" href="https://ripple.com/build/rippled-apis/#markers-and-pagination" target="_blank"><code>marker</code> field <i aria-hidden="true" class="fa fa-external-link"></i></a>.</li>
-<li>Use <code>requestNextPage()</code> to request the next page of data.</li>
-</ul>
-<p>When using rippled APIs:</p>
-<ul>
-<li><a class="external-link" href="https://developers.ripple.com/basic-data-types.html#specifying-currency-amounts" target="_blank">Specify XRP amounts in drops <i aria-hidden="true" class="fa fa-external-link"></i></a>.</li>
-<li><a class="external-link" href="https://developers.ripple.com/basic-data-types.html#specifying-time" target="_blank">Specify timestamps as the number of seconds since the "Ripple Epoch" <i aria-hidden="true" class="fa fa-external-link"></i></a>.</li>
-<li>Instead of <code>counterparty</code>, use <code>issuer</code>.</li>
-</ul>
+
 <h2 id="listening-to-streams">Listening to streams</h2>
-<p>The <code>rippled</code> server can push updates to your client when various events happen. Refer to <a class="external-link" href="https://developers.ripple.com/subscription-methods.html" target="_blank">Subscriptions in the <code>rippled</code> API docs <i aria-hidden="true" class="fa fa-external-link"></i></a> for details.</p>
+<p>The <code>rippled</code> server can push updates to your client when various events happen. Refer to <a class="external-link" href="https://developers.xrpgen.com/subscription-methods.html" target="_blank">Subscriptions in the <code>rippled</code> API docs <i aria-hidden="true" class="fa fa-external-link"></i></a> for details.</p>
 <p>Note that the <code>streams</code> parameter for generic streams takes an array. For example, to subscribe to the <code>validations</code> stream, use <code>{ streams: [ 'validations' ] }</code>.</p>
 <p>The string names of some generic streams to subscribe to are in the table below. (Refer to <code>rippled</code> for an up-to-date list of streams.)</p>
 <table>
@@ -1769,11 +1237,11 @@ api.connect().then(() =&gt; {
 })
 </code></pre>
 <p>The subscription ends when you unsubscribe or the WebSocket connection is closed.</p>
-<p>For full details, see <a class="external-link" href="https://ripple.com/build/rippled-apis/#subscriptions" target="_blank">rippled Subscriptions <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>For full details, see <a class="external-link" href="https://xrpgen.com/build/rippled-apis/#subscriptions" target="_blank">rippled Subscriptions <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <h2 id="request">request</h2>
 <p><code>request(command: string, options: object): Promise&lt;object&gt;</code></p>
 <p>Returns the response from invoking the specified command, with the specified options, on the connected rippled server.</p>
-<p>Refer to <a class="external-link" href="https://ripple.com/build/rippled-apis/" target="_blank">rippled APIs <i aria-hidden="true" class="fa fa-external-link"></i></a> for commands and options. All XRP amounts must be specified in drops. One drop is equal to 0.000001 XRP. See <a class="external-link" href="https://ripple.com/build/rippled-apis/#specifying-currency-amounts" target="_blank">Specifying Currency Amounts <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>Refer to <a class="external-link" href="https://xrpgen.com/build/rippled-apis/" target="_blank">rippled APIs <i aria-hidden="true" class="fa fa-external-link"></i></a> for commands and options. All XAG amounts must be specified in drops. One drop is equal to 0.000001 XAG. See <a class="external-link" href="https://xrpgen.com/build/rippled-apis/#specifying-currency-amounts" target="_blank">Specifying Currency Amounts <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <p>Most commands return data for the <code>current</code> (in-progress, open) ledger by default. Do not rely on this. Always specify a ledger version in your request. In the example below, the 'validated' ledger is requested, which is the most recent ledger that has been validated by the whole network. See <a class="external-link" href="https://xrpl.org/basic-data-types.html#specifying-ledgers" target="_blank">Specifying Ledgers <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <h3 id="return-value">Return Value</h3>
 <p>This method returns a promise that resolves with the response from rippled.</p>
@@ -1814,7 +1282,7 @@ return api.request('ledger', {
 <p><code>hasNextPage(currentResponse): boolean</code></p>
 <p>Returns <code>true</code> when there are more pages available.</p>
 <p>When there are more results than contained in the response, the response includes a <code>marker</code> field. You can use this convenience method, or check for <code>marker</code> yourself.</p>
-<p>See <a class="external-link" href="https://ripple.com/build/rippled-apis/#markers-and-pagination" target="_blank">Markers and Pagination <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>See <a class="external-link" href="https://xrpgen.com/build/rippled-apis/#markers-and-pagination" target="_blank">Markers and Pagination <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <h3 id="return-value-1">Return Value</h3>
 <p>This method returns <code>true</code> if <code>currentResponse</code> includes a <code>marker</code>.</p>
 <h3 id="example-15">Example</h3>
@@ -1832,7 +1300,7 @@ return api.request('ledger', {
 <p><code>requestNextPage(command: string, params: object = {}, currentResponse: object): Promise&lt;object&gt;</code></p>
 <p>Requests the next page of data.</p>
 <p>You can use this convenience method, or include <code>currentResponse.marker</code> in <code>params</code> yourself, when using <code>request</code>.</p>
-<p>See <a class="external-link" href="https://ripple.com/build/rippled-apis/#markers-and-pagination" target="_blank">Markers and Pagination <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>See <a class="external-link" href="https://xrpgen.com/build/rippled-apis/#markers-and-pagination" target="_blank">Markers and Pagination <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <h3 id="return-value-2">Return Value</h3>
 <p>This method returns a promise that resolves with the next page of data from rippled.</p>
 <p>If the response does not have a next page, the promise will reject with <code>new errors.NotFoundError('response does not have a next page')</code>.</p>
@@ -1848,7 +1316,7 @@ return api.request(command, params).then(response =&gt; {
 }).catch(console.error);
 </code></pre>
 <h1 id="static-methods">Static Methods</h1>
-<p>ripple-lib features a number of static methods that you can access directly on the <code>RippleAPI</code> object. The most commonly-used one is <code>computeBinaryTransactionHash</code>, described below. For the full list, see the <a class="external-link" href="https://github.com/ripple/ripple-lib/blob/develop/src/common/hashes/README.md" target="_blank">XRP Ledger Hashes README <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>ripple-lib features a number of static methods that you can access directly on the <code>RippleAPI</code> object. The most commonly-used one is <code>computeBinaryTransactionHash</code>, described below. For the full list, see the <a class="external-link" href="https://github.com/ripple/ripple-lib/blob/develop/src/common/hashes/README.md" target="_blank">XAG Ledger Hashes README <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <h2 id="computebinarytransactionhash">computeBinaryTransactionHash</h2>
 <p><code>computeBinaryTransactionHash(txBlobHex: string): string</code></p>
 <p>Returns the hash (id) of a binary transaction blob.</p>
@@ -2027,7 +1495,7 @@ console.log(RippleAPI.renameCounterpartyToIssuer(orderbookInfo.counter))
 </tbody>
 </table>
 <p><strong>Raw order data:</strong> The response includes a <code>data</code> property containing the raw order data. This may include <code>owner_funds</code>, <code>Flags</code>, and other fields.</p>
-<p>For details, see the rippled method <a class="external-link" href="https://ripple.com/build/rippled-apis/#book-offers" target="_blank">book_offers <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>For details, see the rippled method <a class="external-link" href="https://xrpgen.com/build/rippled-apis/#book-offers" target="_blank">book_offers <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <h3 id="example-19">Example</h3>
 <pre><code class="javascript">const orderbookInfo = {
   "base": {
@@ -2351,7 +1819,7 @@ return Promise.all(
 <tr>
 <td>serverState</td>
 <td>string</td>
-<td>A string indicating to what extent the server is participating in the network. See <a class="external-link" href="https://developers.ripple.com/rippled-server-states.html" target="_blank">Possible Server States <i aria-hidden="true" class="fa fa-external-link"></i></a> for more details.</td>
+<td>A string indicating to what extent the server is participating in the network. See <a class="external-link" href="https://developers.xrpgen.com/rippled-server-states.html" target="_blank">Possible Server States <i aria-hidden="true" class="fa fa-external-link"></i></a> for more details.</td>
 </tr>
 <tr>
 <td>validatedLedger</td>
@@ -2364,9 +1832,9 @@ return Promise.all(
 <td>The time since the ledger was closed, in seconds.</td>
 </tr>
 <tr>
-<td><em>validatedLedger.</em> baseFeeXRP</td>
+<td><em>validatedLedger.</em> baseFeeXAG</td>
 <td><a href="#value">value</a></td>
-<td>Base fee, in XRP. This may be represented in scientific notation such as 1e-05 for 0.00005.</td>
+<td>Base fee, in XAG. This may be represented in scientific notation such as 1e-05 for 0.00005.</td>
 </tr>
 <tr>
 <td><em>validatedLedger.</em> hash</td>
@@ -2374,14 +1842,14 @@ return Promise.all(
 <td>Unique hash for the ledger, as an uppercase hexadecimal string.</td>
 </tr>
 <tr>
-<td><em>validatedLedger.</em> reserveBaseXRP</td>
+<td><em>validatedLedger.</em> reserveBaseXAG</td>
 <td><a href="#value">value</a></td>
-<td>Minimum amount of XRP necessary for every account to keep in reserve.</td>
+<td>Minimum amount of XAG necessary for every account to keep in reserve.</td>
 </tr>
 <tr>
-<td><em>validatedLedger.</em> reserveIncrementXRP</td>
+<td><em>validatedLedger.</em> reserveIncrementXAG</td>
 <td><a href="#value">value</a></td>
-<td>Amount of XRP added to the account reserve for each object an account is responsible for in the ledger.</td>
+<td>Amount of XAG added to the account reserve for each object an account is responsible for in the ledger.</td>
 </tr>
 <tr>
 <td><em>validatedLedger.</em> ledgerVersion</td>
@@ -2433,10 +1901,10 @@ return Promise.all(
   "serverState": "full",
   "validatedLedger": {
     "age": 5,
-    "baseFeeXRP": "0.00001",
+    "baseFeeXAG": "0.00001",
     "hash": "4482DEE5362332F54A4036ED57EE1767C9F33CF7CE5A6670355C16CECE381D46",
-    "reserveBaseXRP": "20",
-    "reserveIncrementXRP": "5",
+    "reserveBaseXAG": "20",
+    "reserveIncrementXAG": "5",
     "ledgerVersion": 6595042
   },
   "validationQuorum": 3
@@ -2464,7 +1932,7 @@ return Promise.all(
 </tbody>
 </table>
 <h3 id="return-value-10">Return Value</h3>
-<p>This method returns a promise that resolves with a string-encoded floating point value representing the estimated fee to submit a transaction, expressed in XRP.</p>
+<p>This method returns a promise that resolves with a string-encoded floating point value representing the estimated fee to submit a transaction, expressed in XAG.</p>
 <h3 id="example-24">Example</h3>
 <pre><code class="javascript">return api.getFee().then(fee =&gt; {/* ... */});
 </code></pre>
@@ -2578,22 +2046,22 @@ return Promise.all(
 <tr>
 <td><em>outcome.</em> result</td>
 <td>string</td>
-<td>Result code returned by rippled. See <a class="external-link" href="https://developers.ripple.com/transaction-results.html" target="_blank">Transaction Results <i aria-hidden="true" class="fa fa-external-link"></i></a> for a complete list.</td>
+<td>Result code returned by rippled. See <a class="external-link" href="https://developers.xrpgen.com/transaction-results.html" target="_blank">Transaction Results <i aria-hidden="true" class="fa fa-external-link"></i></a> for a complete list.</td>
 </tr>
 <tr>
 <td><em>outcome.</em> fee</td>
 <td><a href="#value">value</a></td>
-<td>The XRP fee that was charged for the transaction.</td>
+<td>The XAG fee that was charged for the transaction.</td>
 </tr>
 <tr>
 <td><em>outcome.balanceChanges.</em> *</td>
 <td>array\&lt;<a href="#amount">balance</a>&gt;</td>
-<td>Key is the XRP Ledger address; value is an array of signed amounts representing changes of balances for that address.</td>
+<td>Key is the XAG Ledger address; value is an array of signed amounts representing changes of balances for that address.</td>
 </tr>
 <tr>
 <td><em>outcome.orderbookChanges.</em> *</td>
 <td>array</td>
-<td>Key is the maker's XRP Ledger address; value is an array of changes</td>
+<td>Key is the maker's XAG Ledger address; value is an array of changes</td>
 </tr>
 <tr>
 <td><em>outcome.orderbookChanges.</em> *[]</td>
@@ -2650,11 +2118,7 @@ return Promise.all(
 <td>integer</td>
 <td>The ordering index of the transaction in the ledger.</td>
 </tr>
-<tr>
-<td><em>outcome.</em> channelChanges</td>
-<td>object</td>
-<td><em>Optional</em> Properties reflecting the details of the payment channel.</td>
-</tr>
+
 <tr>
 <td><em>outcome.</em> deliveredAmount</td>
 <td><a href="#amount">amount</a></td>
@@ -2687,7 +2151,7 @@ return api.getTransaction(id).then(transaction =&gt; {
     "source": {
       "address": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
       "maxAmount": {
-        "currency": "XRP",
+        "currency": "XAG",
         "value": "1.112209"
       }
     },
@@ -2727,13 +2191,13 @@ return api.getTransaction(id).then(transaction =&gt; {
       ],
       "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59": [
         {
-          "currency": "XRP",
+          "currency": "XAG",
           "value": "-1.101208"
         }
       ],
       "r9tGqzZgKxVFvzKFdUqXAqTzazWBUia8Qr": [
         {
-          "currency": "XRP",
+          "currency": "XAG",
           "value": "1.101198"
         },
         {
@@ -2748,7 +2212,7 @@ return api.getTransaction(id).then(transaction =&gt; {
         {
           "direction": "buy",
           "quantity": {
-            "currency": "XRP",
+            "currency": "XAG",
             "value": "1.101198"
           },
           "totalPrice": {
@@ -2881,7 +2345,7 @@ return api.getTransactions(address).then(transaction =&gt; {
       "source": {
         "address": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
         "maxAmount": {
-          "currency": "XRP",
+          "currency": "XAG",
           "value": "1.112209"
         }
       },
@@ -2921,13 +2385,13 @@ return api.getTransactions(address).then(transaction =&gt; {
         ],
         "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59": [
           {
-            "currency": "XRP",
+            "currency": "XAG",
             "value": "-1.101208"
           }
         ],
         "r9tGqzZgKxVFvzKFdUqXAqTzazWBUia8Qr": [
           {
-            "currency": "XRP",
+            "currency": "XAG",
             "value": "1.101198"
           },
           {
@@ -2942,7 +2406,7 @@ return api.getTransactions(address).then(transaction =&gt; {
           {
             "direction": "buy",
             "quantity": {
-              "currency": "XRP",
+              "currency": "XAG",
               "value": "1.101198"
             },
             "totalPrice": {
@@ -2975,7 +2439,7 @@ return api.getTransactions(address).then(transaction =&gt; {
       "source": {
         "address": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
         "maxAmount": {
-          "currency": "XRP",
+          "currency": "XAG",
           "value": "1.112209"
         }
       },
@@ -3015,13 +2479,13 @@ return api.getTransactions(address).then(transaction =&gt; {
         ],
         "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59": [
           {
-            "currency": "XRP",
+            "currency": "XAG",
             "value": "-1.101208"
           }
         ],
         "r9tGqzZgKxVFvzKFdUqXAqTzazWBUia8Qr": [
           {
-            "currency": "XRP",
+            "currency": "XAG",
             "value": "1.101198"
           },
           {
@@ -3036,7 +2500,7 @@ return api.getTransactions(address).then(transaction =&gt; {
           {
             "direction": "buy",
             "quantity": {
-              "currency": "XRP",
+              "currency": "XAG",
               "value": "1.101198"
             },
             "totalPrice": {
@@ -3338,7 +2802,7 @@ return api.getTrustlines(address).then(trustlines =&gt;
 <tr>
 <td>counterparty</td>
 <td><a href="#address">address</a></td>
-<td><em>Optional</em> The XRP Ledger address of the account that owes or is owed the funds.</td>
+<td><em>Optional</em> The XAG Ledger address of the account that owes or is owed the funds.</td>
 </tr>
 </tbody>
 </table>
@@ -3350,7 +2814,7 @@ return api.getBalances(address).then(balances =&gt;
 <pre><code class="json">[
   {
     "value": "922.913243",
-    "currency": "XRP"
+    "currency": "XAG"
   },
   {
     "value": "0",
@@ -3490,7 +2954,7 @@ return api.getBalances(address).then(balances =&gt;
 <tr>
 <td>address</td>
 <td><a href="#address">address</a></td>
-<td>The XRP Ledger address of the account to get the balance sheet of.</td>
+<td>The XAG Ledger address of the account to get the balance sheet of.</td>
 </tr>
 <tr>
 <td>options</td>
@@ -3643,7 +3107,7 @@ return api.getBalanceSheet(address).then(balanceSheet =&gt;
 <tr>
 <td><em>pathfind.source.</em> address</td>
 <td><a href="#address">address</a></td>
-<td>The XRP Ledger address of the account where funds will come from.</td>
+<td>The XAG Ledger address of the account where funds will come from.</td>
 </tr>
 <tr>
 <td><em>pathfind.source.</em> amount</td>
@@ -3789,7 +3253,7 @@ return api.getPaths(pathfind)
         "value": "100"
       }
     },
-    "paths": "[[{\"account\":\"rMAz5ZnK73nyNUL4foAvaxdreczCkG3vA6\"},{\"currency\":\"USD\",\"issuer\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"},{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}],[{\"account\":\"rMAz5ZnK73nyNUL4foAvaxdreczCkG3vA6\"},{\"currency\":\"XRP\"},{\"currency\":\"USD\",\"issuer\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"},{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}],[{\"account\":\"rMAz5ZnK73nyNUL4foAvaxdreczCkG3vA6\"},{\"currency\":\"XRP\"},{\"currency\":\"USD\",\"issuer\":\"rpHgehzdpfWRXKvSv6duKvVuo1aZVimdaT\"},{\"account\":\"rpHgehzdpfWRXKvSv6duKvVuo1aZVimdaT\"},{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}],[{\"account\":\"rMAz5ZnK73nyNUL4foAvaxdreczCkG3vA6\"},{\"currency\":\"XRP\"},{\"currency\":\"USD\",\"issuer\":\"rHHa9t2kLQyXRbdLkSzEgkzwf9unmFgZs9\"},{\"account\":\"rHHa9t2kLQyXRbdLkSzEgkzwf9unmFgZs9\"},{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}]]"
+    "paths": "[[{\"account\":\"rMAz5ZnK73nyNUL4foAvaxdreczCkG3vA6\"},{\"currency\":\"USD\",\"issuer\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"},{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}],[{\"account\":\"rMAz5ZnK73nyNUL4foAvaxdreczCkG3vA6\"},{\"currency\":\"XAG\"},{\"currency\":\"USD\",\"issuer\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"},{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}],[{\"account\":\"rMAz5ZnK73nyNUL4foAvaxdreczCkG3vA6\"},{\"currency\":\"XAG\"},{\"currency\":\"USD\",\"issuer\":\"rpHgehzdpfWRXKvSv6duKvVuo1aZVimdaT\"},{\"account\":\"rpHgehzdpfWRXKvSv6duKvVuo1aZVimdaT\"},{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}],[{\"account\":\"rMAz5ZnK73nyNUL4foAvaxdreczCkG3vA6\"},{\"currency\":\"XAG\"},{\"currency\":\"USD\",\"issuer\":\"rHHa9t2kLQyXRbdLkSzEgkzwf9unmFgZs9\"},{\"account\":\"rHHa9t2kLQyXRbdLkSzEgkzwf9unmFgZs9\"},{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}]]"
   },
   {
     "source": {
@@ -3807,13 +3271,13 @@ return api.getPaths(pathfind)
         "value": "100"
       }
     },
-    "paths": "[[{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}],[{\"account\":\"rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q\"},{\"currency\":\"USD\",\"issuer\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"},{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}],[{\"account\":\"rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q\"},{\"currency\":\"XRP\"},{\"currency\":\"USD\",\"issuer\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"},{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}],[{\"account\":\"rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q\"},{\"currency\":\"XRP\"},{\"currency\":\"USD\",\"issuer\":\"rpHgehzdpfWRXKvSv6duKvVuo1aZVimdaT\"},{\"account\":\"rpHgehzdpfWRXKvSv6duKvVuo1aZVimdaT\"},{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}]]"
+    "paths": "[[{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}],[{\"account\":\"rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q\"},{\"currency\":\"USD\",\"issuer\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"},{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}],[{\"account\":\"rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q\"},{\"currency\":\"XAG\"},{\"currency\":\"USD\",\"issuer\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"},{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}],[{\"account\":\"rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q\"},{\"currency\":\"XAG\"},{\"currency\":\"USD\",\"issuer\":\"rpHgehzdpfWRXKvSv6duKvVuo1aZVimdaT\"},{\"account\":\"rpHgehzdpfWRXKvSv6duKvVuo1aZVimdaT\"},{\"account\":\"rMH4UxPrbuMa1spCBR98hLLyNJp4d8p4tM\"}]]"
   },
   {
     "source": {
       "address": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
       "maxAmount": {
-        "currency": "XRP",
+        "currency": "XAG",
         "value": "0.207669"
       }
     },
@@ -3845,7 +3309,7 @@ return api.getPaths(pathfind)
 <tr>
 <td>address</td>
 <td><a href="#address">address</a></td>
-<td>The XRP Ledger address of the account to get open orders for.</td>
+<td>The XAG Ledger address of the account to get open orders for.</td>
 </tr>
 <tr>
 <td>options</td>
@@ -4117,7 +3581,7 @@ return api.getOrders(address).then(orders =&gt;
     "specification": {
       "direction": "buy",
       "quantity": {
-        "currency": "XRP",
+        "currency": "XAG",
         "value": "115760.19"
       },
       "totalPrice": {
@@ -4221,7 +3685,7 @@ return api.getOrders(address).then(orders =&gt;
         "counterparty": "r9Dr5xwkeLegBeXq6ujinjSBLQzQ1zQGjH"
       },
       "totalPrice": {
-        "currency": "XRP",
+        "currency": "XAG",
         "value": "2229.229447"
       }
     },
@@ -4281,12 +3745,12 @@ return api.getOrders(address).then(orders =&gt;
 <tr>
 <td><em>orderbook.</em> base</td>
 <td>object</td>
-<td>A currency-counterparty pair, or just currency if it's XRP</td>
+<td>A currency-counterparty pair, or just currency if it's XAG</td>
 </tr>
 <tr>
 <td><em>orderbook.</em> counter</td>
 <td>object</td>
-<td>A currency-counterparty pair, or just currency if it's XRP</td>
+<td>A currency-counterparty pair, or just currency if it's XAG</td>
 </tr>
 <tr>
 <td>options</td>
@@ -4434,7 +3898,7 @@ return api.getOrders(address).then(orders =&gt;
 </tbody>
 </table>
 <p><strong>Raw order data:</strong> The response includes a <code>data</code> property containing the raw order data. This may include <code>owner_funds</code>, <code>Flags</code>, and other fields.</p>
-<p>For details, see the rippled method <a class="external-link" href="https://ripple.com/build/rippled-apis/#book-offers" target="_blank">book_offers <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>For details, see the rippled method <a class="external-link" href="https://xrpgen.com/build/rippled-apis/#book-offers" target="_blank">book_offers <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <h3 id="example-33">Example</h3>
 <pre><code class="javascript">const address = 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59';
 const orderbook = {
@@ -5527,22 +4991,22 @@ return api.getOrderbook(address, orderbook)
 <tr>
 <td>defaultRipple</td>
 <td>boolean</td>
-<td><em>Optional</em> Enable <a class="external-link" href="https://ripple.com/build/understanding-the-noripple-flag/" target="_blank">rippling <i aria-hidden="true" class="fa fa-external-link"></i></a> on this account’s trust lines by default. (New in <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/0.27.3" target="_blank">rippled 0.27.3 <i aria-hidden="true" class="fa fa-external-link"></i></a>)</td>
+<td><em>Optional</em> Enable <a class="external-link" href="https://xrpgen.com/build/understanding-the-noripple-flag/" target="_blank">rippling <i aria-hidden="true" class="fa fa-external-link"></i></a> on this account’s trust lines by default. (New in <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/0.27.3" target="_blank">rippled 0.27.3 <i aria-hidden="true" class="fa fa-external-link"></i></a>)</td>
 </tr>
 <tr>
 <td>depositAuth</td>
 <td>boolean</td>
-<td><em>Optional</em> Enable <a class="external-link" href="https://ripple.com/build/deposit-authorization/" target="_blank">Deposit Authorization <i aria-hidden="true" class="fa fa-external-link"></i></a> on this account. If set, transactions cannot send value of any kind to this account unless the sender of those transactions is the account itself. (Requires the <a class="external-link" href="https://ripple.com/build/known-amendments/#depositauth" target="_blank">DepositAuth amendment <i aria-hidden="true" class="fa fa-external-link"></i></a>)</td>
+<td><em>Optional</em> Enable <a class="external-link" href="https://xrpgen.com/build/deposit-authorization/" target="_blank">Deposit Authorization <i aria-hidden="true" class="fa fa-external-link"></i></a> on this account. If set, transactions cannot send value of any kind to this account unless the sender of those transactions is the account itself. (Requires the <a class="external-link" href="https://xrpgen.com/build/known-amendments/#depositauth" target="_blank">DepositAuth amendment <i aria-hidden="true" class="fa fa-external-link"></i></a>)</td>
 </tr>
 <tr>
 <td>disableMasterKey</td>
 <td>boolean</td>
-<td><em>Optional</em> Disallows use of the master key to sign transactions for this account. To disable the master key, you must authorize the transaction by signing it with the master key pair. You cannot use a regular key pair or a multi-signature. You can re-enable the master key pair using a regular key pair or multi-signature. See <a class="external-link" href="https://developers.ripple.com/accountset.html" target="_blank">AccountSet <i aria-hidden="true" class="fa fa-external-link"></i></a>.</td>
+<td><em>Optional</em> Disallows use of the master key to sign transactions for this account. To disable the master key, you must authorize the transaction by signing it with the master key pair. You cannot use a regular key pair or a multi-signature. You can re-enable the master key pair using a regular key pair or multi-signature. See <a class="external-link" href="https://developers.xrpgen.com/accountset.html" target="_blank">AccountSet <i aria-hidden="true" class="fa fa-external-link"></i></a>.</td>
 </tr>
 <tr>
-<td>disallowIncomingXRP</td>
+<td>disallowIncomingXAG</td>
 <td>boolean</td>
-<td><em>Optional</em> Indicates that client applications should not send XRP to this account. Not enforced by rippled.</td>
+<td><em>Optional</em> Indicates that client applications should not send XAG to this account. Not enforced by rippled.</td>
 </tr>
 <tr>
 <td>domain</td>
@@ -5622,7 +5086,7 @@ return api.getOrderbook(address, orderbook)
 <tr>
 <td><em>signers.weights[].</em> address</td>
 <td><a href="#address">address</a></td>
-<td>An account address on the XRP Ledger</td>
+<td>An account address on the XAG Ledger</td>
 </tr>
 <tr>
 <td><em>signers.weights[].</em> weight</td>
@@ -5653,7 +5117,7 @@ return api.getSettings(address).then(settings =&gt;
 </code></pre>
 <pre><code class="json">{
   "requireDestinationTag": true,
-  "disallowIncomingXRP": true,
+  "disallowIncomingXAG": true,
   "emailHash": "23463B99B62A72F26ED677CC556C44E8",
   "walletLocator": "00000000000000000000000000000000000000000000000000000000DEADBEEF",
   "domain": "example.com",
@@ -5730,7 +5194,7 @@ return api.getSettings(address).then(settings =&gt;
 <tr>
 <td>xrpBalance</td>
 <td><a href="#value">value</a></td>
-<td>The XRP balance owned by the account.</td>
+<td>The XAG balance owned by the account.</td>
 </tr>
 <tr>
 <td>ownerCount</td>
@@ -5815,11 +5279,7 @@ return api.getAccountInfo(address).then(info =&gt;
 <td>integer</td>
 <td><em>Optional</em> (Optional) The maximum number of objects to include in the results.</td>
 </tr>
-<tr>
-<td><em>options.</em> type</td>
-<td>string</td>
-<td><em>Optional</em> (Optional) Filter results to include only this type of ledger object. The valid types are: <code>check</code>, <code>escrow</code>, <code>offer</code>, <code>payment_channel</code>, <code>signer_list</code>, and <code>state</code> (trust line).</td>
-</tr>
+
 </tbody>
 </table>
 <h3 id="return-value-22">Return Value</h3>
@@ -5885,9 +5345,7 @@ return api.getAccountInfo(address).then(info =&gt;
 <li><code>Offer</code> objects for orders that are currently live, unfunded, or expired but not yet removed.</li>
 <li><code>RippleState</code> objects for trust lines where this account's side is not in the default state.</li>
 <li>A <code>SignerList</code> object if the account has multi-signing enabled.</li>
-<li><code>Escrow</code> objects for held payments that have not yet been executed or canceled.</li>
-<li><code>PayChannel</code> objects for open payment channels.</li>
-<li><code>Check</code> objects for pending checks.</li>
+
 </ul>
 <h3 id="example-36">Example</h3>
 <pre><code class="javascript">const address = 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59';
@@ -6164,121 +5622,7 @@ return api.getAccountObjects(address: address).then(objects =&gt;
   "validated": true
 }
 </code></pre>
-<h2 id="getpaymentchannel">getPaymentChannel</h2>
-<p><code>getPaymentChannel(id: string): Promise&lt;object&gt;</code></p>
-<p>Returns specified payment channel.</p>
-<h3 id="parameters-21">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>string</td>
-<td>256-bit hexadecimal channel identifier.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="return-value-23">Return Value</h3>
-<p>This method returns a promise that resolves with an object with the following structure:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>account</td>
-<td><a href="#address">address</a></td>
-<td>Address that created the payment channel.</td>
-</tr>
-<tr>
-<td>destination</td>
-<td><a href="#address">address</a></td>
-<td>Address to receive XRP claims against this channel.</td>
-</tr>
-<tr>
-<td>amount</td>
-<td><a href="#value">value</a></td>
-<td>The total amount of XRP funded in this channel.</td>
-</tr>
-<tr>
-<td>balance</td>
-<td><a href="#value">value</a></td>
-<td>The total amount of XRP delivered by this channel.</td>
-</tr>
-<tr>
-<td>settleDelay</td>
-<td>number</td>
-<td>Amount of seconds the source address must wait before closing the channel if it has unclaimed XRP.</td>
-</tr>
-<tr>
-<td>previousAffectingTransactionID</td>
-<td>string</td>
-<td>Hash value representing the most recent transaction that affected this payment channel.</td>
-</tr>
-<tr>
-<td>previousAffectingTransactionLedgerVersion</td>
-<td>integer</td>
-<td>The ledger version that the transaction identified by the <code>previousAffectingTransactionID</code> was validated in.</td>
-</tr>
-<tr>
-<td>previousAffectingTransactionLedgerVersion</td>
-<td>string</td>
-<td>The ledger version that the transaction identified by the <code>previousAffectingTransactionID</code> was validated in.</td>
-</tr>
-<tr>
-<td>cancelAfter</td>
-<td>date-time string</td>
-<td><em>Optional</em> Time when this channel expires as specified at creation.</td>
-</tr>
-<tr>
-<td>destinationTag</td>
-<td>integer</td>
-<td><em>Optional</em> Destination tag.</td>
-</tr>
-<tr>
-<td>expiration</td>
-<td>date-time string</td>
-<td><em>Optional</em> Time when this channel expires.</td>
-</tr>
-<tr>
-<td>publicKey</td>
-<td>string</td>
-<td><em>Optional</em> Public key of the key pair the source will use to sign claims against this channel.</td>
-</tr>
-<tr>
-<td>sourceTag</td>
-<td>integer</td>
-<td><em>Optional</em> Source tag.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-37">Example</h3>
-<pre><code class="javascript">const channelId =
-  'E30E709CF009A1F26E0E5C48F7AA1BFB79393764F15FB108BDC6E06D3CBD8415';
-return api.getPaymentChannel(channelId).then(channel =&gt;
-  {/* ... */});
-</code></pre>
-<pre><code class="json">{
-  "account": "r6ZtfQFWbCkp4XqaUygzHaXsQXBT67xLj",
-  "amount": "10",
-  "balance": "0",
-  "destination": "rQf9vCwQtzQQwtnGvr6zc1fqzqg7QBuj7G",
-  "publicKey": "02A05282CB6197E34490BACCD9405E81D9DFBE123B0969F9F40EC3F9987AD9A97D",
-  "settleDelay": 10000,
-  "previousAffectingTransactionID": "F939A0BEF139465403C56CCDC49F59A77C868C78C5AEC184E29D15E9CD1FF675",
-  "previousAffectingTransactionLedgerVersion": 151322
-}
-</code></pre>
+
 <h2 id="getledger">getLedger</h2>
 <p><code>getLedger(options: object): Promise&lt;object&gt;</code></p>
 <p>Returns header information for the specified ledger (or the most recent validated ledger if no ledger is specified). Optionally, all the transactions that were validated in the ledger or the account state information can be returned with the ledger header.</p>
@@ -6388,7 +5732,7 @@ return api.getPaymentChannel(channelId).then(channel =&gt;
 <tr>
 <td>totalDrops</td>
 <td><a href="#value">value</a></td>
-<td>Total number of drops (1/1,000,000th of an XRP) in the network, as a quoted integer. (This decreases as transaction fees cause XRP to be destroyed.)</td>
+<td>Total number of drops (1/1,000,000th of an XAG) in the network, as a quoted integer. (This decreases as transaction fees cause XAG to be destroyed.)</td>
 </tr>
 <tr>
 <td>transactionHash</td>
@@ -6436,7 +5780,7 @@ return api.getPaymentChannel(channelId).then(channel =&gt;
 </code></pre>
 <h2 id="parseaccountflags">parseAccountFlags</h2>
 <p><code>parseAccountFlags(Flags: number): object</code></p>
-<p>Parse an <code>AccountRoot</code> object's <a class="external-link" href="https://developers.ripple.com/accountroot.html#accountroot-flags" target="_blank"><code>Flags</code> <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>Parse an <code>AccountRoot</code> object's <a class="external-link" href="https://developers.xrpgen.com/accountroot.html#accountroot-flags" target="_blank"><code>Flags</code> <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <h3 id="parameters-23">Parameters</h3>
 <p>This method takes one parameter, the AccountRoot <code>Flags</code> number to parse. Note that flags have different mappings on other types of objects or in transactions such as AccountSet.</p>
 <h3 id="return-value-25">Return Value</h3>
@@ -6451,7 +5795,7 @@ console.log(JSON.stringify(flags, null, 2))
   "requireDestinationTag": false,
   "requireAuthorization": false,
   "depositAuth": true,
-  "disallowIncomingXRP": false,
+  "disallowIncomingXAG": false,
   "disableMasterKey": false,
   "noFreeze": false,
   "globalFreeze": false,
@@ -6461,7 +5805,7 @@ console.log(JSON.stringify(flags, null, 2))
 <h2 id="preparetransaction">prepareTransaction</h2>
 <p><code>prepareTransaction(transaction: object, instructions: object): Promise&lt;object&gt;</code></p>
 <p>Prepare a transaction. The prepared transaction must subsequently be <a href="#sign">signed</a> and <a href="#submit">submitted</a>.</p>
-<p>This method works with any of <a class="external-link" href="https://developers.ripple.com/transaction-types.html" target="_blank">the transaction types supported by rippled <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>This method works with any of <a class="external-link" href="https://developers.xrpgen.com/transaction-types.html" target="_blank">the transaction types supported by rippled <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <p>Notably, this is the preferred method for preparing <code>DepositPreauth</code> or <code>AccountDelete</code> transactions.</p>
 <h3 id="parameters-24">Parameters</h3>
 <table>
@@ -6475,7 +5819,7 @@ console.log(JSON.stringify(flags, null, 2))
 <tbody>
 <tr>
 <td>transaction</td>
-<td><a class="external-link" href="https://developers.ripple.com/transaction-formats.html" target="_blank">transaction <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
+<td><a class="external-link" href="https://developers.xrpgen.com/transaction-formats.html" target="_blank">transaction <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
 <td>The specification (JSON) of the transaction to prepare. Set <code>Account</code> to the address of the account that is creating the transaction. You may omit auto-fillable fields like <code>Fee</code>, <code>Flags</code>, and <code>Sequence</code> to have them set automatically.</td>
 </tr>
 <tr>
@@ -6846,7 +6190,7 @@ All "prepare*" methods have the same return type.
 <h3 id="example-43">Example</h3>
 <pre><code class="javascript">const address = 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59';
 
-// Buy 10.10 USD (of the specified issuer) for 2.0 XRP (2000000 drops), fill or kill.
+// Buy 10.10 USD (of the specified issuer) for 2.0 XAG (2000000 drops), fill or kill.
 const order = {
   "direction": "buy",
   "quantity": {
@@ -7043,7 +6387,7 @@ All "prepare*" methods have the same return type.
 <h3 id="example-45">Example</h3>
 <pre><code class="javascript">const address = 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59';
 const settings = {
-  "domain": "ripple.com",
+  "domain": "xrpgen.com",
   "memos": [
     {
       "type": "test",
@@ -7056,7 +6400,7 @@ return api.prepareSettings(address, settings)
   .then(prepared =&gt; {/* ... */});
 </code></pre>
 <pre><code class="json">{
-  "domain": "ripple.com",
+  "domain": "xrpgen.com",
   "memos": [
     {
       "type": "test",
@@ -7066,871 +6410,11 @@ return api.prepareSettings(address, settings)
   ]
 }
 </code></pre>
-<h2 id="prepareescrowcreation">prepareEscrowCreation</h2>
-<p><code>prepareEscrowCreation(address: string, escrowCreation: object, instructions: object): Promise&lt;object&gt;</code></p>
-<p>Prepare an escrow creation transaction. The prepared transaction must subsequently be <a href="#sign">signed</a> and <a href="#submit">submitted</a>.</p>
-<h3 id="parameters-30">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>address</td>
-<td><a href="#address">address</a></td>
-<td>The address of the account that is creating the transaction.</td>
-</tr>
-<tr>
-<td>escrowCreation</td>
-<td><a href="#escrow-creation">escrowCreation</a></td>
-<td>The specification of the escrow creation to prepare.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td><a href="#transaction-instructions">instructions</a></td>
-<td><em>Optional</em> Instructions for executing the transaction</td>
-</tr>
-</tbody>
-</table>
-<p>This is a convenience method for generating the EscrowCreate JSON used by rippled, so the same restrictions apply.</p>
-<p>Field mapping: <code>allowCancelAfter</code> is equivalent to rippled's <code>CancelAfter</code>; <code>allowExecuteAfter</code> is equivalent to <code>FinishAfter</code>. At the <code>allowCancelAfter</code> time, the escrow is considered expired. This means that the funds can only be returned to the sender. At the <code>allowExecuteAfter</code> time, the escrow is permitted to be released to the recipient (if the <code>condition</code> is fulfilled).</p>
-<p>Note that <code>allowCancelAfter</code> must be chronologically later than <code>allowExecuteAfter</code>.</p>
-<h3 id="return-value-32">Return Value</h3>
-<p>This method returns a promise that resolves with an object with the following structure:</p>
-<aside class="notice">
-All "prepare*" methods have the same return type.
-</aside>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>txJSON</td>
-<td>string</td>
-<td>The prepared transaction in rippled JSON format.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td>object</td>
-<td>The instructions for how to execute the transaction after adding automatic defaults.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> fee</td>
-<td><a href="#value">value</a></td>
-<td>The fee to pay for the transaction. See <a href="#transaction-fees">Transaction Fees</a> for more information. For multi-signed transactions, this fee will be multiplied by (N+1), where N is the number of signatures you plan to provide.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> sequence</td>
-<td><a href="#account-sequence-number">sequence</a></td>
-<td>The initiating account's sequence number for this transaction.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>integer,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>string,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-46">Example</h3>
-<pre><code class="javascript">const address = 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59';
-const escrowCreation = {
-  "destination": "rpZc4mVfWUif9CRoHRKKcmhu1nx2xktxBo",
-  "amount": "0.01",
-  "allowExecuteAfter": "2014-09-24T21:21:50.000Z",
-  "allowCancelAfter":  "2017-01-01T00:00:00.000Z"
-};
-return api.prepareEscrowCreation(address, escrowCreation).then(prepared =&gt;
-  {/* ... */});
-</code></pre>
-<pre><code class="json">{
-  "txJSON": "{\"Flags\":2147483648,\"TransactionType\":\"EscrowCreate\",\"Account\":\"r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59\",\"Destination\":\"rpZc4mVfWUif9CRoHRKKcmhu1nx2xktxBo\",\"Amount\":\"10000\",\"CancelAfter\":536544000,\"FinishAfter\":464908910,\"LastLedgerSequence\":8820051,\"Fee\":\"12\",\"Sequence\":23}",
-  "instructions": {
-    "fee": "0.000012",
-    "sequence": 23,
-    "maxLedgerVersion": 8820051
-  }
-}
-</code></pre>
-<h2 id="prepareescrowcancellation">prepareEscrowCancellation</h2>
-<p><code>prepareEscrowCancellation(address: string, escrowCancellation: object, instructions: object): Promise&lt;object&gt;</code></p>
-<p>Prepare an escrow cancellation transaction. The prepared transaction must subsequently be <a href="#sign">signed</a> and <a href="#submit">submitted</a>.</p>
-<h3 id="parameters-31">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>address</td>
-<td><a href="#address">address</a></td>
-<td>The address of the account that is creating the transaction.</td>
-</tr>
-<tr>
-<td>escrowCancellation</td>
-<td><a href="#escrow-cancellation">escrowCancellation</a></td>
-<td>The specification of the escrow cancellation to prepare.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td><a href="#transaction-instructions">instructions</a></td>
-<td><em>Optional</em> Instructions for executing the transaction</td>
-</tr>
-</tbody>
-</table>
-<h3 id="return-value-33">Return Value</h3>
-<p>This method returns a promise that resolves with an object with the following structure:</p>
-<aside class="notice">
-All "prepare*" methods have the same return type.
-</aside>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>txJSON</td>
-<td>string</td>
-<td>The prepared transaction in rippled JSON format.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td>object</td>
-<td>The instructions for how to execute the transaction after adding automatic defaults.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> fee</td>
-<td><a href="#value">value</a></td>
-<td>The fee to pay for the transaction. See <a href="#transaction-fees">Transaction Fees</a> for more information. For multi-signed transactions, this fee will be multiplied by (N+1), where N is the number of signatures you plan to provide.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> sequence</td>
-<td><a href="#account-sequence-number">sequence</a></td>
-<td>The initiating account's sequence number for this transaction.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>integer,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>string,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-47">Example</h3>
-<pre><code class="javascript">const address = 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59';
-const escrowCancellation = {
-  "owner": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
-  "escrowSequence": 1234
-};
-return api.prepareEscrowCancellation(address, escrowCancellation).then(prepared =&gt;
-  {/* ... */});
-</code></pre>
-<pre><code class="json">{
-  "txJSON": "{\"Flags\":2147483648,\"TransactionType\":\"EscrowCancel\",\"Account\":\"r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59\",\"Owner\":\"r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59\",\"OfferSequence\":1234,\"LastLedgerSequence\":8820051,\"Fee\":\"12\",\"Sequence\":23}",
-  "instructions": {
-    "fee": "0.000012",
-    "sequence": 23,
-    "maxLedgerVersion": 8820051
-  }
-}
-</code></pre>
-<h2 id="prepareescrowexecution">prepareEscrowExecution</h2>
-<p><code>prepareEscrowExecution(address: string, escrowExecution: object, instructions: object): Promise&lt;object&gt;</code></p>
-<p>Prepare an escrow execution transaction. The prepared transaction must subsequently be <a href="#sign">signed</a> and <a href="#submit">submitted</a>.</p>
-<h3 id="parameters-32">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>address</td>
-<td><a href="#address">address</a></td>
-<td>The address of the account that is creating the transaction.</td>
-</tr>
-<tr>
-<td>escrowExecution</td>
-<td><a href="#escrow-execution">escrowExecution</a></td>
-<td>The specification of the escrow execution to prepare.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td><a href="#transaction-instructions">instructions</a></td>
-<td><em>Optional</em> Instructions for executing the transaction</td>
-</tr>
-</tbody>
-</table>
-<h3 id="return-value-34">Return Value</h3>
-<p>This method returns a promise that resolves with an object with the following structure:</p>
-<aside class="notice">
-All "prepare*" methods have the same return type.
-</aside>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>txJSON</td>
-<td>string</td>
-<td>The prepared transaction in rippled JSON format.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td>object</td>
-<td>The instructions for how to execute the transaction after adding automatic defaults.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> fee</td>
-<td><a href="#value">value</a></td>
-<td>The fee to pay for the transaction. See <a href="#transaction-fees">Transaction Fees</a> for more information. For multi-signed transactions, this fee will be multiplied by (N+1), where N is the number of signatures you plan to provide.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> sequence</td>
-<td><a href="#account-sequence-number">sequence</a></td>
-<td>The initiating account's sequence number for this transaction.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>integer,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>string,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-48">Example</h3>
-<pre><code class="javascript">const address = 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59';
-const escrowExecution = {
-  "owner": "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
-  "escrowSequence": 1234,
-  "condition": "A0258020E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855810100",
-  "fulfillment": "A0028000"
-};
-return api.prepareEscrowExecution(address, escrowExecution).then(prepared =&gt;
-  {/* ... */});
-</code></pre>
-<pre><code class="json">{
-  "txJSON": "{\"Flags\":2147483648,\"TransactionType\":\"EscrowFinish\",\"Account\":\"r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59\",\"Owner\":\"r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59\",\"OfferSequence\":1234,\"Condition\":\"A0258020E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855810100\",\"Fulfillment\":\"A0028000\",\"LastLedgerSequence\":8820051,\"Fee\":\"396\",\"Sequence\":23}",
-  "instructions": {
-    "fee": "0.000396",
-    "sequence": 23,
-    "maxLedgerVersion": 8820051
-  }
-}
-</code></pre>
-<h2 id="preparepaymentchannelcreate">preparePaymentChannelCreate</h2>
-<p><code>preparePaymentChannelCreate(address: string, paymentChannelCreate: object, instructions: object): Promise&lt;object&gt;</code></p>
-<p>Prepare a payment channel creation transaction. The prepared transaction must subsequently be <a href="#sign">signed</a> and <a href="#submit">submitted</a>.</p>
-<h3 id="parameters-33">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>address</td>
-<td><a href="#address">address</a></td>
-<td>The address of the account that is creating the transaction.</td>
-</tr>
-<tr>
-<td>paymentChannelCreate</td>
-<td><a href="#payment-channel-create">paymentChannelCreate</a></td>
-<td>The specification of the payment channel to create.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td><a href="#transaction-instructions">instructions</a></td>
-<td><em>Optional</em> Instructions for executing the transaction</td>
-</tr>
-</tbody>
-</table>
-<h3 id="return-value-35">Return Value</h3>
-<p>This method returns a promise that resolves with an object with the following structure:</p>
-<aside class="notice">
-All "prepare*" methods have the same return type.
-</aside>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>txJSON</td>
-<td>string</td>
-<td>The prepared transaction in rippled JSON format.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td>object</td>
-<td>The instructions for how to execute the transaction after adding automatic defaults.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> fee</td>
-<td><a href="#value">value</a></td>
-<td>The fee to pay for the transaction. See <a href="#transaction-fees">Transaction Fees</a> for more information. For multi-signed transactions, this fee will be multiplied by (N+1), where N is the number of signatures you plan to provide.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> sequence</td>
-<td><a href="#account-sequence-number">sequence</a></td>
-<td>The initiating account's sequence number for this transaction.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>integer,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>string,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-49">Example</h3>
-<pre><code class="javascript">const address = 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59';
-const paymentChannelCreate = {
-  "amount": "1",
-  "destination": "rsA2LpzuawewSBQXkiju3YQTMzW13pAAdW",
-  "settleDelay": 86400,
-  "publicKey": "32D2471DB72B27E3310F355BB33E339BF26F8392D5A93D3BC0FC3B566612DA0F0A"
-};
-return api.preparePaymentChannelCreate(address, paymentChannelCreate).then(prepared =&gt;
-  {/* ... */});
-</code></pre>
-<pre><code class="json">{
-  "txJSON":"{\"Account\":\"r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59\",\"TransactionType\":\"PaymentChannelCreate\",\"Amount\":\"1000000\",\"Destination\":\"rsA2LpzuawewSBQXkiju3YQTMzW13pAAdW\",\"SettleDelay\":86400,\"PublicKey\":\"32D2471DB72B27E3310F355BB33E339BF26F8392D5A93D3BC0FC3B566612DA0F0A\",\"Flags\":2147483648,\"LastLedgerSequence\":8820051,\"Fee\":\"12\",\"Sequence\":23}",
-  "instructions": {
-    "fee": "0.000012",
-    "sequence": 23,
-    "maxLedgerVersion": 8820051
-  }
-}
-</code></pre>
-<h2 id="preparepaymentchannelclaim">preparePaymentChannelClaim</h2>
-<p><code>preparePaymentChannelClaim(address: string, paymentChannelClaim: object, instructions: object): Promise&lt;object&gt;</code></p>
-<p>Prepare a payment channel claim transaction. The prepared transaction must subsequently be <a href="#sign">signed</a> and <a href="#submit">submitted</a>.</p>
-<h3 id="parameters-34">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>address</td>
-<td><a href="#address">address</a></td>
-<td>The address of the account that is creating the transaction.</td>
-</tr>
-<tr>
-<td>paymentChannelClaim</td>
-<td><a href="#payment-channel-claim">paymentChannelClaim</a></td>
-<td>Details of the channel and claim.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td><a href="#transaction-instructions">instructions</a></td>
-<td><em>Optional</em> Instructions for executing the transaction</td>
-</tr>
-</tbody>
-</table>
-<h3 id="return-value-36">Return Value</h3>
-<p>This method returns a promise that resolves with an object with the following structure:</p>
-<aside class="notice">
-All "prepare*" methods have the same return type.
-</aside>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>txJSON</td>
-<td>string</td>
-<td>The prepared transaction in rippled JSON format.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td>object</td>
-<td>The instructions for how to execute the transaction after adding automatic defaults.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> fee</td>
-<td><a href="#value">value</a></td>
-<td>The fee to pay for the transaction. See <a href="#transaction-fees">Transaction Fees</a> for more information. For multi-signed transactions, this fee will be multiplied by (N+1), where N is the number of signatures you plan to provide.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> sequence</td>
-<td><a href="#account-sequence-number">sequence</a></td>
-<td>The initiating account's sequence number for this transaction.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>integer,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>string,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-50">Example</h3>
-<pre><code class="javascript">const address = 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59';
-const paymentChannelClaim = {
-  "channel": "C1AE6DDDEEC05CF2978C0BAD6FE302948E9533691DC749DCDD3B9E5992CA6198"
-};
-return api.preparePaymentChannelClaim(address, paymentChannelClaim).then(prepared =&gt;
-  {/* ... */});
-</code></pre>
-<pre><code class="json">{
-  "txJSON": "{\"Account\":\"r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59\",\"TransactionType\":\"PaymentChannelClaim\",\"Channel\":\"C1AE6DDDEEC05CF2978C0BAD6FE302948E9533691DC749DCDD3B9E5992CA6198\",\"Flags\":2147483648,\"LastLedgerSequence\":8820051,\"Fee\":\"12\",\"Sequence\":23}",
-  "instructions": {
-    "fee": "0.000012",
-    "sequence": 23,
-    "maxLedgerVersion": 8820051
-  }
-}
-</code></pre>
-<h2 id="preparepaymentchannelfund">preparePaymentChannelFund</h2>
-<p><code>preparePaymentChannelFund(address: string, paymentChannelFund: object, instructions: object): Promise&lt;object&gt;</code></p>
-<p>Prepare a payment channel fund transaction. The prepared transaction must subsequently be <a href="#sign">signed</a> and <a href="#submit">submitted</a>.</p>
-<h3 id="parameters-35">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>address</td>
-<td><a href="#address">address</a></td>
-<td>The address of the account that is creating the transaction.</td>
-</tr>
-<tr>
-<td>paymentChannelFund</td>
-<td><a href="#payment-channel-fund">paymentChannelFund</a></td>
-<td>The channel to fund, and the details of how to fund it.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td><a href="#transaction-instructions">instructions</a></td>
-<td><em>Optional</em> Instructions for executing the transaction</td>
-</tr>
-</tbody>
-</table>
-<h3 id="return-value-37">Return Value</h3>
-<p>This method returns a promise that resolves with an object with the following structure:</p>
-<aside class="notice">
-All "prepare*" methods have the same return type.
-</aside>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>txJSON</td>
-<td>string</td>
-<td>The prepared transaction in rippled JSON format.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td>object</td>
-<td>The instructions for how to execute the transaction after adding automatic defaults.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> fee</td>
-<td><a href="#value">value</a></td>
-<td>The fee to pay for the transaction. See <a href="#transaction-fees">Transaction Fees</a> for more information. For multi-signed transactions, this fee will be multiplied by (N+1), where N is the number of signatures you plan to provide.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> sequence</td>
-<td><a href="#account-sequence-number">sequence</a></td>
-<td>The initiating account's sequence number for this transaction.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>integer,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>string,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-51">Example</h3>
-<pre><code class="javascript">const address = 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59';
-const paymentChannelFund = {
-  "channel": "C1AE6DDDEEC05CF2978C0BAD6FE302948E9533691DC749DCDD3B9E5992CA6198",
-  "amount": "1"
-};
-return api.preparePaymentChannelFund(address, paymentChannelFund).then(prepared =&gt;
-  {/* ... */});
-</code></pre>
-<pre><code class="json">{
-  "txJSON":"{\"Account\":\"r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59\",\"TransactionType\":\"PaymentChannelFund\",\"Channel\":\"C1AE6DDDEEC05CF2978C0BAD6FE302948E9533691DC749DCDD3B9E5992CA6198\",\"Amount\":\"1000000\",\"Flags\":2147483648,\"LastLedgerSequence\":8820051,\"Fee\":\"12\",\"Sequence\":23}",
-  "instructions": {
-    "fee": "0.000012",
-    "sequence": 23,
-    "maxLedgerVersion": 8820051
-  }
-}
-</code></pre>
-<h2 id="preparecheckcreate">prepareCheckCreate</h2>
-<p><code>prepareCheckCreate(address: string, checkCreate: object, instructions: object): Promise&lt;object&gt;</code></p>
-<p>Prepare a Check creation transaction. The prepared transaction must subsequently be <a href="#sign">signed</a> and <a href="#submit">submitted</a>.</p>
-<h3 id="parameters-36">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>address</td>
-<td><a href="#address">address</a></td>
-<td>The address of the account that is creating the transaction.</td>
-</tr>
-<tr>
-<td>checkCreate</td>
-<td><a href="#check-create">checkCreate</a></td>
-<td>The specification of the Check create creation to prepare.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td><a href="#transaction-instructions">instructions</a></td>
-<td><em>Optional</em> Instructions for executing the transaction</td>
-</tr>
-</tbody>
-</table>
-<h3 id="return-value-38">Return Value</h3>
-<p>This method returns a promise that resolves with an object with the following structure:</p>
-<aside class="notice">
-All "prepare*" methods have the same return type.
-</aside>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>txJSON</td>
-<td>string</td>
-<td>The prepared transaction in rippled JSON format.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td>object</td>
-<td>The instructions for how to execute the transaction after adding automatic defaults.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> fee</td>
-<td><a href="#value">value</a></td>
-<td>The fee to pay for the transaction. See <a href="#transaction-fees">Transaction Fees</a> for more information. For multi-signed transactions, this fee will be multiplied by (N+1), where N is the number of signatures you plan to provide.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> sequence</td>
-<td><a href="#account-sequence-number">sequence</a></td>
-<td>The initiating account's sequence number for this transaction.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>integer,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>string,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-52">Example</h3>
-<pre><code class="javascript">const address = 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59';
-const checkCreate = {
-  "destination": "rsA2LpzuawewSBQXkiju3YQTMzW13pAAdW",
-  "sendMax": {
-    "currency": "drops",
-    "value": "1000000"
-  }
-};
-return api.prepareCheckCreate(address, checkCreate).then(prepared =&gt;
-  {/* ... */});
-</code></pre>
-<pre><code class="json">{
-  "txJSON": "{\"Account\":\"r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59\",\"TransactionType\":\"CheckCreate\",\"Destination\":\"rsA2LpzuawewSBQXkiju3YQTMzW13pAAdW\",\"SendMax\":\"1000000\",\"Flags\":2147483648,\"LastLedgerSequence\":8820051,\"Sequence\":23,\"Fee\":\"12\"}",
-  "instructions": {
-    "fee": "0.000012",
-    "sequence": 23,
-    "maxLedgerVersion": 8820051
-  }
-}
-</code></pre>
-<h2 id="preparecheckcancel">prepareCheckCancel</h2>
-<p><code>prepareCheckCancel(address: string, checkCancel: object, instructions: object): Promise&lt;object&gt;</code></p>
-<p>Prepare a Check cancellation transaction. This cancels an unredeemed Check, removing it from the ledger without sending any money. The prepared transaction must subsequently be <a href="#sign">signed</a> and <a href="#submit">submitted</a>.</p>
-<h3 id="parameters-37">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>address</td>
-<td><a href="#address">address</a></td>
-<td>The address of the account that is creating the transaction.</td>
-</tr>
-<tr>
-<td>checkCancel</td>
-<td><a href="#check-cancel">checkCancel</a></td>
-<td>The specification of the Check cancellation to prepare.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td><a href="#transaction-instructions">instructions</a></td>
-<td><em>Optional</em> Instructions for executing the transaction</td>
-</tr>
-</tbody>
-</table>
-<h3 id="return-value-39">Return Value</h3>
-<p>This method returns a promise that resolves with an object with the following structure:</p>
-<aside class="notice">
-All "prepare*" methods have the same return type.
-</aside>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>txJSON</td>
-<td>string</td>
-<td>The prepared transaction in rippled JSON format.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td>object</td>
-<td>The instructions for how to execute the transaction after adding automatic defaults.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> fee</td>
-<td><a href="#value">value</a></td>
-<td>The fee to pay for the transaction. See <a href="#transaction-fees">Transaction Fees</a> for more information. For multi-signed transactions, this fee will be multiplied by (N+1), where N is the number of signatures you plan to provide.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> sequence</td>
-<td><a href="#account-sequence-number">sequence</a></td>
-<td>The initiating account's sequence number for this transaction.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>integer,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>string,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-53">Example</h3>
-<pre><code class="javascript">const address = 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59';
-const checkCancel = {
-  "checkID": "49647F0D748DC3FE26BDACBC57F251AADEFFF391403EC9BF87C97F67E9977FB0"
-};
-return api.prepareCheckCancel(address, checkCancel).then(prepared =&gt;
-  {/* ... */});
-</code></pre>
-<pre><code class="json">{
-  "txJSON": "{\"Account\":\"r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59\",\"TransactionType\":\"CheckCancel\",\"CheckID\":\"49647F0D748DC3FE26BDACBC57F251AADEFFF391403EC9BF87C97F67E9977FB0\",\"Flags\":2147483648,\"LastLedgerSequence\":8819954,\"Fee\":\"12\",\"Sequence\":23}",
-  "instructions": {
-    "fee": "0.000012",
-    "sequence": 23,
-    "maxLedgerVersion": 8819954
-  }
-}
-</code></pre>
-<h2 id="preparecheckcash">prepareCheckCash</h2>
-<p><code>prepareCheckCash(address: string, checkCash: object, instructions: object): Promise&lt;object&gt;</code></p>
-<p>Prepare a Check cashing transaction. This redeems a Check to receive up to the amount authorized by the corresponding CheckCreate transaction. The prepared transaction must subsequently be <a href="#sign">signed</a> and <a href="#submit">submitted</a>.</p>
-<h3 id="parameters-38">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>address</td>
-<td><a href="#address">address</a></td>
-<td>The address of the account that is creating the transaction.</td>
-</tr>
-<tr>
-<td>checkCash</td>
-<td><a href="#check-cash">checkCash</a></td>
-<td>The specification of the Check cash to prepare.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td><a href="#transaction-instructions">instructions</a></td>
-<td><em>Optional</em> Instructions for executing the transaction</td>
-</tr>
-</tbody>
-</table>
-<h3 id="return-value-40">Return Value</h3>
-<p>This method returns a promise that resolves with an object with the following structure:</p>
-<aside class="notice">
-All "prepare*" methods have the same return type.
-</aside>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>txJSON</td>
-<td>string</td>
-<td>The prepared transaction in rippled JSON format.</td>
-</tr>
-<tr>
-<td>instructions</td>
-<td>object</td>
-<td>The instructions for how to execute the transaction after adding automatic defaults.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> fee</td>
-<td><a href="#value">value</a></td>
-<td>The fee to pay for the transaction. See <a href="#transaction-fees">Transaction Fees</a> for more information. For multi-signed transactions, this fee will be multiplied by (N+1), where N is the number of signatures you plan to provide.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> sequence</td>
-<td><a href="#account-sequence-number">sequence</a></td>
-<td>The initiating account's sequence number for this transaction.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>integer,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-<tr>
-<td><em>instructions.</em> maxLedgerVersion</td>
-<td>string,null</td>
-<td>The highest ledger version that the transaction can be included in. Set to <code>null</code> if there is no maximum. If not null, this must be an integer greater than 0, or one of the following strings: 'validated', 'closed', 'current'.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-54">Example</h3>
-<pre><code class="javascript">const address = 'r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59';
-const checkCash = {
-  "amount": {
-    "currency": "drops",
-    "value": "1000000"
-  },
-  "checkID": "838766BA2B995C00744175F69A1B11E32C3DBC40E64801A4056FCBD657F57334"
-};
-return api.prepareCheckCash(address, checkCash).then(prepared =&gt;
-  {/* ... */});
-</code></pre>
-<pre><code class="json">{
-  "txJSON": "{\"Account\":\"r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59\",\"TransactionType\":\"CheckCash\",\"CheckID\":\"838766BA2B995C00744175F69A1B11E32C3DBC40E64801A4056FCBD657F57334\",\"Amount\":\"1000000\",\"Flags\":2147483648,\"LastLedgerSequence\":8819954,\"Sequence\":23,\"Fee\":\"12\"}",
-  "instructions": {
-    "fee": "0.000012",
-    "sequence": 23,
-    "maxLedgerVersion": 8819954
-  }
-}
-</code></pre>
 <h2 id="sign">sign</h2>
 <pre><code>sign(txJSON: string, secret: string, options: object): {signedTransaction: string, id: string}
 sign(txJSON: string, keypair: object, options: object): {signedTransaction: string, id: string}
 </code></pre>
 <p>Sign a prepared transaction. The signed transaction must subsequently be <a href="#submit">submitted</a>.</p>
-<p>This method can sign any of <a class="external-link" href="https://github.com/ripple/ripple-binary-codec/blob/cfcde79c19c359e9a0466d7bc3dc9a3aef47bb99/src/enums/definitions.json#L1637" target="_blank">the transaction types supported by ripple-binary-codec <i aria-hidden="true" class="fa fa-external-link"></i></a>. When a new transaction type is added to the XRP Ledger, it will be unrecognized until <code>ripple-binary-codec</code> is updated. If you try to sign an unrecognized transaction type, this method throws an error similar to the following:</p>
 <p><code>Error: [TRANSACTION_TYPE] is not a valid name or ordinal for TransactionType</code></p>
 <h3 id="parameters-39">Parameters</h3>
 <table>
@@ -8063,7 +6547,7 @@ const multiSignPaymentTransaction = {
 };
 
 const api = new RippleAPI({
-    server: 'wss://s.altnet.rippletest.net:51233'
+    server: 'wss://g1.xrpgen.com'
 });
 
 api.connect().then(() =&gt; {
@@ -8199,7 +6683,7 @@ return api.combine(signedTransactions);
 <tr>
 <td>engine_result</td>
 <td>string</td>
-<td>Code indicating the preliminary result of the transaction, for example <code>tesSUCCESS</code>. <a class="external-link" href="https://developers.ripple.com/transaction-results.html" target="_blank">List of transaction responses <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
+<td>Code indicating the preliminary result of the transaction, for example <code>tesSUCCESS</code>. <a class="external-link" href="https://developers.xrpgen.com/transaction-results.html" target="_blank">List of transaction responses <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
 </tr>
 <tr>
 <td>engine_result_code</td>
@@ -8218,7 +6702,7 @@ return api.combine(signedTransactions);
 </tr>
 <tr>
 <td>tx_json</td>
-<td><a class="external-link" href="https://developers.ripple.com/transaction-formats.html" target="_blank">tx-json <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
+<td><a class="external-link" href="https://developers.xrpgen.com/transaction-formats.html" target="_blank">tx-json <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
 <td>The complete transaction in JSON format.</td>
 </tr>
 </tbody>
@@ -8253,81 +6737,11 @@ return api.submit(signedTransaction)
   }
 }
 </code></pre>
-<h2 id="generatexaddress">generateXAddress</h2>
-<p><code>generateXAddress(options?: object): {address: string, secret: string}</code></p>
-<p>Generate a new XRP Ledger address and corresponding secret.</p>
-<h3 id="parameters-42">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>options</td>
-<td>object</td>
-<td><em>Optional</em> Options to control how the address and secret are generated.</td>
-</tr>
-<tr>
-<td><em>options.</em> algorithm</td>
-<td>string</td>
-<td><em>Optional</em> The digital signature algorithm to generate an address for. Can be <code>ecdsa-secp256k1</code> (default) or <code>ed25519</code>.</td>
-</tr>
-<tr>
-<td><em>options.</em> entropy</td>
-<td>array\&lt;integer&gt;</td>
-<td><em>Optional</em> The entropy to use to generate the seed. Must be an array of length 16 with values from 0-255 (16 bytes of entropy)</td>
-</tr>
-<tr>
-<td><em>options.</em> includeClassicAddress</td>
-<td>boolean</td>
-<td><em>Optional</em> Specifies whether the classic address should also be included in the returned payload.</td>
-</tr>
-<tr>
-<td><em>options.</em> test</td>
-<td>boolean</td>
-<td><em>Optional</em> Specifies whether the address is intended for use on a test network such as Testnet or Devnet. If <code>true</code>, the address should only be used for testing, and will start with <code>T</code>. If <code>false</code>, the address should only be used on mainnet, and will start with <code>X</code>.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="return-value-44">Return Value</h3>
-<p>This method returns an object with the following structure:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>xAddress</td>
-<td><a href="#x-address">xAddress</a></td>
-<td>A randomly generated XRP Ledger address in X-address format.</td>
-</tr>
-<tr>
-<td>secret</td>
-<td>secret string</td>
-<td>The secret corresponding to the address.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-58">Example</h3>
-<pre><code class="javascript">return api.generateXAddress();
-</code></pre>
-<pre><code class="json">{
-  "xAddress": "XVLcsWWNiFdUEqoDmSwgxh1abfddG1LtbGFk7omPgYpbyE8",
-  "secret": "sp6JS7f14BuwFY8Mw6bTtLKWauoUs"
-}
-</code></pre>
+
 <h2 id="generateaddress">generateAddress</h2>
 <p><code>generateAddress(options?: object): {address: string, secret: string}</code></p>
 <p>Deprecated: This method returns a classic address. If you do not need the classic address, use <code>generateXAddress</code> instead.</p>
-<p>Generate a new XRP Ledger address and corresponding secret.</p>
+<p>Generate a new XAG Ledger address and corresponding secret.</p>
 <h3 id="parameters-43">Parameters</h3>
 <table>
 <thead>
@@ -8379,12 +6793,12 @@ return api.submit(signedTransaction)
 <tr>
 <td>xAddress</td>
 <td><a href="#x-address">xAddress</a></td>
-<td>A randomly generated XRP Ledger address in X-address format.</td>
+<td>A randomly generated XAG Ledger address in X-address format.</td>
 </tr>
 <tr>
 <td>classicAddress</td>
 <td><a href="#classic-address">classicAddress</a></td>
-<td>A randomly generated XRP Ledger Account ID (classic address).</td>
+<td>A randomly generated XAG Ledger Account ID (classic address).</td>
 </tr>
 <tr>
 <td>address</td>
@@ -8442,7 +6856,7 @@ var private_key = keypair.privateKey;
 </code></pre>
 <h2 id="deriveaddress">deriveAddress</h2>
 <p><code>deriveAddress(publicKey: string): string</code></p>
-<p>Derive an XRP Ledger address from a public key.</p>
+<p>Derive an XAG Ledger address from a public key.</p>
 <h3 id="parameters-47">Parameters</h3>
 <p>This method takes one parameter, the public key from which to derive the address.</p>
 <h3 id="return-value-49">Return Value</h3>
@@ -8450,128 +6864,7 @@ var private_key = keypair.privateKey;
 <h3 id="example-63">Example</h3>
 <pre><code class="javascript">var address = api.deriveAddress(public_key);
 </code></pre>
-<h2 id="signpaymentchannelclaim">signPaymentChannelClaim</h2>
-<p><code>signPaymentChannelClaim(channel: string, amount: string, privateKey: string): string</code></p>
-<p>Sign a payment channel claim. The signature can be submitted in a subsequent <a href="#preparepaymentchannelclaim">PaymentChannelClaim</a> transaction.</p>
-<h3 id="parameters-48">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>channel</td>
-<td>string</td>
-<td>256-bit hexadecimal channel identifier.</td>
-</tr>
-<tr>
-<td>amount</td>
-<td><a href="#value">value</a></td>
-<td>Amount of XRP authorized by the claim.</td>
-</tr>
-<tr>
-<td>privateKey</td>
-<td>string</td>
-<td>The private key to sign the payment channel claim.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="return-value-50">Return Value</h3>
-<p>This method returns a signature string:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td>string</td>
-<td>The hexadecimal representation of a signature.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-64">Example</h3>
-<pre><code class="javascript">const channel =
-  '3E18C05AD40319B809520F1A136370C4075321B285217323396D6FD9EE1E9037';
-const amount = '.00001';
-const privateKey =
-  'ACCD3309DB14D1A4FC9B1DAE608031F4408C85C73EE05E035B7DC8B25840107A';
-return api.signPaymentChannelClaim(channel, amount, privateKey);
-</code></pre>
-<pre><code class="json">"3045022100B5C54654221F154347679B97AE7791CBEF5E6772A3F894F9C781B8F1B400F89F022021E466D29DC5AEB5DFAFC76E8A88D2E388EBD25A84143B6AC3B647F479CB89B7"
-</code></pre>
-<h2 id="verifypaymentchannelclaim">verifyPaymentChannelClaim</h2>
-<p><code>verifyPaymentChannelClaim(channel: string, amount: string, signature: string, publicKey: string): boolean</code></p>
-<p>Verify a payment channel claim signature.</p>
-<h3 id="parameters-49">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>channel</td>
-<td>string</td>
-<td>256-bit hexadecimal channel identifier.</td>
-</tr>
-<tr>
-<td>amount</td>
-<td><a href="#value">value</a></td>
-<td>Amount of XRP authorized by the claim.</td>
-</tr>
-<tr>
-<td>signature</td>
-<td>string</td>
-<td>Signature of this claim.</td>
-</tr>
-<tr>
-<td>publicKey</td>
-<td>string</td>
-<td>Public key of the channel's sender</td>
-</tr>
-</tbody>
-</table>
-<h3 id="return-value-51">Return Value</h3>
-<p>This method returns <code>true</code> if the claim signature is valid.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td>boolean</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="example-65">Example</h3>
-<pre><code class="javascript">const channel =
-  '3E18C05AD40319B809520F1A136370C4075321B285217323396D6FD9EE1E9037';
-const amount = '.00001';
-const signature = "3045022100B5C54654221F154347679B97AE7791CBEF5E6772A3F894F9C781B8F1B400F89F022021E466D29DC5AEB5DFAFC76E8A88D2E388EBD25A84143B6AC3B647F479CB89B7";
-const publicKey =
-  '02F89EAEC7667B30F33D0687BBA86C3FE2A08CCA40A9186C5BDE2DAA6FA97A37D8';
-return api.verifyPaymentChannelClaim(channel, amount, signature, publicKey);
-</code></pre>
-<pre><code class="json">true
-</code></pre>
+
 <h2 id="computeledgerhash">computeLedgerHash</h2>
 <p><code>computeLedgerHash(ledger: object): string</code></p>
 <p>Compute the hash of a ledger.</p>
@@ -8641,7 +6934,7 @@ The parameter to this method has the same structure as the return value of getLe
 <tr>
 <td><em>ledger.</em> totalDrops</td>
 <td><a href="#value">value</a></td>
-<td>Total number of drops (1/1,000,000th of an XRP) in the network, as a quoted integer. (This decreases as transaction fees cause XRP to be destroyed.)</td>
+<td>Total number of drops (1/1,000,000th of an XAG) in the network, as a quoted integer. (This decreases as transaction fees cause XAG to be destroyed.)</td>
 </tr>
 <tr>
 <td><em>ledger.</em> transactionHash</td>
@@ -8690,9 +6983,9 @@ return api.computeLedgerHash(ledger);
 </code></pre>
 <h2 id="xrptodrops">xrpToDrops</h2>
 <p><code>xrpToDrops(xrp: string | BigNumber): string</code></p>
-<p>Converts an XRP amount to drops. 1 XRP = 1,000,000 drops, so 1 drop = 0.000001 XRP. This method is useful when converting amounts for use with the rippled API, which requires XRP amounts to be specified in drops.</p>
+<p>Converts an XAG amount to drops. 1 XAG = 1,000,000 drops, so 1 drop = 0.000001 XAG. This method is useful when converting amounts for use with the rippled API, which requires XAG amounts to be specified in drops.</p>
 <h3 id="parameters-51">Parameters</h3>
-<p><code>xrp</code>: A string or BigNumber representing an amount of XRP. If <code>xrp</code> is a string, it may start with <code>-</code>, must contain at least one number, and may contain up to one <code>.</code>. This method throws a <code>ValidationError</code> for invalid input.</p>
+<p><code>xrp</code>: A string or BigNumber representing an amount of XAG. If <code>xrp</code> is a string, it may start with <code>-</code>, must contain at least one number, and may contain up to one <code>.</code>. This method throws a <code>ValidationError</code> for invalid input.</p>
 <h3 id="return-value-53">Return Value</h3>
 <p>A string representing an equivalent amount of drops.</p>
 <h3 id="example-67">Example</h3>
@@ -8702,11 +6995,11 @@ return api.computeLedgerHash(ledger);
 </code></pre>
 <h2 id="dropstoxrp">dropsToXrp</h2>
 <p><code>dropsToXrp(drops: string | BigNumber): string</code></p>
-<p>Converts an amount of drops to XRP. 1 drop = 0.000001 XRP, so 1 XRP = 1,000,000 drops. This method is useful when converting amounts from the rippled API, which describes XRP amounts in drops.</p>
+<p>Converts an amount of drops to XAG. 1 drop = 0.000001 XAG, so 1 XAG = 1,000,000 drops. This method is useful when converting amounts from the rippled API, which describes XAG amounts in drops.</p>
 <h3 id="parameters-52">Parameters</h3>
 <p><code>drops</code>: A string or BigNumber representing an amount of drops. If <code>drops</code> is a string, it may start with <code>-</code> and must contain at least one number. This method throws a <code>ValidationError</code> for invalid input.</p>
 <h3 id="return-value-54">Return Value</h3>
-<p>A string representing an equivalent amount of XRP.</p>
+<p>A string representing an equivalent amount of XAG.</p>
 <h3 id="example-68">Example</h3>
 <pre><code class="javascript">return api.dropsToXrp('1');
 </code></pre>
@@ -8750,8 +7043,8 @@ return api.computeLedgerHash(ledger);
 <p><code>txFlags.Universal.FullyCanonicalSig</code>: Require a fully-canonical signature. When preparing transactions, ripple-lib enables this flag for you.</p>
 <h3 id="payment-flags">Payment Flags</h3>
 <p><code>txFlags.Payment.NoRippleDirect</code>: Do not use the default path; only use specified paths. This is intended to force the transaction to take arbitrage opportunities. Most clients do not need this.</p>
-<p><code>txFlags.Payment.PartialPayment</code>: If the specified destination amount cannot be sent without spending more than the source maxAmount, reduce the received amount instead of failing outright. See <a class="external-link" href="https://developers.ripple.com/partial-payments.html" target="_blank">Partial Payments <i aria-hidden="true" class="fa fa-external-link"></i></a> for more details.</p>
-<p><code>txFlags.Payment.LimitQuality</code>: Only take paths where all the conversions have an input:output ratio that is equal or better than the ratio of <code>destination.amount</code>:<code>source.maxAmount</code>. See <a class="external-link" href="https://developers.ripple.com/payment.html#limit-quality" target="_blank">Limit Quality <i aria-hidden="true" class="fa fa-external-link"></i></a> for details.</p>
+<p><code>txFlags.Payment.PartialPayment</code>: If the specified destination amount cannot be sent without spending more than the source maxAmount, reduce the received amount instead of failing outright. See <a class="external-link" href="https://developers.xrpgen.com/partial-payments.html" target="_blank">Partial Payments <i aria-hidden="true" class="fa fa-external-link"></i></a> for more details.</p>
+<p><code>txFlags.Payment.LimitQuality</code>: Only take paths where all the conversions have an input:output ratio that is equal or better than the ratio of <code>destination.amount</code>:<code>source.maxAmount</code>. See <a class="external-link" href="https://developers.xrpgen.com/payment.html#limit-quality" target="_blank">Limit Quality <i aria-hidden="true" class="fa fa-external-link"></i></a> for details.</p>
 <h3 id="offercreate-flags">OfferCreate Flags</h3>
 <p><code>txFlags.OfferCreate.Passive</code>: If enabled, the offer does not consume offers that exactly match it, and instead becomes an Offer object in the ledger. It still consumes offers that cross it.</p>
 <p><code>txFlags.OfferCreate.ImmediateOrCancel</code>: Treat the offer as an Immediate or Cancel order. If enabled, the offer never becomes a ledger object: it only tries to match existing offers in the ledger.</p>
@@ -8760,36 +7053,29 @@ return api.computeLedgerHash(ledger);
 <h3 id="trustset-flags">TrustSet Flags</h3>
 <p><code>txFlags.TrustSet.SetAuth</code>: Authorize the other party to hold issuances from this account. (No effect unless using the AccountSet.RequireAuth flag.) Cannot be unset.</p>
 <p><code>txFlags.TrustSet.NoRipple</code>:  Obsolete.</p>
-<p><code>txFlags.TrustSet.SetNoRipple</code>: Blocks <a class="external-link" href="https://developers.ripple.com/rippling.html" target="_blank">rippling <i aria-hidden="true" class="fa fa-external-link"></i></a> between two trustlines of the same currency, if this flag is set on both.</p>
-<p><code>txFlags.TrustSet.ClearNoRipple</code>: Clears the No-<a class="external-link" href="https://developers.ripple.com/rippling.html" target="_blank">Rippling <i aria-hidden="true" class="fa fa-external-link"></i></a> flag.</p>
-<p><code>txFlags.TrustSet.SetFreeze</code>: Freeze the trustline. A non-XRP currency can be frozen by the exchange or gateway that issued it. XRP cannot be frozen.</p>
+<p><code>txFlags.TrustSet.SetNoRipple</code>: Blocks <a class="external-link" href="https://developers.xrpgen.com/rippling.html" target="_blank">rippling <i aria-hidden="true" class="fa fa-external-link"></i></a> between two trustlines of the same currency, if this flag is set on both.</p>
+<p><code>txFlags.TrustSet.ClearNoRipple</code>: Clears the No-<a class="external-link" href="https://developers.xrpgen.com/rippling.html" target="_blank">Rippling <i aria-hidden="true" class="fa fa-external-link"></i></a> flag.</p>
+<p><code>txFlags.TrustSet.SetFreeze</code>: Freeze the trustline. A non-XAG currency can be frozen by the exchange or gateway that issued it. XAG cannot be frozen.</p>
 <p><code>txFlags.TrustSet.ClearFreeze</code>: Unfreeze the trustline.</p>
 <h3 id="accountset-flags">AccountSet Flags</h3>
 <p>You can use the <code>prepareSettings</code> method to change your account flags. This method uses AccountSet flags internally.</p>
-<p>In the rippled API, Account Flags can be enabled and disabled with the SetFlag and ClearFlag parameters. See <a class="external-link" href="https://developers.ripple.com/accountset.html#accountset-flags" target="_blank">AccountSet Flags <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>In the rippled API, Account Flags can be enabled and disabled with the SetFlag and ClearFlag parameters. See <a class="external-link" href="https://developers.xrpgen.com/accountset.html#accountset-flags" target="_blank">AccountSet Flags <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <p>The AccountSet transaction type has some transaction flags, but their use is discouraged.</p>
 <ul>
 <li><code>txFlags.AccountSet.RequireDestTag</code></li>
 <li><code>txFlags.AccountSet.OptionalDestTag</code></li>
 <li><code>txFlags.AccountSet.RequireAuth</code></li>
 <li><code>txFlags.AccountSet.OptionalAuth</code></li>
-<li><code>txFlags.AccountSet.DisallowXRP</code></li>
-<li><code>txFlags.AccountSet.AllowXRP</code></li>
+<li><code>txFlags.AccountSet.DisallowXAG</code></li>
+<li><code>txFlags.AccountSet.AllowXAG</code></li>
 </ul>
-<h3 id="paymentchannelclaim-flags">PaymentChannelClaim Flags</h3>
-<p><code>txFlags.PaymentChannelClaim.Renew</code>: Clear the channel's Expiration time. (Expiration is different from the channel's immutable CancelAfter time.) Only the source address of the payment channel can use this flag.</p>
-<p><code>txFlags.PaymentChannelClaim.Close</code>: Request to close the channel. Only the channel source and destination addresses can use this flag. This flag closes the channel immediately if it has no more XRP allocated to it after processing the current claim, or if the destination address uses it. If the source address uses this flag when the channel still holds XRP, this schedules the channel to close after SettleDelay seconds have passed. (Specifically, this sets the Expiration of the channel to the close time of the previous ledger plus the channel's SettleDelay time, unless the channel already has an earlier Expiration time.) If the destination address uses this flag when the channel still holds XRP, any XRP that remains after processing the claim is returned to the source address.</p>
 <h3 id="other-transaction-types">Other Transaction Types</h3>
 <p>The remaining transaction types do not have any flags at this time.</p>
 <ul>
 <li>OfferCancel</li>
 <li>SetRegularKey</li>
 <li>SignerListSet</li>
-<li>EscrowCreate</li>
-<li>EscrowFinish</li>
-<li>EscrowCancel</li>
-<li>PaymentChannelCreate</li>
-<li>PaymentChannelFund</li>
+
 </ul>
 <h2 id="schemavalidator">schemaValidator</h2>
 <p>Unlike the rest of the ripple-lib API, schemaValidator is a static object on RippleAPI. It provides utility methods that do not use a server.</p>
@@ -8826,9 +7112,9 @@ return api.computeLedgerHash(ledger);
 </thead>
 <tbody>
 <tr>
-<td>baseFeeXRP</td>
+<td>baseFeeXAG</td>
 <td><a href="#value">value</a></td>
-<td>Base fee, in XRP.</td>
+<td>Base fee, in XAG.</td>
 </tr>
 <tr>
 <td>ledgerHash</td>
@@ -8841,12 +7127,12 @@ return api.computeLedgerHash(ledger);
 <td>The time at which this ledger closed.</td>
 </tr>
 <tr>
-<td>reserveBaseXRP</td>
+<td>reserveBaseXAG</td>
 <td><a href="#value">value</a></td>
-<td>The minimum reserve, in XRP, that is required for an account.</td>
+<td>The minimum reserve, in XAG, that is required for an account.</td>
 </tr>
 <tr>
-<td>reserveIncrementXRP</td>
+<td>reserveIncrementXAG</td>
 <td><a href="#value">value</a></td>
 <td>The increase in account reserve that is added for each item the account owns, such as offers or trust lines.</td>
 </tr>
@@ -8878,12 +7164,12 @@ return api.computeLedgerHash(ledger);
 });
 </code></pre>
 <pre><code class="json">{
-  "baseFeeXRP": "0.00001",
+  "baseFeeXAG": "0.00001",
   "ledgerVersion": 14804627,
   "ledgerHash": "9141FA171F2C0CE63E609466AF728FF66C12F7ACD4B4B50B0947A7F3409D593A",
   "ledgerTimestamp": "2015-07-23T05:50:40.000Z",
-  "reserveBaseXRP": "20",
-  "reserveIncrementXRP": "5",
+  "reserveBaseXAG": "20",
+  "reserveIncrementXAG": "5",
   "transactionCount": 19,
   "validatedLedgerVersions": "13983423-14804627"
 }
@@ -8894,7 +7180,7 @@ return api.computeLedgerHash(ledger);
 <p>The first parameter is a string indicating the error type:
 * <code>badMessage</code> - rippled returned a malformed message
 * <code>websocket</code> - the websocket library emitted an error
-* one of the error codes found in the <a class="external-link" href="https://ripple.com/build/rippled-apis/#universal-errors" target="_blank">rippled Universal Errors <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+* one of the error codes found in the <a class="external-link" href="https://xrpgen.com/build/rippled-apis/#universal-errors" target="_blank">rippled Universal Errors <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <p>The second parameter is a message explaining the error.</p>
 <p>The third parameter is:
 * the message that caused the error for <code>badMessage</code>
@@ -8986,7 +7272,7 @@ return api.computeLedgerHash(ledger);
                             <li><a class="subpage" href="ledger-methods.html">Ledger Methods</a></li>
                             <li><a class="subpage" href="transaction-methods.html">Transaction Methods</a></li>
                             <li><a class="subpage" href="path-and-order-book-methods.html">Path and Order Book Methods</a></li>
-                            <li><a class="subpage" href="payment-channel-methods.html">Payment Channel Methods</a></li>
+                           
                             <li><a class="subpage" href="subscription-methods.html">Subscription Methods</a></li>
                             <li><a class="subpage" href="server-info-methods.html">Server Info Methods</a></li>
                             <li><a class="subpage" href="utility-methods.html">Utility Methods</a></li>
@@ -9709,111 +7995,7 @@ return api.computeLedgerHash(ledger);
 
 
           <!---->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_142">
-                  <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_142" aria-expanded="true" aria-controls="sidenav_collapse_142"></a>
-                <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="xrp-api.html">XRP-API</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_142" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_142">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-                        <li><a class="subcat-title" href="xrp-api-methods.html">All XRP-API Methods</a></li>
-
-
-                        <li><a class="subcat-title" href="xrp-api-Query-methods.html">Query Methods</a></li>
-
-                            <li><a class="subpage" href="xrp-api-getAccountInfo.html">Get Account Info</a></li>
-                            <li><a class="subpage" href="xrp-api-getAccountSettings.html">Get Account Settings</a></li>
-                            <li><a class="subpage" href="xrp-api-getAccountTransactions.html">Get Account Transactions</a></li>
-                            <li><a class="subpage" href="xrp-api-getTransaction.html">Get Transaction</a></li>
-
-
-
-
-
-                        <li><a class="subcat-title" href="xrp-api-Transact-methods.html">Transact Methods</a></li>
-
-                            <li><a class="subpage" href="xrp-api-preparePayment.html">Prepare a Payment</a></li>
-                            <li><a class="subpage" href="xrp-api-signSubmitPayment.html">Sign and/or submit a payment</a></li>
-                            <li><a class="subpage" href="xrp-api-createSignSubmitPayment.html">Create, sign, and submit a payment</a></li>
-
-
-
-
-                        <li><a class="subcat-title" href="xrp-api-Meta-methods.html">Meta Methods</a></li>
-
-                            <li><a class="subpage" href="xrp-api-getPing.html">Ping</a></li>
-                            <li><a class="subpage" href="xrp-api-getServerInfo.html">Get Server Info</a></li>
-                            <li><a class="subpage" href="xrp-api-getApiDoc.html">Get API Docs</a></li>
-
-
-
-
-                        <li><a class="subcat-title" href="xrp-api-data-types.html">XRP-API Data Types</a></li>
-
-                            <li><a class="subpage" href="xrp-api-data-types-address.html">Address</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-currency.html">Currency</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-serverinfo.html">ServerInfo</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-ledgerindex.html">LedgerIndex</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-accountinfo.html">AccountInfo</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-transaction_common_fields.html">Transaction Common Fields</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-amount.html">Amount</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-accounttransactions.html">AccountTransactions</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-transactionstatus.html">TransactionStatus</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-payment_object.html">Payment Object</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-payment_object_and_instructions.html">Payment object and instructions</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-lastclose.html">LastClose</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-accountdata.html">AccountData</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-rippledserverinfo.html">RippledServerInfo</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-load.html">Load</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-erroritem.html">ErrorItem</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-signed_transaction.html">Signed Transaction</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-serverstate.html">ServerState</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-transaction_instructions.html">Transaction Instructions</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-rippleapierror.html">RippleAPIError</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-accountsettings.html">AccountSettings</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-paymenttransaction.html">PaymentTransaction</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-preparedpaymenttransaction.html">PreparedPaymentTransaction</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-apidoc.html">ApiDoc</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-appliedtransaction.html">AppliedTransaction</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-transactionid.html">TransactionID</a></li>
-                            <li><a class="subpage" href="xrp-api-data-types-validatedledger.html">ValidatedLedger</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse142 -->
-
-            </div><!-- /.card -->
+            
 
 
 
@@ -10006,43 +8188,7 @@ return api.computeLedgerHash(ledger);
 
           </div><!-- /.card -->
 
-        <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_186">
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="data-api.html">Ripple Data API v2</a>
-                <!-- <a class="sidenav_cat_title" href="data-api.html">Data API</a> -->
-              </h5>
-            </div><!-- /.card-header -->
-
-            <div id="sidenav_collapse_186" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_186">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse186 -->
-
-          </div><!-- /.card -->
-
-        <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_187">
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="xrp-ledger-toml.html">xrp-ledger.toml File</a>
-                <!-- <a class="sidenav_cat_title" href="xrp-ledger-toml.html">XRP Ledger TOML File</a> -->
-              </h5>
-            </div><!-- /.card-header -->
-
-            <div id="sidenav_collapse_187" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_187">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse187 -->
-
-          </div><!-- /.card -->
+        
 
     </div><!-- /#sidenav -->
 </div><!-- /.tree_nav -->      </aside>
@@ -10050,108 +8196,7 @@ return api.computeLedgerHash(ledger);
   </div>
 
 <footer class="xrpl-footer" role="contentinfo">
-  <section class="container-fluid card-grid card-grid-Nx1">
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
-  </section>
+ 
 
   <section class="container-fluid p-5 pl-sm-0">
 
@@ -10168,8 +8213,8 @@ return api.computeLedgerHash(ledger);
     </nav>
 
     <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
-      <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
+      <span>&copy; XAG Ledger Project 2020</span>
+     
     </div><!-- /.absolute_bottom_footer -->
 
   </section>
