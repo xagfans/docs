@@ -1138,7 +1138,7 @@ const api = new RippleAPI();
 </code></pre>
 
 <h2 id="listening-to-streams">Listening to streams</h2>
-<p>The <code>rippled</code> server can push updates to your client when various events happen. Refer to <a class="external-link" href="https://developers.xrpgen.com/subscription-methods.html" target="_blank">Subscriptions in the <code>rippled</code> API docs <i aria-hidden="true" class="fa fa-external-link"></i></a> for details.</p>
+<p>The <code>rippled</code> server can push updates to your client when various events happen. </p>
 <p>Note that the <code>streams</code> parameter for generic streams takes an array. For example, to subscribe to the <code>validations</code> stream, use <code>{ streams: [ 'validations' ] }</code>.</p>
 <p>The string names of some generic streams to subscribe to are in the table below. (Refer to <code>rippled</code> for an up-to-date list of streams.)</p>
 <table>
@@ -1202,7 +1202,7 @@ const api = new RippleAPI();
 </tr>
 <tr>
 <td><code>transaction</code></td>
-<td>Sent by many subscriptions including <code>transactions</code>, <code>transactions_proposed</code>, <code>accounts</code>, <code>accounts_proposed</code>, and <code>book</code> (Order Book). See <a class="external-link" href="https://xrpl.org/subscribe.html#transaction-streams" target="_blank">Transaction Streams <i aria-hidden="true" class="fa fa-external-link"></i></a> for details.</td>
+<td>Sent by many subscriptions including <code>transactions</code>, <code>transactions_proposed</code>, <code>accounts</code>, <code>accounts_proposed</code>, and <code>book</code> (Order Book). </td>
 </tr>
 <tr>
 <td><code>peerStatusChange</code></td>
@@ -1210,7 +1210,7 @@ const api = new RippleAPI();
 </tr>
 <tr>
 <td><code>path_find</code></td>
-<td>Asynchronous follow-up response to the currently open path_find request. See <a class="external-link" href="https://xrpl.org/path_find.html" target="_blank">rippled path_find method <i aria-hidden="true" class="fa fa-external-link"></i></a> for details.</td>
+<td>Asynchronous follow-up response to the currently open path_find request. See <a class="external-link" href="path_find.html" target="_blank">rippled path_find method <i aria-hidden="true" class="fa fa-external-link"></i></a> for details.</td>
 </tr>
 </tbody>
 </table>
@@ -1241,7 +1241,7 @@ api.connect().then(() =&gt; {
 <p><code>request(command: string, options: object): Promise&lt;object&gt;</code></p>
 <p>Returns the response from invoking the specified command, with the specified options, on the connected rippled server.</p>
 <p>Refer to <a class="external-link" href="https://xrpgen.com/build/rippled-apis/" target="_blank">rippled APIs <i aria-hidden="true" class="fa fa-external-link"></i></a> for commands and options. All XAG amounts must be specified in drops. One drop is equal to 0.000001 XAG. See <a class="external-link" href="https://xrpgen.com/build/rippled-apis/#specifying-currency-amounts" target="_blank">Specifying Currency Amounts <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
-<p>Most commands return data for the <code>current</code> (in-progress, open) ledger by default. Do not rely on this. Always specify a ledger version in your request. In the example below, the 'validated' ledger is requested, which is the most recent ledger that has been validated by the whole network. See <a class="external-link" href="https://xrpl.org/basic-data-types.html#specifying-ledgers" target="_blank">Specifying Ledgers <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>Most commands return data for the <code>current</code> (in-progress, open) ledger by default. Do not rely on this. Always specify a ledger version in your request. In the example below, the 'validated' ledger is requested, which is the most recent ledger that has been validated by the whole network. See <a class="external-link" href="basic-data-types.html#specifying-ledgers" target="_blank">Specifying Ledgers <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <h3 id="return-value">Return Value</h3>
 <p>This method returns a promise that resolves with the response from rippled.</p>
 <h3 id="example-14">Example</h3>
