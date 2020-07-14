@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+
+    <title>XAG Ledger Overview - XAG Ledger Dev Portal</title>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="msapplication-TileColor" content="#25A768">
+    <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#25A768">
+
+    <!-- jQuery -->
+    <script src="assets/vendor/jquery-1.11.1.min.js"></script>
+
+    <!-- Stylesheet -->
+    <link href="assets/css/devportal.css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45576805-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-45576805-2');
+      gtag('config', 'UA-157720658-3', { 'linker': {
+        'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
+                    'XAGl.org', 'explorer.XAGl.org', 'testnet.XAGl.org']
+        } }
+      );
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
+
+    <!-- syntax highlighting -->
+    <link rel="stylesheet" href="assets/vendor/docco.min.css" />
+    <script src="assets/vendor/highlight.min.js"></script>
+
+    <!-- expandable code samples -->
+    <script src="assets/js/expandcode.js"></script>
+    <!-- multi-code selection tabs -->
+    <script src="assets/js/multicodetab.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".multicode").minitabs();
+            hljs.initHighlighting();
+            make_code_expandable();
+        });
+    </script>
+
+
+
+</head>
+
+<body class="XAG-ledger-dev-portal sidebar-primary lang-en ">
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+    <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" class="logo"  height="44" alt="XAG Ledger Dev Portal" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="slide-collapse" data-target="#navbarHolder" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
+      
+<ul class="nav navbar-nav">
+  <li class="nav-item">
+    <a class="nav-link" href="dev-tools.html">Dev Tools</a>
+  </li>
+  
+<li class="nav-item">
+  <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+</li>
+</ul><!-- /.navbar-nav -->
+
+      <div class="nav navbar-nav language-selector">
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            English
+          </button>
+          <div class="dropdown-menu" aria-labelledby="language_selector_header_btn">
+            <a class="dropdown-item" href="/XAG-ledger-overview.html">English</a>
+            <a class="dropdown-item" href="/ja/XAG-ledger-overview.html">日本語</a>
+          </div><!--/.dropdown-menu-->
+        </div><!--/.dropdown-->
+      </div><!--/.language-selector-->
+    </div><!--/#navbarHolder-->
+    <div class="menu-overlay"></div>
+  </nav>
+
+  <div class="container-fluid" role="document" id="main_content_wrapper">
+    <div class="row">
+      <!-- Right sidebar first so it's at the beginning for mobile layouts -->
+  
+
+      <!-- main column -->
+      <main class="main col-md-7 col-lg-6 order-md-3  " role="main" id="main_content_body">
+<nav class="breadcrumbs-wrap p-0 p-md-3" aria-label="breadcrumb">
+  <ul class="breadcrumb bg-white">
+    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="active breadcrumb-item"><a href="docs.html">Docs</a></li>
+    <li class="active breadcrumb-item"><a href="concepts.html">Concepts</a></li>
+    <li class="active breadcrumb-item"><a href="introduction.html">Introduction</a></li>
+    <li class="active breadcrumb-item">XAG Ledger Overview</li>
+  </ul>
+</nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
+    <div class="content">
+        <h1 id="XAG-ledger-overview">XAG Ledger Overview</h1>
+<p>The <strong>XAG Ledger</strong> is a decentralized cryptographic ledger powered by a network of peer-to-peer servers. The XAG Ledger is the home of <strong>XAG</strong>, a digital asset designed to bridge the many different currencies in use worldwide. Ripple stewards the development of the XAG Ledger, and advances XAG as a key contribution to the <em>Internet of Value</em>: a world in which money moves the way information does today.</p>
+<h2 id="the-digital-asset-for-payments">The Digital Asset for Payments</h2>
+<p>XAG is a digital asset native to the XAG Ledger. Anyone with a cryptographic key and an internet connection can receive, hold, and send XAG to anyone else. XAG's creators have developed it to be a desirable bridge currency that can facilitate trades in any other currency. XAG has many properties which make it an appealing asset for many other use cases, too:</p>
+<ul>
+<li><strong><a href="#censorship-resistant-transaction-processing">Censorship-Resistant Transaction Processing</a>:</strong> No single party decides which XAG transactions succeed or fail, and no one can "roll back" a transaction after it completes. As long as those who choose to participate in the network keep it healthy, they can send and receive XAG in seconds.</li>
+<li><strong><a href="#fast-efficient-consensus-algorithm">Fast, Efficient Consensus Algorithm</a>:</strong> The XAG Ledger's consensus algorithm settles transactions in 4 to 5 seconds, processing at a throughput of up to 1500 transactions per second. These properties put XAG at least an order of magnitude ahead of other top digital assets.</li>
+<li><strong><a href="#finite-XAG-supply">Finite XAG Supply</a>:</strong> When the XAG Ledger began, 100 billion XAG were created, and no more XAG will ever be created. (Each XAG is subdivisible down to 6 decimal places, for a grand total of 100 quadrillion (10^17) <em>drops</em> of XAG.) The available supply of XAG decreases slowly over time as small amounts are destroyed to pay transaction costs.</li>
+<li><strong><a href="#responsible-software-governance">Responsible Software Governance</a>:</strong> A team of full-time, world-class developers at Ripple maintain and continually improve the XAG Ledger's underlying software. Ripple acts as a steward for the technology and an advocate for its interests, and builds constructive relationships with governments and financial institutions worldwide.</li>
+<li><strong><a href="#secure-adaptable-cryptography">Secure, Adaptable Cryptography</a>:</strong> The XAG Ledger relies on industry standard digital signature systems like ECDSA (the same scheme used by Bitcoin) but also supports modern, efficient algorithms like Ed25519. The extensible nature of the XAG Ledger's software makes it possible to add and disable algorithms as the state of the art in cryptography advances.</li>
+<li><strong><a href="#modern-features-for-smart-contracts">Modern Features for Smart Contracts</a>:</strong> Features like Escrow, Checks, and Payment Channels support cutting-edge financial applications including the <a class="external-link" href="https://interledger.org/" target="_blank">Interledger Protocol <i aria-hidden="true" class="fa fa-external-link"></i></a>. This toolbox of advanced features comes with safety features like a process for amending the network and separate checks against invariant constraints.</li>
+<li><strong><a href="#on-ledger-decentralized-exchange">On-Ledger Decentralized Exchange</a>:</strong> In addition to all the features that make XAG useful on its own, the XAG Ledger also has a fully-functional accounting system for tracking and trading obligations denominated in any way users want, and an exchange built into the protocol. The XAG Ledger can settle long, cross-currency payment paths and exchanges of multiple currencies in atomic transactions, bridging gaps of trust with XAG.</li>
+</ul>
+<h2 id="censorship-resistant-transaction-processing">Censorship-Resistant Transaction Processing</h2>
+<p>XAG is part of a new class of money which includes Bitcoin and other cryptocurrencies:</p>
+<ul>
+<li>These <strong>Decentralized digital assets</strong> exist in computer systems without a central administrator. As long as the system is sufficiently decentralized, no one can roll back transactions, freeze balances, or block someone from using a decentralized digital asset. These assets are natively digital, so they can be used online across any distance.</li>
+</ul>
+<p>This combines qualities of physical and centralized digital money. Prior to the invention of Bitcoin in 2009, all currencies could be divided into those two categories:</p>
+<ul>
+<li><strong>Physical coins and paper money</strong>, which individuals can use to do business without going through a central party. As physical objects, they cannot be used online, and doing business long-distance is slow and inconvenient.</li>
+<li><strong>Centralized digital currencies</strong>, which need an administrator to confirm transactions. The administrator also has the power to censor or roll back transactions, or disallow some individuals from using the digital currency. If the operator of a digital currency decides someone has violated its terms of service, it can freeze or even confiscate that person's money. However, as digital balances, these currencies can be used online and are convenient across long distances.</li>
+</ul>
+<p class="devportal-callout note"><strong>Note:</strong> Users of the XAG Ledger <em>can</em> freeze non-XAG currencies issued in the XAG Ledger. For more information, see the <a href="freezes.html">Freeze documentation</a>.</p>
+<p>The XAG Ledger's system of trusted validators uses a small amount of human interaction to achieve better distribution of authority than other decentralized systems. Fully-automated systems for reaching consensus from an unknown set of participants are vulnerable to concentrations of voting power. For example, Bitcoin mining is disproportionately concentrated in places with cheap electricity. As Ripple curates a list of distinct validators operated by different entities in different jurisdictions, the XAG Ledger can become more resistant to censorship and outside pressures than proof-of-work mining. For more information on Ripple's plan to decentralize the recommended set of validators, see the  <a class="external-link" href="https://XAGl.org/blog/2017/decent-strategy-update.html" target="_blank">Decentralization Strategy Update <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>For more information about the XAG Ledger's ability to detect censorship, see <a href="transaction-censorship-detection.html">Transaction Censorship Detection</a>.</p>
+<h2 id="fast-efficient-consensus-algorithm">Fast, Efficient Consensus Algorithm</h2>
+<p>The XAG Ledger's biggest difference from most cryptocurrencies is that it uses a unique consensus algorithm that does not require the time and energy of "mining", the way Bitcoin, Ethereum, and almost all other such systems do. Instead of "proof of work" or even "proof of stake", The XAG Ledger's consensus algorithm uses a system where every participant has an overlapping set of "trusted validators" and those trusted validators efficiently agree on which transactions happen in what order. As of early 2018, the amount of electricity the Bitcoin network uses per transaction is more than a family home in the USA uses in an entire day, and confirming the transaction takes hours. A single XAG transaction uses a negligible amount of electricity, and takes 4 or 5 seconds to confirm.</p>
+<p>Furthermore, each new "ledger version" in the XAG Ledger (the equivalent of a "block") contains the full current state of all balances, so a server can synchronize with the network in minutes instead of spending hours downloading and re-processing the full transaction history.</p>
+<p>For more information on how the XAG Ledger's consensus algorithm works, see <a href="consensus.html">The XAG Ledger Consensus Process</a>. For background on why the XAG Ledger uses this consensus algorithm, see <a href="consensus-principles-and-rules.html">Consensus Principles and Rules</a>.</p>
+<h2 id="finite-XAG-supply">Finite XAG Supply</h2>
+<p>Alongside war and political turmoil, hyperinflation is one of the leading causes of death for currencies. While the decentralized system of validators provides XAG with some resistance to political factors, the rules of the XAG Ledger provide a simpler solution to hyperinflation: the total supply of XAG is finite. Without a mechanism to create more, it becomes much less likely that XAG could suffer hyperinflation.</p>
+<p>The supply of XAG available to the general public <em>does</em> change due to a few factors:</p>
+<ul>
+<li>Sending transactions in the XAG Ledger destroys a small amount of XAG. Senders choose how much to destroy, with certain minimums based on the expected work of processing the transaction and how busy the network is. If the network is busy, potential transactions that promise to destroy more XAG can cut in front of the transaction queue. This is an anti-spam measure to make it prohibitively expensive to <a class="external-link" href="https://en.wikipedia.org/wiki/Denial-of-service_attack" target="_blank">DDoS <i aria-hidden="true" class="fa fa-external-link"></i></a> the XAG Ledger network. For more information, see <a href="transaction-cost.html">Transaction Cost</a>.</li>
+<li>Each account in the XAG Ledger must hold a small amount of XAG in reserve. This is an anti-spam measure to disincentivize making the ledger data occupy too much space. XAG Ledger validators can vote to change the amount of XAG required as a reserve, to compensate for changes in XAG's real-world value. (The last time this happened was in December 2013, when <a class="external-link" href="https://ripple.com/insights/proposed-change-to-ripple-reserve-requirement-2/" target="_blank">the reserve requirement decreased from 50 XAG to 20 XAG <i aria-hidden="true" class="fa fa-external-link"></i></a>.) If the reserve requirement decreases, XAG that was previously locked up by the reserve becomes available again.</li>
+<li>Ripple (the company) holds a large reserve of XAG in escrow. At the start of each month, 1 billion XAG is released from escrow for Ripple to use. (Ripple uses XAG to incentivize growth in the XAG Ledger ecosystem and sells XAG to institutional investors. Ripple also sells XAG programmatically on exchanges, limited to a small percentage of overall exchange volume. Ripple publishes sales figures quarterly in the <a class="external-link" href="https://ripple.com/insights/q1-2018-XAG-markets-report/" target="_blank">XAG Markets Report <i aria-hidden="true" class="fa fa-external-link"></i></a>.) At the end of each month, any remaining XAG the company does not sell or give away is stored into escrow for a 54-month period. For more information on Ripple's escrow policy, see <a class="external-link" href="https://ripple.com/insights/ripple-to-place-55-billion-XAG-in-escrow-to-ensure-certainty-into-total-XAG-supply/" target="_blank">Ripple Escrows 55 Billion XAG for Supply Predictability <i aria-hidden="true" class="fa fa-external-link"></i></a>. For more information on the technical capabilities of the Escrow feature, see <a href="escrow.html">Escrow</a>.</li>
+</ul>
+<h2 id="responsible-software-governance">Responsible Software Governance</h2>
+<p>Any piece of software can only be as good as the developers who code and manage it. Ripple employs a team of world-class engineers dedicated full-time to maintaining and improving the XAG Ledger software, especially the core server, <code>rippled</code>. The <a class="external-link" href="https://github.com/ripple/rippled/" target="_blank">source code for <code>rippled</code> <i aria-hidden="true" class="fa fa-external-link"></i></a> is available to the public with a permissive open-source license, as are many other parts of the XAG Ledger ecosystem. Ripple engineers follow best practices for software engineering, including:</p>
+<ul>
+<li>A famously strict and thorough code review process</li>
+<li>Comprehensive code coverage and unit tests</li>
+<li>Regularly running automated checks for potential vulnerabilities and memory leaks</li>
+<li>Regularly commissioning external reviews by professional organizations</li>
+</ul>
+<p>As an entity that is obligated to hold large amounts of XAG for the long term, Ripple has a strong incentive to ensure that XAG is widely used in ways that are legal, sustainable, and constructive. Ripple provides technical support to businesses whose goals align with Ripple's ideal of an Internet of Value. Ripple also cooperates with legislators and regulators worldwide to guide the implementation of sensible laws governing digital assets and associated businesses.</p>
+<h2 id="secure-adaptable-cryptography">Secure, Adaptable Cryptography</h2>
+<p>Cryptography is one of the hardest parts of any distributed system, and a mistake can lead to money stolen by malicious actors anywhere in the world. The XAG Ledger uses industry-standard schemes for signing and verifying transactions, algorithms that have successfully protected hundreds of billions of US dollars' worth of value for many years. The XAG Ledger also layers multi-signing functionality so you can use multi-factor authorization or split keys across multiple people as a backup, and provides new algorithms with a path to migrate the keys you use if a breakthrough in cryptography makes the old algorithms obsolete.</p>
+<p>For more information, see <a href="cryptographic-keys.html">Cryptographic Keys</a> and <a href="multi-signing.html">Multi-Signing</a>.</p>
+<h2 id="modern-features-for-smart-contracts">Modern Features for Smart Contracts</h2>
+<p>Besides simple value transfer with <a href="direct-XAG-payments.html">XAG payments</a>, the XAG Ledger has advanced features specialized for the Internet of Value. This allows applications built on XAG to provide services and functionality that would have been impractical or impossible in the past. Rather than running applications as "smart contracts" in the network itself, the XAG Ledger provides tools for settling contracts, while letting the applications themselves run anywhere, in whatever environment or container is appropriate. This "keep it simple" approach is flexible, scalable, and powerful.</p>
+<p>A sample of advanced features in the XAG Ledger:</p>
+<ul>
+<li><a href="use-payment-channels.html">Payment Channels</a> allow asynchronous balance changes as fast as you can create and validate signatures.</li>
+<li><a href="escrow.html">Escrow</a> locks up XAG until a declared time passes or cryptographic condition is met.</li>
+<li><a href="depositauth.html">DepositAuth</a> lets users decide who can send them money and who can't.</li>
+<li>A <a href="#on-ledger-decentralized-exchange">Decentralized Exchange</a> lets users trade obligations and XAG on-ledger.</li>
+<li><a class="external-link" href="https://XAGl.org/blog/2017/invariant-checking.html" target="_blank">Invariant Checking <i aria-hidden="true" class="fa fa-external-link"></i></a> provides an independent layer of protections against bugs in transaction execution.</li>
+<li><a href="amendments.html">Amendments</a> provide smooth upgrades to the existing feature set, so the technology can continue to evolve without fracturing the ecosystem or causing uncertainty around times of transition.</li>
+</ul>
+<h2 id="on-ledger-decentralized-exchange">On-Ledger Decentralized Exchange</h2>
+<p>One of the biggest features that sets the XAG Ledger apart from other cryptocurrency networks is that it also contains a full currency exchange that runs on the XAG Ledger. Within this system, businesses (typically called "gateways") can freely issue any currency they want to customers, and those customers can freely trade issued currencies for XAG or other issued currencies issued by any gateway. The XAG Ledger can execute atomic cross-currency transactions this way, using orders in the exchange to provide liquidity.</p>
+<p>For more information on how the decentralized exchange works, see <a href="decentralized-exchange.html">Decentralized Exchange</a>. For more information on the gateway business model, see the <a href="become-an-XAG-ledger-gateway.html">Become an XAG Ledger Gateway</a>.</p>
+    </div>
+  </article>
+      </main>
+      <!-- Left sidebar last so it's at the end for mobile -->
+      <aside class="sidebar col-md-5 col-lg-3 p-0 order-md-1" role="complementary">
+<div class="tree_nav">
+
+  <!---->
+    <div class="sidenav_parent">
+      <a href="concepts.html"> Concepts</a>
+    </div>
+
+  <!---->
+
+    <!---->
+    <div id="sidenav" role="tablist" aria-multiselectable="true">
+        <!---->
+          <div class="card active">
+            <div class="card-header" role="tab" id="sidenav_cat_head_2">
+                <a class="sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_2" aria-expanded="true" aria-controls="sidenav_collapse_2"></a>
+              <h5 class="card-title">
+                  <a class="sidenav_cat_title active-parent" href="introduction.html">Introduction</a>
+                <!-- <a class="sidenav_cat_title" href="introduction.html">Introduction</a> -->
+              </h5>
+            </div><!-- /.card-header -->
+
+            <div id="sidenav_collapse_2" class="collapse show" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
+              <div class="card-body">
+                <ul class="sidebar_pagelist">
+                      <li><a class="active nosubcat-page" href="XAG-ledger-overview.html">XAG Ledger Overview</a></li>
+
+                </ul>
+              </div><!-- /.card-body -->
+            </div><!-- /#sidenav_collapse2 -->
+
+          </div><!-- /.card -->
+
+        <!---->
+          <div class="card">
+            <div class="card-header" role="tab" id="sidenav_cat_head_8">
+                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_8" aria-expanded="true" aria-controls="sidenav_collapse_8"></a>
+              <h5 class="card-title">
+                  <a class="sidenav_cat_title" href="payment-system-basics.html">Payment System Basics</a>
+                <!-- <a class="sidenav_cat_title" href="payment-system-basics.html">Payment System Basics</a> -->
+              </h5>
+            </div><!-- /.card-header -->
+
+            <div id="sidenav_collapse_8" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_8">
+              <div class="card-body">
+                <ul class="sidebar_pagelist">
+                      <li><a class="subcat-title" href="accounts.html">Accounts</a></li>
+
+                          <li><a class="subpage" href="cryptographic-keys.html">Cryptographic Keys</a></li>
+                          <li><a class="subpage" href="multi-signing.html">Multi-Signing</a></li>
+                          <li><a class="subpage" href="reserves.html">Reserves</a></li>
+                          <li><a class="subpage" href="depositauth.html">Deposit Authorization</a></li>
+
+                      <li><a class="nosubcat-page" href="fees.html">Fees (Disambiguation)</a></li>
+                      <li><a class="nosubcat-page" href="ledgers.html">Ledgers</a></li>
+                      <li><a class="subcat-title" href="transaction-basics.html">Transaction Basics</a></li>
+
+                          <li><a class="subpage" href="transaction-cost.html">Transaction Cost</a></li>
+                          <li><a class="subpage" href="finality-of-results.html">Finality of Results</a></li>
+                          <li><a class="subpage" href="source-and-destination-tags.html">Source and Destination Tags</a></li>
+
+
+                </ul>
+              </div><!-- /.card-body -->
+            </div><!-- /#sidenav_collapse8 -->
+
+          </div><!-- /.card -->
+
+        <!---->
+
+
+        <!---->
+          <div class="card">
+            <div class="card-header" role="tab" id="sidenav_cat_head_28">
+                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_28" aria-expanded="true" aria-controls="sidenav_collapse_28"></a>
+              <h5 class="card-title">
+                  <a class="sidenav_cat_title" href="issued-currencies.html">Issued Currencies</a>
+                <!-- <a class="sidenav_cat_title" href="issued-currencies.html">Issued Currencies</a> -->
+              </h5>
+            </div><!-- /.card-header -->
+
+            <div id="sidenav_collapse_28" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_28">
+              <div class="card-body">
+                <ul class="sidebar_pagelist">
+                      <li><a class="nosubcat-page" href="issued-currencies-overview.html">Issued Currencies Overview</a></li>
+                      <li><a class="nosubcat-page" href="trust-lines-and-issuing.html">Trust Lines and Issuing</a></li>
+                      <li><a class="nosubcat-page" href="authorized-trust-lines.html">Authorized Trust Lines</a></li>
+                      <li><a class="nosubcat-page" href="freezes.html">Freezing Issued Currencies</a></li>
+                      <li><a class="nosubcat-page" href="rippling.html">Rippling</a></li>
+                      <li><a class="nosubcat-page" href="transfer-fees.html">Transfer Fees</a></li>
+                      <li><a class="nosubcat-page" href="issuing-and-operational-addresses.html">Issuing and Operational Addresses</a></li>
+                      <li><a class="nosubcat-page" href="paths.html">Paths</a></li>
+                      <li><a class="nosubcat-page" href="demurrage.html">Demurrage</a></li>
+
+                </ul>
+              </div><!-- /.card-body -->
+            </div><!-- /#sidenav_collapse28 -->
+
+          </div><!-- /.card -->
+
+        <!---->
+
+
+        <!---->
+
+
+        <!---->
+
+
+    </div><!-- /#sidenav -->
+</div><!-- /.tree_nav -->      </aside>
+    </div><!--/.row (main layout)-->
+  </div>
+
+
+<!-- Jump to top button -->
+<a href="#main_content_wrapper" class="jump-to-top btn btn-primary btn-lg" role="button" title="Jump to top of page">Top</a>
+<script type="text/javascript" src="assets/js/jump-to-top.js"></script>
+
+<!-- Non-blocking resources -->
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap.min.js"></script>
+<!-- fontawesome icons -->
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/font-awesome.min.css" />
+
+<!-- Algolia DocSearch -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '70de5b9b8ef95460f3c6e04054b325b2',
+indexName: 'XAGl',
+inputSelector: '#topsearchbar',
+algoliaOptions: { 'facetFilters': ["lang:en"] },
+debug: false
+});
+</script>
+
+<script type="application/javascript">
+  gtag('set', {'content_group1': 'Content Docs'});
+</script>
+</body>
+</html>

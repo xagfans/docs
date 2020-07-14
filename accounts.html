@@ -32,7 +32,7 @@
       gtag('config', 'UA-45576805-2');
       gtag('config', 'UA-157720658-3', { 'linker': {
         'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
+                    'XAGl.org', 'explorer.XAGl.org', 'testnet.XAGl.org']
         } }
       );
     </script>
@@ -60,7 +60,7 @@
 
 </head>
 
-<body class="xrp-ledger-dev-portal sidebar-primary lang-en ">
+<body class="XAG-ledger-dev-portal sidebar-primary lang-en ">
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
     <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" class="logo"  height="44" alt="XAG Ledger Dev Portal" /></a>
@@ -68,29 +68,17 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
-      <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dev-tools.html">Dev Tools</a>
-            </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-      </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/concepts/payment-system-basics/accounts/accounts.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+      
+<ul class="nav navbar-nav">
+  <li class="nav-item">
+    <a class="nav-link" href="dev-tools.html">Dev Tools</a>
+  </li>
+  
+<li class="nav-item">
+  <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+</li>
+</ul><!-- /.navbar-nav -->
+
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -109,24 +97,7 @@
   <div class="container-fluid" role="document" id="main_content_wrapper">
     <div class="row">
       <!-- Right sidebar first so it's at the beginning for mobile layouts -->
-      <aside class="right-sidebar col-lg-3 order-lg-4 p-0" role="complementary">
-  <div class="card" id="page-toc-wrapper">
-    <div class="card-header">
-      <h4>In this document</h4>
-    </div>
-    <ul class="card-body">
-      <li class="level-1"><a href="#accounts">Accounts</a></li>
-<li class="level-3"><a href="#creating-accounts">Creating Accounts</a></li>
-<li class="level-2"><a href="#addresses">Addresses</a></li>
-<li class="level-3"><a href="#special-addresses">Special Addresses</a></li>
-<li class="level-2"><a href="#deletion-of-accounts">Deletion of Accounts</a></li>
-<li class="level-2"><a href="#transaction-history">Transaction History</a></li>
-<li class="level-2"><a href="#address-encoding">Address Encoding</a></li>
-<li class="level-2"><a href="#see-also">See Also</a></li>
-
-    </ul>
-  </div>
-      </aside>
+    
 
       <!-- main column -->
       <main class="main col-md-7 col-lg-6 order-md-3  " role="main" id="main_content_body">
@@ -141,14 +112,14 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="accounts">Accounts</h1>
-<p>An "Account" in the XRP Ledger represents a holder of XRP and a sender of <a href="transaction-formats.html">transactions</a>. The core elements of an account are:</p>
+<p>An "Account" in the XAG Ledger represents a holder of XAG and a sender of <a href="transaction-formats.html">transactions</a>. The core elements of an account are:</p>
 <ul>
 <li>
 <p>An identifying <strong>address</strong>, such as <code>rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn</code></p>
-<p class="devportal-callout note"><strong>Note:</strong> The XRP community has <a class="external-link" href="https://github.com/xrp-community/standards-drafts/issues/6" target="_blank">proposed <i aria-hidden="true" class="fa fa-external-link"></i></a> (and developed a <a class="external-link" href="https://github.com/xrp-community/xrpl-tagged-address-codec" target="_blank">codec <i aria-hidden="true" class="fa fa-external-link"></i></a> to support) a new <strong>X</strong>-address format that exchanges and wallets could use instead of <a class="external-link" href="https://xrpl.org/source-and-destination-tags.html" target="_blank">destination tags <i aria-hidden="true" class="fa fa-external-link"></i></a>. These "packed" addresses start with an <code>X</code> instead of an <code>r</code>. For more information, see the <a class="external-link" href="https://xrpaddress.info/" target="_blank">XRPL 𝗫-address format <i aria-hidden="true" class="fa fa-external-link"></i></a> site.</p>
+<p class="devportal-callout note"><strong>Note:</strong> The XAG community has <a class="external-link" href="https://github.com/XAG-community/standards-drafts/issues/6" target="_blank">proposed <i aria-hidden="true" class="fa fa-external-link"></i></a> (and developed a <a class="external-link" href="https://github.com/XAG-community/XAGl-tagged-address-codec" target="_blank">codec <i aria-hidden="true" class="fa fa-external-link"></i></a> to support) a new <strong>X</strong>-address format that exchanges and wallets could use instead of <a class="external-link" href="https://XAGl.org/source-and-destination-tags.html" target="_blank">destination tags <i aria-hidden="true" class="fa fa-external-link"></i></a>. These "packed" addresses start with an <code>X</code> instead of an <code>r</code>. For more information, see the <a class="external-link" href="https://XAGaddress.info/" target="_blank">XAGL 𝗫-address format <i aria-hidden="true" class="fa fa-external-link"></i></a> site.</p>
 </li>
 <li>
-<p>An <strong>XRP balance</strong>. Some of this XRP is set aside for the <a href="reserves.html">Reserve</a>.</p>
+<p>An <strong>XAG balance</strong>. Some of this XAG is set aside for the <a href="reserves.html">Reserve</a>.</p>
 </li>
 <li>A <strong>sequence number</strong>, which helps make sure any transactions this account sends are applied in the correct order and only once each. To execute a transaction, the transaction's sequence number and its sender's sequence number must match. Then, as part of applying the transaction, the account's sequence number increases by 1. (See also: <a href="basic-data-types.html#account-sequence">Basic Data Types: Account Sequence</a>.)</li>
 <li>A <strong>history of transactions</strong> that affected this account and its balances.</li>
@@ -160,32 +131,32 @@
 </li>
 </ul>
 <p>In the ledger's data tree, an account's core data is stored in the <a href="accountroot.html">AccountRoot</a> ledger object type. An account can also be the owner (or partial owner) of several other types of data.</p>
-<p class="devportal-callout tip"><strong>Tip:</strong> An "Account" in the XRP Ledger is somewhere between the financial usage (like "bank account") and the computing usage (like "UNIX account"). Non-XRP currencies and assets aren't stored in an XRP Ledger Account itself; each such asset is stored in an accounting relationship called a "Trust Line" that connects two parties.</p>
+<p class="devportal-callout tip"><strong>Tip:</strong> An "Account" in the XAG Ledger is somewhere between the financial usage (like "bank account") and the computing usage (like "UNIX account"). Non-XAG currencies and assets aren't stored in an XAG Ledger Account itself; each such asset is stored in an accounting relationship called a "Trust Line" that connects two parties.</p>
 <h3 id="creating-accounts">Creating Accounts</h3>
-<p>There is not a dedicated "create account" transaction. The <a href="payment.html">Payment transaction</a> automatically creates a new account if the payment sends XRP equal to or greater than the <a href="reserves.html">account reserve</a> to a mathematically-valid address that does not already have an account. This is called <em>funding</em> an account, and creates an <a href="accountroot.html">AccountRoot object</a> in the ledger. No other transaction can create an account.</p>
-<p class="devportal-callout caution"><strong>Caution:</strong> Funding an account <strong>does not</strong> give you any special privileges over that account. Whoever has the secret key corresponding to the account's address has full control over the account and all XRP it contains. For some addresses, it's possible that no one has the secret key, in which case the account is a <a href="#special-addresses">black hole</a> and the XRP is lost forever.</p>
-<p>The typical way to get an account in the XRP Ledger is as follows:</p>
+<p>There is not a dedicated "create account" transaction. The <a href="payment.html">Payment transaction</a> automatically creates a new account if the payment sends XAG equal to or greater than the <a href="reserves.html">account reserve</a> to a mathematically-valid address that does not already have an account. This is called <em>funding</em> an account, and creates an <a href="accountroot.html">AccountRoot object</a> in the ledger. No other transaction can create an account.</p>
+<p class="devportal-callout caution"><strong>Caution:</strong> Funding an account <strong>does not</strong> give you any special privileges over that account. Whoever has the secret key corresponding to the account's address has full control over the account and all XAG it contains. For some addresses, it's possible that no one has the secret key, in which case the account is a <a href="#special-addresses">black hole</a> and the XAG is lost forever.</p>
+<p>The typical way to get an account in the XAG Ledger is as follows:</p>
 <ol>
 <li>
 <p>Generate a key pair from a strong source of randomness and calculate the address of that key pair. (For example, you can use the <a href="wallet_propose.html">wallet_propose method</a> to do this.)</p>
 </li>
 <li>
-<p>Have someone who already has an account in the XRP Ledger send XRP to the address you generated.</p>
+<p>Have someone who already has an account in the XAG Ledger send XAG to the address you generated.</p>
 <ul>
 <li>
-<p>For example, you can purchase XRP in a private exchange, then withdraw XRP from the exchange to the address you specified.</p>
-<p class="devportal-callout caution"><strong>Caution:</strong> The first time you receive XRP at your own XRP Ledger address, you must pay the <a href="reserves.html">account reserve</a> (currently 20 XRP), which locks up that amount of XRP indefinitely. In contrast, private exchanges usually hold all their customers' XRP in a few shared XRP Ledger accounts, so customers don't have to pay the reserve for individual accounts at the exchange. Before withdrawing, consider whether having your own account directly on the XRP Ledger is worth the price.</p>
+<p>For example, you can purchase XAG in a private exchange, then withdraw XAG from the exchange to the address you specified.</p>
+<p class="devportal-callout caution"><strong>Caution:</strong> The first time you receive XAG at your own XAG Ledger address, you must pay the <a href="reserves.html">account reserve</a> (currently 20 XAG), which locks up that amount of XAG indefinitely. In contrast, private exchanges usually hold all their customers' XAG in a few shared XAG Ledger accounts, so customers don't have to pay the reserve for individual accounts at the exchange. Before withdrawing, consider whether having your own account directly on the XAG Ledger is worth the price.</p>
 </li>
 </ul>
 </li>
 </ol>
 <h2 id="addresses">Addresses</h2>
-<p>Accounts in the XRP Ledger are identified by an address in the XRP Ledger's <a href="base58-encodings.html">base58</a> format. The address is derived from the account's master <a class="external-link" href="https://en.wikipedia.org/wiki/Public-key_cryptography" target="_blank">public key <i aria-hidden="true" class="fa fa-external-link"></i></a>, which is in turn derived from a secret key. An address is represented as a string in JSON and has the following characteristics:</p>
+<p>Accounts in the XAG Ledger are identified by an address in the XAG Ledger's <a href="base58-encodings.html">base58</a> format. The address is derived from the account's master <a class="external-link" href="https://en.wikipedia.org/wiki/Public-key_cryptography" target="_blank">public key <i aria-hidden="true" class="fa fa-external-link"></i></a>, which is in turn derived from a secret key. An address is represented as a string in JSON and has the following characteristics:</p>
 <ul>
 <li>Between 25 and 35 characters in length</li>
 <li>
 <p>Starts with the character <code>r</code></p>
-<p class="devportal-callout note"><strong>Note:</strong> The XRP community has <a class="external-link" href="https://github.com/xrp-community/standards-drafts/issues/6" target="_blank">proposed <i aria-hidden="true" class="fa fa-external-link"></i></a> (and developed a <a class="external-link" href="https://github.com/xrp-community/xrpl-tagged-address-codec" target="_blank">codec <i aria-hidden="true" class="fa fa-external-link"></i></a> to support) a new <strong>X</strong>-address format that exchanges and wallets could use instead of <a class="external-link" href="https://xrpl.org/source-and-destination-tags.html" target="_blank">destination tags <i aria-hidden="true" class="fa fa-external-link"></i></a>. These "packed" addresses start with an <code>X</code> instead of an <code>r</code>. For more information, see the <a class="external-link" href="https://xrpaddress.info/" target="_blank">XRPL 𝗫-address format <i aria-hidden="true" class="fa fa-external-link"></i></a> site.</p>
+<p class="devportal-callout note"><strong>Note:</strong> The XAG community has <a class="external-link" href="https://github.com/XAG-community/standards-drafts/issues/6" target="_blank">proposed <i aria-hidden="true" class="fa fa-external-link"></i></a> (and developed a <a class="external-link" href="https://github.com/XAG-community/XAGl-tagged-address-codec" target="_blank">codec <i aria-hidden="true" class="fa fa-external-link"></i></a> to support) a new <strong>X</strong>-address format that exchanges and wallets could use instead of <a class="external-link" href="https://XAGl.org/source-and-destination-tags.html" target="_blank">destination tags <i aria-hidden="true" class="fa fa-external-link"></i></a>. These "packed" addresses start with an <code>X</code> instead of an <code>r</code>. For more information, see the <a class="external-link" href="https://XAGaddress.info/" target="_blank">XAGL 𝗫-address format <i aria-hidden="true" class="fa fa-external-link"></i></a> site.</p>
 </li>
 <li>
 <p>Uses alphanumeric characters, excluding the number "<code>0</code>" capital letter "<code>O</code>", capital letter "<code>I</code>", and lowercase letter "<code>l</code>"</p>
@@ -194,11 +165,11 @@
 <li>Includes a 4-byte checksum so that the probability of generating a valid address from random characters is approximately 1 in 2^32</li>
 </ul>
 <p>For more information, see <a href="accounts.html">Accounts</a> and <a href="base58-encodings.html">base58 Encodings</a>.</p>
-<p>Any valid address can <a href="#creating-accounts">become an account in the XRP Ledger</a> by being funded. You can also use an address that has not been funded to represent a <a href="setregularkey.html">regular key</a> or a member of a <a href="multi-signing.html">signer list</a>. Only a funded account can be the sender of a transaction.</p>
-<p>Creating a valid address is a strictly mathematical task starting with a key pair. You can generate a key pair and calculate its address entirely offline without communicating to the XRP Ledger or any other party. The conversion from a public key to an address involves a one-way hash function, so it is possible to confirm that a public key matches an address but it is impossible to derive the public key from the address alone. (This is part of the reason why signed transactions include the public key <em>and</em> the address of the sender.)</p>
-<p>For more technical details of how to calculate an XRP Ledger address, see <a href="#address-encoding">Address Encoding</a>.</p>
+<p>Any valid address can <a href="#creating-accounts">become an account in the XAG Ledger</a> by being funded. You can also use an address that has not been funded to represent a <a href="setregularkey.html">regular key</a> or a member of a <a href="multi-signing.html">signer list</a>. Only a funded account can be the sender of a transaction.</p>
+<p>Creating a valid address is a strictly mathematical task starting with a key pair. You can generate a key pair and calculate its address entirely offline without communicating to the XAG Ledger or any other party. The conversion from a public key to an address involves a one-way hash function, so it is possible to confirm that a public key matches an address but it is impossible to derive the public key from the address alone. (This is part of the reason why signed transactions include the public key <em>and</em> the address of the sender.)</p>
+<p>For more technical details of how to calculate an XAG Ledger address, see <a href="#address-encoding">Address Encoding</a>.</p>
 <h3 id="special-addresses">Special Addresses</h3>
-<p>Some addresses have special meaning, or historical uses, in the XRP Ledger. In many cases, these are "black hole" addresses, meaning the address is not derived from a known secret key. Since it is effectively impossible to guess a secret key from only an address, any XRP possessed by black hole addresses is lost forever.</p>
+<p>Some addresses have special meaning, or historical uses, in the XAG Ledger. In many cases, these are "black hole" addresses, meaning the address is not derived from a known secret key. Since it is effectively impossible to guess a secret key from only an address, any XAG possessed by black hole addresses is lost forever.</p>
 <table>
 <thead>
 <tr>
@@ -212,31 +183,31 @@
 <tr>
 <td>rrrrrrrrrrrrrrrrrrrrrhoLvTp</td>
 <td>ACCOUNT_ZERO</td>
-<td>An address that is the XRP Ledger's <a href="base58-encodings.html">base58</a> encoding of the value <code>0</code>. In peer-to-peer communications, <code>rippled</code> uses this address as the issuer for XRP.</td>
+<td>An address that is the XAG Ledger's <a href="base58-encodings.html">base58</a> encoding of the value <code>0</code>. In peer-to-peer communications, <code>rippled</code> uses this address as the issuer for XAG.</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>rrrrrrrrrrrrrrrrrrrrBZbvji</td>
 <td>ACCOUNT_ONE</td>
-<td>An address that is the XRP Ledger's <a href="base58-encodings.html">base58</a> encoding of the value <code>1</code>. In the ledger, <a href="ripplestate.html">RippleState entries</a> use this address as a placeholder for the issuer of a trust line balance.</td>
+<td>An address that is the XAG Ledger's <a href="base58-encodings.html">base58</a> encoding of the value <code>1</code>. In the ledger, <a href="ripplestate.html">RippleState entries</a> use this address as a placeholder for the issuer of a trust line balance.</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh</td>
 <td>The genesis account</td>
-<td>When <code>rippled</code> starts a new genesis ledger from scratch (for example, in stand-alone mode), this account holds all the XRP. This address is generated from the seed value "masterpassphrase" which is <a class="external-link" href="https://github.com/ripple/rippled/blob/94ed5b3a53077d815ad0dd65d490c8d37a147361/src/ripple/app/ledger/Ledger.cpp#L184" target="_blank">hard-coded <i aria-hidden="true" class="fa fa-external-link"></i></a>.</td>
+<td>When <code>rippled</code> starts a new genesis ledger from scratch (for example, in stand-alone mode), this account holds all the XAG. This address is generated from the seed value "masterpassphrase" which is <a class="external-link" href="https://github.com/ripple/rippled/blob/94ed5b3a53077d815ad0dd65d490c8d37a147361/src/ripple/app/ledger/Ledger.cpp#L184" target="_blank">hard-coded <i aria-hidden="true" class="fa fa-external-link"></i></a>.</td>
 <td>No</td>
 </tr>
 <tr>
 <td>rrrrrrrrrrrrrrrrrNAMEtxvNvQ</td>
 <td>Ripple Name reservation black-hole</td>
-<td>In the past, Ripple asked users to send XRP to this account to reserve Ripple Names.</td>
+<td>In the past, Ripple asked users to send XAG to this account to reserve Ripple Names.</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>rrrrrrrrrrrrrrrrrrrn5RM1rHd</td>
 <td>NaN Address</td>
-<td>Previous versions of <a class="external-link" href="https://github.com/ripple/ripple-lib" target="_blank">ripple-lib <i aria-hidden="true" class="fa fa-external-link"></i></a> generated this address when encoding the value <a class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN" target="_blank">NaN <i aria-hidden="true" class="fa fa-external-link"></i></a> using the XRP Ledger's <a href="base58-encodings.html">base58</a> string encoding format.</td>
+<td>Previous versions of <a class="external-link" href="https://github.com/ripple/ripple-lib" target="_blank">ripple-lib <i aria-hidden="true" class="fa fa-external-link"></i></a> generated this address when encoding the value <a class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN" target="_blank">NaN <i aria-hidden="true" class="fa fa-external-link"></i></a> using the XAG Ledger's <a href="base58-encodings.html">base58</a> string encoding format.</td>
 <td>Yes</td>
 </tr>
 </tbody>
@@ -254,19 +225,19 @@
 </ul>
 </li>
 <li>The account must own fewer than 1000 objects in the ledger.</li>
-<li>The <a href="accountdelete.html">AccountDelete transaction</a> must pay a special <a href="transaction-cost.html">transaction cost</a> equal to at least the <a href="reserves.html">owner reserve</a> for one item (currently 5 XRP).</li>
+<li>The <a href="accountdelete.html">AccountDelete transaction</a> must pay a special <a href="transaction-cost.html">transaction cost</a> equal to at least the <a href="reserves.html">owner reserve</a> for one item (currently 5 XAG).</li>
 </ul>
 <p>After an account has been deleted, it can be re-created in the ledger through the normal method of <a href="#creating-accounts">creating accounts</a>. An account that has been deleted and re-created is no different than an account that has been created for the first time.</p>
 <p class="devportal-callout warning"><strong>Warning:</strong> The <a href="accountdelete.html">AccountDelete transaction</a>'s transaction cost always applies when the transaction is included in a validated ledger, even if the transaction failed because the account does not meet the requirements to be deleted. To greatly reduce the chances of paying the high transaction cost if the account cannot be deleted, <a href="submit.html">submit the transaction</a> with <code>fail_hard</code> enabled.</p>
-<p>Unlike Bitcoin and many other cryptocurrencies, each new version of the XRP Ledger's public ledger chain contains the full state of the ledger, which increases in size with each new account. For that reason, you should not create new XRP Ledger accounts unless necessary. You can recover some of an account's 20 XRP <a href="reserves.html">reserve</a> by deleting the account, but you must still destroy at least 5 XRP to do so.</p>
-<p>Institutions who send and receive value on behalf of many users can use <a href="become-an-xrp-ledger-gateway.html#source-and-destination-tags"><strong>Source Tags</strong> and <strong>Destination Tags</strong></a> to distinguish payments from and to their customers while only using one (or a handful) of accounts in the XRP Ledger.</p>
+<p>Unlike Bitcoin and many other cryptocurrencies, each new version of the XAG Ledger's public ledger chain contains the full state of the ledger, which increases in size with each new account. For that reason, you should not create new XAG Ledger accounts unless necessary. You can recover some of an account's 20 XAG <a href="reserves.html">reserve</a> by deleting the account, but you must still destroy at least 5 XAG to do so.</p>
+<p>Institutions who send and receive value on behalf of many users can use <a href="become-an-XAG-ledger-gateway.html#source-and-destination-tags"><strong>Source Tags</strong> and <strong>Destination Tags</strong></a> to distinguish payments from and to their customers while only using one (or a handful) of accounts in the XAG Ledger.</p>
 <h2 id="transaction-history">Transaction History</h2>
-<p>In the XRP Ledger, transaction history is tracked by a "thread" of transactions linked by a transaction's identifying hash and the ledger index. The <code>AccountRoot</code> ledger object has the identifying hash and ledger of the transaction that most recently modified it; the metadata of that transaction includes the previous state of the <code>AccountRoot</code> node, so it is possible to iterate through the history of a single account this way. This transaction history includes any transactions that modify the <code>AccountRoot</code> node directly, including:</p>
+<p>In the XAG Ledger, transaction history is tracked by a "thread" of transactions linked by a transaction's identifying hash and the ledger index. The <code>AccountRoot</code> ledger object has the identifying hash and ledger of the transaction that most recently modified it; the metadata of that transaction includes the previous state of the <code>AccountRoot</code> node, so it is possible to iterate through the history of a single account this way. This transaction history includes any transactions that modify the <code>AccountRoot</code> node directly, including:</p>
 <ul>
-<li>Transactions sent by the account, because they modify the account's <code>Sequence</code> number. These transactions also modify the account's XRP balance because of the <a href="transaction-cost.html">transaction cost</a>.</li>
-<li>Transactions that modified the account's XRP balance, including incoming <a href="payment.html">Payment transactions</a> and other types of transactions such as <a href="paymentchannelclaim.html">PaymentChannelClaim</a> and <a href="escrowfinish.html">EscrowFinish</a>.</li>
+<li>Transactions sent by the account, because they modify the account's <code>Sequence</code> number. These transactions also modify the account's XAG balance because of the <a href="transaction-cost.html">transaction cost</a>.</li>
+<li>Transactions that modified the account's XAG balance, including incoming <a href="payment.html">Payment transactions</a> and other types of transactions such as <a href="paymentchannelclaim.html">PaymentChannelClaim</a> and <a href="escrowfinish.html">EscrowFinish</a>.</li>
 </ul>
-<p>The <em>conceptual</em> transaction history of an account also includes transactions that modified the account's owned objects and non-XRP balances. These objects are separate ledger objects, each with their own thread of transactions that affected them. If you have an account's full ledger history, you can follow it forward to find the ledger objects created or modified by it. A "complete" transaction history includes the history of objects owned by a transaction, such as:</p>
+<p>The <em>conceptual</em> transaction history of an account also includes transactions that modified the account's owned objects and non-XAG balances. These objects are separate ledger objects, each with their own thread of transactions that affected them. If you have an account's full ledger history, you can follow it forward to find the ledger objects created or modified by it. A "complete" transaction history includes the history of objects owned by a transaction, such as:</p>
 <ul>
 <li><code>RippleState</code> objects (Trust Lines) connected to the account.</li>
 <li><code>DirectoryNode</code> objects, especially the owner directory tracking the account's owned objects.</li>
@@ -277,12 +248,12 @@
 </ul>
 <p>For more information on each of these objects, see the <a href="ledger-data-formats.html">Ledger Format Reference</a>.</p>
 <h2 id="address-encoding">Address Encoding</h2>
-<p class="devportal-callout tip"><strong>Tip:</strong> These technical details are only relevant for people building low-level library software for XRP Ledger compatibility!</p>
+<p class="devportal-callout tip"><strong>Tip:</strong> These technical details are only relevant for people building low-level library software for XAG Ledger compatibility!</p>
 <p><a class="external-link" href="https://github.com/ripple/rippled/blob/35fa20a110e3d43ffc1e9e664fc9017b6f2747ae/src/ripple/protocol/impl/AccountID.cpp#L109-L140" target="_blank" title="Source">[Source] <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
-<p>XRP Ledger addresses are encoded using <a class="external-link" href="https://en.wikipedia.org/wiki/Base58" target="_blank">base58 <i aria-hidden="true" class="fa fa-external-link"></i></a> with the <em>dictionary</em> <code>rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz</code>. Since the XRP Ledger encodes several types of keys with base58, it prefixes the encoded data with a one-byte "type prefix" (also called a "version prefix") to distinguish them. The type prefix causes addresses to usually start with different letters in base58 format.</p>
+<p>XAG Ledger addresses are encoded using <a class="external-link" href="https://en.wikipedia.org/wiki/Base58" target="_blank">base58 <i aria-hidden="true" class="fa fa-external-link"></i></a> with the <em>dictionary</em> <code>rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz</code>. Since the XAG Ledger encodes several types of keys with base58, it prefixes the encoded data with a one-byte "type prefix" (also called a "version prefix") to distinguish them. The type prefix causes addresses to usually start with different letters in base58 format.</p>
 <p>The following diagram shows the relationship between keys and addresses:</p>
 <p><a href="img/address-encoding.png"><img alt="Master Public Key + Type Prefix → Account ID + Checksum → Address" src="img/address-encoding.png"/></a></p>
-<p>The formula for calculating an XRP Ledger address from a public key is as follows. For the complete example code, see <a class="external-link" href="https://github.com/ripple/ripple-dev-portal/blob/master/content/_code-samples/address_encoding/encode_address.js" target="_blank"><code>encode_address.js</code> <i aria-hidden="true" class="fa fa-external-link"></i></a>. For the process of deriving a public key from a passphrase or seed value, see <a href="cryptographic-keys.html#key-derivation">Key Derivation</a>.</p>
+<p>The formula for calculating an XAG Ledger address from a public key is as follows. For the complete example code, see <a class="external-link" href="https://github.com/ripple/ripple-dev-portal/blob/master/content/_code-samples/address_encoding/encode_address.js" target="_blank"><code>encode_address.js</code> <i aria-hidden="true" class="fa fa-external-link"></i></a>. For the process of deriving a public key from a passphrase or seed value, see <a href="cryptographic-keys.html#key-derivation">Key Derivation</a>.</p>
 <ol>
 <li>
 <p>Import required algorithms: SHA-256, RIPEMD160, and base58. Set the dictionary for base58.</p>
@@ -330,28 +301,7 @@ console.log(address);
 </code></pre>
 </li>
 </ol>
-<h2 id="see-also">See Also</h2>
-<ul>
-<li><strong>Concepts:</strong><ul>
-<li><a href="reserves.html">Reserves</a></li>
-<li><a href="cryptographic-keys.html">Cryptographic Keys</a></li>
-<li><a href="issuing-and-operational-addresses.html">Issuing and Operational Addresses</a></li>
-</ul>
-</li>
-<li><strong>References:</strong><ul>
-<li><a href="account_info.html">account_info method</a></li>
-<li><a href="wallet_propose.html">wallet_propose method</a></li>
-<li><a href="accountset.html">AccountSet transaction</a></li>
-<li><a href="payment.html">Payment transaction</a></li>
-<li><a href="accountroot.html">AccountRoot object</a></li>
-</ul>
-</li>
-<li><strong>Tutorials:</strong><ul>
-<li><a href="manage-account-settings.html">Manage Account Settings (Category)</a></li>
-<li><a href="monitor-incoming-payments-with-websocket.html">Monitor Incoming Payments with WebSocket</a></li>
-</ul>
-</li>
-</ul>
+
 <!-- -->
 <!-- -->
 <!-- API object types -->
@@ -388,9 +338,9 @@ console.log(address);
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xrp-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="XAG-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xrp.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="XAG.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -417,10 +367,7 @@ console.log(address);
 
                           <li><a class="subpage" href="cryptographic-keys.html">Cryptographic Keys</a></li>
                           <li><a class="subpage" href="multi-signing.html">Multi-Signing</a></li>
-                          <li><a class="subpage" href="reserves.html">Reserves</a></li>
-                          <li><a class="subpage" href="depositauth.html">Deposit Authorization</a></li>
-
-                      <li><a class="nosubcat-page" href="fees.html">Fees (Disambiguation)</a></li>
+    
                       <li><a class="nosubcat-page" href="ledgers.html">Ledgers</a></li>
                       <li><a class="subcat-title" href="transaction-basics.html">Transaction Basics</a></li>
 
@@ -436,30 +383,7 @@ console.log(address);
           </div><!-- /.card -->
 
         <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_20">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_20" aria-expanded="true" aria-controls="sidenav_collapse_20"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="payment-types.html">Payment Types</a>
-                <!-- <a class="sidenav_cat_title" href="payment-types.html">Payment Types</a> -->
-              </h5>
-            </div><!-- /.card-header -->
-
-            <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="direct-xrp-payments.html">Direct XRP Payments</a></li>
-                      <li><a class="nosubcat-page" href="cross-currency-payments.html">Cross-Currency Payments</a></li>
-                      <li><a class="nosubcat-page" href="checks.html">Checks</a></li>
-                      <li><a class="nosubcat-page" href="escrow.html">Escrow</a></li>
-                      <li><a class="nosubcat-page" href="partial-payments.html">Partial Payments</a></li>
-                      <li><a class="nosubcat-page" href="payment-channels.html">Payment Channels</a></li>
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse20 -->
-
-          </div><!-- /.card -->
+   
 
         <!---->
           <div class="card">
@@ -491,220 +415,17 @@ console.log(address);
           </div><!-- /.card -->
 
         <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_38">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_38" aria-expanded="true" aria-controls="sidenav_collapse_38"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="decentralized-exchange.html">Decentralized Exchange</a>
-                <!-- <a class="sidenav_cat_title" href="decentralized-exchange.html">Decentralized Exchange</a> -->
-              </h5>
-            </div><!-- /.card-header -->
-
-            <div id="sidenav_collapse_38" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_38">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="offers.html">Offers</a></li>
-                      <li><a class="nosubcat-page" href="autobridging.html">Auto-Bridging</a></li>
-                      <li><a class="nosubcat-page" href="ticksize.html">Tick Size</a></li>
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse38 -->
-
-          </div><!-- /.card -->
+  
 
         <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_42">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_42" aria-expanded="true" aria-controls="sidenav_collapse_42"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="consensus-network.html">Consensus Network</a>
-                <!-- <a class="sidenav_cat_title" href="consensus-network.html">Consensus Network</a> -->
-              </h5>
-            </div><!-- /.card-header -->
+ 
 
-            <div id="sidenav_collapse_42" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_42">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="consensus.html">Consensus</a></li>
-                      <li><a class="nosubcat-page" href="consensus-principles-and-rules.html">Consensus Principles and Rules</a></li>
-                      <li><a class="nosubcat-page" href="consensus-protections.html">Consensus Protections Against Attacks and Failure Modes</a></li>
-                      <li><a class="nosubcat-page" href="transaction-queue.html">Transaction Queue</a></li>
-                      <li><a class="nosubcat-page" href="about-canceling-a-transaction.html">About Canceling a Transaction</a></li>
-                      <li><a class="nosubcat-page" href="transaction-malleability.html">Transaction Malleability</a></li>
-                      <li><a class="subcat-title" href="amendments.html">Amendments</a></li>
 
-                          <li><a class="subpage" href="known-amendments.html">Known Amendments</a></li>
-
-                      <li><a class="nosubcat-page" href="fee-voting.html">Fee Voting</a></li>
-                      <li><a class="nosubcat-page" href="consensus-research.html">Consensus Research</a></li>
-                      <li><a class="nosubcat-page" href="parallel-networks.html">Parallel Networks</a></li>
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse42 -->
-
-          </div><!-- /.card -->
-
-        <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_54">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_54" aria-expanded="true" aria-controls="sidenav_collapse_54"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="the-rippled-server.html">The rippled Server</a>
-                <!-- <a class="sidenav_cat_title" href="the-rippled-server.html">The rippled Server</a> -->
-              </h5>
-            </div><!-- /.card-header -->
-
-            <div id="sidenav_collapse_54" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_54">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="rippled-server-modes.html">rippled Server Modes</a></li>
-                      <li><a class="nosubcat-page" href="clustering.html">Clustering</a></li>
-                      <li><a class="subcat-title" href="ledger-history.html">Ledger History</a></li>
-
-                          <li><a class="subpage" href="online-deletion.html">Online Deletion</a></li>
-                          <li><a class="subpage" href="history-sharding.html">History Sharding</a></li>
-
-                      <li><a class="nosubcat-page" href="peer-protocol.html">Peer Protocol</a></li>
-                      <li><a class="nosubcat-page" href="transaction-censorship-detection.html">Transaction Censorship Detection</a></li>
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse54 -->
-
-          </div><!-- /.card -->
 
     </div><!-- /#sidenav -->
 </div><!-- /.tree_nav -->      </aside>
     </div><!--/.row (main layout)-->
   </div>
-
-<footer class="xrpl-footer" role="contentinfo">
-  <section class="container-fluid card-grid card-grid-Nx1">
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
-  </section>
-
-  <section class="container-fluid p-5 pl-sm-0">
-
-    <nav role="navigation" class="d-flex mb-3 language-selector">
-      <img class="language_selector_icon" src="assets/img/icon-language-selector.svg" width="32" height="40" alt="language selection icon" />
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="/accounts.html"><i class="fa fa-check-circle"></i> English</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/ja/accounts.html">日本語</a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
-      <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
-    </div><!-- /.absolute_bottom_footer -->
-
-  </section>
-</footer>
 
 <!-- Jump to top button -->
 <a href="#main_content_wrapper" class="jump-to-top btn btn-primary btn-lg" role="button" title="Jump to top of page">Top</a>
@@ -720,7 +441,7 @@ console.log(address);
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script type="text/javascript"> docsearch({
 apiKey: '70de5b9b8ef95460f3c6e04054b325b2',
-indexName: 'xrpl',
+indexName: 'XAGl',
 inputSelector: '#topsearchbar',
 algoliaOptions: { 'facetFilters': ["lang:en"] },
 debug: false
