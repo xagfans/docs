@@ -32,7 +32,7 @@
       gtag('config', 'UA-45576805-2');
       gtag('config', 'UA-157720658-3', { 'linker': {
         'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
+                    'XAGl.org', 'explorer.XAGl.org', 'testnet.XAGl.org']
         } }
       );
     </script>
@@ -60,7 +60,7 @@
 
 </head>
 
-<body class="xrp-ledger-dev-portal sidebar-primary lang-en ">
+<body class="XAG-ledger-dev-portal sidebar-primary lang-en ">
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
     <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" class="logo"  height="44" alt="XAG Ledger Dev Portal" /></a>
@@ -68,29 +68,17 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
-      <ul class="nav navbar-nav">
-            <li class="nav-item active-parent">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dev-tools.html">Dev Tools</a>
-            </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-      </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/concepts/payment-system-basics/transaction-basics/transaction-basics.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+      
+<ul class="nav navbar-nav">
+  <li class="nav-item">
+    <a class="nav-link" href="dev-tools.html">Dev Tools</a>
+  </li>
+  
+<li class="nav-item">
+  <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+</li>
+</ul><!-- /.navbar-nav -->
+
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -109,26 +97,7 @@
   <div class="container-fluid" role="document" id="main_content_wrapper">
     <div class="row">
       <!-- Right sidebar first so it's at the beginning for mobile layouts -->
-      <aside class="right-sidebar col-lg-3 order-lg-4 p-0" role="complementary">
-  <div class="card" id="page-toc-wrapper">
-    <div class="card-header">
-      <h4>In this document</h4>
-    </div>
-    <ul class="card-body">
-      <li class="level-1"><a href="#transaction-basics">Transaction Basics</a></li>
-<li class="level-3"><a href="#identifying-transactions">Identifying Transactions</a></li>
-<li class="level-2"><a href="#claimed-cost-justification">Claimed Cost Justification</a></li>
-<li class="level-2"><a href="#authorizing-transactions">Authorizing Transactions</a></li>
-<li class="level-2"><a href="#signing-and-submitting-transactions">Signing and Submitting Transactions</a></li>
-<li class="level-3"><a href="#example-unsigned-transaction">Example Unsigned Transaction</a></li>
-<li class="level-2"><a href="#example-signed-transaction-blob">Example Signed Transaction Blob</a></li>
-<li class="level-2"><a href="#example-executed-transaction-with-metadata">Example Executed Transaction with Metadata</a></li>
-<li class="level-2"><a href="#see-also">See Also</a></li>
-
-    </ul>
-  </div>
-      </aside>
-
+     
       <!-- main column -->
       <main class="main col-md-7 col-lg-6 order-md-3  " role="main" id="main_content_body">
 <nav class="breadcrumbs-wrap p-0 p-md-3" aria-label="breadcrumb">
@@ -142,12 +111,12 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="transaction-basics">Transaction Basics</h1>
-<p>A <em>Transaction</em> is the only way to modify the XRP Ledger. Transactions are only final if signed, submitted, and accepted into a validated ledger version following the <a href="consensus.html">consensus process</a>. Some ledger rules also generate <em><a href="pseudo-transaction-types.html">pseudo-transactions</a></em>, which aren't signed or submitted, but still must be accepted by consensus. Transactions that fail are also included in ledgers because they modify balances of XRP to pay for the anti-spam <a href="transaction-cost.html">transaction cost</a>.</p>
-<p>Transactions can do more than just send money. In addition to supporting various <a href="payment-types.html">Payment Types</a>, transactions in the XRP Ledger are also used to rotate <a href="cryptographic-keys.html">cryptographic keys</a>, manage other settings, and trade in the XRP Ledger's <a href="decentralized-exchange.html">decentralized exchange</a>. The <a href="rippled-api.html"><code>rippled</code> API reference</a> has a complete <a href="transaction-types.html">list of transaction types</a>.</p>
+<p>A <em>Transaction</em> is the only way to modify the XAG Ledger. Transactions are only final if signed, submitted, and accepted into a validated ledger version following the <a href="consensus.html">consensus process</a>. Some ledger rules also generate <em><a href="pseudo-transaction-types.html">pseudo-transactions</a></em>, which aren't signed or submitted, but still must be accepted by consensus. Transactions that fail are also included in ledgers because they modify balances of XAG to pay for the anti-spam <a href="transaction-cost.html">transaction cost</a>.</p>
+<p>Transactions can do more than just send money. In addition to supporting various <a href="payment-types.html">Payment Types</a>, transactions in the XAG Ledger are also used to rotate <a href="cryptographic-keys.html">cryptographic keys</a>, manage other settings, and trade in the XAG Ledger's <a href="decentralized-exchange.html">decentralized exchange</a>. The <a href="rippled-api.html"><code>rippled</code> API reference</a> has a complete <a href="transaction-types.html">list of transaction types</a>.</p>
 <h3 id="identifying-transactions">Identifying Transactions</h3>
 <p>Every signed transaction has a unique <code>"hash"</code> that identifies it. The server provides the hash in the response when you submit the transaction; you can also look up a transaction in an account's transaction history with the <a href="account_tx.html">account_tx command</a>.</p>
 <p>The transaction hash can be used as a "proof of payment" since anyone can <a href="look-up-transaction-results.html">look up the transaction by its hash</a> to verify its final status.</p>
-<p class="devportal-callout note"><strong>Note:</strong> In the full history of the XRP Ledger, there is an exception to the rule that transaction hashes are unique. Two early <a href="setfee.html">SetFee pseudo-transactions</a> had the exact same fields, resulting in the same hash, <code>1C15FEA3E1D50F96B6598607FC773FF1F6E0125F30160144BE0C5CBC52F5151B</code>. The first of these transactions appears <a href="websocket-api-tool.html?server=wss%3A%2F%2Fs2.ripple.com%2F&amp;req=%7B%22id%22%3A%22setfee_nonunique_hash_1%22%2C%22command%22%3A%22transaction_entry%22%2C%22tx_hash%22%3A%221C15FEA3E1D50F96B6598607FC773FF1F6E0125F30160144BE0C5CBC52F5151B%22%2C%22ledger_index%22%3A3715073%7D">in ledger 3715073</a> and the second is <a href="websocket-api-tool.html?server=wss%3A%2F%2Fs2.ripple.com%2F&amp;req=%7B%22id%22%3A%22setfee_nonunique_hash_1%22%2C%22command%22%3A%22transaction_entry%22%2C%22tx_hash%22%3A%221C15FEA3E1D50F96B6598607FC773FF1F6E0125F30160144BE0C5CBC52F5151B%22%2C%22ledger_index%22%3A3721729%7D">in ledger 3721729</a>. Newer <a href="setfee.html">SetFee pseudo-transactions</a> include a <code>LedgerSequence</code> field so that they are guaranteed to be unique.
+<p class="devportal-callout note"><strong>Note:</strong> In the full history of the XAG Ledger, there is an exception to the rule that transaction hashes are unique. Two early <a href="setfee.html">SetFee pseudo-transactions</a> had the exact same fields, resulting in the same hash, <code>1C15FEA3E1D50F96B6598607FC773FF1F6E0125F30160144BE0C5CBC52F5151B</code>. The first of these transactions appears <a href="websocket-api-tool.html?server=wss%3A%2F%2Fs2.ripple.com%2F&amp;req=%7B%22id%22%3A%22setfee_nonunique_hash_1%22%2C%22command%22%3A%22transaction_entry%22%2C%22tx_hash%22%3A%221C15FEA3E1D50F96B6598607FC773FF1F6E0125F30160144BE0C5CBC52F5151B%22%2C%22ledger_index%22%3A3715073%7D">in ledger 3715073</a> and the second is <a href="websocket-api-tool.html?server=wss%3A%2F%2Fs2.ripple.com%2F&amp;req=%7B%22id%22%3A%22setfee_nonunique_hash_1%22%2C%22command%22%3A%22transaction_entry%22%2C%22tx_hash%22%3A%221C15FEA3E1D50F96B6598607FC773FF1F6E0125F30160144BE0C5CBC52F5151B%22%2C%22ledger_index%22%3A3721729%7D">in ledger 3721729</a>. Newer <a href="setfee.html">SetFee pseudo-transactions</a> include a <code>LedgerSequence</code> field so that they are guaranteed to be unique.
 <!--_ --></p>
 <h2 id="claimed-cost-justification">Claimed Cost Justification</h2>
 <p>Although it may seem unfair to charge a <a href="transaction-cost.html">transaction cost</a> for a failed transaction, the <code>tec</code> class of errors exists for good reasons:</p>
@@ -157,7 +126,7 @@
 <li>The transaction cost is generally very small in real-world value, so it should not harm users unless they are sending large quantities of transactions.</li>
 </ul>
 <h2 id="authorizing-transactions">Authorizing Transactions</h2>
-<p>In the decentralized XRP Ledger, a digital signature proves that a transaction is authorized to do a specific set of actions. Only signed transactions can be submitted to the network and included in a validated ledger. A signed transaction is immutable: its contents cannot change, and the signature is not valid for any other transaction. <!-- STYLE_OVERRIDE: is authorized to --></p>
+<p>In the decentralized XAG Ledger, a digital signature proves that a transaction is authorized to do a specific set of actions. Only signed transactions can be submitted to the network and included in a validated ledger. A signed transaction is immutable: its contents cannot change, and the signature is not valid for any other transaction. <!-- STYLE_OVERRIDE: is authorized to --></p>
 <p>A transaction can be authorized by any of the following types of signatures:</p>
 <ul>
 <li>A single signature from the master private key that is mathematically associated with the sending address. You can disable or enable the master key pair using an <a href="accountset.html">AccountSet transaction</a>.</li>
@@ -173,7 +142,7 @@
 <p>For more information about master and regular key pairs, see <a href="cryptographic-keys.html">Cryptographic Keys</a>.</p>
 <!-- -->
 <h2 id="signing-and-submitting-transactions">Signing and Submitting Transactions</h2>
-<p>Sending a transaction to the XRP Ledger involves several steps:</p>
+<p>Sending a transaction to the XAG Ledger involves several steps:</p>
 <ol>
 <li>Create an <a href="#example-unsigned-transaction">unsigned transaction in JSON format</a>.</li>
 <li>Use one or more signatures to <a href="#authorizing-transactions">authorize the transaction</a>.</li>
@@ -182,7 +151,7 @@
 <li>The <code>rippled</code> servers apply those transactions to the previous ledger in a canonical order and share their results.</li>
 <li>If enough <a href="rippled-server-modes.html#reasons-to-run-a-validator">trusted validators</a> created the exact same ledger, that ledger is declared <em>validated</em> and the <a href="transaction-results.html">results of the transactions</a> in that ledger are immutable.</li>
 </ol>
-<p>See <a href="send-xrp.html">Send XRP</a> for an interactive tutorial in sending XRP payments.</p>
+<p>See <a href="send-XAG.html">Send XAG</a> for an interactive tutorial in sending XAG payments.</p>
 <h3 id="example-unsigned-transaction">Example Unsigned Transaction</h3>
 <p>Here is an example of an unsigned <a href="payment.html">Payment transaction</a> in JSON:</p>
 <pre><code>{
@@ -199,7 +168,7 @@
   "Sequence": 2,
 }
 </code></pre>
-<p>The XRP Ledger only relays and executes a transaction if the transaction object has been authorized by the sending address (in the <code>Account</code>) field. For transactions authorized by only a single signature, you have two options:</p>
+<p>The XAG Ledger only relays and executes a transaction if the transaction object has been authorized by the sending address (in the <code>Account</code>) field. For transactions authorized by only a single signature, you have two options:</p>
 <ol>
 <li>Convert it to a binary blob and sign it offline. This is preferable, since it means that the account secret used for signing the transaction is never transmitted over any network connection.<ul>
 <li>You can use <a href="rippleapi-reference.html#sign">RippleAPI</a> for offline signing.</li>
@@ -308,33 +277,7 @@
   }
 }
 </code></pre>
-<h2 id="see-also">See Also</h2>
-<ul>
-<li><strong>Concepts:</strong><ul>
-<li><a href="payment-types.html">Payment Types</a></li>
-<li><a href="consensus-network.html">Consensus Network</a></li>
-</ul>
-</li>
-<li><strong>Tutorials:</strong><ul>
-<li><a href="set-up-secure-signing.html">Set Up Secure Signing</a></li>
-<li><a href="send-xrp.html">Send XRP</a></li>
-<li><a href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
-<li><a href="monitor-incoming-payments-with-websocket.html">Monitor Incoming Payments with WebSocket</a></li>
-<li><a href="cancel-or-skip-a-transaction.html">Cancel or Skip a Transaction</a></li>
-<li><a href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
-</ul>
-</li>
-<li><strong>References:</strong><ul>
-<li><a href="transaction-common-fields.html">Transaction Common Fields</a></li>
-<li><a href="transaction-types.html">Transaction Types</a></li>
-<li><a href="transaction-metadata.html">Transaction Metadata</a></li>
-<li><a href="account_tx.html">account_tx method</a></li>
-<li><a href="tx.html">tx method</a></li>
-<li><a href="submit.html">submit method</a></li>
-<li><a href="submit_multisigned.html">submit_multisigned method</a></li>
-</ul>
-</li>
-</ul>
+
 <!-- -->
 <!-- -->
 <!-- API object types -->
@@ -371,9 +314,9 @@
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xrp-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="XAG-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xrp.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="XAG.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -400,10 +343,7 @@
 
                           <li><a class="subpage" href="cryptographic-keys.html">Cryptographic Keys</a></li>
                           <li><a class="subpage" href="multi-signing.html">Multi-Signing</a></li>
-                          <li><a class="subpage" href="reserves.html">Reserves</a></li>
-                          <li><a class="subpage" href="depositauth.html">Deposit Authorization</a></li>
-
-                      <li><a class="nosubcat-page" href="fees.html">Fees (Disambiguation)</a></li>
+                        
                       <li><a class="nosubcat-page" href="ledgers.html">Ledgers</a></li>
                       <li><a class="subcat-title active" href="#main_content_body">Transaction Basics</a></li>
 
@@ -419,30 +359,7 @@
           </div><!-- /.card -->
 
         <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_20">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_20" aria-expanded="true" aria-controls="sidenav_collapse_20"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="payment-types.html">Payment Types</a>
-                <!-- <a class="sidenav_cat_title" href="payment-types.html">Payment Types</a> -->
-              </h5>
-            </div><!-- /.card-header -->
-
-            <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="direct-xrp-payments.html">Direct XRP Payments</a></li>
-                      <li><a class="nosubcat-page" href="cross-currency-payments.html">Cross-Currency Payments</a></li>
-                      <li><a class="nosubcat-page" href="checks.html">Checks</a></li>
-                      <li><a class="nosubcat-page" href="escrow.html">Escrow</a></li>
-                      <li><a class="nosubcat-page" href="partial-payments.html">Partial Payments</a></li>
-                      <li><a class="nosubcat-page" href="payment-channels.html">Payment Channels</a></li>
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse20 -->
-
-          </div><!-- /.card -->
+        
 
         <!---->
           <div class="card">
@@ -474,220 +391,16 @@
           </div><!-- /.card -->
 
         <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_38">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_38" aria-expanded="true" aria-controls="sidenav_collapse_38"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="decentralized-exchange.html">Decentralized Exchange</a>
-                <!-- <a class="sidenav_cat_title" href="decentralized-exchange.html">Decentralized Exchange</a> -->
-              </h5>
-            </div><!-- /.card-header -->
-
-            <div id="sidenav_collapse_38" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_38">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="offers.html">Offers</a></li>
-                      <li><a class="nosubcat-page" href="autobridging.html">Auto-Bridging</a></li>
-                      <li><a class="nosubcat-page" href="ticksize.html">Tick Size</a></li>
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse38 -->
-
-          </div><!-- /.card -->
+    
 
         <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_42">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_42" aria-expanded="true" aria-controls="sidenav_collapse_42"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="consensus-network.html">Consensus Network</a>
-                <!-- <a class="sidenav_cat_title" href="consensus-network.html">Consensus Network</a> -->
-              </h5>
-            </div><!-- /.card-header -->
-
-            <div id="sidenav_collapse_42" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_42">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="consensus.html">Consensus</a></li>
-                      <li><a class="nosubcat-page" href="consensus-principles-and-rules.html">Consensus Principles and Rules</a></li>
-                      <li><a class="nosubcat-page" href="consensus-protections.html">Consensus Protections Against Attacks and Failure Modes</a></li>
-                      <li><a class="nosubcat-page" href="transaction-queue.html">Transaction Queue</a></li>
-                      <li><a class="nosubcat-page" href="about-canceling-a-transaction.html">About Canceling a Transaction</a></li>
-                      <li><a class="nosubcat-page" href="transaction-malleability.html">Transaction Malleability</a></li>
-                      <li><a class="subcat-title" href="amendments.html">Amendments</a></li>
-
-                          <li><a class="subpage" href="known-amendments.html">Known Amendments</a></li>
-
-                      <li><a class="nosubcat-page" href="fee-voting.html">Fee Voting</a></li>
-                      <li><a class="nosubcat-page" href="consensus-research.html">Consensus Research</a></li>
-                      <li><a class="nosubcat-page" href="parallel-networks.html">Parallel Networks</a></li>
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse42 -->
-
-          </div><!-- /.card -->
-
-        <!---->
-          <div class="card">
-            <div class="card-header" role="tab" id="sidenav_cat_head_54">
-                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_54" aria-expanded="true" aria-controls="sidenav_collapse_54"></a>
-              <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="the-rippled-server.html">The rippled Server</a>
-                <!-- <a class="sidenav_cat_title" href="the-rippled-server.html">The rippled Server</a> -->
-              </h5>
-            </div><!-- /.card-header -->
-
-            <div id="sidenav_collapse_54" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_54">
-              <div class="card-body">
-                <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="rippled-server-modes.html">rippled Server Modes</a></li>
-                      <li><a class="nosubcat-page" href="clustering.html">Clustering</a></li>
-                      <li><a class="subcat-title" href="ledger-history.html">Ledger History</a></li>
-
-                          <li><a class="subpage" href="online-deletion.html">Online Deletion</a></li>
-                          <li><a class="subpage" href="history-sharding.html">History Sharding</a></li>
-
-                      <li><a class="nosubcat-page" href="peer-protocol.html">Peer Protocol</a></li>
-                      <li><a class="nosubcat-page" href="transaction-censorship-detection.html">Transaction Censorship Detection</a></li>
-
-                </ul>
-              </div><!-- /.card-body -->
-            </div><!-- /#sidenav_collapse54 -->
-
-          </div><!-- /.card -->
+  
 
     </div><!-- /#sidenav -->
 </div><!-- /.tree_nav -->      </aside>
     </div><!--/.row (main layout)-->
   </div>
 
-<footer class="xrpl-footer" role="contentinfo">
-  <section class="container-fluid card-grid card-grid-Nx1">
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
-  </section>
-
-  <section class="container-fluid p-5 pl-sm-0">
-
-    <nav role="navigation" class="d-flex mb-3 language-selector">
-      <img class="language_selector_icon" src="assets/img/icon-language-selector.svg" width="32" height="40" alt="language selection icon" />
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="/transaction-basics.html"><i class="fa fa-check-circle"></i> English</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/ja/transaction-basics.html">日本語</a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
-      <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
-    </div><!-- /.absolute_bottom_footer -->
-
-  </section>
-</footer>
 
 <!-- Jump to top button -->
 <a href="#main_content_wrapper" class="jump-to-top btn btn-primary btn-lg" role="button" title="Jump to top of page">Top</a>
@@ -703,7 +416,7 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script type="text/javascript"> docsearch({
 apiKey: '70de5b9b8ef95460f3c6e04054b325b2',
-indexName: 'xrpl',
+indexName: 'XAGl',
 inputSelector: '#topsearchbar',
 algoliaOptions: { 'facetFilters': ["lang:en"] },
 debug: false
