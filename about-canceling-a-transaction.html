@@ -111,7 +111,7 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="about-canceling-a-transaction">About Canceling a Transaction</h1>
-<p>An important and intentional feature of the XRP Ledger is that a <a href="transaction-basics.html">transaction</a>'s outcome is <a href="finality-of-results.html">final</a> as soon as it has been incorporated in a <a href="ledgers.html">ledger version</a> that is validated by the <a href="consensus.html">consensus process</a>.</p>
+<p>An important and intentional feature of the XAG Ledger is that a <a href="transaction-basics.html">transaction</a>'s outcome is <a href="finality-of-results.html">final</a> as soon as it has been incorporated in a <a href="ledgers.html">ledger version</a> that is validated by the <a href="consensus.html">consensus process</a>.</p>
 <p>If a transaction has <em>not</em> yet been included in a validated ledger, it may be possible to effectively cancel it by sending another transaction from the same sending address with the same <code>Sequence</code> value. If you do not want the replacement transaction to do anything, send an <a href="accountset.html">AccountSet transaction</a> with no options.</p>
 <p class="devportal-callout caution"><strong>Caution:</strong> There is no guaranteed way to cancel a valid transaction after it has been distributed to the network. The process described here may or may not work depending on a number of factors including how busy the network is, the network topology, and the <a href="transaction-cost.html">transaction cost</a> of the proposed transaction.</p>
 <p>If the transaction has already been distributed to the network and proposed as a <a href="consensus.html#consensus-1">candidate transaction</a> in servers' consensus proposals, it may be too late to cancel. It is more likely that you can successfully cancel a transaction that is <a href="transaction-queue.html">queued</a> or is stuck "in limbo" because its <a href="transaction-cost.html">transaction cost</a> is not high enough to meet the network's current requirements. In this case, the replacement transaction can either do nothing, or do the same thing as the transaction to be canceled. The replacement transaction is more likely to succeed if its transaction cost is higher.</p>
@@ -154,9 +154,9 @@
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -383,7 +383,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

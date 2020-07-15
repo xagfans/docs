@@ -113,8 +113,8 @@
     <div class="content">
         <h1 id="tick-size">Tick Size</h1>
 <p><em>(Added by the <a href="known-amendments.html#ticksize">TickSize amendment</a>.)</em></p>
-<p>When an Offer is placed into an order book, its exchange rate is truncated based on the <code>TickSize</code> values set by the issuers of the currencies involved in the Offer. When a trader offers to exchange XRP and an issued currency, the <code>TickSize</code> from the issuer of the currency applies. When a trader offers to exchange two issued currencies, the offer uses the smaller <code>TickSize</code> value (that is, the one with fewer significant digits). If neither currency has a <code>TickSize</code> set, the default behavior applies.</p>
-<p>The <code>TickSize</code> value truncates the number of <em>significant digits</em> in the exchange rate of an offer when it gets placed in an order book. Issuers can set <code>TickSize</code> to an integer from <code>3</code> to <code>15</code> using an <a href="accountset.html">AccountSet transaction</a>. The exchange rate is represented as significant digits and an exponent; the <code>TickSize</code> does not affect the exponent. This allows the XRP Ledger to represent exchange rates between assets that vary greatly in value (for example, a hyperinflated currency compared to a rare commodity). The lower the <code>TickSize</code> an issuer sets, the larger the increment traders must offer to be considered a higher exchange rate than the existing Offers.</p>
+<p>When an Offer is placed into an order book, its exchange rate is truncated based on the <code>TickSize</code> values set by the issuers of the currencies involved in the Offer. When a trader offers to exchange XAG and an issued currency, the <code>TickSize</code> from the issuer of the currency applies. When a trader offers to exchange two issued currencies, the offer uses the smaller <code>TickSize</code> value (that is, the one with fewer significant digits). If neither currency has a <code>TickSize</code> set, the default behavior applies.</p>
+<p>The <code>TickSize</code> value truncates the number of <em>significant digits</em> in the exchange rate of an offer when it gets placed in an order book. Issuers can set <code>TickSize</code> to an integer from <code>3</code> to <code>15</code> using an <a href="accountset.html">AccountSet transaction</a>. The exchange rate is represented as significant digits and an exponent; the <code>TickSize</code> does not affect the exponent. This allows the XAG Ledger to represent exchange rates between assets that vary greatly in value (for example, a hyperinflated currency compared to a rare commodity). The lower the <code>TickSize</code> an issuer sets, the larger the increment traders must offer to be considered a higher exchange rate than the existing Offers.</p>
 <p>The <code>TickSize</code> does not affect the part of an Offer that can be executed immediately. (For that reason, OfferCreate transactions with <code>tfImmediateOrCancel</code> are unaffected by <code>TickSize</code> values.) If the Offer cannot be fully executed, the transaction processing engine calculates the exchange rate and truncates it based on <code>TickSize</code>. Then, the engine rounds the remaining amount of the Offer from the "less important" side to match the truncated exchange rate. For a default OfferCreate transaction (a "buy" Offer), the <code>TakerPays</code> amount (the amount being bought) gets rounded. If the <code>tfSell</code> flag is enabled (a "sell" Offer) the <code>TakerGets</code> amount (the amount being sold) gets rounded.</p>
 <p>When an issuer enables, disables, or changes the <code>TickSize</code>, Offers that were placed under the previous setting are unaffected.</p>
 <h2 id="see-also">See Also</h2>
@@ -163,9 +163,9 @@
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -392,7 +392,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

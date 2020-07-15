@@ -113,8 +113,8 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="tem-codes">tem Codes</h1>
-<p>These codes indicate that the transaction was malformed, and cannot succeed according to the XRP Ledger protocol. They have numerical values in the range -299 to -200. The exact code for any given error is subject to change, so don't rely on it.</p>
-<p class="devportal-callout tip"><strong>Tip:</strong> Transactions with <code>tem</code> codes are not applied to ledgers, and cannot cause any changes to XRP Ledger state. A <code>tem</code> result is final unless the rules for a valid transaction change. (For example, using functionality from an <a href="amendments.html">Amendment</a> before that amendment is enabled results in <code>temDISABLED</code>; such a transaction could succeed later if it becomes valid when the amendment is enabled.)</p>
+<p>These codes indicate that the transaction was malformed, and cannot succeed according to the XAG Ledger protocol. They have numerical values in the range -299 to -200. The exact code for any given error is subject to change, so don't rely on it.</p>
+<p class="devportal-callout tip"><strong>Tip:</strong> Transactions with <code>tem</code> codes are not applied to ledgers, and cannot cause any changes to XAG Ledger state. A <code>tem</code> result is final unless the rules for a valid transaction change. (For example, using functionality from an <a href="amendments.html">Amendment</a> before that amendment is enabled results in <code>temDISABLED</code>; such a transaction could succeed later if it becomes valid when the amendment is enabled.)</p>
 <table>
 <thead>
 <tr>
@@ -141,7 +141,7 @@
 </tr>
 <tr>
 <td align="left"><code>temBAD_FEE</code></td>
-<td align="left">The transaction improperly specified its <code>Fee</code> value, for example by listing a non-XRP currency or some negative amount of XRP.</td>
+<td align="left">The transaction improperly specified its <code>Fee</code> value, for example by listing a non-XAG currency or some negative amount of XAG.</td>
 </tr>
 <tr>
 <td align="left"><code>temBAD_ISSUER</code></td>
@@ -153,35 +153,35 @@
 </tr>
 <tr>
 <td align="left"><code>temBAD_OFFER</code></td>
-<td align="left">The <a href="offercreate.html">OfferCreate transaction</a> specifies an invalid offer, such as offering to trade XRP for itself, or offering a negative amount.</td>
+<td align="left">The <a href="offercreate.html">OfferCreate transaction</a> specifies an invalid offer, such as offering to trade XAG for itself, or offering a negative amount.</td>
 </tr>
 <tr>
 <td align="left"><code>temBAD_PATH</code></td>
-<td align="left">The <a href="payment.html">Payment transaction</a> specifies one or more <a href="paths.html">Paths</a> improperly, for example including an issuer for XRP, or specifying an account differently.</td>
+<td align="left">The <a href="payment.html">Payment transaction</a> specifies one or more <a href="paths.html">Paths</a> improperly, for example including an issuer for XAG, or specifying an account differently.</td>
 </tr>
 <tr>
 <td align="left"><code>temBAD_PATH_LOOP</code></td>
 <td align="left">One of the <a href="paths.html">Paths</a> in the <a href="payment.html">Payment transaction</a> was flagged as a loop, so it cannot be processed in a bounded amount of time.</td>
 </tr>
 <tr>
-<td align="left"><code>temBAD_SEND_XRP_LIMIT</code></td>
-<td align="left">The <a href="payment.html">Payment transaction</a> used the <a href="payment.html#limit-quality">tfLimitQuality</a> flag in a direct XRP-to-XRP payment, even though XRP-to-XRP payments do not involve any conversions.</td>
+<td align="left"><code>temBAD_SEND_XAG_LIMIT</code></td>
+<td align="left">The <a href="payment.html">Payment transaction</a> used the <a href="payment.html#limit-quality">tfLimitQuality</a> flag in a direct XAG-to-XAG payment, even though XAG-to-XAG payments do not involve any conversions.</td>
 </tr>
 <tr>
-<td align="left"><code>temBAD_SEND_XRP_MAX</code></td>
-<td align="left">The <a href="payment.html">Payment transaction</a> included a <code>SendMax</code> field in a direct XRP-to-XRP payment, even though sending XRP should never require SendMax. (XRP is only valid in SendMax if the destination <code>Amount</code> is not XRP.)</td>
+<td align="left"><code>temBAD_SEND_XAG_MAX</code></td>
+<td align="left">The <a href="payment.html">Payment transaction</a> included a <code>SendMax</code> field in a direct XAG-to-XAG payment, even though sending XAG should never require SendMax. (XAG is only valid in SendMax if the destination <code>Amount</code> is not XAG.)</td>
 </tr>
 <tr>
-<td align="left"><code>temBAD_SEND_XRP_NO_DIRECT</code></td>
-<td align="left">The <a href="payment.html">Payment transaction</a> used the <a href="payment.html#payment-flags">tfNoDirectRipple</a> flag for a direct XRP-to-XRP payment, even though XRP-to-XRP payments are always direct.</td>
+<td align="left"><code>temBAD_SEND_XAG_NO_DIRECT</code></td>
+<td align="left">The <a href="payment.html">Payment transaction</a> used the <a href="payment.html#payment-flags">tfNoDirectRipple</a> flag for a direct XAG-to-XAG payment, even though XAG-to-XAG payments are always direct.</td>
 </tr>
 <tr>
-<td align="left"><code>temBAD_SEND_XRP_PARTIAL</code></td>
-<td align="left">The <a href="payment.html">Payment transaction</a> used the <a href="partial-payments.html">tfPartialPayment</a> flag for a direct XRP-to-XRP payment, even though XRP-to-XRP payments should always deliver the full amount.</td>
+<td align="left"><code>temBAD_SEND_XAG_PARTIAL</code></td>
+<td align="left">The <a href="payment.html">Payment transaction</a> used the <a href="partial-payments.html">tfPartialPayment</a> flag for a direct XAG-to-XAG payment, even though XAG-to-XAG payments should always deliver the full amount.</td>
 </tr>
 <tr>
-<td align="left"><code>temBAD_SEND_XRP_PATHS</code></td>
-<td align="left">The <a href="payment.html">Payment transaction</a> included <code>Paths</code> while sending XRP, even though XRP-to-XRP payments should always be direct.</td>
+<td align="left"><code>temBAD_SEND_XAG_PATHS</code></td>
+<td align="left">The <a href="payment.html">Payment transaction</a> included <code>Paths</code> while sending XAG, even though XAG-to-XAG payments should always be direct.</td>
 </tr>
 <tr>
 <td align="left"><code>temBAD_SEQUENCE</code></td>
@@ -626,7 +626,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

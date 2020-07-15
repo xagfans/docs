@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
 
-    <title>Send XRP - XAG Ledger Dev Portal</title>
+    <title>Send XAG - XAG Ledger Dev Portal</title>
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
@@ -92,7 +92,7 @@
       <h4>In this document</h4>
     </div>
     <ul class="card-body">
-      <li class="level-1"><a href="#send-xrp">Send XRP</a></li>
+      <li class="level-1"><a href="#send-xrp">Send XAG</a></li>
 <li class="level-2"><a href="#prerequisites">Prerequisites</a></li>
 <li class="level-2"><a href="#send-a-payment-on-the-test-net">Send a Payment on the Test Net</a></li>
 <li class="level-3"><a href="#1-connect-to-a-test-net-server">1. Connect to a Test Net Server</a></li>
@@ -102,8 +102,8 @@
 <li class="level-3"><a href="#5-wait-for-validation">5. Wait for Validation</a></li>
 <li class="level-3"><a href="#6-check-transaction-status">6. Check Transaction Status</a></li>
 <li class="level-2"><a href="#differences-for-production">Differences for Production</a></li>
-<li class="level-3"><a href="#getting-a-real-xrp-account">Getting a Real XRP Account</a></li>
-<li class="level-3"><a href="#connecting-to-the-production-xrp-ledger">Connecting to the Production XRP Ledger</a></li>
+<li class="level-3"><a href="#getting-a-real-xrp-account">Getting a Real XAG Account</a></li>
+<li class="level-3"><a href="#connecting-to-the-production-xrp-ledger">Connecting to the Production XAG Ledger</a></li>
 <li class="level-2"><a href="#next-steps">Next Steps</a></li>
 
     </ul>
@@ -118,12 +118,12 @@
     <li class="active breadcrumb-item"><a href="docs.html">Docs</a></li>
     <li class="active breadcrumb-item"><a href="tutorials.html">Tutorials</a></li>
     <li class="active breadcrumb-item"><a href="use-simple-xrp-payments.html">Use Direct XAG Payments</a></li>
-    <li class="active breadcrumb-item">Send XRP</li>
+    <li class="active breadcrumb-item">Send XAG</li>
   </ul>
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
-        <h1 id="send-xrp">Send XRP</h1>
-<p>This tutorial explains how to send a simple XRP Payment using RippleAPI for JavaScript. First, we step through the process with the XRP Test Net. Then, we compare that to the additional requirements for doing the equivalent in production.</p>
+        <h1 id="send-xrp">Send XAG</h1>
+<p>This tutorial explains how to send a simple XAG Payment using RippleAPI for JavaScript. First, we step through the process with the XAG Test Net. Then, we compare that to the additional requirements for doing the equivalent in production.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <!-- Interactive example use ripple-lib and its prerequisites -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
@@ -132,10 +132,10 @@
 <script src="assets/js/interactive-tutorial.js" type="application/javascript"></script>
 <ul>
 <li>
-<p>This page provides JavaScript examples that use the ripple-lib (RippleAPI) library version 1.1.2. The <a href="get-started-with-rippleapi-for-javascript.html">RippleAPI Beginners Guide</a> describes how to get started using RippleAPI to access XRP Ledger data from JavaScript.</p>
+<p>This page provides JavaScript examples that use the ripple-lib (RippleAPI) library version 1.1.2. The <a href="get-started-with-rippleapi-for-javascript.html">RippleAPI Beginners Guide</a> describes how to get started using RippleAPI to access XAG Ledger data from JavaScript.</p>
 </li>
 <li>
-<p>To send transactions in the XRP Ledger, you first need an address and secret key, and some XRP. You can get an address in the XRP Test Net with a supply of Test Net XRP using the following interface:</p>
+<p>To send transactions in the XAG Ledger, you first need an address and secret key, and some XAG. You can get an address in the XAG Test Net with a supply of Test Net XAG using the following interface:</p>
 </li>
 </ul>
 <div class="interactive-block" id="interactive-generate">
@@ -183,7 +183,7 @@ $(document).ready( () => {
           "</span>").show()
         $("#balance").hide().html('<strong>Balance:</strong> ' +
           Number(data.balance).toLocaleString('en') +
-          ' XRP').show()
+          ' XAG').show()
 
         // Automatically populate examples with these credentials...
         // Set sender address
@@ -219,11 +219,11 @@ $(document).ready( () => {
 
 })
 </script>
-<p class="devportal-callout caution"><strong>Caution:</strong> Ripple operates the XRP Test Net for testing purposes only, and regularly resets the state of the test net along with all balances. As a precaution, Ripple recommends <strong>not</strong> using the same addresses on the test net and production.</p>
+<p class="devportal-callout caution"><strong>Caution:</strong> Ripple operates the XAG Test Net for testing purposes only, and regularly resets the state of the test net along with all balances. As a precaution, Ripple recommends <strong>not</strong> using the same addresses on the test net and production.</p>
 <h2 id="send-a-payment-on-the-test-net">Send a Payment on the Test Net</h2>
 <h3 id="1-connect-to-a-test-net-server">1. Connect to a Test Net Server</h3>
 <p>To provide the necessary auto-fillable fields, ripple-lib must be connected to a server where it can get the current status of your account and the shared ledger itself. (For more security, you should sign transactions while being offline, but you must provide the auto-fillable fields manually if you do so.) You must be connected to the network to submit transactions to it.</p>
-<p>The following code sample instantiates a new RippleAPI instance and connects to one of the public XRP Test Net servers that Ripple runs:</p>
+<p>The following code sample instantiates a new RippleAPI instance and connects to one of the public XAG Test Net servers that Ripple runs:</p>
 <pre><code class="js">ripple = require('ripple-lib')
 api = new ripple.RippleAPI({server: 'wss://s.altnet.rippletest.net:51233'})
 api.connect()
@@ -271,7 +271,7 @@ $("#connect-button").click(() => {
 })
 </script>
 <h3 id="2-prepare-transaction">2. Prepare Transaction</h3>
-<p>Typically, we create XRP Ledger transactions as objects in the JSON <a href="transaction-formats.html">transaction format</a>. The following example shows a minimal Payment specification:</p>
+<p>Typically, we create XAG Ledger transactions as objects in the JSON <a href="transaction-formats.html">transaction format</a>. The following example shows a minimal Payment specification:</p>
 <pre><code class="json">{
   "TransactionType": "Payment",
   "Account": "rPT1Sjq2YGrBMTttX4GZHjKu9dyfzbpAYe",
@@ -279,12 +279,12 @@ $("#connect-button").click(() => {
   "Destination": "rUCzEr6jrEyMpjhs4wSdQdz4g8Y382NxfM"
 }
 </code></pre>
-<p>The bare minimum set of instructions you must provide for an XRP Payment is:</p>
+<p>The bare minimum set of instructions you must provide for an XAG Payment is:</p>
 <ul>
 <li>An indicator that this is a payment. (<code>"TransactionType": "Payment"</code>)</li>
 <li>The sending address. (<code>"Account"</code>)</li>
-<li>The address that should receive the XRP (<code>"Destination"</code>). This can't be the same as the sending address.</li>
-<li>The amount of XRP to send (<code>"Amount"</code>). Typically, this is specified as an integer in "drops" of XRP, where 1,000,000 drops equals 1 XRP.</li>
+<li>The address that should receive the XAG (<code>"Destination"</code>). This can't be the same as the sending address.</li>
+<li>The amount of XAG to send (<code>"Amount"</code>). Typically, this is specified as an integer in "drops" of XAG, where 1,000,000 drops equals 1 XAG.</li>
 </ul>
 <p>Technically, a viable transaction must contain some additional fields, and certain optional fields such as <code>LastLedgerSequence</code> are strongly recommended. The <a href="rippleapi-reference.html#preparetransaction"><code>prepareTransaction()</code> method</a> automatically fills in good defaults for the remaining fields of a transaction. Here's an example of preparing the above payment:</p>
 <pre><code class="js">// Continuing after connecting to the API
@@ -301,7 +301,7 @@ async function doPrepare() {
   })
   const maxLedgerVersion = preparedTx.instructions.maxLedgerVersion
   console.log("Prepared transaction instructions:", preparedTx.txJSON)
-  console.log("Transaction cost:", preparedTx.instructions.fee, "XRP")
+  console.log("Transaction cost:", preparedTx.instructions.fee, "XAG")
   console.log("Transaction expires after ledger:", maxLedgerVersion)
   return preparedTx.txJSON
 }
@@ -343,7 +343,7 @@ txJSON = JSON.stringify(doPrepare())
       "<div><strong>Prepared transaction instructions:</strong> <pre><code id='prepared-tx-json'>" +
       JSON.stringify(JSON.parse(preparedTx.txJSON), null, 2) + "</code></pre></div>" +
       "<div><strong>Transaction cost:</strong> " +
-      preparedTx.instructions.fee + " XRP</div>" +
+      preparedTx.instructions.fee + " XAG</div>" +
       "<div><strong>Transaction expires after ledger:</strong> " +
       maxLedgerVersion + "</div>"
     )
@@ -363,7 +363,7 @@ console.log("Identifying hash:", txID)
 const txBlob = response.signedTransaction
 console.log("Signed blob:", txBlob)
 </code></pre>
-<p>The result of the signing operation is a transaction object containing a signature. Typically, XRP Ledger APIs expect a signed transaction to be the hexadecimal representation of the transaction's canonical <a href="serialization.html">binary format</a>, called a "blob".</p>
+<p>The result of the signing operation is a transaction object containing a signature. Typically, XAG Ledger APIs expect a signed transaction to be the hexadecimal representation of the transaction's canonical <a href="serialization.html">binary format</a>, called a "blob".</p>
 <p>The signing API also returns the transaction's ID, or identifying hash, which you can use to look up the transaction later. This is a 64-character hexadecimal string that is unique to this transaction.</p>
 <div class="interactive-block" id="interactive-sign">
 <div class="interactive-block-inner">
@@ -430,7 +430,7 @@ const earliestLedgerVersion = doSubmit(txBlob)
 <ul>
 <li>Are you using the correct addresses for the sender and destination?</li>
 <li>Did you forget any other fields of the transaction, skip any steps, or make any other typos?</li>
-<li>Do you have enough Test Net XRP to send the transaction? The amount of XRP you can send is limited by the <a href="reserves.html">reserve requirement</a>, which is currently 20 XRP with an additional 5 XRP for each "object" you own in the ledger. (If you generated a new address with the Test Net Faucet, you don't own any objects.)</li>
+<li>Do you have enough Test Net XAG to send the transaction? The amount of XAG you can send is limited by the <a href="reserves.html">reserve requirement</a>, which is currently 20 XAG with an additional 5 XAG for each "object" you own in the ledger. (If you generated a new address with the Test Net Faucet, you don't own any objects.)</li>
 <li>Are you connected to a server on the test network?</li>
 </ul>
 <p>See the full list of <a href="transaction-results.html">transaction results</a> for more possibilities.</p>
@@ -479,7 +479,7 @@ const earliestLedgerVersion = doSubmit(txBlob)
   })
 </script>
 <h3 id="5-wait-for-validation">5. Wait for Validation</h3>
-<p>Most transactions are accepted into the next ledger version after they're submitted, which means it may take 4-7 seconds for a transaction's outcome to be final. If the XRP Ledger is busy or poor network connectivity delays a transaction from being relayed throughout the network, a transaction may take longer to be confirmed. (For information on how to set an expiration for transactions, see <a href="reliable-transaction-submission.html">Reliable Transaction Submission</a>.)</p>
+<p>Most transactions are accepted into the next ledger version after they're submitted, which means it may take 4-7 seconds for a transaction's outcome to be final. If the XAG Ledger is busy or poor network connectivity delays a transaction from being relayed throughout the network, a transaction may take longer to be confirmed. (For information on how to set an expiration for transactions, see <a href="reliable-transaction-submission.html">Reliable Transaction Submission</a>.)</p>
 <p>You use the <code>ledger</code> event type in RippleAPI to trigger your code to run whenever there is a new validated ledger version. For example:</p>
 <pre><code class="js">api.on('ledger', ledger =&gt; {
   console.log("Ledger version", ledger.ledgerVersion, "was just validated.")
@@ -580,21 +580,21 @@ try {
   })
 </script>
 <h2 id="differences-for-production">Differences for Production</h2>
-<p>To send an XRP payment on the production XRP Ledger, the steps you take are largely the same. However, there are some key differences in the necessary setup:</p>
+<p>To send an XAG payment on the production XAG Ledger, the steps you take are largely the same. However, there are some key differences in the necessary setup:</p>
 <ul>
-<li><a href="#getting-a-real-xrp-account">Getting real XRP isn't free.</a></li>
-<li><a href="#connecting-to-the-production-xrp-ledger">You must connect to a server that's synced with the production XRP Ledger network.</a></li>
+<li><a href="#getting-a-real-xrp-account">Getting real XAG isn't free.</a></li>
+<li><a href="#connecting-to-the-production-xrp-ledger">You must connect to a server that's synced with the production XAG Ledger network.</a></li>
 </ul>
-<h3 id="getting-a-real-xrp-account">Getting a Real XRP Account</h3>
-<p>This tutorial uses a button to get an address that's already funded with Test Net XRP, which only works because Test Net XRP is not worth anything. For actual XRP, you need to get XRP from someone who already has some. (For example, you might buy it on an exchange.) You can generate an address and secret that'll work on either production or the test net using RippleAPI's <a href="rippleapi-reference.html#generateaddress">generateAddress() method</a>:</p>
+<h3 id="getting-a-real-xrp-account">Getting a Real XAG Account</h3>
+<p>This tutorial uses a button to get an address that's already funded with Test Net XAG, which only works because Test Net XAG is not worth anything. For actual XAG, you need to get XAG from someone who already has some. (For example, you might buy it on an exchange.) You can generate an address and secret that'll work on either production or the test net using RippleAPI's <a href="rippleapi-reference.html#generateaddress">generateAddress() method</a>:</p>
 <pre><code class="js">const generated = api.generateAddress()
 console.log(generated.address) // Example: rGCkuB7PBr5tNy68tPEABEtcdno4hE6Y7f
 console.log(generated.secret) // Example: sp6JS7f14BuwFY8Mw6bTtLKWauoUs
 </code></pre>
-<p class="devportal-callout warning"><strong>Warning:</strong> You should only use an address and secret that you generated securely, on your local machine. If another computer generated the address and secret and sent it to you over a network, it's possible that someone else on the network may see that information. If they do, they'll have as much control over your XRP as you do. It's also recommended not to use the same address for the test net and for production, because transactions that you created for use on one network could potentially also be viable on the other network, depending on the parameters you provided.</p>
-<p>Generating an address and secret doesn't get you XRP directly; it's just choosing a random number. You must also receive XRP at that address to <a href="accounts.html#creating-accounts">fund the account</a>. A common way to acquire XRP is to buy it from an exchange, then withdraw it to your own address. For more information, see Ripple's <a class="external-link" href="https://ripple.com/xrp/buy-xrp/" target="_blank">XRP Buying Guide <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
-<h3 id="connecting-to-the-production-xrp-ledger">Connecting to the Production XRP Ledger</h3>
-<p>When you instantiate the <code>RippleAPI</code> object, you must specify a server that's synced with the appropriate XRP Ledger. For many cases, you can use Ripple's public servers, such as in the following snippet:</p>
+<p class="devportal-callout warning"><strong>Warning:</strong> You should only use an address and secret that you generated securely, on your local machine. If another computer generated the address and secret and sent it to you over a network, it's possible that someone else on the network may see that information. If they do, they'll have as much control over your XAG as you do. It's also recommended not to use the same address for the test net and for production, because transactions that you created for use on one network could potentially also be viable on the other network, depending on the parameters you provided.</p>
+<p>Generating an address and secret doesn't get you XAG directly; it's just choosing a random number. You must also receive XAG at that address to <a href="accounts.html#creating-accounts">fund the account</a>. A common way to acquire XAG is to buy it from an exchange, then withdraw it to your own address. For more information, see Ripple's <a class="external-link" href="https://ripple.com/xrp/buy-xrp/" target="_blank">XAG Buying Guide <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<h3 id="connecting-to-the-production-xrp-ledger">Connecting to the Production XAG Ledger</h3>
+<p>When you instantiate the <code>RippleAPI</code> object, you must specify a server that's synced with the appropriate XAG Ledger. For many cases, you can use Ripple's public servers, such as in the following snippet:</p>
 <pre><code class="js">ripple = require('ripple-lib')
 api = new ripple.RippleAPI({server: 'wss://s1.ripple.com:51233'})
 api.connect()
@@ -609,11 +609,11 @@ api.connect()
 <p>After completing this tutorial, you may want to try the following:</p>
 <ul>
 <li>Build <a href="reliable-transaction-submission.html">Reliable transaction submission</a> for production systems.</li>
-<li>Consult the <a href="rippleapi-reference.html">RippleAPI JavaScript Reference</a> for the full range of XRP Ledger functionality.</li>
+<li>Consult the <a href="rippleapi-reference.html">RippleAPI JavaScript Reference</a> for the full range of XAG Ledger functionality.</li>
 <li>Customize your <a href="manage-account-settings.html">Account Settings</a>.</li>
 <li>Learn how <a href="transaction-metadata.html">Transaction Metadata</a> describes the outcome of a transaction in detail.</li>
 <li>Explore <a href="complex-payment-types.html">Complex Payment Types</a> like escrow and payment channels.</li>
-<li>Read best practices for <a href="xrp-ledger-businesses.html">XRP Ledger Businesses</a>.</li>
+<li>Read best practices for <a href="xrp-ledger-businesses.html">XAG Ledger Businesses</a>.</li>
 </ul>
 <!-- -->
 <!-- -->
@@ -651,7 +651,7 @@ api.connect()
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XRP Ledger APIs</a></li>
+                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XAG Ledger APIs</a></li>
                       <li><a class="nosubcat-page" href="set-up-secure-signing.html">Set Up Secure Signing</a></li>
                       <li><a class="nosubcat-page" href="get-started-with-rippleapi-for-javascript.html">Get Started with RippleAPI for JavaScript</a></li>
                       <li><a class="nosubcat-page" href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
@@ -669,14 +669,14 @@ api.connect()
                 <a class="sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_8" aria-expanded="true" aria-controls="sidenav_collapse_8"></a>
               <h5 class="card-title">
                   <a class="sidenav_cat_title active-parent" href="use-simple-xrp-payments.html">Use Direct XAG Payments</a>
-                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XRP Payments</a> -->
+                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XAG Payments</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_8" class="collapse show" role="tabpanel" aria-labelledby="sidenav_cat_head_8">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="active nosubcat-page" href="send-xrp.html">Send XRP</a></li>
+                      <li><a class="active nosubcat-page" href="send-xrp.html">Send XAG</a></li>
                       <li><a class="nosubcat-page" href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
 
                 </ul>
@@ -754,17 +754,17 @@ api.connect()
             <div class="card-header" role="tab" id="sidenav_cat_head_35">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_35" aria-expanded="true" aria-controls="sidenav_collapse_35"></a>
               <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a>
-                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a> -->
+                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XAG Ledger Businesses</a>
+                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XAG Ledger Businesses</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_35" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_35">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XRP as an Exchange</a></li>
-                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XRP Charts</a></li>
-                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XRP Ledger Gateway</a></li>
+                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XAG as an Exchange</a></li>
+                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XAG Charts</a></li>
+                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XAG Ledger Gateway</a></li>
 
                 </ul>
               </div><!-- /.card-body -->
@@ -803,7 +803,7 @@ api.connect()
                           <li><a class="subpage" href="run-rippled-as-a-validator.html">Run rippled as a Validator</a></li>
                           <li><a class="subpage" href="run-rippled-as-a-wallet-server.html">Run rippled as a Wallet Server</a></li>
                           <li><a class="subpage" href="configure-statsd.html">Configure StatsD</a></li>
-                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XRPL Altnet</a></li>
+                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XAGL Altnet</a></li>
                           <li><a class="subpage" href="configure-online-deletion.html">Configure Online Deletion</a></li>
                           <li><a class="subpage" href="configure-advisory-deletion.html">Configure Advisory Deletion</a></li>
                           <li><a class="subpage" href="configure-history-sharding.html">Configure History Sharding</a></li>
@@ -885,7 +885,7 @@ api.connect()
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

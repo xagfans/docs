@@ -122,7 +122,7 @@
 <p><a class="external-link" href="https://github.com/ripple/rippled/blob/5d2d88209f1732a0f8d592012094e345cbe3e675/src/ripple/protocol/impl/LedgerFormats.cpp#L70" target="_blank" title="Source">[Source] <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
 <p>The <code>RippleState</code> object type connects two accounts in a single currency. Conceptually, a <code>RippleState</code> object represents two <a href="trust-lines-and-issuing.html">trust lines</a> between the accounts, one from each side. Each account can change the settings for its side of the <code>RippleState</code> object, but the balance is a single shared value. A trust line that is entirely in its default state is considered the same as a trust line that does not exist, so <code>rippled</code> deletes <code>RippleState</code> objects when their properties are entirely default.</p>
 <h2 id="high-vs-low-account">High vs. Low Account</h2>
-<p>There can only be one <code>RippleState</code> object per currency for any given pair of accounts. Since no account is privileged in the XRP Ledger, a <code>RippleState</code> object sorts account addresses numerically, to ensure a canonical form. Whichever address is numerically lower when <a href="accounts.html#address-encoding">decoded</a> is deemed the "low account" and the other is the "high account". The net balance of the trust line is stored from the low account's perspective.</p>
+<p>There can only be one <code>RippleState</code> object per currency for any given pair of accounts. Since no account is privileged in the XAG Ledger, a <code>RippleState</code> object sorts account addresses numerically, to ensure a canonical form. Whichever address is numerically lower when <a href="accounts.html#address-encoding">decoded</a> is deemed the "low account" and the other is the "high account". The net balance of the trust line is stored from the low account's perspective.</p>
 <p>The <a href="trust-lines-and-issuing.html">"issuer"</a> for the balance in a trust line depends on whether the balance is positive or negative. If a <code>RippleState</code> object shows a positive balance, the high account is the issuer. If the balance is negative, the low account is the issuer. Frequently, the issuer has its limit set to 0 and the other account has a positive limit, but this is not reliable because limits can change without affecting an existing balance.</p>
 <h2 id="example-ripplestate-json">Example RippleState JSON</h2>
 <pre><code class="json">{
@@ -728,7 +728,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

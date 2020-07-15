@@ -119,7 +119,7 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="capacity-planning">Capacity Planning</h1>
-<p>This section describes configuration, network, and hardware recommendations that you can use to tune and optimize the performance of your <code>rippled</code> server. Being aware of these considerations can help you ensure that your <code>rippled</code> server is ready to handle XRP Ledger network capacity today and in the near future.</p>
+<p>This section describes configuration, network, and hardware recommendations that you can use to tune and optimize the performance of your <code>rippled</code> server. Being aware of these considerations can help you ensure that your <code>rippled</code> server is ready to handle XAG Ledger network capacity today and in the near future.</p>
 <h2 id="configuration-settings">Configuration Settings</h2>
 <p>Ripple recommends using these configuration guidelines to optimize resource utilization and performance of your <code>rippled</code> server.</p>
 <p>You can set the following parameters in the <code>rippled.cfg</code> file used for your <code>rippled</code> server. You can access an example config file, <code>rippled-example.cfg</code>, in the <a class="external-link" href="https://github.com/ripple/rippled/blob/develop/cfg/rippled-example.cfg" target="_blank"><code>cfg</code> directory <i aria-hidden="true" class="fa fa-external-link"></i></a> in the <code>rippled</code> GitHub repo.</p>
@@ -212,8 +212,8 @@ advisory_delete=0
 <p>The example <code>rippled-example.cfg</code> file sets the logging verbosity to <code>warning</code> in the <code>[rpc_startup]</code> stanza. This setting greatly reduces disk space and I/O requirements over more verbose logging. However, more verbose logging provides increased visibility for troubleshooting.</p>
 <p class="devportal-callout caution"><strong>Caution:</strong> If you omit the <code>log_level</code> command from the <code>[rpc_startup]</code> stanza, <code>rippled</code> writes logs to disk at the <code>debug</code> level and outputs <code>warning</code> level logs to the console. <code>debug</code> level logging requires several more GB of disk space per day than <code>warning</code> level, depending on transaction volumes and client activity.</p>
 <h2 id="network-and-hardware">Network and Hardware</h2>
-<p>Each <code>rippled</code> server in the XRP Ledger network performs all of the transaction processing work of the network. Therefore, the baseline hardware for production <code>rippled</code> servers should be similar to that used in Ripple's <a class="external-link" href="https://xrpl.org/blog/2017/high-scalability-xrp-ledger.html" target="_blank">performance testing <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
-<p>Ensuring that your <code>rippled</code> server meets these network and hardware requirements helps achieve consistent, good performance across the XRP Ledger network.</p>
+<p>Each <code>rippled</code> server in the XAG Ledger network performs all of the transaction processing work of the network. Therefore, the baseline hardware for production <code>rippled</code> servers should be similar to that used in Ripple's <a class="external-link" href="https://xrpl.org/blog/2017/high-scalability-xrp-ledger.html" target="_blank">performance testing <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>Ensuring that your <code>rippled</code> server meets these network and hardware requirements helps achieve consistent, good performance across the XAG Ledger network.</p>
 <h3 id="recommendation-1">Recommendation</h3>
 <p>For best performance in enterprise production environments, Ripple recommends running <code>rippled</code> on bare metal with the following characteristics:</p>
 <ul>
@@ -393,7 +393,7 @@ advisory_delete=0
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XRP Ledger APIs</a></li>
+                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XAG Ledger APIs</a></li>
                       <li><a class="nosubcat-page" href="set-up-secure-signing.html">Set Up Secure Signing</a></li>
                       <li><a class="nosubcat-page" href="get-started-with-rippleapi-for-javascript.html">Get Started with RippleAPI for JavaScript</a></li>
                       <li><a class="nosubcat-page" href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
@@ -411,14 +411,14 @@ advisory_delete=0
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_8" aria-expanded="true" aria-controls="sidenav_collapse_8"></a>
               <h5 class="card-title">
                   <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Direct XAG Payments</a>
-                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XRP Payments</a> -->
+                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XAG Payments</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_8" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_8">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="send-xrp.html">Send XRP</a></li>
+                      <li><a class="nosubcat-page" href="send-xrp.html">Send XAG</a></li>
                       <li><a class="nosubcat-page" href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
 
                 </ul>
@@ -496,17 +496,17 @@ advisory_delete=0
             <div class="card-header" role="tab" id="sidenav_cat_head_35">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_35" aria-expanded="true" aria-controls="sidenav_collapse_35"></a>
               <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a>
-                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a> -->
+                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XAG Ledger Businesses</a>
+                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XAG Ledger Businesses</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_35" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_35">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XRP as an Exchange</a></li>
-                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XRP Charts</a></li>
-                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XRP Ledger Gateway</a></li>
+                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XAG as an Exchange</a></li>
+                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XAG Charts</a></li>
+                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XAG Ledger Gateway</a></li>
 
                 </ul>
               </div><!-- /.card-body -->
@@ -545,7 +545,7 @@ advisory_delete=0
                           <li><a class="subpage" href="run-rippled-as-a-validator.html">Run rippled as a Validator</a></li>
                           <li><a class="subpage" href="run-rippled-as-a-wallet-server.html">Run rippled as a Wallet Server</a></li>
                           <li><a class="subpage" href="configure-statsd.html">Configure StatsD</a></li>
-                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XRPL Altnet</a></li>
+                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XAGL Altnet</a></li>
                           <li><a class="subpage" href="configure-online-deletion.html">Configure Online Deletion</a></li>
                           <li><a class="subpage" href="configure-advisory-deletion.html">Configure Advisory Deletion</a></li>
                           <li><a class="subpage" href="configure-history-sharding.html">Configure History Sharding</a></li>
@@ -627,7 +627,7 @@ advisory_delete=0
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

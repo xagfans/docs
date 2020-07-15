@@ -146,7 +146,7 @@
 <td align="left">Fee</td>
 <td align="left">String</td>
 <td align="left">Amount</td>
-<td align="left"><em>(Required; <a href="#auto-fillable-fields">auto-fillable</a>)</em> Integer amount of XRP, in drops, to be destroyed as a cost for distributing this transaction to the network. Some transaction types have different minimum requirements. See <a href="transaction-cost.html">Transaction Cost</a> for details.</td>
+<td align="left"><em>(Required; <a href="#auto-fillable-fields">auto-fillable</a>)</em> Integer amount of XAG, in drops, to be destroyed as a cost for distributing this transaction to the network. Some transaction types have different minimum requirements. See <a href="transaction-cost.html">Transaction Cost</a> for details.</td>
 </tr>
 <tr>
 <td align="left">Sequence</td>
@@ -210,7 +210,7 @@
 <p>Unlike the <code>PreviousTxnID</code> field, which tracks the last transaction to <em>modify</em> an account (regardless of sender), the <code>AccountTxnID</code> tracks the last transaction <em>sent by</em> an account. To use AccountTxnID, you must first set the <a href="accountset.html#accountset-flags">asfAccountTxnID</a> flag, so that the ledger keeps track of the ID for the account's previous transaction. (<code>PreviousTxnID</code>, by comparison, is always tracked.)</p>
 <p>One situation in which this is useful is if you have a primary system for submitting transactions and a passive backup system. If the passive backup system becomes disconnected from the primary, but the primary is not fully dead, and they both begin operating at the same time, you could potentially have serious problems like some transactions sending twice and others not at all. Chaining your transactions together with <code>AccountTxnID</code> ensures that, even if both systems are active, only one of them can submit valid transactions at a time.</p>
 <h2 id="auto-fillable-fields">Auto-fillable Fields</h2>
-<p>Some fields can be automatically filled in before a transaction is signed, either by a <code>rippled</code> server or by a library used for signing such as <a class="external-link" href="https://github.com/ripple/ripple-lib" target="_blank">ripple-lib <i aria-hidden="true" class="fa fa-external-link"></i></a>. Auto-filling values requires an active connection to the XRP Ledger to get the latest state, so it cannot be done offline. Both <a class="external-link" href="https://github.com/ripple/ripple-lib" target="_blank">ripple-lib <i aria-hidden="true" class="fa fa-external-link"></i></a> and <code>rippled</code> can automatically provide the following values:</p>
+<p>Some fields can be automatically filled in before a transaction is signed, either by a <code>rippled</code> server or by a library used for signing such as <a class="external-link" href="https://github.com/ripple/ripple-lib" target="_blank">ripple-lib <i aria-hidden="true" class="fa fa-external-link"></i></a>. Auto-filling values requires an active connection to the XAG Ledger to get the latest state, so it cannot be done offline. Both <a class="external-link" href="https://github.com/ripple/ripple-lib" target="_blank">ripple-lib <i aria-hidden="true" class="fa fa-external-link"></i></a> and <code>rippled</code> can automatically provide the following values:</p>
 <ul>
 <li>
 <p><code>Fee</code> - Automatically fill in the <a href="transaction-cost.html">Transaction Cost</a> based on the network.</p>
@@ -248,7 +248,7 @@
 </tbody>
 </table>
 <p>When using the <a href="sign.html">sign method</a> (or <a href="submit.html">submit method</a> in "sign-and-submit" mode), <code>rippled</code> adds a <code>Flags</code> field with <code>tfFullyCanonicalSig</code> enabled unless the <code>Flags</code> field is already present. The <code>tfFullyCanonicalSig</code> flag <strong><em>is not</em></strong> automatically enabled if <code>Flags</code> is explicitly specified. The flag <strong><em>is not</em></strong> automatically enabled when using the <a href="sign_for.html">sign_for method</a> to add a signature to a multi-signed transaction.</p>
-<p class="devportal-callout warning"><strong>Warning:</strong> If you do not enable <code>tfFullyCanonicalSig</code>, it is theoretically possible for a malicious actor to modify your transaction signature so that the transaction may succeed with a different hash than expected. In the worst case, this could <a href="transaction-malleability.html#exploit-with-malleable-transactions">trick your integration into submitting the same payment multiple times</a>. To avoid this problem, enable the <code>tfFullyCanonicalSig</code> flag on all transactions you sign. If the <a href="known-amendments.html#requirefullycanonicalsig">RequireFullyCanonicalSig amendment</a> <span class="status not_enabled" title="This feature is not currently enabled on the production XRP Ledger."><i class="fa fa-flask"></i></span> is enabled, all single-signed transactions are protected regardless of the tfFullyCanonicalSig flag.</p>
+<p class="devportal-callout warning"><strong>Warning:</strong> If you do not enable <code>tfFullyCanonicalSig</code>, it is theoretically possible for a malicious actor to modify your transaction signature so that the transaction may succeed with a different hash than expected. In the worst case, this could <a href="transaction-malleability.html#exploit-with-malleable-transactions">trick your integration into submitting the same payment multiple times</a>. To avoid this problem, enable the <code>tfFullyCanonicalSig</code> flag on all transactions you sign. If the <a href="known-amendments.html#requirefullycanonicalsig">RequireFullyCanonicalSig amendment</a> <span class="status not_enabled" title="This feature is not currently enabled on the production XAG Ledger."><i class="fa fa-flask"></i></span> is enabled, all single-signed transactions are protected regardless of the tfFullyCanonicalSig flag.</p>
 <h3 id="flag-ranges">Flag Ranges</h3>
 <p>A transaction's <code>Flags</code> field can contain flags that apply at different levels or contexts. Flags for each context are limited to the following ranges:</p>
 <table>
@@ -361,7 +361,7 @@
 </tbody>
 </table>
 <p>The <code>SigningPubKey</code> must be a key that is associated with the <code>Account</code> address. If the referenced <code>Account</code> is a funded account in the ledger, then the SigningPubKey can be that account's current Regular Key if one is set. It could also be that account's Master Key, unless the <a href="accountroot.html#accountroot-flags">lsfDisableMaster</a> flag is enabled. If the referenced <code>Account</code> address is not a funded account in the ledger, then the <code>SigningPubKey</code> must be the master key associated with that address.</p>
-<p>Because signature verification is a compute-intensive task, multi-signed transactions cost additional XRP to relay to the network. Each signature included in the multi-signature increases the <a href="transaction-cost.html">transaction cost</a> required for the transaction. For example, if the current minimum transaction cost to relay a transaction to the network is <code>10000</code> drops, then a multi-signed transaction with 3 entries in the <code>Signers</code> array would need a <code>Fee</code> value of at least <code>40000</code> drops to relay.</p>
+<p>Because signature verification is a compute-intensive task, multi-signed transactions cost additional XAG to relay to the network. Each signature included in the multi-signature increases the <a href="transaction-cost.html">transaction cost</a> required for the transaction. For example, if the current minimum transaction cost to relay a transaction to the network is <code>10000</code> drops, then a multi-signed transaction with 3 entries in the <code>Signers</code> array would need a <code>Fee</code> value of at least <code>40000</code> drops to relay.</p>
 <!-- -->
 <!-- -->
 <!-- API object types -->
@@ -727,7 +727,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

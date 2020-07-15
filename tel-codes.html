@@ -114,7 +114,7 @@
     <div class="content">
         <h1 id="tel-codes">tel Codes</h1>
 <p>These codes indicate an error in the local server processing the transaction; it is possible that another server with a different configuration or load level could process the transaction successfully. They have numerical values in the range -399 to -300. The exact code for any given error is subject to change, so don't rely on it.</p>
-<p class="devportal-callout caution"><strong>Caution:</strong> Transactions with <code>tel</code> codes are not applied to ledgers and cannot cause any changes to the XRP Ledger state. However, a transaction that provisionally failed may still succeed or fail with a different code after being reapplied. For more information, see <a href="finality-of-results.html">Finality of Results</a> and <a href="reliable-transaction-submission.html">Reliable Transaction Submission</a>.</p>
+<p class="devportal-callout caution"><strong>Caution:</strong> Transactions with <code>tel</code> codes are not applied to ledgers and cannot cause any changes to the XAG Ledger state. However, a transaction that provisionally failed may still succeed or fail with a different code after being reapplied. For more information, see <a href="finality-of-results.html">Finality of Results</a> and <a href="reliable-transaction-submission.html">Reliable Transaction Submission</a>.</p>
 <table>
 <thead>
 <tr>
@@ -141,7 +141,7 @@
 </tr>
 <tr>
 <td align="left"><code>telCAN_NOT_QUEUE_BALANCE</code></td>
-<td align="left">The transaction did not meet the <a href="transaction-cost.html">open ledger cost</a> and also was not added to the transaction queue because the sum of potential XRP costs of already-queued transactions is greater than the expected balance of the account. You can try again later, or try submitting to a different server. <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/0.70.2" target="_blank" title="New in: rippled 0.70.2"><img alt="New in: rippled 0.70.2" class="dactyl_badge" src="https://img.shields.io/badge/New%20in-rippled%200.70.2-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
+<td align="left">The transaction did not meet the <a href="transaction-cost.html">open ledger cost</a> and also was not added to the transaction queue because the sum of potential XAG costs of already-queued transactions is greater than the expected balance of the account. You can try again later, or try submitting to a different server. <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/0.70.2" target="_blank" title="New in: rippled 0.70.2"><img alt="New in: rippled 0.70.2" class="dactyl_badge" src="https://img.shields.io/badge/New%20in-rippled%200.70.2-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
 </tr>
 <tr>
 <td align="left"><code>telCAN_NOT_QUEUE_BLOCKS</code></td>
@@ -173,7 +173,7 @@
 </tr>
 <tr>
 <td align="left"><code>telNO_DST</code>_<code>PARTIAL</code></td>
-<td align="left">The transaction is an XRP payment that would fund a new account, but the <a href="partial-payments.html">tfPartialPayment flag</a> was enabled. This is disallowed.</td>
+<td align="left">The transaction is an XAG payment that would fund a new account, but the <a href="partial-payments.html">tfPartialPayment flag</a> was enabled. This is disallowed.</td>
 </tr>
 </tbody>
 </table>
@@ -542,7 +542,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

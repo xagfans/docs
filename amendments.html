@@ -120,13 +120,13 @@
     <div class="content">
         <h1 id="amendments">Amendments</h1>
 <p><a class="external-link" href="https://github.com/ripple/rippled/releases/tag/0.31.0" target="_blank" title="Introduced in: rippled 0.31.0"><img alt="Introduced in: rippled 0.31.0" class="dactyl_badge" src="https://img.shields.io/badge/Introduced%20in-rippled%200.31.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
-<p>The Amendments system provides a means of introducing new features to the decentralized XRP Ledger network without causing disruptions. The amendments system works by utilizing the core consensus process of the network to approve any changes by showing continuous support before those changes go into effect. An amendment normally requires <strong>80% support for two weeks</strong> before it can apply.</p>
+<p>The Amendments system provides a means of introducing new features to the decentralized XAG Ledger network without causing disruptions. The amendments system works by utilizing the core consensus process of the network to approve any changes by showing continuous support before those changes go into effect. An amendment normally requires <strong>80% support for two weeks</strong> before it can apply.</p>
 <p>When an Amendment has been enabled, it applies permanently to all ledger versions after the one that included it. You cannot disable an Amendment, unless you introduce a new Amendment to do so.</p>
 <p>For a complete list of known amendments, their statuses, and IDs, see: <a href="known-amendments.html">Known Amendments</a>.</p>
 <h2 id="background">Background</h2>
 <p>Any changes to transaction processing could cause servers to build a different ledger with the same set of transactions. If some <em>validators</em> (<code>rippled</code> servers <a href="rippled-server-modes.html#reasons-to-run-a-validator">participating in consensus</a>) have upgraded to a new version of the software while other validators use the old version, this could cause anything from minor inconveniences to full outages. In the minor case, a minority of servers spend more time and bandwidth fetching the actual consensus ledger because they cannot build it using the transaction processing rules they already know. In the worst case, <a href="consensus.html">the consensus process</a> might be unable to validate new ledger versions because servers with different rules could not reach a consensus on the exact ledger to build.</p>
 <p>Amendments solve this problem, so that new features can be enabled only when enough validators support those features.</p>
-<p>Users and businesses who rely on the XRP Ledger can also use Amendments to provide advance notice of changes in transaction processing that might affect their business. However, API changes that do not impact transaction processing or <a href="consensus.html">the consensus process</a> do not need Amendments.</p>
+<p>Users and businesses who rely on the XAG Ledger can also use Amendments to provide advance notice of changes in transaction processing that might affect their business. However, API changes that do not impact transaction processing or <a href="consensus.html">the consensus process</a> do not need Amendments.</p>
 <h2 id="about-amendments">About Amendments</h2>
 <p>An amendment is a fully-functional feature or change, waiting to be enabled by the peer-to-peer network as a part of the consensus process. A <code>rippled</code> server that wants to use an amendment has code for two modes: without the amendment (old behavior) and with the amendment (new behavior).</p>
 <p>Every amendment has a unique identifying hex value and a short name. The short name is for human use, and is not used in the amendment process. Two servers can support the same amendment ID while using different names to describe it. An amendment's name is not guaranteed to be unique.</p>
@@ -172,7 +172,7 @@ DA1BD556B42D85EA9C84066D028D355B52416734D3283F85E216EA5DA6DB7E13 SusPay
 <li>Do not participate in the consensus process</li>
 <li>Do not vote on future amendments</li>
 </ul>
-<p>Becoming amendment blocked is a security feature to protect applications that depend on XRP Ledger data. Rather than guessing and maybe misinterpreting a ledger after new rules have been applied, <code>rippled</code> reports that it does not know the state of the ledger because it does not know how the amendment works.</p>
+<p>Becoming amendment blocked is a security feature to protect applications that depend on XAG Ledger data. Rather than guessing and maybe misinterpreting a ledger after new rules have been applied, <code>rippled</code> reports that it does not know the state of the ledger because it does not know how the amendment works.</p>
 <p>The amendments that a <code>rippled</code> server is configured to vote for or against have no impact on whether the server becomes amendment blocked. A <code>rippled</code> server always follows the set of amendments enabled by the rest of the network, to the extent possible. A server only becomes amendment blocked if an enabled amendment is not included in the amendment definitions compiled into the server's source code -- in other words, if the amendment is newer than the server.</p>
 <p>If your server is amendment blocked, you must <a href="install-rippled.html">upgrade to a new version</a> to sync with the network.</p>
 <h4 id="how-to-tell-if-your-rippled-server-is-amendment-blocked">How to Tell If Your <code>rippled</code> Server Is Amendment Blocked</h4>
@@ -342,9 +342,9 @@ TrustSetAuth
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -571,7 +571,7 @@ TrustSetAuth
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

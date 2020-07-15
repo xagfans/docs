@@ -117,20 +117,20 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="authorized-trust-lines">Authorized Trust Lines</h1>
-<p>The XRP Ledger's Authorized Trust Lines feature enables a currency issuer to limit who can hold its issued (non-XRP) currencies, so that unknown XRP Ledger addresses cannot hold those currencies. The Authorized Trust Lines feature only applies to issued currencies and has no effect on XRP.</p>
+<p>The XAG Ledger's Authorized Trust Lines feature enables a currency issuer to limit who can hold its issued (non-XAG) currencies, so that unknown XAG Ledger addresses cannot hold those currencies. The Authorized Trust Lines feature only applies to issued currencies and has no effect on XAG.</p>
 <p>To use the Authorized Trust Lines feature, enable the RequireAuth flag on your issuing address. After doing so, your issuing address can send <a href="trustset.html">TrustSet transactions</a> to authorize trust lines from other addresses. While RequireAuth is enabled, other addresses can only hold funds issued by your address if the trust line to your issuing address has been authorized.</p>
-<p>The transaction to authorize a trust line must be signed by the issuing address, which unfortunately means an increased risk exposure for that address. The process for sending funds into the XRP Ledger with RequireAuth enabled looks like the following:</p>
+<p>The transaction to authorize a trust line must be signed by the issuing address, which unfortunately means an increased risk exposure for that address. The process for sending funds into the XAG Ledger with RequireAuth enabled looks like the following:</p>
 <ol>
 <li>An issuing gateway publishes its issuing address to customers.</li>
-<li>A customer sends a <a href="trustset.html">TrustSet transaction</a> to create a trust line from her XRP Ledger address to the gateway's issuing address. This indicates that she is willing to hold a specific currency issued by the gateway, up to a specific numeric limit.</li>
+<li>A customer sends a <a href="trustset.html">TrustSet transaction</a> to create a trust line from her XAG Ledger address to the gateway's issuing address. This indicates that she is willing to hold a specific currency issued by the gateway, up to a specific numeric limit.</li>
 <li>The gateway's issuing address sends a TrustSet transaction authorizing the customer's trust line.</li>
 </ol>
 <p class="devportal-callout tip"><strong>Tip:</strong> An issuing gateway can authorize a trust line preemptively (step 3), before the customer has created it. This creates a trust line with zero limit, so that the customer's TrustSet transaction (step 2) sets the limit on the pre-authorized trust line. <em>(Added by the <a href="known-amendments.html#trustsetauth">TrustSetAuth amendment</a>.)</em></p>
 <h2 id="requireauth-setting">RequireAuth Setting</h2>
 <p>The <code>RequireAuth</code> setting (<code>requireAuthorization</code> in <a href="rippleapi-reference.html">RippleAPI</a>) prevents all counterparties from holding balances issued by an address unless the issuing address has specifically approved a trust line with that counterparty for the currency in question.</p>
-<p>As a precaution, Ripple recommends that issuing gateways always enable <code>RequireAuth</code> on <a href="issuing-and-operational-addresses.html">operational addresses and standby addresses</a>, and then never approve any trust lines to those addresses. This prevents operational addresses and standby addresses from issuing currency in the XRP Ledger even by accident. This is a purely precautionary measure, and does not stop those addresses from transferring issued currency balances created by the issuing address, as they are intended to do.</p>
+<p>As a precaution, Ripple recommends that issuing gateways always enable <code>RequireAuth</code> on <a href="issuing-and-operational-addresses.html">operational addresses and standby addresses</a>, and then never approve any trust lines to those addresses. This prevents operational addresses and standby addresses from issuing currency in the XAG Ledger even by accident. This is a purely precautionary measure, and does not stop those addresses from transferring issued currency balances created by the issuing address, as they are intended to do.</p>
 <p>To use the Authorized Trust Lines feature, an issuer must also enable <code>RequireAuth</code> on its issuing address. After doing so, the issuing address must <a href="#authorizing-trust-lines">submit a <code>TrustSet</code> transaction to approve each trust line</a> from a customer.</p>
-<p class="devportal-callout caution"><strong>Caution:</strong> An account can only enable <code>RequireAuth</code> if it owns no trust lines and no offers in the XRP Ledger, so you must decide whether or not to use it before you start doing business in the XRP Ledger.</p>
+<p class="devportal-callout caution"><strong>Caution:</strong> An account can only enable <code>RequireAuth</code> if it owns no trust lines and no offers in the XAG Ledger, so you must decide whether or not to use it before you start doing business in the XAG Ledger.</p>
 <h3 id="enabling-requireauth">Enabling RequireAuth</h3>
 <p>The following is an example of using a locally-hosted <code>rippled</code>'s <a href="submit.html">submit method</a> to send an <a href="accountset.html">AccountSet transaction</a> to enable the RequireAuth flag: (This method works the same way regardless of whether the address is an issuing address, operational address, or standby address.)</p>
 <p>Request:</p>
@@ -195,7 +195,7 @@
 </ul>
 </li>
 <li><strong>Tutorials:</strong><ul>
-<li><a href="become-an-xrp-ledger-gateway.html">Become an XRP Ledger Gateway</a></li>
+<li><a href="become-an-xrp-ledger-gateway.html">Become an XAG Ledger Gateway</a></li>
 </ul>
 </li>
 <li><strong>References:</strong><ul>
@@ -244,9 +244,9 @@
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -473,7 +473,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

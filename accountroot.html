@@ -118,7 +118,7 @@
     <div class="content">
         <h1 id="accountroot">AccountRoot</h1>
 <p><a class="external-link" href="https://github.com/ripple/rippled/blob/5d2d88209f1732a0f8d592012094e345cbe3e675/src/ripple/protocol/impl/LedgerFormats.cpp#L27" target="_blank" title="Source">[Source] <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
-<p>The <code>AccountRoot</code> object type describes a single <a href="accounts.html">account</a>, its settings, and XRP balance.</p>
+<p>The <code>AccountRoot</code> object type describes a single <a href="accounts.html">account</a>, its settings, and XAG balance.</p>
 <h2 id="example-accountroot-json">Example AccountRoot JSON</h2>
 <pre><code class="json">{
     "Account": "rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn",
@@ -165,7 +165,7 @@
 <td align="left"><code>Balance</code></td>
 <td align="left">String</td>
 <td align="left">Amount</td>
-<td align="left">The account's current <a href="basic-data-types.html#specifying-currency-amounts">XRP balance in drops</a>, represented as a string.</td>
+<td align="left">The account's current <a href="basic-data-types.html#specifying-currency-amounts">XAG balance in drops</a>, represented as a string.</td>
 </tr>
 <tr>
 <td align="left"><a href="#accountroot-flags"><code>Flags</code></a></td>
@@ -289,11 +289,11 @@
 <td>asfDisableMaster</td>
 </tr>
 <tr>
-<td>lsfDisallowXRP</td>
+<td>lsfDisallowXAG</td>
 <td>0x00080000</td>
 <td>524288</td>
-<td>Client applications should not send XRP to this account. Not enforced by <code>rippled</code>.</td>
-<td>asfDisallowXRP</td>
+<td>Client applications should not send XAG to this account. Not enforced by <code>rippled</code>.</td>
+<td>asfDisallowXAG</td>
 </tr>
 <tr>
 <td>lsfGlobalFreeze</td>
@@ -703,7 +703,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

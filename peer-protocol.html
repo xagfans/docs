@@ -119,8 +119,8 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="peer-protocol">Peer Protocol</h1>
-<p>Servers in the XRP Ledger communicate to each other using the XRP Ledger peer protocol, also known as RTXP.</p>
-<p>The peer protocol is the main mode of communication between servers in the XRP Ledger. All information about the behavior, progress, and connectivity of the XRP Ledger passes through the peer protocol. Examples of peer-to-peer communications include all of the following:</p>
+<p>Servers in the XAG Ledger communicate to each other using the XAG Ledger peer protocol, also known as RTXP.</p>
+<p>The peer protocol is the main mode of communication between servers in the XAG Ledger. All information about the behavior, progress, and connectivity of the XAG Ledger passes through the peer protocol. Examples of peer-to-peer communications include all of the following:</p>
 <ul>
 <li>Requesting a connection to other servers in the peer-to-peer network, or advertising that connection slots are available.</li>
 <li>Sharing candidate transactions with the rest of the network.</li>
@@ -129,12 +129,12 @@
 </ul>
 <p>To establish a peer-to-peer connection, one server connects to another via HTTPS and requests an <a class="external-link" href="https://tools.ietf.org/html/rfc7230#section-6.7" target="_blank">HTTP upgrade <i aria-hidden="true" class="fa fa-external-link"></i></a> to switch to RTXP. (For more information, see the <a class="external-link" href="https://github.com/ripple/rippled/blob/906ef761bab95f80b0a7e0cab3b4c594b226cf57/src/ripple/overlay/README.md#handshake" target="_blank">Overlay Network <i aria-hidden="true" class="fa fa-external-link"></i></a> article in the <a class="external-link" href="https://github.com/ripple/rippled" target="_blank"><code>rippled</code> repository <i aria-hidden="true" class="fa fa-external-link"></i></a>.)</p>
 <h2 id="peer-discovery">Peer Discovery</h2>
-<p>The XRP Ledger uses a "gossip" protocol to help find servers find others to connect to in the XRP Ledger network. Whenever a server starts up, it reconnects to any other peers it previously connected to. As a fallback, it uses the <a class="external-link" href="https://github.com/ripple/rippled/blob/fa57859477441b60914e6239382c6fba286a0c26/src/ripple/overlay/impl/OverlayImpl.cpp#L518-L525" target="_blank">hardcoded public hubs <i aria-hidden="true" class="fa fa-external-link"></i></a>. After a server successfully connects to a peer, it asks that peer for the contact information (generally, IP address and port) of other XRP Ledger servers that may also be seeking peers. The server can then connect to those servers, and ask them for the contact information of yet more XRP Ledger servers to peer with. Through this process, the server establishes enough peer connections that it can remain reliably connected to the rest of the network even if it loses a connection to any single peer.</p>
+<p>The XAG Ledger uses a "gossip" protocol to help find servers find others to connect to in the XAG Ledger network. Whenever a server starts up, it reconnects to any other peers it previously connected to. As a fallback, it uses the <a class="external-link" href="https://github.com/ripple/rippled/blob/fa57859477441b60914e6239382c6fba286a0c26/src/ripple/overlay/impl/OverlayImpl.cpp#L518-L525" target="_blank">hardcoded public hubs <i aria-hidden="true" class="fa fa-external-link"></i></a>. After a server successfully connects to a peer, it asks that peer for the contact information (generally, IP address and port) of other XAG Ledger servers that may also be seeking peers. The server can then connect to those servers, and ask them for the contact information of yet more XAG Ledger servers to peer with. Through this process, the server establishes enough peer connections that it can remain reliably connected to the rest of the network even if it loses a connection to any single peer.</p>
 <p>Typically, a server needs to connect to a public hub only once, for a short amount of time, to find other peers. After doing so, the server may or may not remain connected to the hub, depending on how stable its network connection is, how busy the hub is, and how many other high-quality peers the server finds. The server saves the addresses of these other peers so it can try reconnecting directly to those peers later, after a network outage or a restart.</p>
 <p>The <a href="peers.html">peers method</a> shows a list of peers your server is currently connected to.</p>
 <p>For certain high-value servers (such as important <a href="rippled-server-modes.html#rippled-server-modes">validators</a>) you may prefer not to have your server connect to untrusted peers through the peer discovery process. In this case, you can configure your server to use <a href="#private-peers">private peers</a> only.</p>
 <h2 id="peer-protocol-port">Peer Protocol Port</h2>
-<p>To participate in the XRP Ledger, <code>rippled</code> servers connect to arbitrary peers using the peer protocol. (All peers are treated as untrusted, unless they are <a href="clustering.html">clustered</a> with the current server.)</p>
+<p>To participate in the XAG Ledger, <code>rippled</code> servers connect to arbitrary peers using the peer protocol. (All peers are treated as untrusted, unless they are <a href="clustering.html">clustered</a> with the current server.)</p>
 <p>Ideally, the server should be able to send <em>and</em> receive connections on the peer port. You should <a href="forward-ports-for-peering.html">forward the port used for the peer protocol through your firewall</a> to the <code>rippled</code> server.</p>
 <p>The <a class="external-link" href="https://github.com/ripple/rippled/blob/master/cfg/rippled-example.cfg" target="_blank">default <code>rippled</code> config file <i aria-hidden="true" class="fa fa-external-link"></i></a> listens for incoming peer protocol connections on port 51235 on all network interfaces. You can change the port used by editing the appropriate stanza in your <code>rippled.cfg</code> file.</p>
 <p>Example:</p>
@@ -173,7 +173,7 @@ protocol = peer
 </li>
 </ul>
 <h3 id="pros-and-cons-of-peering-configurations">Pros and Cons of Peering Configurations</h3>
-<p>To be part of the XRP Ledger, a <code>rippled</code> server must be connected to the rest of the open peer-to-peer network. Roughly speaking, there are three categories of configurations for how a <code>rippled</code> server connects to the network:</p>
+<p>To be part of the XAG Ledger, a <code>rippled</code> server must be connected to the rest of the open peer-to-peer network. Roughly speaking, there are three categories of configurations for how a <code>rippled</code> server connects to the network:</p>
 <ul>
 <li>Using <strong>discovered peers</strong>. The server connects to any untrusted servers it finds and stays connected as long as those servers behave appropriately. (For example, they don't request too much data, their network connections are stable, and they appear to be following the same <a href="parallel-networks.html">network</a>.) This is the default.</li>
 <li>As a <strong>private server using proxies</strong> run by the same person or organization. The proxies are stock <code>rippled</code> servers (also connected to discovered peers) that maintain a fixed peering connection with the private server.</li>
@@ -290,9 +290,9 @@ protocol = peer
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -519,7 +519,7 @@ protocol = peer
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

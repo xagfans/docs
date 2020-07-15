@@ -128,7 +128,7 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="xrp-ledgertoml-file">xrp-ledger.toml File</h1>
-<p>If you run an XRP Ledger validator or use the XRP Ledger for your business, you can provide information about your usage of the XRP Ledger to the world in a machine-readable <strong><code>xrp-ledger.toml</code></strong> file. Scripts and applications can use the information contained in your <code>xrp-ledger.toml</code> file to better understand and represent you in the XRP Ledger. In some cases, humans may also find it useful to read the same file.</p>
+<p>If you run an XAG Ledger validator or use the XAG Ledger for your business, you can provide information about your usage of the XAG Ledger to the world in a machine-readable <strong><code>xrp-ledger.toml</code></strong> file. Scripts and applications can use the information contained in your <code>xrp-ledger.toml</code> file to better understand and represent you in the XAG Ledger. In some cases, humans may also find it useful to read the same file.</p>
 <p>One of the primary use cases for the <code>xrp-ledger.toml</code> file is <a href="#domain-verification">domain verification</a>.</p>
 <h4 id="notational-conventions">Notational Conventions</h4>
 <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a class="external-link" href="https://tools.ietf.org/html/rfc2119" target="_blank">RFC 2119 <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
@@ -144,12 +144,12 @@ https://xrp.services.example.com/.well-known/xrp-ledger.toml
 <p>The contents MUST be served through the <strong>HTTPS protocol</strong> for security, using a current and secure version of <a class="external-link" href="https://tools.ietf.org/html/rfc8446" target="_blank">TLS <i aria-hidden="true" class="fa fa-external-link"></i></a>, using a valid certificate signed by a well-known certificate authority. (Note: TLS was formerly called SSL, but those versions are no longer secure.) In other words, a prerequisite for hosting an <code>xrp-ledger.toml</code> file is to have a properly-configured HTTPS web server.</p>
 <p>The plain HTTP protocol is vulnerable to man-in-the-middle attacks; for example, some internet services have been known to modify contents retrieved over plain HTTP to inject their own advertisements. To prevent similar techniques from misrepresenting the contents of the <code>xrp-ledger.toml</code> file and potentially causing scripts to behave incorrectly or deceptively, one SHOULD NOT trust the contents of an <code>xrp-ledger.toml</code> file that is served over plain HTTP.</p>
 <h3 id="domain">Domain</h3>
-<p>The domain where you serve the <code>xrp-ledger.toml</code> file is a statement of ownership. The file's contents are not as useful or trustworthy when they stand on their own. For practical reasons, it may be undesirable to serve the file from your main domain, so you MAY use any number of subdomains. When setting the <a href="accountset.html#domain"><code>Domain</code> field of XRP Ledger accounts</a>, you MUST provide the full domain, including all subdomains you used. See <a href="#account-verification">Account Verification</a> for details.</p>
-<p>You MAY serve the same file from multiple subdomains, if desired. For example, if the subdomain <code>www.example.com</code> goes to the same website as <code>example.com</code>, you can serve the file from both locations. If your website <em>requires</em> the <code>www</code> prefix, be sure to include it when you specify the domain (for example, when setting the <code>Domain</code> field of an XRP Ledger account).</p>
-<p>It is RECOMMENDED that you serve a human-readable website from the same domain as the <code>xrp-ledger.toml</code> file. The website can provide further information about your identity and how you use the XRP Ledger, which helps to build trust toward you and your services.</p>
+<p>The domain where you serve the <code>xrp-ledger.toml</code> file is a statement of ownership. The file's contents are not as useful or trustworthy when they stand on their own. For practical reasons, it may be undesirable to serve the file from your main domain, so you MAY use any number of subdomains. When setting the <a href="accountset.html#domain"><code>Domain</code> field of XAG Ledger accounts</a>, you MUST provide the full domain, including all subdomains you used. See <a href="#account-verification">Account Verification</a> for details.</p>
+<p>You MAY serve the same file from multiple subdomains, if desired. For example, if the subdomain <code>www.example.com</code> goes to the same website as <code>example.com</code>, you can serve the file from both locations. If your website <em>requires</em> the <code>www</code> prefix, be sure to include it when you specify the domain (for example, when setting the <code>Domain</code> field of an XAG Ledger account).</p>
+<p>It is RECOMMENDED that you serve a human-readable website from the same domain as the <code>xrp-ledger.toml</code> file. The website can provide further information about your identity and how you use the XAG Ledger, which helps to build trust toward you and your services.</p>
 <h3 id="path">Path</h3>
 <p>In compliance with <a class="external-link" href="https://tools.ietf.org/html/rfc5785" target="_blank">RFC5785 <i aria-hidden="true" class="fa fa-external-link"></i></a>, the path MUST start with <code>/.well-known/</code>. The file MUST be available at the path <code>/.well-known/xrp-ledger.toml</code> exactly (case-sensitive, all lower case).</p>
-<p>You MAY, if desired, serve the same file from alternate capitalizations of the same file, such as <code>/.well-known/XRP-Ledger.TOML</code>. You MUST NOT serve different contents depending on how the path is capitalized.</p>
+<p>You MAY, if desired, serve the same file from alternate capitalizations of the same file, such as <code>/.well-known/XAG-Ledger.TOML</code>. You MUST NOT serve different contents depending on how the path is capitalized.</p>
 <h3 id="headers">Headers</h3>
 <h4 id="content-type">Content-Type</h4>
 <p>The recommended <strong>Content-Type</strong> for the <code>xrp-ledger.toml</code> file is <strong><code>application/toml</code></strong>. However, applications consuming the file SHOULD also accept a Content-Type value of <code>text/plain</code>.</p>
@@ -195,7 +195,7 @@ unl = "https://vl.testnet.rippletest.net"
 address = "r3kmLJN5D28dHuH8vZNUZpMC43pEHpaocV"
 desc = "Ripple-owned address from old ripple.txt file"
 # Note: This doesn't prove ownership of an account unless the
-#   "Domain" field of the account in the XRP Ledger matches the
+#   "Domain" field of the account in the XAG Ledger matches the
 #   domain this file was served from.
 
 [[SERVERS]]
@@ -257,7 +257,7 @@ symbol = "😆" # In practical situations, it may be unwise to use emoji
 <p class="devportal-callout tip"><strong>Tip:</strong> For Offset Date-Time values, Ripple RECOMMENDS that you use the offset <code>Z</code> and provide precision up to milliseconds. (For example, <code>2019-01-22T22:26:58.027Z</code>) If you edit the file by hand, you MAY approximate the time by providing zeroes for the hours, minutes, seconds, and milliseconds. (For example, <code>2019-01-22T00:00:00.000Z</code>)</p>
 <h3 id="validators">Validators</h3>
 <p>The validators list provides information about validating servers you operate. If present, the validators list MUST BE presented as an array of tables, with each entry using the header <code>[[VALIDATORS]]</code>, including double square brackets. Each entry describes a separate validating server.</p>
-<p>The <em>first</em> <code>[[VALIDATORS]]</code> entry in the file is treated as your primary validator. If you operate one or more validators for the production XRP Ledger, you should put the one you want others to trust first.</p>
+<p>The <em>first</em> <code>[[VALIDATORS]]</code> entry in the file is treated as your primary validator. If you operate one or more validators for the production XAG Ledger, you should put the one you want others to trust first.</p>
 <p>For <em>each</em> <code>[[VALIDATORS]]</code> entry, you MAY provide any of the following fields:</p>
 <table>
 <thead>
@@ -271,7 +271,7 @@ symbol = "😆" # In practical situations, it may be unwise to use emoji
 <tr>
 <td align="left"><code>public_key</code></td>
 <td align="left">String</td>
-<td align="left">The master public key of your primary validator, encoded in the XRP Ledger's base58 format (typically, this starts with <code>n</code>).</td>
+<td align="left">The master public key of your primary validator, encoded in the XAG Ledger's base58 format (typically, this starts with <code>n</code>).</td>
 </tr>
 <tr>
 <td align="left"><code>attestation</code></td>
@@ -281,7 +281,7 @@ symbol = "😆" # In practical situations, it may be unwise to use emoji
 <tr>
 <td align="left"><code>network</code></td>
 <td align="left">String</td>
-<td align="left">Which network chain this validator follows. If omitted, clients SHOULD assume that the validator follows the production XRP Ledger. Use <code>main</code> to explicitly specify the production XRP Ledger. Use <code>testnet</code> for Ripple's XRP Ledger Test Net. You MAY provide other values to describe other test nets or non-standard network chains.</td>
+<td align="left">Which network chain this validator follows. If omitted, clients SHOULD assume that the validator follows the production XAG Ledger. Use <code>main</code> to explicitly specify the production XAG Ledger. Use <code>testnet</code> for Ripple's XAG Ledger Test Net. You MAY provide other values to describe other test nets or non-standard network chains.</td>
 </tr>
 <tr>
 <td align="left"><code>owner_country</code></td>
@@ -296,12 +296,12 @@ symbol = "😆" # In practical situations, it may be unwise to use emoji
 <tr>
 <td align="left"><code>unl</code></td>
 <td align="left">String</td>
-<td align="left">An HTTPS URL where one can find the list of other validators this validator trusts. If the validator is configured to use a validator list site for UNL recommendations, this MUST match the server's configuration. For the production XRP Ledger network, use <code>https://vl.ripple.com</code> (trailing slash optional).</td>
+<td align="left">An HTTPS URL where one can find the list of other validators this validator trusts. If the validator is configured to use a validator list site for UNL recommendations, this MUST match the server's configuration. For the production XAG Ledger network, use <code>https://vl.ripple.com</code> (trailing slash optional).</td>
 </tr>
 </tbody>
 </table>
 <h3 id="accounts">Accounts</h3>
-<p>The accounts list provides information about XRP Ledger accounts you own. If present, the accounts list MUST BE presented as an array of tables, with each entry using the header <code>[[ACCOUNTS]]</code>, including double square brackets. Each entry describes a separate account. For <em>each</em> <code>[[ACCOUNTS]]</code> entry, you MAY provide any of the following fields:</p>
+<p>The accounts list provides information about XAG Ledger accounts you own. If present, the accounts list MUST BE presented as an array of tables, with each entry using the header <code>[[ACCOUNTS]]</code>, including double square brackets. Each entry describes a separate account. For <em>each</em> <code>[[ACCOUNTS]]</code> entry, you MAY provide any of the following fields:</p>
 <table>
 <thead>
 <tr>
@@ -314,12 +314,12 @@ symbol = "😆" # In practical situations, it may be unwise to use emoji
 <tr>
 <td align="left"><code>address</code></td>
 <td align="left">String</td>
-<td align="left">The public address of the account, encoded in the XRP Ledger's base58 format (typically, this starts with an <code>r</code>).</td>
+<td align="left">The public address of the account, encoded in the XAG Ledger's base58 format (typically, this starts with an <code>r</code>).</td>
 </tr>
 <tr>
 <td align="left"><code>network</code></td>
 <td align="left">String</td>
-<td align="left">The network chain where this account is primarily used. If omitted, clients SHOULD assume that the account is claimed on the production XRP Ledger <em>and</em> possibly other network chains. Use <code>main</code> for the production XRP Ledger. Use <code>testnet</code> for Ripple's XRP Ledger Test Net. You MAY provide other values to describe other test nets or non-standard network chains.</td>
+<td align="left">The network chain where this account is primarily used. If omitted, clients SHOULD assume that the account is claimed on the production XAG Ledger <em>and</em> possibly other network chains. Use <code>main</code> for the production XAG Ledger. Use <code>testnet</code> for Ripple's XAG Ledger Test Net. You MAY provide other values to describe other test nets or non-standard network chains.</td>
 </tr>
 <tr>
 <td align="left"><code>desc</code></td>
@@ -328,9 +328,9 @@ symbol = "😆" # In practical situations, it may be unwise to use emoji
 </tr>
 </tbody>
 </table>
-<p class="devportal-callout caution"><strong>Caution:</strong> Anyone could claim ownership of any account by hosting an <code>xrp-ledger.toml</code> file, so the presence of an account here SHOULD NOT be considered authoritative unless the <a href="accountset.html#domain"><code>Domain</code> field for these accounts in the XRP Ledger</a> also matches the domain that this <code>xrp-ledger.toml</code> file was served from. See <a href="#account-verification">Account Verification</a> for details.</p>
+<p class="devportal-callout caution"><strong>Caution:</strong> Anyone could claim ownership of any account by hosting an <code>xrp-ledger.toml</code> file, so the presence of an account here SHOULD NOT be considered authoritative unless the <a href="accountset.html#domain"><code>Domain</code> field for these accounts in the XAG Ledger</a> also matches the domain that this <code>xrp-ledger.toml</code> file was served from. See <a href="#account-verification">Account Verification</a> for details.</p>
 <h3 id="principals">Principals</h3>
-<p>The principals list provides information about the people (or business entities) involved in your XRP Ledger businesses and services. If present, the principals list MUST BE presented as an array of tables, with each entry using the header <code>[[PRINCIPALS]]</code>, including double square brackets. Each entry describes a different point of contact. For <em>each</em> <code>[[PRINCIPALS]]</code> entry, you MAY provide any of the following fields:</p>
+<p>The principals list provides information about the people (or business entities) involved in your XAG Ledger businesses and services. If present, the principals list MUST BE presented as an array of tables, with each entry using the header <code>[[PRINCIPALS]]</code>, including double square brackets. Each entry describes a different point of contact. For <em>each</em> <code>[[PRINCIPALS]]</code> entry, you MAY provide any of the following fields:</p>
 <table>
 <thead>
 <tr>
@@ -354,7 +354,7 @@ symbol = "😆" # In practical situations, it may be unwise to use emoji
 </table>
 <p>You may provide other contact information as desired. (See <a href="#custom-fields">Custom Fields</a> for information about custom fields.)</p>
 <h3 id="servers">Servers</h3>
-<p>The servers list provides information about XRP Ledger servers (<code>rippled</code>) you run with public access. If present, the servers list MUST BE presented as an array of tables, with each entry using the header <code>[[SERVERS]]</code>, including double square brackets. Each entry describes a different server or server cluster. For <em>each</em> <code>[[SERVERS]]</code> entry, you MAY provide any of the following fields:</p>
+<p>The servers list provides information about XAG Ledger servers (<code>rippled</code>) you run with public access. If present, the servers list MUST BE presented as an array of tables, with each entry using the header <code>[[SERVERS]]</code>, including double square brackets. Each entry describes a different server or server cluster. For <em>each</em> <code>[[SERVERS]]</code> entry, you MAY provide any of the following fields:</p>
 <table>
 <thead>
 <tr>
@@ -377,18 +377,18 @@ symbol = "😆" # In practical situations, it may be unwise to use emoji
 <tr>
 <td align="left"><code>peer</code></td>
 <td align="left">String (URL)</td>
-<td align="left">The URL where your server is listening for the XRP Ledger Peer Protocol. Other XRP Ledger servers can connect at this URL. If your server provides a Peer Crawler response, it is served from this URL with <code>crawl</code> appended.</td>
+<td align="left">The URL where your server is listening for the XAG Ledger Peer Protocol. Other XAG Ledger servers can connect at this URL. If your server provides a Peer Crawler response, it is served from this URL with <code>crawl</code> appended.</td>
 </tr>
 <tr>
 <td align="left"><code>network</code></td>
 <td align="left">String</td>
-<td align="left">Which network chain this server follows. If omitted, clients SHOULD assume that the server follows the production XRP Ledger. Use <code>main</code> to explicitly specify the production XRP Ledger. Use <code>testnet</code> for Ripple's XRP Ledger Test Net. You MAY provide other values to describe other test nets or non-standard network chains.</td>
+<td align="left">Which network chain this server follows. If omitted, clients SHOULD assume that the server follows the production XAG Ledger. Use <code>main</code> to explicitly specify the production XAG Ledger. Use <code>testnet</code> for Ripple's XAG Ledger Test Net. You MAY provide other values to describe other test nets or non-standard network chains.</td>
 </tr>
 </tbody>
 </table>
 <p>For all URLs in this section, the trailing slash is RECOMMENDED. If omitted, client applications SHOULD assume that there is a trailing slash implied.</p>
 <h3 id="currencies">Currencies</h3>
-<p>If you issue any assets, tokens, or currencies in the XRP Ledger, you can provide information about them in the <code>[[CURRENCIES]]</code> list. If present, the currencies list MUST BE presented as an array of tables, with each entry using the header <code>[[CURRENCIES]]</code>, including double square brackets. Each entry describes a separate issued currency or asset. For <em>each</em> <code>[[CURRENCIES]]</code> entry, you MAY provide any of the following fields:</p>
+<p>If you issue any assets, tokens, or currencies in the XAG Ledger, you can provide information about them in the <code>[[CURRENCIES]]</code> list. If present, the currencies list MUST BE presented as an array of tables, with each entry using the header <code>[[CURRENCIES]]</code>, including double square brackets. Each entry describes a separate issued currency or asset. For <em>each</em> <code>[[CURRENCIES]]</code> entry, you MAY provide any of the following fields:</p>
 <table>
 <thead>
 <tr>
@@ -401,7 +401,7 @@ symbol = "😆" # In practical situations, it may be unwise to use emoji
 <tr>
 <td align="left"><code>code</code></td>
 <td align="left">String</td>
-<td align="left">The (case-sensitive) ticker symbol of this currency in the XRP Ledger. This can be a three-digit code, a 40-character hex code, or a custom format (for clients that know how to represent the non-standard code in the XRP Ledger). See the <a href="currency-formats.html#currency-codes">Currency Code reference</a> for information on the XRP Ledger's currency code formats.</td>
+<td align="left">The (case-sensitive) ticker symbol of this currency in the XAG Ledger. This can be a three-digit code, a 40-character hex code, or a custom format (for clients that know how to represent the non-standard code in the XAG Ledger). See the <a href="currency-formats.html#currency-codes">Currency Code reference</a> for information on the XAG Ledger's currency code formats.</td>
 </tr>
 <tr>
 <td align="left"><code>display_decimals</code></td>
@@ -411,12 +411,12 @@ symbol = "😆" # In practical situations, it may be unwise to use emoji
 <tr>
 <td align="left"><code>issuer</code></td>
 <td align="left">String</td>
-<td align="left">The address of the XRP Ledger account where you issue this currency, encoded in the XRP Ledger's base58 format (typically, this starts with an <code>r</code>). You SHOULD also list this address in the <code>[[ACCOUNTS]]</code> list. (Reminder: the presence of an address here is not authoritative on its own. See <a href="#account-verification">Account Verification</a> for details.)</td>
+<td align="left">The address of the XAG Ledger account where you issue this currency, encoded in the XAG Ledger's base58 format (typically, this starts with an <code>r</code>). You SHOULD also list this address in the <code>[[ACCOUNTS]]</code> list. (Reminder: the presence of an address here is not authoritative on its own. See <a href="#account-verification">Account Verification</a> for details.)</td>
 </tr>
 <tr>
 <td align="left"><code>network</code></td>
 <td align="left">String</td>
-<td align="left">The network chain where you issue this currency. Use <code>main</code> to explicitly specify the production XRP Ledger. If omitted, clients SHOULD assume that the currency is issued on the production XRP Ledger. Use <code>testnet</code> for Ripple's XRP Ledger Test Net. You MAY provide other values to describe other test nets or non-standard network chains.</td>
+<td align="left">The network chain where you issue this currency. Use <code>main</code> to explicitly specify the production XAG Ledger. If omitted, clients SHOULD assume that the currency is issued on the production XAG Ledger. Use <code>testnet</code> for Ripple's XAG Ledger Test Net. You MAY provide other values to describe other test nets or non-standard network chains.</td>
 </tr>
 <tr>
 <td align="left"><code>symbol</code></td>
@@ -426,7 +426,7 @@ symbol = "😆" # In practical situations, it may be unwise to use emoji
 </tbody>
 </table>
 <h3 id="custom-fields">Custom Fields</h3>
-<p>The <code>xrp-ledger.toml</code> file is intended for users of the XRP Ledger to provide information to other users, scripts, and applications. As such, there may be many kinds of information that are useful to convey but are not described in this specification. Users are encouraged to add other fields at any level of the <code>xrp-ledger.toml</code> file, as desired to convey relevant information.</p>
+<p>The <code>xrp-ledger.toml</code> file is intended for users of the XAG Ledger to provide information to other users, scripts, and applications. As such, there may be many kinds of information that are useful to convey but are not described in this specification. Users are encouraged to add other fields at any level of the <code>xrp-ledger.toml</code> file, as desired to convey relevant information.</p>
 <p>Tools that parse the <code>xrp-ledger.toml</code> file MUST accept documents that contain any other fields that the application is not familiar with. Those tools MAY make those additional fields available to higher-level applications that call them, or MAY discard those fields. To maintain forward-compatibility with future versions of this specification, tools MAY also discard fields specified in this standard. Tools MUST NOT return an error if an <code>xrp-ledger.toml</code> file contains an unrecognized field. To detect typos, tools MAY provide a warning on unrecognized fields, especially if those field names are similar to the names of standard fields.</p>
 <p>Tools MAY return an error if a field they recognize is not formatted as expected, even if that field is not defined in this specification.</p>
 <p>When creating custom fields, be mindful of the field name you choose. If you use a very generic field name, other users may use the same name to mean something different, or formatted in a conflicting way. If you use a custom field that you think others will find useful, please contribute a specification for your field to the maintainers of this document.</p>
@@ -513,7 +513,7 @@ VUSmEydzBpMjFlcTNNWXl3TFZKWm5GT3I3QzBrdzJBaVR6U0NqSXpkaXRROD0ifQ==
 <p>Update <a href="#contents">the contents of your <code>xrp-ledger.toml</code> file</a> with the <code>attestation</code> block, and update the <code>rippled.cfg</code> file with the <code>[validator_token]</code> block from the sample output.</p>
 <p class="devportal-callout warning"><strong>Warning:</strong> Your validator token is meant to be kept secret. Do not share it on your <code>xrp-ledger.toml</code> file or anywhere else. </p>
 <h2 id="account-verification">Account Verification</h2>
-<p>Similar to <a href="#domain-verification">Domain Verification</a>, account verification is the idea of proving that the same entity operates a particular domain and a particular XRP Ledger address. Account verification is not necessary for using the XRP Ledger or providing an <code>xrp-ledger.toml</code> file, but you may desire to verify your accounts in the name of transparency.</p>
+<p>Similar to <a href="#domain-verification">Domain Verification</a>, account verification is the idea of proving that the same entity operates a particular domain and a particular XAG Ledger address. Account verification is not necessary for using the XAG Ledger or providing an <code>xrp-ledger.toml</code> file, but you may desire to verify your accounts in the name of transparency.</p>
 <p>Account verification requires establishing a two-way link between the domain operator and the address:</p>
 <ol>
 <li>
@@ -535,7 +535,7 @@ VUSmEydzBpMjFlcTNNWXl3TFZKWm5GT3I3QzBrdzJBaVR6U0NqSXpkaXRROD0ifQ==
 </ol>
 <p>Either of these two links, on their own, SHOULD NOT be considered authoritative. Anyone could host an <code>xrp-ledger.toml</code> file claiming ownership of any account, and any account operator could set its <code>Domain</code> field to any string it wants. If the two match, it provides strong evidence that the same entity operates both.</p>
 <h2 id="acknowledgements">Acknowledgements</h2>
-<p>This specification is derived from the <a class="external-link" href="https://web.archive.org/web/20161007113240/https://wiki.ripple.com/Ripple.txt" target="_blank">original ripple.txt spec <i aria-hidden="true" class="fa fa-external-link"></i></a> and draws inspiration from the <a class="external-link" href="https://www.stellar.org/developers/guides/walkthroughs/how-to-complete-stellar-toml.html" target="_blank">stellar.toml file <i aria-hidden="true" class="fa fa-external-link"></i></a>. This specification also incorporates feedback from XRP community members and many past and current Ripple employees.</p>
+<p>This specification is derived from the <a class="external-link" href="https://web.archive.org/web/20161007113240/https://wiki.ripple.com/Ripple.txt" target="_blank">original ripple.txt spec <i aria-hidden="true" class="fa fa-external-link"></i></a> and draws inspiration from the <a class="external-link" href="https://www.stellar.org/developers/guides/walkthroughs/how-to-complete-stellar-toml.html" target="_blank">stellar.toml file <i aria-hidden="true" class="fa fa-external-link"></i></a>. This specification also incorporates feedback from XAG community members and many past and current Ripple employees.</p>
     </div>
   </article>
       </main>
@@ -1322,14 +1322,14 @@ VUSmEydzBpMjFlcTNNWXl3TFZKWm5GT3I3QzBrdzJBaVR6U0NqSXpkaXRROD0ifQ==
               <div class="card-header" role="tab" id="sidenav_cat_head_142">
                   <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_142" aria-expanded="true" aria-controls="sidenav_collapse_142"></a>
                 <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="xrp-api.html">XRP-API</a>
+                  <a class="sidenav_cat_title" href="xrp-api.html">XAG-API</a>
                 </h5>
               </div><!-- /.card-header -->
 
               <div id="sidenav_collapse_142" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_142">
                 <div class="card-body">
                   <ul class="sidebar_pagelist">
-                        <li><a class="subcat-title" href="xrp-api-methods.html">All XRP-API Methods</a></li>
+                        <li><a class="subcat-title" href="xrp-api-methods.html">All XAG-API Methods</a></li>
 
 
                         <li><a class="subcat-title" href="xrp-api-Query-methods.html">Query Methods</a></li>
@@ -1361,7 +1361,7 @@ VUSmEydzBpMjFlcTNNWXl3TFZKWm5GT3I3QzBrdzJBaVR6U0NqSXpkaXRROD0ifQ==
 
 
 
-                        <li><a class="subcat-title" href="xrp-api-data-types.html">XRP-API Data Types</a></li>
+                        <li><a class="subcat-title" href="xrp-api-data-types.html">XAG-API Data Types</a></li>
 
                             <li><a class="subpage" href="xrp-api-data-types-address.html">Address</a></li>
                             <li><a class="subpage" href="xrp-api-data-types-currency.html">Currency</a></li>
@@ -1639,7 +1639,7 @@ VUSmEydzBpMjFlcTNNWXl3TFZKWm5GT3I3QzBrdzJBaVR6U0NqSXpkaXRROD0ifQ==
             <div class="card-header" role="tab" id="sidenav_cat_head_187">
               <h5 class="card-title">
                   <a class="sidenav_cat_title active" href="xrp-ledger-toml.html">xrp-ledger.toml File</a>
-                <!-- <a class="sidenav_cat_title" href="xrp-ledger-toml.html">XRP Ledger TOML File</a> -->
+                <!-- <a class="sidenav_cat_title" href="xrp-ledger-toml.html">XAG Ledger TOML File</a> -->
               </h5>
             </div><!-- /.card-header -->
 
@@ -1696,7 +1696,7 @@ VUSmEydzBpMjFlcTNNWXl3TFZKWm5GT3I3QzBrdzJBaVR6U0NqSXpkaXRROD0ifQ==
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

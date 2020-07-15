@@ -122,7 +122,7 @@
 <p>There are two kinds of <code>LedgerHashes</code> object. Both types have the same fields. Each ledger version contains:</p>
 <ul>
 <li>Exactly one "recent history" <code>LedgerHashes</code> object</li>
-<li>A number of "previous history" <code>LedgerHashes</code> objects based on the current ledger index (that is, the length of the ledger history). Specifically, the XRP Ledger adds a new "previous history" object every 65536 ledger versions.</li>
+<li>A number of "previous history" <code>LedgerHashes</code> objects based on the current ledger index (that is, the length of the ledger history). Specifically, the XAG Ledger adds a new "previous history" object every 65536 ledger versions.</li>
 </ul>
 <p class="devportal-callout note"><strong>Note:</strong> As an exception, a new genesis ledger has no <code>LedgerHashes</code> objects at all, because it has no ledger history.</p>
 <p>Example <code>LedgerHashes</code> object (trimmed for length):</p>
@@ -163,7 +163,7 @@
 <td><code>FirstLedgerSequence</code></td>
 <td>Number</td>
 <td>UInt32</td>
-<td><strong>DEPRECATED</strong> Do not use. (The "recent hashes" object of the production XRP Ledger has the value <code>2</code> in this field as a result of a previous <code>rippled</code> software. That value gets carried forward as the "recent hashes" object is updated. New "previous history" objects do not have this field, nor do "recent hashes" objects in <a href="parallel-networks.html">parallel networks</a> started with more recent versions of <code>rippled</code>.)</td>
+<td><strong>DEPRECATED</strong> Do not use. (The "recent hashes" object of the production XAG Ledger has the value <code>2</code> in this field as a result of a previous <code>rippled</code> software. That value gets carried forward as the "recent hashes" object is updated. New "previous history" objects do not have this field, nor do "recent hashes" objects in <a href="parallel-networks.html">parallel networks</a> started with more recent versions of <code>rippled</code>.)</td>
 </tr>
 <tr>
 <td><code>LastLedgerSequence</code></td>
@@ -569,7 +569,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

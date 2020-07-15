@@ -101,7 +101,7 @@
 <li class="level-3"><a href="#consensus-rules">Consensus Rules</a></li>
 <li class="level-3"><a href="#consensus-rounds">Consensus Rounds</a></li>
 <li class="level-3"><a href="#consensus-can-fail">Consensus Can Fail</a></li>
-<li class="level-3"><a href="#how-the-xrp-ledger-handles-consensus-failure">How the XRP Ledger Handles Consensus Failure</a></li>
+<li class="level-3"><a href="#how-the-xrp-ledger-handles-consensus-failure">How the XAG Ledger Handles Consensus Failure</a></li>
 <li class="level-2"><a href="#philosophy">Philosophy</a></li>
 <li class="level-2"><a href="#see-also">See Also</a></li>
 
@@ -122,26 +122,26 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="consensus-principles-and-rules">Consensus Principles and Rules</h1>
-<p>The XRP Ledger is a universal payment system enabling users to transfer funds across national boundaries as seamlessly as sending an email. Like other peer-to-peer payment networks such as Bitcoin, the XRP Ledger enables peer-to-peer transaction settlement across a decentralized network of computers. Unlike other digital currency protocols, the XRP Ledger allows users to denominate their transactions with any currency they prefer, including fiat currencies, digital currencies and other forms of value, in addition to XRP (the native asset of the XRP Ledger).</p>
-<p>The XRP Ledger's technology enables near real-time settlement (three to six seconds) and contains a decentralized exchange, where payments automatically use the cheapest currency trade orders available to bridge currencies.</p>
+<p>The XAG Ledger is a universal payment system enabling users to transfer funds across national boundaries as seamlessly as sending an email. Like other peer-to-peer payment networks such as Bitcoin, the XAG Ledger enables peer-to-peer transaction settlement across a decentralized network of computers. Unlike other digital currency protocols, the XAG Ledger allows users to denominate their transactions with any currency they prefer, including fiat currencies, digital currencies and other forms of value, in addition to XAG (the native asset of the XAG Ledger).</p>
+<p>The XAG Ledger's technology enables near real-time settlement (three to six seconds) and contains a decentralized exchange, where payments automatically use the cheapest currency trade orders available to bridge currencies.</p>
 <h2 id="background">Background</h2>
 <h3 id="mechanics">Mechanics</h3>
-<p>At the core, the XRP Ledger is a shared database that records information such as accounts, balances, and offers to trade assets. Signed instructions called "transactions" cause changes such as creating accounts, making payments, and trading assets.</p>
-<p>As a cryptographic system, the owners of XRP Ledger accounts are identified by <em>cryptographic identities</em>, which correspond to public/private key pairs. Transactions are authorized by cryptographic signatures matching these identities. Every server processes every transaction according to the same deterministic, known rules. Ultimately, the goal is for every server in the network to have a complete copy of the exact same ledger state, without needing a single central authority to arbitrate transactions.</p>
+<p>At the core, the XAG Ledger is a shared database that records information such as accounts, balances, and offers to trade assets. Signed instructions called "transactions" cause changes such as creating accounts, making payments, and trading assets.</p>
+<p>As a cryptographic system, the owners of XAG Ledger accounts are identified by <em>cryptographic identities</em>, which correspond to public/private key pairs. Transactions are authorized by cryptographic signatures matching these identities. Every server processes every transaction according to the same deterministic, known rules. Ultimately, the goal is for every server in the network to have a complete copy of the exact same ledger state, without needing a single central authority to arbitrate transactions.</p>
 <h3 id="the-double-spend-problem">The Double Spend Problem</h3>
 <p>The "double spend" problem is a fundamental challenge to operating any sort of payment system. The problem comes from the requirement that when money is spent in one place, it can't also be spent in another place. More generally, the problem occurs when you have any two transactions such that either one is valid but not both together.</p>
 <p>Suppose Alice, Bob, and Charlie are using a payment system, and Alice has a balance of $10. For the payment system to be useful, Alice must be able to send her $10 to Bob, or to Charlie. However, if Alice tries to send $10 to Bob and also send $10 to Charlie at the same time, that's where the double spend problem comes in.</p>
 <p>If Alice can send the "same" $10 to both Charlie and Bob, the payment system ceases to be useful. The payment system needs a way to choose which transaction should succeed and which should fail, in such a way that all participants agree on which transaction has happened. Either of those two transactions is equally valid on its own. However, different participants in the payment system may have a different view of which transaction came first.</p>
 <p>Conventionally, payment systems solve the double spend problem by having a central authority track and approve transactions. For example, a bank decides to clear a check based on the issuer's available balance, of which the bank is the sole custodian. In such a system, all participants follow the central authority's decisions.</p>
-<p>Distributed ledger technologies, like the XRP Ledger, have no central authority. They must solve the double spend problem in some other way.</p>
+<p>Distributed ledger technologies, like the XAG Ledger, have no central authority. They must solve the double spend problem in some other way.</p>
 <h2 id="how-consensus-works">How Consensus Works</h2>
 <h3 id="simplifying-the-problem">Simplifying the Problem</h3>
 <p>Much of the double spend problem can be solved by well-known rules such as prohibiting an account from spending funds it does not have. In fact, the double spend problem can be reduced to putting transactions in order.</p>
 <p>Consider the example of Alice trying to send the same $10 to both Bob and Charlie. If the payment to Bob is known to be first, then everyone can agree that she has the funds to pay Bob. If the payment to Charlie is known to be second, then everyone can agree that she cannot send those funds to Charlie because the money has already been sent to Bob.</p>
 <p>We can also order transactions by deterministic rules. Because transactions are collections of digital information, it's trivial for a computer to sort them.</p>
 <p>This would be enough to solve the double spend problem without a central authority, but it would require us to have every transaction that would ever occur (so that we could sort them) before we could be certain of the results of any transaction. Obviously, this is impractical. <!-- STYLE_OVERRIDE: obviously --></p>
-<p>If we could collect transactions into groups and agree on those groupings, we could sort the transactions within that group. As long as every participant agrees on which transactions are to be processed as a unit, they can use deterministic rules to solve the double spend problem without any need for a central authority. The participants each sort the transactions and apply them in a deterministic way following the known rules. The XRP Ledger solves the double-spend problem in exactly this way.</p>
-<p>The XRP Ledger allows multiple conflicting transactions to be in the agreed group. The group of transactions is executed according to deterministic rules, so whichever transaction comes first according to the sorting rules succeeds and whichever conflicting transaction comes second fails.</p>
+<p>If we could collect transactions into groups and agree on those groupings, we could sort the transactions within that group. As long as every participant agrees on which transactions are to be processed as a unit, they can use deterministic rules to solve the double spend problem without any need for a central authority. The participants each sort the transactions and apply them in a deterministic way following the known rules. The XAG Ledger solves the double-spend problem in exactly this way.</p>
+<p>The XAG Ledger allows multiple conflicting transactions to be in the agreed group. The group of transactions is executed according to deterministic rules, so whichever transaction comes first according to the sorting rules succeeds and whichever conflicting transaction comes second fails.</p>
 <h3 id="consensus-rules">Consensus Rules</h3>
 <p>The primary role of consensus is for participants in the process to agree on which transactions are to be processed as a group to resolve the double spend problem. There are four reasons this agreement is easier to achieve than might be expected:</p>
 <ol>
@@ -162,7 +162,7 @@
 <p>In other words, for the consensus process to ever finish, some participant must declare that consensus has been reached on a set of transactions even though every other participant is theoretically still capable of changing the agreed upon set of transactions.</p>
 <p>Imagine a group of people in a room trying to agree which door they should use to exit. No matter how much the participants discuss, at some point, <em>someone</em> has to be the first one to walk out of a door, even though the people behind that person could still change their minds and leave through the other door.</p>
 <p>The probability of this kind of failure can be made very low, but it cannot be reduced to zero. The engineering tradeoffs are such that driving this probability down below about one in a thousand makes consensus significantly slower, and less able to tolerate network and endpoint failures.</p>
-<h3 id="how-the-xrp-ledger-handles-consensus-failure">How the XRP Ledger Handles Consensus Failure</h3>
+<h3 id="how-the-xrp-ledger-handles-consensus-failure">How the XAG Ledger Handles Consensus Failure</h3>
 <p>After a consensus round completes, each participant applies the set of transactions that they believe were agreed to. This results in constructing what they believe the next state of the ledger should be.</p>
 <p>Participants that are also validators then publish a cryptographic fingerprint of this next ledger. We call this fingerprint a “validation vote”. If the consensus round succeeded, the vast majority of honest validators should be publishing the same fingerprint.</p>
 <p>Participants then collect these validation votes. From the validation votes, they can determine whether the previous consensus round resulted in a supermajority of participants agreeing on a set of transactions or not.</p>
@@ -177,8 +177,8 @@
 <p>On rare occasions, the network as a whole fails to make forward progress for a few seconds. In exchange, average transaction confirmation times are low.</p>
 <h2 id="philosophy">Philosophy</h2>
 <p>One form of reliability is the ability of a system to provide results even under conditions where some components have failed, some participants are malicious, and so on. While this is important, there is another form of reliability that is much more important in cryptographic payment systems — the ability of a system to produce results that can be relied upon. That is, when a system reports a result to us as reliable, we should be able to rely on that result.</p>
-<p>Real-world systems, however, face operational conditions in which both kinds of reliability can be compromised. These include hardware failures, communication failures, and even dishonest participants. Part of the XRP Ledger's design philosophy is to detect conditions where the reliability of results are impaired and report them, rather than providing results that must not be relied on.</p>
-<p>The XRP Ledger's consensus algorithm provides a robust alternative to proof of work systems, without consuming computational resources needlessly. Byzantine failures are possible, and do happen, but the consequence is only minor delays. In all cases, the XRP Ledger's consensus algorithm reports results as reliable only when they in fact are.</p>
+<p>Real-world systems, however, face operational conditions in which both kinds of reliability can be compromised. These include hardware failures, communication failures, and even dishonest participants. Part of the XAG Ledger's design philosophy is to detect conditions where the reliability of results are impaired and report them, rather than providing results that must not be relied on.</p>
+<p>The XAG Ledger's consensus algorithm provides a robust alternative to proof of work systems, without consuming computational resources needlessly. Byzantine failures are possible, and do happen, but the consequence is only minor delays. In all cases, the XAG Ledger's consensus algorithm reports results as reliable only when they in fact are.</p>
 <h2 id="see-also">See Also</h2>
 <ul>
 <li><strong>Concepts:</strong><ul>
@@ -238,9 +238,9 @@
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -467,7 +467,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

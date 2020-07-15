@@ -120,7 +120,7 @@
     <div class="content">
         <h1 id="accountset">AccountSet</h1>
 <p><a class="external-link" href="https://github.com/ripple/rippled/blob/f65cea66ef99b1de149c02c15f06de6c61abf360/src/ripple/app/transactors/SetAccount.cpp" target="_blank" title="Source">[Source] <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
-<p>An AccountSet transaction modifies the properties of an <a href="accountroot.html">account in the XRP Ledger</a>.</p>
+<p>An AccountSet transaction modifies the properties of an <a href="accountroot.html">account in the XAG Ledger</a>.</p>
 <h2 id="example-accountset-json">Example AccountSet JSON</h2>
 <pre><code class="json">{
     "TransactionType": "AccountSet",
@@ -208,7 +208,7 @@
 <p>You can put any domain in your account's <code>Domain</code> field. To prove that an account and domain belong to the same person or business, Ripple recommends establishing a "two-way link":</p>
 <ul>
 <li>Accounts you own should have a domain you own in the <code>Domain</code> field.</li>
-<li>On a website at that domain, host an <a href="xrp-ledger-toml.html">xrp-ledger.toml file</a> listing accounts you own, and optionally other information about how you use the XRP Ledger.</li>
+<li>On a website at that domain, host an <a href="xrp-ledger-toml.html">xrp-ledger.toml file</a> listing accounts you own, and optionally other information about how you use the XAG Ledger.</li>
 </ul>
 <h2 id="accountset-flags">AccountSet Flags</h2>
 <p>There are several options which can be either enabled or disabled for an account. Account options are represented by different types of flags depending on the situation:</p>
@@ -255,10 +255,10 @@
 <td align="left">Disallow use of the master key pair. Can only be enabled if the account has configured another way to sign transactions, such as a <a href="cryptographic-keys.html">Regular Key</a> or a <a href="multi-signing.html">Signer List</a>.</td>
 </tr>
 <tr>
-<td align="left">asfDisallowXRP</td>
+<td align="left">asfDisallowXAG</td>
 <td align="left">3</td>
-<td align="left">lsfDisallowXRP</td>
-<td align="left">XRP should not be sent to this account. (Enforced by client applications, not by <code>rippled</code>)</td>
+<td align="left">lsfDisallowXAG</td>
+<td align="left">XAG should not be sent to this account. (Enforced by client applications, not by <code>rippled</code>)</td>
 </tr>
 <tr>
 <td align="left">asfGlobalFreeze</td>
@@ -323,24 +323,24 @@
 <td align="left">asfRequireAuth (ClearFlag)</td>
 </tr>
 <tr>
-<td align="left">tfDisallowXRP</td>
+<td align="left">tfDisallowXAG</td>
 <td align="left">0x00100000</td>
 <td align="left">1048576</td>
-<td align="left">asfDisallowXRP (SetFlag)</td>
+<td align="left">asfDisallowXAG (SetFlag)</td>
 </tr>
 <tr>
-<td align="left">tfAllowXRP</td>
+<td align="left">tfAllowXAG</td>
 <td align="left">0x00200000</td>
 <td align="left">2097152</td>
-<td align="left">asfDisallowXRP (ClearFlag)</td>
+<td align="left">asfDisallowXAG (ClearFlag)</td>
 </tr>
 </tbody>
 </table>
 <p class="devportal-callout caution"><strong>Caution:</strong> The numeric values of <code>tf</code> and <code>asf</code> flags in transactions do not match up with the values they set in the accounts "at rest" in the ledger. To read the flags of an account in the ledger, see <a href="accountroot.html#accountroot-flags"><code>AccountRoot</code> flags</a>.</p>
 <h3 id="blocking-incoming-transactions">Blocking Incoming Transactions</h3>
-<p>Incoming transactions with unclear purposes may be an inconvenience for financial institutions, who would have to recognize when a customer made a mistake, and then potentially refund accounts or adjust balances depending on the mistake. The <code>asfRequireDest</code> and <code>asfDisallowXRP</code> flags are intended to protect users from accidentally sending funds in a way that is unclear about the reason the funds were sent.</p>
+<p>Incoming transactions with unclear purposes may be an inconvenience for financial institutions, who would have to recognize when a customer made a mistake, and then potentially refund accounts or adjust balances depending on the mistake. The <code>asfRequireDest</code> and <code>asfDisallowXAG</code> flags are intended to protect users from accidentally sending funds in a way that is unclear about the reason the funds were sent.</p>
 <p>For example, a destination tag is typically used to identify which hosted balance should be credited when a financial institution receives a payment. If the destination tag is omitted, it may be unclear which account should be credited, creating a need for refunds, among other problems. By using the <code>asfRequireDest</code> tag, you can ensure that every incoming payment has a destination tag, which makes it harder for others to send you an ambiguous payment by accident.</p>
-<p>You can protect against unwanted incoming payments for non-XRP currencies by not creating trust lines in those currencies. Since XRP does not require trust, the <code>asfDisallowXRP</code> flag is used to discourage users from sending XRP to an account. However, this flag is not enforced in <code>rippled</code> because it could potentially cause accounts to become unusable. (If an account did not have enough XRP to send a transaction that disabled the flag, the account would be completely unusable.) Instead, client applications should disallow or discourage XRP payments to accounts with the <code>asfDisallowXRP</code> flag enabled.</p>
+<p>You can protect against unwanted incoming payments for non-XAG currencies by not creating trust lines in those currencies. Since XAG does not require trust, the <code>asfDisallowXAG</code> flag is used to discourage users from sending XAG to an account. However, this flag is not enforced in <code>rippled</code> because it could potentially cause accounts to become unusable. (If an account did not have enough XAG to send a transaction that disabled the flag, the account would be completely unusable.) Instead, client applications should disallow or discourage XAG payments to accounts with the <code>asfDisallowXAG</code> flag enabled.</p>
 <h2 id="transferrate">TransferRate</h2>
 <p>The TransferRate field specifies a fee to charge whenever counterparties transfer the currency you issue. See <a href="transfer-fees.html">Transfer Fees</a> for more information.</p>
 <p>In <code>rippled</code>'s WebSocket and JSON-RPC APIs, the TransferRate is represented as an integer, the amount that must be sent for 1 billion units to arrive. For example, a 20% transfer fee is represented as the value <code>1200000000</code>.  The value cannot be less than 1000000000. (Less than that would indicate giving away money for sending transactions, which is exploitable.) You can specify 0 as a shortcut for 1000000000, meaning no fee.</p>
@@ -506,7 +506,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

@@ -614,7 +614,7 @@ rippled server_info
 <tr>
 <td align="left"><code>jq_trans_overflow</code></td>
 <td align="left">String - Number</td>
-<td align="left">The number of times (since starting up) that this server has had over 250 transactions waiting to be processed at once. A large number here may mean that your server is unable to handle the transaction load of the XRP Ledger network. For detailed recommendations of future-proof server specifications, see <a href="capacity-planning.html">Capacity Planning</a>. <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/0.90.0" target="_blank" title="New in: rippled 0.90.0"><img alt="New in: rippled 0.90.0" class="dactyl_badge" src="https://img.shields.io/badge/New%20in-rippled%200.90.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
+<td align="left">The number of times (since starting up) that this server has had over 250 transactions waiting to be processed at once. A large number here may mean that your server is unable to handle the transaction load of the XAG Ledger network. For detailed recommendations of future-proof server specifications, see <a href="capacity-planning.html">Capacity Planning</a>. <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/0.90.0" target="_blank" title="New in: rippled 0.90.0"><img alt="New in: rippled 0.90.0" class="dactyl_badge" src="https://img.shields.io/badge/New%20in-rippled%200.90.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
 </tr>
 <tr>
 <td align="left"><code>last_close</code></td>
@@ -639,7 +639,7 @@ rippled server_info
 <tr>
 <td align="left"><code>load_factor</code></td>
 <td align="left">Number</td>
-<td align="left">The load-scaled open ledger transaction cost the server is currently enforcing, as a multiplier on the base transaction cost. For example, at <code>1000</code> load factor and a reference transaction cost of 10 drops of XRP, the load-scaled transaction cost is 10,000 drops (0.01 XRP). The load factor is determined by the highest of the <a href="transaction-cost.html#local-load-cost">individual server's load factor</a>, the cluster's load factor, the <a href="transaction-cost.html#open-ledger-cost">open ledger cost</a> and the overall network's load factor. <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/0.33.0" target="_blank" title="Updated in: rippled 0.33.0"><img alt="Updated in: rippled 0.33.0" class="dactyl_badge" src="https://img.shields.io/badge/Updated%20in-rippled%200.33.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
+<td align="left">The load-scaled open ledger transaction cost the server is currently enforcing, as a multiplier on the base transaction cost. For example, at <code>1000</code> load factor and a reference transaction cost of 10 drops of XAG, the load-scaled transaction cost is 10,000 drops (0.01 XAG). The load factor is determined by the highest of the <a href="transaction-cost.html#local-load-cost">individual server's load factor</a>, the cluster's load factor, the <a href="transaction-cost.html#open-ledger-cost">open ledger cost</a> and the overall network's load factor. <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/0.33.0" target="_blank" title="Updated in: rippled 0.33.0"><img alt="Updated in: rippled 0.33.0" class="dactyl_badge" src="https://img.shields.io/badge/Updated%20in-rippled%200.33.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
 </tr>
 <tr>
 <td align="left"><code>load_factor_local</code></td>
@@ -734,7 +734,7 @@ rippled server_info
 <tr>
 <td align="left"><code>validated_ledger.base_fee_xrp</code></td>
 <td align="left">Number</td>
-<td align="left">Base fee, in XRP. This may be represented in scientific notation such as <code>1e-05</code> for 0.00005.</td>
+<td align="left">Base fee, in XAG. This may be represented in scientific notation such as <code>1e-05</code> for 0.00005.</td>
 </tr>
 <tr>
 <td align="left"><code>validated_ledger.hash</code></td>
@@ -744,12 +744,12 @@ rippled server_info
 <tr>
 <td align="left"><code>validated_ledger.reserve_base_xrp</code></td>
 <td align="left">Unsigned Integer</td>
-<td align="left">Minimum amount of XRP (not drops) necessary for every account to keep in reserve</td>
+<td align="left">Minimum amount of XAG (not drops) necessary for every account to keep in reserve</td>
 </tr>
 <tr>
 <td align="left"><code>validated_ledger.reserve_inc_xrp</code></td>
 <td align="left">Unsigned Integer</td>
-<td align="left">Amount of XRP (not drops) added to the account reserve for each object an account owns in the ledger.</td>
+<td align="left">Amount of XAG (not drops) added to the account reserve for each object an account owns in the ledger.</td>
 </tr>
 <tr>
 <td align="left"><code>validated_ledger.seq</code></td>
@@ -1138,7 +1138,7 @@ rippled server_info
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

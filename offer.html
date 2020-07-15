@@ -118,7 +118,7 @@
     <div class="content">
         <h1 id="offer">Offer</h1>
 <p><a class="external-link" href="https://github.com/ripple/rippled/blob/5d2d88209f1732a0f8d592012094e345cbe3e675/src/ripple/protocol/impl/LedgerFormats.cpp#L57" target="_blank" title="Source">[Source] <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
-<p>The <code>Offer</code> object type describes an offer to exchange currencies, more traditionally known as an <em>order</em>, in the XRP Ledger's distributed exchange. An <a href="offercreate.html">OfferCreate transaction</a> only creates an <code>Offer</code> object in the ledger when the offer cannot be fully executed immediately by consuming other offers already in the ledger.</p>
+<p>The <code>Offer</code> object type describes an offer to exchange currencies, more traditionally known as an <em>order</em>, in the XAG Ledger's distributed exchange. An <a href="offercreate.html">OfferCreate transaction</a> only creates an <code>Offer</code> object in the ledger when the offer cannot be fully executed immediately by consuming other offers already in the ledger.</p>
 <p>An offer can become unfunded through other activities in the network, while remaining in the ledger. However, <code>rippled</code> automatically prunes any unfunded offers it happens across in the course of transaction processing (and <em>only</em> transaction processing, because the ledger state must only be changed by transactions).</p>
 <p>For more information, see <a href="offers.html">Offers</a>.</p>
 <h2 id="example-offer-json">Example Offer JSON</h2>
@@ -629,7 +629,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

@@ -155,7 +155,7 @@
     <div class="content">
         <h1 id="known-amendments">Known Amendments</h1>
 <p><a class="external-link" href="https://github.com/ripple/rippled/blob/master/src/ripple/protocol/impl/Feature.cpp" target="_blank" title="Source">[Source] <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
-<p>The following is a comprehensive list of all known amendments and their status on the production XRP Ledger:</p>
+<p>The following is a comprehensive list of all known amendments and their status on the production XAG Ledger:</p>
 <table>
 <thead>
 <tr>
@@ -393,7 +393,7 @@
 </tr>
 </tbody>
 </table>
-<p>Introduces "Checks" to the XRP Ledger. Checks work similarly to personal paper checks. The sender signs a transaction to create a Check for a specific maximum amount and destination. Later, the destination can cash the Check to receive up to the specified amount. The actual movement of money only occurs when the Check is cashed, so cashing the Check may fail depending on the sender's current balance and the available liquidity. If cashing the Check fails, the Check object remains in the ledger so it may be successfully cashed later.</p>
+<p>Introduces "Checks" to the XAG Ledger. Checks work similarly to personal paper checks. The sender signs a transaction to create a Check for a specific maximum amount and destination. Later, the destination can cash the Check to receive up to the specified amount. The actual movement of money only occurs when the Check is cashed, so cashing the Check may fail depending on the sender's current balance and the available liquidity. If cashing the Check fails, the Check object remains in the ledger so it may be successfully cashed later.</p>
 <p>The sender or the receiver can cancel a Check at any time before it is cashed. A Check can also have an expiration time, after which it cannot be cashed, and anyone can cancel it.</p>
 <p>Introduces three new transaction types: CheckCreate, CheckCancel, and CheckCash, and a new ledger object type, Check. Adds a new transaction result code, <code>tecEXPIRED</code>, which occurs when trying to create a Check whose expiration time is in the past.</p>
 <p>This amendment also changes the OfferCreate transaction to return <code>tecEXPIRED</code> when trying to create an Offer whose expiration time is in the past. Without this amendment, an OfferCreate whose expiration time is in the past returns <code>tesSUCCESS</code> but does not create or execute an Offer.</p>
@@ -447,7 +447,7 @@
 </table>
 <p>Makes it possible to delete <a href="accounts.html">accounts</a>.</p>
 <p>Without this amendment, new accounts always start with their <code>Sequence</code> numbers at 1, and there is no way to remove accounts from the state data of the ledger.</p>
-<p>With this amendment, new accounts start with their <code>Sequence</code> numbers equal to the <code>Sequence</code> number matching the <a href="basic-data-types.html#ledger-index">index of the ledger</a> in which the account is created. This change protects accounts that are deleted and later re-created from having their old transactions executed again. Adds a new <code>AccountDelete</code> transaction type, which deletes an account and certain objects that the account owns in the ledger. Certain types of objects cannot be deleted this way, so an account that is linked to any such objects cannot be deleted. Additionally, an account cannot be deleted if the current ledger index minus 256 is less than the account's current <code>Sequence</code> number. See <a class="external-link" href="https://github.com/xrp-community/standards-drafts/issues/8" target="_blank">XRP Community Standards Draft 7 <i aria-hidden="true" class="fa fa-external-link"></i></a> for a detailed discussion of this amendment.</p>
+<p>With this amendment, new accounts start with their <code>Sequence</code> numbers equal to the <code>Sequence</code> number matching the <a href="basic-data-types.html#ledger-index">index of the ledger</a> in which the account is created. This change protects accounts that are deleted and later re-created from having their old transactions executed again. Adds a new <code>AccountDelete</code> transaction type, which deletes an account and certain objects that the account owns in the ledger. Certain types of objects cannot be deleted this way, so an account that is linked to any such objects cannot be deleted. Additionally, an account cannot be deleted if the current ledger index minus 256 is less than the account's current <code>Sequence</code> number. See <a class="external-link" href="https://github.com/xrp-community/standards-drafts/issues/8" target="_blank">XAG Community Standards Draft 7 <i aria-hidden="true" class="fa fa-external-link"></i></a> for a detailed discussion of this amendment.</p>
 <h2 id="depositauth">DepositAuth</h2>
 <table>
 <thead>
@@ -464,9 +464,9 @@
 </tbody>
 </table>
 <p>Adds a new account flag, <code>DepositAuth</code>, which lets an account strictly reject any incoming money from transactions sent by other accounts. Businesses can use this flag to comply with strict regulations that require due diligence before receiving money from any source.</p>
-<p>When an account enables this flag, Payment transactions fail if the account is the destination, regardless of whether the Payment would have delivered XRP or an issued currency. EscrowFinish and PaymentChannelClaim transactions fail if the account is the destination unless the destination account itself sends those transactions. If the <a href="#checks">Checks</a> amendment is enabled, the account can receive XRP or issued currencies by sending CheckCash transactions.</p>
-<p>As an exception, accounts with <code>DepositAuth</code> enabled can receive Payment transactions for small amounts of XRP (equal or less than the minimum <a href="reserves.html">account reserve</a>) if their current XRP balance is below the account reserve.</p>
-<p>Also fixes a bug in the EscrowCreate and PaymentChannelCreate transactions where they mistakenly enforced the DisallowXRP flag, which is meant to be a non-binding advisory flag. (By not enforcing DisallowXRP in the ledger itself an account can still receive the necessary XRP to meet its <a href="reserves.html">account reserve</a> and pay <a href="transaction-cost.html">transaction costs</a>.)</p>
+<p>When an account enables this flag, Payment transactions fail if the account is the destination, regardless of whether the Payment would have delivered XAG or an issued currency. EscrowFinish and PaymentChannelClaim transactions fail if the account is the destination unless the destination account itself sends those transactions. If the <a href="#checks">Checks</a> amendment is enabled, the account can receive XAG or issued currencies by sending CheckCash transactions.</p>
+<p>As an exception, accounts with <code>DepositAuth</code> enabled can receive Payment transactions for small amounts of XAG (equal or less than the minimum <a href="reserves.html">account reserve</a>) if their current XAG balance is below the account reserve.</p>
+<p>Also fixes a bug in the EscrowCreate and PaymentChannelCreate transactions where they mistakenly enforced the DisallowXAG flag, which is meant to be a non-binding advisory flag. (By not enforcing DisallowXAG in the ledger itself an account can still receive the necessary XAG to meet its <a href="reserves.html">account reserve</a> and pay <a href="transaction-cost.html">transaction costs</a>.)</p>
 <h2 id="depositpreauth">DepositPreauth</h2>
 <table>
 <thead>
@@ -500,15 +500,15 @@
 </tr>
 </tbody>
 </table>
-<p>Adds sanity checks to transaction processing to ensure that certain conditions are always met. This provides an extra, independent layer of protection against bugs in transaction processing that could otherwise cause exploits and vulnerabilities in the XRP Ledger. Ripple expects to add more invariant checks in future versions of <code>rippled</code> without additional amendments.</p>
+<p>Adds sanity checks to transaction processing to ensure that certain conditions are always met. This provides an extra, independent layer of protection against bugs in transaction processing that could otherwise cause exploits and vulnerabilities in the XAG Ledger. Ripple expects to add more invariant checks in future versions of <code>rippled</code> without additional amendments.</p>
 <p>Introduces two new transaction error codes, <code>tecINVARIANT_FAILED</code> and <code>tefINVARIANT_FAILED</code>. Changes transaction processing to add the new checks.</p>
 <p>Examples of invariant checks:</p>
 <ul>
-<li>The total amount of XRP destroyed by a transaction must match the <a href="transaction-cost.html">transaction cost</a> exactly.</li>
-<li>XRP cannot be created.</li>
+<li>The total amount of XAG destroyed by a transaction must match the <a href="transaction-cost.html">transaction cost</a> exactly.</li>
+<li>XAG cannot be created.</li>
 <li><a href="accountroot.html"><code>AccountRoot</code> objects in the ledger</a> cannot be deleted unless <a href="#deletableaccounts">DeletableAccounts</a> is enabled. (See also: <a href="accounts.html#deletion-of-accounts">Deletion of Accounts</a>.)</li>
 <li><a href="ledger-object-types.html">An object in the ledger</a> cannot change its type. (The <code>LedgerEntryType</code> field is immutable.)</li>
-<li>There cannot be a trust line for XRP.</li>
+<li>There cannot be a trust line for XAG.</li>
 </ul>
 <h2 id="escrow">Escrow</h2>
 <table>
@@ -526,7 +526,7 @@
 </tbody>
 </table>
 <p>Replaces the <a href="#suspay">SusPay</a> and <a href="#cryptoconditions">CryptoConditions</a> amendments.</p>
-<p>Provides "suspended payments" for XRP for escrow within the XRP Ledger, including support for <a class="external-link" href="https://tools.ietf.org/html/draft-thomas-crypto-conditions-02" target="_blank">Interledger Protocol Crypto-Conditions <i aria-hidden="true" class="fa fa-external-link"></i></a>. Creates a new ledger object type for suspended payments and new transaction types to create, execute, and cancel suspended payments.</p>
+<p>Provides "suspended payments" for XAG for escrow within the XAG Ledger, including support for <a class="external-link" href="https://tools.ietf.org/html/draft-thomas-crypto-conditions-02" target="_blank">Interledger Protocol Crypto-Conditions <i aria-hidden="true" class="fa fa-external-link"></i></a>. Creates a new ledger object type for suspended payments and new transaction types to create, execute, and cancel suspended payments.</p>
 <h2 id="feeescalation">FeeEscalation</h2>
 <table>
 <thead>
@@ -784,8 +784,8 @@
 </tr>
 </tbody>
 </table>
-<p>Fixes a bug where certain XRP endpoints were not checked when detecting circular paths.</p>
-<p>Without this amendment, it is possible to have a <a href="paths.html">payment path</a> where the input to the path is XRP, and an intermediate path step also outputs XRP. This is a "loop" payment, and the payment engine disallows such paths because they can have different results when executed forward compared to backwards.</p>
+<p>Fixes a bug where certain XAG endpoints were not checked when detecting circular paths.</p>
+<p>Without this amendment, it is possible to have a <a href="paths.html">payment path</a> where the input to the path is XAG, and an intermediate path step also outputs XAG. This is a "loop" payment, and the payment engine disallows such paths because they can have different results when executed forward compared to backwards.</p>
 <p>With this amendment, those payments fail with the <a href="tem-codes.html"><code>temBAD_PATH_LOOP</code> result code</a> instead.</p>
 <h2 id="fixcheckthreading">fixCheckThreading</h2>
 <table>
@@ -871,9 +871,9 @@
 </tr>
 </tbody>
 </table>
-<p>Fixes a bug in <a href="autobridging.html">auto-bridging</a> that can leave a dry offer in the XRP Ledger. A dry offer is an offer that, if crossed, cannot yield any funds.</p>
+<p>Fixes a bug in <a href="autobridging.html">auto-bridging</a> that can leave a dry offer in the XAG Ledger. A dry offer is an offer that, if crossed, cannot yield any funds.</p>
 <p>Without this fix, the dry offer remains on the ledger and counts toward its owner's <a href="reserves.html#owner-reserves">reserve requirement</a> without providing any benefit to the owner. Another offer crossing of the right type and quality can remove the dry offer. However, if the required offer crossing type and quality are rare, it may take a while for the dry offer to be removed.</p>
-<p>With this amendment enabled, the XRP Ledger removes these dry offers when they're matched in auto-bridging.</p>
+<p>With this amendment enabled, the XAG Ledger removes these dry offers when they're matched in auto-bridging.</p>
 <h2 id="flow">Flow</h2>
 <table>
 <thead>
@@ -906,7 +906,7 @@
 </tr>
 </tbody>
 </table>
-<p>Streamlines the offer crossing logic in the XRP Ledger's decentralized exchange. Uses the updated code from the <a href="#flow">Flow</a> amendment to power offer crossing, so <a href="offercreate.html">OfferCreate transactions</a> and <a href="payment.html">Payment transactions</a> share more code. This has subtle differences in how offers are processed:</p>
+<p>Streamlines the offer crossing logic in the XAG Ledger's decentralized exchange. Uses the updated code from the <a href="#flow">Flow</a> amendment to power offer crossing, so <a href="offercreate.html">OfferCreate transactions</a> and <a href="payment.html">Payment transactions</a> share more code. This has subtle differences in how offers are processed:</p>
 <ul>
 <li>Rounding is slightly different in some cases.</li>
 <li>Due to differences in rounding, some combinations of offers may be ranked higher or lower than by the old logic, and taken preferentially.</li>
@@ -988,9 +988,9 @@ the latest ledger that that validator considers to be fully validated. The conse
 </tr>
 </tbody>
 </table>
-<p>Reduces the <a href="reserves.html#owner-reserves">owner reserve</a> counted against your XRP Ledger account when it owns a <a href="multi-signing.html">multi-signing</a> SignerList.</p>
-<p>Without this amendment, the owner reserve for a SignerList ranges from 15 to 50 XRP, depending on the number of signers in the list.</p>
-<p>With this amendment enabled, the owner reserve for a new SignerList is 5 XRP, regardless of the number of signers. The reserve requirement for previously-created SignerList objects remains unchanged. To reduce the reserve requirement of SignerList objects created before this amendment was enabled, use a <a href="signerlistset.html">SignerListSet transaction</a> to replace the SignerList after this amendment has been enabled. (The replacement can be identical to the previous version.)</p>
+<p>Reduces the <a href="reserves.html#owner-reserves">owner reserve</a> counted against your XAG Ledger account when it owns a <a href="multi-signing.html">multi-signing</a> SignerList.</p>
+<p>Without this amendment, the owner reserve for a SignerList ranges from 15 to 50 XAG, depending on the number of signers in the list.</p>
+<p>With this amendment enabled, the owner reserve for a new SignerList is 5 XAG, regardless of the number of signers. The reserve requirement for previously-created SignerList objects remains unchanged. To reduce the reserve requirement of SignerList objects created before this amendment was enabled, use a <a href="signerlistset.html">SignerListSet transaction</a> to replace the SignerList after this amendment has been enabled. (The replacement can be identical to the previous version.)</p>
 <h2 id="ownerpaysfee">OwnerPaysFee</h2>
 <table>
 <thead>
@@ -1024,7 +1024,7 @@ the latest ledger that that validator considers to be fully validated. The conse
 </tr>
 </tbody>
 </table>
-<p>Creates "Payment Channels" for XRP. Payment channels are a tool for facilitating repeated, unidirectional payments or temporary credit between two parties. Ripple expects this feature to be useful for the <a class="external-link" href="https://interledger.org/" target="_blank">Interledger Protocol <i aria-hidden="true" class="fa fa-external-link"></i></a>. One party creates a Payment Channel and sets aside some XRP in that channel for a predetermined expiration. Then, through off-ledger secure communications, the sender can send "Claim" messages to the receiver. The receiver can redeem the Claim messages before the expiration, or choose not to in case the payment is not needed. The receiver can verify Claims individually without actually distributing them to the network and waiting for the consensus process to redeem them, then redeem the batched content of many small Claims later, as long as it is within the expiration.</p>
+<p>Creates "Payment Channels" for XAG. Payment channels are a tool for facilitating repeated, unidirectional payments or temporary credit between two parties. Ripple expects this feature to be useful for the <a class="external-link" href="https://interledger.org/" target="_blank">Interledger Protocol <i aria-hidden="true" class="fa fa-external-link"></i></a>. One party creates a Payment Channel and sets aside some XAG in that channel for a predetermined expiration. Then, through off-ledger secure communications, the sender can send "Claim" messages to the receiver. The receiver can redeem the Claim messages before the expiration, or choose not to in case the payment is not needed. The receiver can verify Claims individually without actually distributing them to the network and waiting for the consensus process to redeem them, then redeem the batched content of many small Claims later, as long as it is within the expiration.</p>
 <p>Creates three new transaction types: <a href="paymentchannelcreate.html">PaymentChannelCreate</a>, <a href="paymentchannelclaim.html">PaymentChannelClaim</a>, and <a href="paymentchannelfund.html">PaymentChannelFund</a>. Creates a new ledger object type, <a href="paychannel.html">PayChannel</a>. Defines an off-ledger data structure called a <code>Claim</code>, used in the ChannelClaim transaction. Creates new <code>rippled</code> API methods: <a href="channel_authorize.html"><code>channel_authorize</code></a> (creates a signed Claim), <a href="channel_verify.html"><code>channel_verify</code></a> (verifies a signed Claim), and <a href="account_channels.html"><code>account_channels</code></a> (lists Channels associated with an account).</p>
 <p>For more information, see the <a href="use-payment-channels.html">Payment Channels Tutorial</a>.</p>
 <h2 id="requirefullycanonicalsig">RequireFullyCanonicalSig</h2>
@@ -1042,7 +1042,7 @@ the latest ledger that that validator considers to be fully validated. The conse
 </tr>
 </tbody>
 </table>
-<p>Changes the signature requirements for the XRP Ledger protocol so that non-fully-canonical signatures are no longer valid in any case. This protects against <a href="transaction-malleability.html">transaction malleability</a> on <em>all</em> transactions, instead of just transactions with the <a href="transaction-common-fields.html#global-flags">tfFullyCanonicalSig flag</a> enabled.</p>
+<p>Changes the signature requirements for the XAG Ledger protocol so that non-fully-canonical signatures are no longer valid in any case. This protects against <a href="transaction-malleability.html">transaction malleability</a> on <em>all</em> transactions, instead of just transactions with the <a href="transaction-common-fields.html#global-flags">tfFullyCanonicalSig flag</a> enabled.</p>
 <p>Without this amendment, a transaction is malleable if it uses a secp256k1 signature and does not have tfFullyCanonicalSig enabled. Most signing utilities enable tfFullyCanonicalSig by default, but there are exceptions.</p>
 <p>With this amendment, no single-signed transactions are malleable. (<a href="transaction-malleability.html#malleability-with-multi-signatures">Multi-signed transactions may still be malleable</a> if signers provide more signatures than are necessary.) All transactions must use the fully canonical form of the signature, regardless of the tfFullyCanonicalSig flag. Signing utilities that do not create fully canonical signatures are not supported. All of Ripple's signing utilities have been providing fully-canonical signatures exclusively since at least 2014.</p>
 <p>For more information, see <a class="external-link" href="https://github.com/ripple/rippled/issues/3042" target="_blank"><code>rippled</code> issue #3042 <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
@@ -1062,7 +1062,7 @@ the latest ledger that that validator considers to be fully validated. The conse
 </tbody>
 </table>
 <p>Changes the hash tree structure that <code>rippled</code> uses to represent a ledger. The new structure is more compact and efficient than the previous version. This affects how ledger hashes are calculated, but has no other user-facing consequences.</p>
-<p>When this amendment is activated, the XRP Ledger will undergo a brief scheduled unavailability while the network calculates the changes to the hash tree structure. <!-- STYLE_OVERRIDE: will --></p>
+<p>When this amendment is activated, the XAG Ledger will undergo a brief scheduled unavailability while the network calculates the changes to the hash tree structure. <!-- STYLE_OVERRIDE: will --></p>
 <h2 id="sorteddirectories">SortedDirectories</h2>
 <table>
 <thead>
@@ -1129,7 +1129,7 @@ the latest ledger that that validator considers to be fully validated. The conse
 </tbody>
 </table>
 <p>Changes the way <a href="offers.html#lifecycle-of-an-offer">Offers</a> are ranked in order books, so that currency issuers can configure how many significant digits are taken into account when ranking Offers by exchange rate. With this amendment, the exchange rates of Offers are rounded to the configured number of significant digits, so that more Offers have the same exact exchange rate. The intent of this change is to require a meaningful improvement in price to outrank a previous Offer. If used by major issuers, this should reduce the incentive to spam the ledger with Offers that are only a tiny fraction of a percentage point better than existing offers. It may also increase the efficiency of order book storage in the ledger, because Offers can be grouped into fewer exchange rates.</p>
-<p>Introduces a <code>TickSize</code> field to accounts, which can be set with the <a href="accountset.html">AccountSet transaction type</a>. If a currency issuer sets the <code>TickSize</code> field, the XRP Ledger truncates the exchange rate (ratio of funds in to funds out) of Offers to trade the issuer's currency, and adjusts the amounts of the Offer to match the truncated exchange rate. If only one currency in the trade has a <code>TickSize</code> set, that number of significant digits applies. When trading two currencies that have different <code>TickSize</code> values, whichever <code>TickSize</code> indicates the fewest significant digits applies. XRP does not have a <code>TickSize</code>.</p>
+<p>Introduces a <code>TickSize</code> field to accounts, which can be set with the <a href="accountset.html">AccountSet transaction type</a>. If a currency issuer sets the <code>TickSize</code> field, the XAG Ledger truncates the exchange rate (ratio of funds in to funds out) of Offers to trade the issuer's currency, and adjusts the amounts of the Offer to match the truncated exchange rate. If only one currency in the trade has a <code>TickSize</code> set, that number of significant digits applies. When trading two currencies that have different <code>TickSize</code> values, whichever <code>TickSize</code> indicates the fewest significant digits applies. XAG does not have a <code>TickSize</code>.</p>
 <h2 id="trustsetauth">TrustSetAuth</h2>
 <table>
 <thead>
@@ -1183,9 +1183,9 @@ the latest ledger that that validator considers to be fully validated. The conse
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -1412,7 +1412,7 @@ the latest ledger that that validator considers to be fully validated. The conse
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 
