@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
 
-    <title>Direct XRP Payments - XAG Ledger Dev Portal</title>
+    <title>Direct XAG Payments - XAG Ledger Dev Portal</title>
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
@@ -90,11 +90,11 @@
       <h4>In this document</h4>
     </div>
     <ul class="card-body">
-      <li class="level-1"><a href="#direct-xrp-payments">Direct XRP Payments</a></li>
+      <li class="level-1"><a href="#direct-xrp-payments">Direct XAG Payments</a></li>
 <li class="level-2"><a href="#about-direct-xrp-to-xrp-payments">About Direct XRP-to-XRP Payments</a></li>
 <li class="level-2"><a href="#funding-accounts">Funding Accounts</a></li>
 <li class="level-2"><a href="#address-reuse">Address Reuse</a></li>
-<li class="level-2"><a href="#how-direct-xrp-payments-are-processed">How Direct XRP Payments Are Processed</a></li>
+<li class="level-2"><a href="#how-direct-xrp-payments-are-processed">How Direct XAG Payments Are Processed</a></li>
 <li class="level-2"><a href="#comparison-to-other-payment-types">Comparison to Other Payment Types</a></li>
 <li class="level-2"><a href="#see-also">See Also</a></li>
 
@@ -110,11 +110,11 @@
     <li class="active breadcrumb-item"><a href="docs.html">Docs</a></li>
     <li class="active breadcrumb-item"><a href="concepts.html">Concepts</a></li>
     <li class="active breadcrumb-item"><a href="payment-types.html">Payment Types</a></li>
-    <li class="active breadcrumb-item">Direct XRP Payments</li>
+    <li class="active breadcrumb-item">Direct XAG Payments</li>
   </ul>
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
-        <h1 id="direct-xrp-payments">Direct XRP Payments</h1>
+        <h1 id="direct-xrp-payments">Direct XAG Payments</h1>
 <p>The basis of any financial system is <em>transferring value</em>: or, in one word, payments. The simplest type of payment in the XRP Ledger is a direct XRP-to-XRP payment, which transfers XRP directly from one account in the XRP Ledger to another.</p>
 <h2 id="about-direct-xrp-to-xrp-payments">About Direct XRP-to-XRP Payments</h2>
 <p>Generally, any address in the XRP Ledger can send XRP directly to any other address. The address on the receiving side is often called the <em>destination address</em>, and the address on the sending side is called the <em>source address</em>. To send XRP directly, the sender uses a <a href="payment.html">Payment transaction</a>, which can be as concise as the following:</p>
@@ -134,13 +134,13 @@
 <h2 id="address-reuse">Address Reuse</h2>
 <p>In the XRP Ledger, addresses where you can receive payments are permanent, and have a non-trivial <a href="reserves.html">reserve requirement</a> of XRP that they cannot spend. This means that, contrary to some other blockchain systems, it is not a good idea to use a different, disposable address for every transaction. The best practice for the XRP Ledger is to reuse the same address for multiple transactions. If you use the address regularly (especially if it's managed by an internet-connected service), you should set a <a href="cryptographic-keys.html">regular key</a> and proactively change keys on a regular basis to reduce the risk of a key compromise.</p>
 <p>As a sender, it is best not to assume that your intended recipient is using the same address from the last time you sent them a payment. Inevitably, sometimes security compromises happen and a person or business has to change addresses. Before sending money, you should ask the recipient for their current receiving address, so you don't accidentally send money to a malicious user who has taken control of a compromised old address.</p>
-<h2 id="how-direct-xrp-payments-are-processed">How Direct XRP Payments Are Processed</h2>
+<h2 id="how-direct-xrp-payments-are-processed">How Direct XAG Payments Are Processed</h2>
 <p>From a relatively high level, the XRP Ledger's transaction processing engine applies a direct XRP payment as follows:</p>
 <ol>
 <li>
 <p>It validates the parameters of the <a href="payment.html">Payment transaction</a>. If the transaction is structured to send and deliver XRP, the transaction processing engine recognizes it as a direct XRP-to-XRP payment. Validation checks include:</p>
 <ul>
-<li>Checking that all fields are formatted correctly. For example, for direct XRP payments, the <code>Amount</code> field must be <a href="basic-data-types.html#specifying-currency-amounts">drops of XRP</a>.</li>
+<li>Checking that all fields are formatted correctly. For example, for Direct XAG Payments, the <code>Amount</code> field must be <a href="basic-data-types.html#specifying-currency-amounts">drops of XRP</a>.</li>
 <li>Checking that the sending address is a funded <a href="accounts.html">account</a> in the XRP Ledger.</li>
 <li>Checking that all provided signatures are valid for the sending address.</li>
 <li>Confirming that the destination address is different than the sender address. (It is not sufficient to send to the same address with a different <a href="source-and-destination-tags.html">destination tag</a>.)</li>
@@ -163,7 +163,7 @@
 </ol>
 <h2 id="comparison-to-other-payment-types">Comparison to Other Payment Types</h2>
 <ul>
-<li><strong>Direct XRP Payments</strong> are the only way to both send and receive XRP in a single transaction. They are a good balance of speed, simplicity, and low cost.</li>
+<li><strong>Direct XAG Payments</strong> are the only way to both send and receive XRP in a single transaction. They are a good balance of speed, simplicity, and low cost.</li>
 <li><a href="cross-currency-payments.html">Cross-currency payments</a> also use the <a href="payment.html">Payment</a> transaction type, but can send any combination of XRP and non-XRP <a href="issued-currencies.html">issued currencies</a> except XRP-to-XRP. They can also be <a href="partial-payments.html">partial payments</a>. Cross-currency payments are good for payments not denominated in XRP or for taking arbitrage opportunities in the <a href="decentralized-exchange.html">decentralized exchange</a>.</li>
 <li><a href="checks.html">Checks</a> let the sender set up an obligation without transferring any money immediately. The recipient can cash it any time before it expires, but the amount is not guaranteed. Checks can send either XRP or issued currencies. Checks are good for giving the recipient the autonomy to claim the payment.</li>
 <li><a href="escrow.html">Escrow</a> sets aside XRP which can be claimed by its intended recipient when certain conditions are met. The XRP amount is fully guaranteed and cannot be otherwise used by the sender unless the Escrow expires. Escrow is good for smart contracts in large amounts.</li>
@@ -283,12 +283,11 @@
             <div id="sidenav_collapse_20" class="collapse show" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="active nosubcat-page" href="direct-xrp-payments.html">Direct XRP Payments</a></li>
+                      <li><a class="active nosubcat-page" href="direct-xrp-payments.html">Direct XAG Payments</a></li>
                       <li><a class="nosubcat-page" href="cross-currency-payments.html">Cross-Currency Payments</a></li>
-                      <li><a class="nosubcat-page" href="checks.html">Checks</a></li>
-                      <li><a class="nosubcat-page" href="escrow.html">Escrow</a></li>
+                      
                       <li><a class="nosubcat-page" href="partial-payments.html">Partial Payments</a></li>
-                      <li><a class="nosubcat-page" href="payment-channels.html">Payment Channels</a></li>
+                      
 
                 </ul>
               </div><!-- /.card-body -->
@@ -485,11 +484,7 @@
 
         <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
 
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
+        
 
 
 
@@ -504,17 +499,9 @@
 
         <div class="card">
           <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
+           <h5><a href="https://xrpgen.com/" target="_blank">Xrpalike Gene<i class="fa fa-external-link"></i></a></h5>
           </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
+          <!--/.card-body-->
           <div class="flag-vertical">04</div>
         </div><!--/.card -->
   </section>
