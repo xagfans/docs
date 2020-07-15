@@ -83,23 +83,7 @@
   <div class="container-fluid" role="document" id="main_content_wrapper">
     <div class="row">
       <!-- Right sidebar first so it's at the beginning for mobile layouts -->
-      <aside class="right-sidebar col-lg-3 order-lg-4 p-0" role="complementary">
-  <div class="card" id="page-toc-wrapper">
-    <div class="card-header">
-      <h4>In this document</h4>
-    </div>
-    <ul class="card-body">
-      <li class="level-1"><a href="#introduction-to-consensus">Introduction to Consensus</a></li>
-<li class="level-2"><a href="#consensus-protocol-properties">Consensus Protocol Properties</a></li>
-<li class="level-2"><a href="#background">Background</a></li>
-<li class="level-2"><a href="#ledger-history">Ledger History</a></li>
-<li class="level-2"><a href="#trust-based-validation">Trust-Based Validation</a></li>
-<li class="level-2"><a href="#see-also">See Also</a></li>
-<li class="level-2"><a href="#footnotes">Footnotes</a></li>
-
-    </ul>
-  </div>
-      </aside>
+      
 
       <!-- main column -->
       <main class="main col-md-7 col-lg-6 order-md-3  " role="main" id="main_content_body">
@@ -145,26 +129,10 @@
 <p><a href="img/consensus-rounds.png"><img alt="Figure 2: Consensus rounds. Validators revise their proposals to match other validators they trust" src="img/consensus-rounds.png"/></a></p>
 <p>It's OK if a small proportion of validators don't operate properly all the time. As long as fewer than 20% of trusted validators are faulty, consensus can continue unimpeded; and confirming an invalid transaction would require over 80% of trusted validators to collude. If more than 20% but less than 80% of trusted validators are faulty, the network simply stops making progress.</p>
 <p>For a longer exploration of how the XAG Ledger Consensus Protocol responds to various challenges, attacks, and failure cases, see <a href="consensus-protections.html">Consensus Protections Against Attacks and Failure Modes</a>.</p>
-<h2 id="see-also">See Also</h2>
-<ul>
-<li><a href="consensus-network.html">Consensus Network Concepts</a> for several articles describing the mechanics of the XAG Ledger Consensus Protocol in greater depth.</li>
-<li><a href="run-rippled-as-a-validator.html">Run <code>rippled</code> as a Validator</a> for instructions on running your own validator.</li>
-<li><a class="external-link" href="https://xrpl.org/blog/2017/decent-strategy-update.html" target="_blank">Decentralization Strategy Update (Ripple Dev Blog) <i aria-hidden="true" class="fa fa-external-link"></i></a> for a description of Ripple's goals and plans for decentralizing the XAG Ledger.</li>
-</ul>
+
 <!-- -->
 <hr/>
-<h2 id="footnotes">Footnotes</h2>
-<ol>
-<li>
-<p><a id="footnote-1"></a> Due to a mishap early in the XAG Ledger's history, <a class="external-link" href="http://web.archive.org/web/20171211225452/https://forum.ripple.com/viewtopic.php?f=2&amp;t=3613" target="_blank">ledgers 1 through 32569 were lost <i aria-hidden="true" class="fa fa-external-link"></i></a>. (This loss represents approximately the first week of ledger history.) Thus, ledger #32570 is the earliest ledger available anywhere. Because the XAG Ledger's state is recorded in every ledger version, the ledger can continue without the missing history. New test networks still start with ledger index 1.</p>
-</li>
-<li>
-<p><a id="footnote-2"></a> In Bitcoin, the current state is sometimes called the set of "UTXOs" (unspent transaction outputs). Unlike the XAG Ledger, a Bitcoin server must download the entire transaction history to know the full set of UTXOs and process new transactions. As of 2018, there have been some proposals to modify Bitcoin's consensus mechanism to periodically summarize the latest UTXOs so new servers would not need to do this. Ethereum uses a similar approach to the XAG Ledger, with a summary of the current state (called a <em>state root</em>) in each block, but syncing takes longer because Ethereum stores a large amount of state data.</p>
-</li>
-<li>
-<p><a id="footnote-3"></a> A server does not need a direct connection to its trusted validators to hear from them. The XAG Ledger peer-to-peer network uses a <em>gossip protocol</em> where servers identify each other by public keys and relay digitally-signed messages from others.</p>
-</li>
-</ol>
+
     </div>
   </article>
       </main>
@@ -385,30 +353,7 @@
     </div><!--/.row (main layout)-->
   </div>
 
-<footer class="xrpl-footer" role="contentinfo">
-  
 
-  <section class="container-fluid p-5 pl-sm-0">
-
-    <nav role="navigation" class="d-flex mb-3 language-selector">
-      <img class="language_selector_icon" src="assets/img/icon-language-selector.svg" width="32" height="40" alt="language selection icon" />
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="/intro-to-consensus.html"><i class="fa fa-check-circle"></i> English</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/cn/intro-to-consensus.html">中文</a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="absolute_bottom_footer">
-      <span>&copy; XAG Ledger Project 2019</span>
-      <span><a href="">License</a></span>
-    </div><!-- /.absolute_bottom_footer -->
-
-  </section>
-</footer>
 
 <!-- Jump to top button -->
 <a href="#main_content_wrapper" class="jump-to-top btn btn-primary btn-lg" role="button" title="Jump to top of page">Top</a>
