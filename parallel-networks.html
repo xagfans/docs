@@ -113,8 +113,8 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="parallel-networks">Parallel Networks</h1>
-<p>There is one production XRP Ledger peer-to-peer network, and all business that takes place on the XRP Ledger occurs within the production network—the Mainnet.</p>
-<p>To help members of the XRPL community interact with XRPL technology without affecting anything on the Mainnet, Ripple hosts two alternative networks, or altnets: the Testnet and the Devnet. Here's a breakdown of all three networks:</p>
+<p>There is one production XAG Ledger peer-to-peer network, and all business that takes place on the XAG Ledger occurs within the production network—the Mainnet.</p>
+<p>To help members of the XAGL community interact with XAGL technology without affecting anything on the Mainnet, Ripple hosts two alternative networks, or altnets: the Testnet and the Devnet. Here's a breakdown of all three networks:</p>
 <table>
 <thead>
 <tr>
@@ -127,21 +127,21 @@
 <tr>
 <td align="left">Mainnet</td>
 <td align="left">Stable releases</td>
-<td align="left"><em>The</em> <a href="xag-ledger-overview.html">XRP Ledger</a>, a  decentralized cryptographic ledger powered by a network of peer-to-peer servers and the home of <a href="xag.html">XRP</a>.</td>
+<td align="left"><em>The</em> <a href="xag-ledger-overview.html">XAG Ledger</a>, a  decentralized cryptographic ledger powered by a network of peer-to-peer servers and the home of <a href="xag.html">XAG</a>.</td>
 </tr>
 <tr>
 <td align="left">Testnet</td>
 <td align="left">Stable releases</td>
-<td align="left">An "alternate universe" network that acts as a testing ground for software built on the XRP Ledger, without impacting production XRP Ledger users and without risking real money. The <a href="known-amendments.html">amendment status</a> of the Testnet is intended to closely mirror the Mainnet, although slight variations in timing may occur due to the unpredictable nature of decentralized systems.</td>
+<td align="left">An "alternate universe" network that acts as a testing ground for software built on the XAG Ledger, without impacting production XAG Ledger users and without risking real money. The <a href="known-amendments.html">amendment status</a> of the Testnet is intended to closely mirror the Mainnet, although slight variations in timing may occur due to the unpredictable nature of decentralized systems.</td>
 </tr>
 <tr>
 <td align="left">Devnet</td>
 <td align="left">Beta releases</td>
-<td align="left">A preview of coming attractions, where unstable changes to the core XRP Ledger software may be tested out. Developers can use this altnet to interact with and learn about planned new XRPL features and amendments that are not yet enabled on the Mainnet.</td>
+<td align="left">A preview of coming attractions, where unstable changes to the core XAG Ledger software may be tested out. Developers can use this altnet to interact with and learn about planned new XAGL features and amendments that are not yet enabled on the Mainnet.</td>
 </tr>
 </tbody>
 </table>
-<p>Testnet and Devnet each have their own separate supply of test XRP, which Ripple <a href="xrp-testnet-faucet.html">gives away for free</a> to parties interested in experimenting with the XRP Ledger and developing applications and integrations. Test XRP does not have real-world value and is lost when the network is reset.</p>
+<p>Testnet and Devnet each have their own separate supply of test XAG, which Ripple <a href="xrp-testnet-faucet.html">gives away for free</a> to parties interested in experimenting with the XAG Ledger and developing applications and integrations. Test XAG does not have real-world value and is lost when the network is reset.</p>
 <p class="devportal-callout caution"><strong>Caution:</strong> Ripple makes no guarantees about the stability of altnets. These networks have been and continue to be used to test various properties of server configuration, network topology, and network performance.</p>
 <h2 id="parallel-networks-and-consensus">Parallel Networks and Consensus</h2>
 <p>There is no <code>rippled</code> setting that defines which network it uses. Instead, it uses the consensus of validators it trusts to know which ledger to accept as the truth. When different consensus groups of <code>rippled</code> instances only trust other members of the same group, each group continues as a parallel network. Even if malicious or misbehaving computers connect to both networks, the consensus process overrides the confusion as long as the members of each network are not configured to trust members of another network in excess of their quorum settings.</p>
@@ -149,7 +149,7 @@
 <h2 id="see-also">See Also</h2>
 <ul>
 <li><strong>Tools:</strong><ul>
-<li><a href="xrp-test-net-faucet.html">XRP Testnet Faucet</a></li>
+<li><a href="xrp-test-net-faucet.html">XAG Testnet Faucet</a></li>
 </ul>
 </li>
 <li><strong>Concepts:</strong><ul>
@@ -158,7 +158,7 @@
 </ul>
 </li>
 <li><strong>Tutorials:</strong><ul>
-<li><a href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your <code>rippled</code> to the XRP Testnet</a></li>
+<li><a href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your <code>rippled</code> to the XAG Testnet</a></li>
 <li><a href="use-stand-alone-mode.html">Use rippled in Stand-Alone Mode</a></li>
 </ul>
 </li>
@@ -207,9 +207,9 @@
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -436,7 +436,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

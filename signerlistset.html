@@ -177,7 +177,7 @@
 <p>You cannot create a SignerList such that the SignerQuorum could never be met. The SignerQuorum must be greater than 0 but less than or equal to the sum of the <code>SignerWeight</code> values in the list. Otherwise, the transaction fails with the error <a href="tem-codes.html">temMALFORMED</a>.</p>
 <p>You can create, update, or remove a SignerList using the master key, regular key, or the current SignerList, if those methods of signing transactions are available.</p>
 <p>You cannot remove the last method of signing transactions from an account. If an account's master key is disabled (it has the <a href="accountroot.html#accountroot-flags"><code>lsfDisableMaster</code> flag</a> enabled) and the account does not have a <a href="cryptographic-keys.html">Regular Key</a> configured, then you cannot delete the SignerList from the account. Instead, the transaction fails with the error <a href="tec-codes.html"><code>tecNO_ALTERNATIVE_KEY</code></a>.</p>
-<p>With the <a href="known-amendments.html#multisignreserve">MultiSignReserve amendment</a> enabled, creating or replacing a SignerList enables the lsfOneOwnerCount flag on the SignerList object. When this flag is enabled, the XRP Ledger is able to lower the <a href="accountroot.html#accountroot-fields"><code>OwnerCount</code></a> and <a href="reserves.html#owner-reserves">owner reserve</a> for a SignerList as provided by the MultiSignReserve amendment. For more information, see <a href="signerlist.html#signerlist-flags">SignerList Flag</a>.</p>
+<p>With the <a href="known-amendments.html#multisignreserve">MultiSignReserve amendment</a> enabled, creating or replacing a SignerList enables the lsfOneOwnerCount flag on the SignerList object. When this flag is enabled, the XAG Ledger is able to lower the <a href="accountroot.html#accountroot-fields"><code>OwnerCount</code></a> and <a href="reserves.html#owner-reserves">owner reserve</a> for a SignerList as provided by the MultiSignReserve amendment. For more information, see <a href="signerlist.html#signerlist-flags">SignerList Flag</a>.</p>
 <!-- -->
 <!-- -->
 <!-- API object types -->
@@ -340,7 +340,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

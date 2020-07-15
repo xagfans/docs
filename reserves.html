@@ -117,14 +117,14 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="reserves">Reserves</h1>
-<p>The XRP Ledger applies <em>reserve requirements</em>, in XRP, to protect the shared global ledger from growing excessively large as the result of spam or malicious usage. The goal is to constrain the growth of the ledger to match improvements in technology so that a current commodity-level machine can always fit the current ledger in RAM and the full ledger history on disk.</p>
-<p>To submit transactions, an address must hold a minimum amount of XRP in the shared global ledger. You cannot send this XRP to other addresses. To fund a new address, you must send enough XRP to meet the reserve requirement.</p>
-<p>The current minimum reserve requirement is <strong>20 XRP</strong>. (This is the cost of an address that owns no other objects in the ledger.) Each new <a href="accounts.html">account</a> must set aside this much XRP, which cannot be recovered or sent to others.</p>
+<p>The XAG Ledger applies <em>reserve requirements</em>, in XAG, to protect the shared global ledger from growing excessively large as the result of spam or malicious usage. The goal is to constrain the growth of the ledger to match improvements in technology so that a current commodity-level machine can always fit the current ledger in RAM and the full ledger history on disk.</p>
+<p>To submit transactions, an address must hold a minimum amount of XAG in the shared global ledger. You cannot send this XAG to other addresses. To fund a new address, you must send enough XAG to meet the reserve requirement.</p>
+<p>The current minimum reserve requirement is <strong>20 XAG</strong>. (This is the cost of an address that owns no other objects in the ledger.) Each new <a href="accounts.html">account</a> must set aside this much XAG, which cannot be recovered or sent to others.</p>
 <h2 id="base-reserve-and-owner-reserve">Base Reserve and Owner Reserve</h2>
 <p>The reserve requirement is divided into two parts:</p>
 <ul>
-<li>The <strong>Base Reserve</strong> is a minimum amount of XRP that is required for every address in the ledger. Currently, this is 20 XRP (<code>20000000</code> drops).</li>
-<li>The <strong>Owner Reserve</strong> is an increase to the reserve requirement for each object that the address owns in the ledger. Currently, this is 5 XRP (<code>5000000</code> drops) per item.</li>
+<li>The <strong>Base Reserve</strong> is a minimum amount of XAG that is required for every address in the ledger. Currently, this is 20 XAG (<code>20000000</code> drops).</li>
+<li>The <strong>Owner Reserve</strong> is an increase to the reserve requirement for each object that the address owns in the ledger. Currently, this is 5 XAG (<code>5000000</code> drops) per item.</li>
 </ul>
 <h3 id="owner-reserves">Owner Reserves</h3>
 <p>Many objects in the ledger are owned by a particular address, and count toward the reserve requirement of that address. When objects are removed from the ledger, they no longer count against their owner's reserve requirement.</p>
@@ -138,13 +138,13 @@
 <li><a href="checks.html">Checks</a> are owned by the address that created them (the sender, not the destination).</li>
 </ul>
 <h4 id="owner-reserve-edge-cases">Owner Reserve Edge Cases</h4>
-<p>The XRP Ledger considers an <a href="offercreate.html">OfferCreate transaction</a> to be an explicit statement of willingness to hold an asset. Consuming the offer automatically creates a trust line (with limit 0, and a balance above that limit) for the <code>taker_pays</code> currency if such a trust line does not exist. However, if the offer's owner does not hold enough XRP to also meet the owner reserve requirement of the new trust line, the offer is considered unfunded. See also: <a href="offers.html#lifecycle-of-an-offer">Lifecycle of an Offer</a>.</p>
+<p>The XAG Ledger considers an <a href="offercreate.html">OfferCreate transaction</a> to be an explicit statement of willingness to hold an asset. Consuming the offer automatically creates a trust line (with limit 0, and a balance above that limit) for the <code>taker_pays</code> currency if such a trust line does not exist. However, if the offer's owner does not hold enough XAG to also meet the owner reserve requirement of the new trust line, the offer is considered unfunded. See also: <a href="offers.html#lifecycle-of-an-offer">Lifecycle of an Offer</a>.</p>
 <h2 id="going-below-the-reserve-requirement">Going Below the Reserve Requirement</h2>
-<p>During transaction processing, the <a href="transaction-cost.html">transaction cost</a> destroys some of the sending address's XRP balance. This can cause an address's XRP to go below the reserve requirement.</p>
-<p>When an address holds less XRP than its current reserve requirement, it cannot send new transactions that would transfer XRP to others, or increase its own reserve. Even so, the address continues to exist in the ledger and can send other transactions as long as it has enough XRP to pay the transaction cost. The address can become able to send all types of transactions again if it receives enough XRP to meet its reserve requirement again, or if the <a href="#changing-the-reserve-requirements">reserve requirement decreases</a> to less than the address's XRP holdings.</p>
-<p class="devportal-callout tip"><strong>Tip:</strong> When an address is below the reserve requirement, it can send new <a href="offercreate.html">OfferCreate transactions</a> to acquire more XRP, or other currencies on its existing trust lines. These transactions cannot create new <a href="ripplestate.html">trust lines</a>, or <a href="offer.html">Offer nodes in the ledger</a>, so they can only execute trades that consume Offers that are already in the order books.</p>
+<p>During transaction processing, the <a href="transaction-cost.html">transaction cost</a> destroys some of the sending address's XAG balance. This can cause an address's XAG to go below the reserve requirement.</p>
+<p>When an address holds less XAG than its current reserve requirement, it cannot send new transactions that would transfer XAG to others, or increase its own reserve. Even so, the address continues to exist in the ledger and can send other transactions as long as it has enough XAG to pay the transaction cost. The address can become able to send all types of transactions again if it receives enough XAG to meet its reserve requirement again, or if the <a href="#changing-the-reserve-requirements">reserve requirement decreases</a> to less than the address's XAG holdings.</p>
+<p class="devportal-callout tip"><strong>Tip:</strong> When an address is below the reserve requirement, it can send new <a href="offercreate.html">OfferCreate transactions</a> to acquire more XAG, or other currencies on its existing trust lines. These transactions cannot create new <a href="ripplestate.html">trust lines</a>, or <a href="offer.html">Offer nodes in the ledger</a>, so they can only execute trades that consume Offers that are already in the order books.</p>
 <h2 id="changing-the-reserve-requirements">Changing the Reserve Requirements</h2>
-<p>The XRP Ledger has a mechanism to adjust the reserve requirements for long-term changes in the value of XRP. Any changes have to be approved by the consensus process. See <a href="fee-voting.html">Fee Voting</a> for more information.</p>
+<p>The XAG Ledger has a mechanism to adjust the reserve requirements for long-term changes in the value of XAG. Any changes have to be approved by the consensus process. See <a href="fee-voting.html">Fee Voting</a> for more information.</p>
 <h2 id="see-also">See Also</h2>
 <ul>
 <li><a href="account_objects.html">account_objects method</a></li>
@@ -188,9 +188,9 @@
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -417,7 +417,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

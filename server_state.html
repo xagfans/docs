@@ -117,7 +117,7 @@
     <div class="content">
         <h1 id="server_state">server_state</h1>
 <p><a class="external-link" href="https://github.com/ripple/rippled/blob/master/src/ripple/rpc/handlers/ServerState.cpp" target="_blank" title="Source">[Source] <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
-<p>The <code>server_state</code> command asks the server for various machine-readable information about the <code>rippled</code> server's current state. The response is almost the same as the <a href="server_info.html">server_info method</a>, but uses units that are easier to process instead of easier to read. (For example, XRP values are given in integer drops instead of scientific notation or decimal values, and time is given in milliseconds instead of seconds.)</p>
+<p>The <code>server_state</code> command asks the server for various machine-readable information about the <code>rippled</code> server's current state. The response is almost the same as the <a href="server_info.html">server_info method</a>, but uses units that are easier to process instead of easier to read. (For example, XAG values are given in integer drops instead of scientific notation or decimal values, and time is given in milliseconds instead of seconds.)</p>
 <h2 id="request-format">Request Format</h2>
 <p>An example of the request format:</p>
 <div class="multicode" id="code-0"><ul class="codetabs"><li><a href="#code-0-0">WebSocket</a></li><li><a href="#code-0-1">JSON-RPC</a></li><li><a href="#code-0-2">Commandline</a></li></ul>
@@ -646,7 +646,7 @@ rippled server_state
 <tr>
 <td align="left"><code>jq_trans_overflow</code></td>
 <td align="left">String - Number</td>
-<td align="left">The number of times this server has had over 250 transactions waiting to be processed at once. A large number here may mean that your server is unable to handle the transaction load of the XRP Ledger network. For detailed recommendations of future-proof server specifications, see <a href="capacity-planning.html">Capacity Planning</a>. <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/0.90.0" target="_blank" title="New in: rippled 0.90.0"><img alt="New in: rippled 0.90.0" class="dactyl_badge" src="https://img.shields.io/badge/New%20in-rippled%200.90.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
+<td align="left">The number of times this server has had over 250 transactions waiting to be processed at once. A large number here may mean that your server is unable to handle the transaction load of the XAG Ledger network. For detailed recommendations of future-proof server specifications, see <a href="capacity-planning.html">Capacity Planning</a>. <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/0.90.0" target="_blank" title="New in: rippled 0.90.0"><img alt="New in: rippled 0.90.0" class="dactyl_badge" src="https://img.shields.io/badge/New%20in-rippled%200.90.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></td>
 </tr>
 <tr>
 <td align="left"><code>load</code></td>
@@ -751,7 +751,7 @@ rippled server_state
 <tr>
 <td align="left"><code>validated_ledger.base_fee</code></td>
 <td align="left">Number</td>
-<td align="left">Base fee, in drops of XRP, for propagating a transaction to the network.</td>
+<td align="left">Base fee, in drops of XAG, for propagating a transaction to the network.</td>
 </tr>
 <tr>
 <td align="left"><code>validated_ledger.close_time</code></td>
@@ -996,14 +996,14 @@ rippled server_state
 
                             <li><a class="subpage" href="accountroot.html">AccountRoot</a></li>
                             <li><a class="subpage" href="amendments-object.html">Amendments</a></li>
-                            <li><a class="subpage" href="check.html">Check</a></li>
+                            
                             <li><a class="subpage" href="depositpreauth-object.html">DepositPreauth</a></li>
                             <li><a class="subpage" href="directorynode.html">DirectoryNode</a></li>
-                            <li><a class="subpage" href="escrow-object.html">Escrow</a></li>
+                            
                             <li><a class="subpage" href="feesettings.html">FeeSettings</a></li>
                             <li><a class="subpage" href="ledgerhashes.html">LedgerHashes</a></li>
                             <li><a class="subpage" href="offer.html">Offer</a></li>
-                            <li><a class="subpage" href="paychannel.html">PayChannel</a></li>
+                           
                             <li><a class="subpage" href="ripplestate.html">RippleState</a></li>
                             <li><a class="subpage" href="signerlist.html">SignerList</a></li>
 
@@ -1067,54 +1067,7 @@ rippled server_state
               </div><!-- /#sidenav_collapse18 -->
 
             </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_19">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="commandline-usage.html">rippled Commandline Usage Reference</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_19" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_19">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse19 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_20">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="peer-crawler.html">Peer Crawler</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse20 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_21">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="validator-list.html">Validator List Method</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_21" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_21">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse21 -->
-
-            </div><!-- /.panel -->
+            <!-- /.panel -->
     </div><!-- /#sidenav -->
 
 </div><!-- /.tree_nav -->      </aside>
@@ -1159,7 +1112,7 @@ rippled server_state
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

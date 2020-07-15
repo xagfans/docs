@@ -121,7 +121,7 @@
 <p>See the following pages for some common categories of problems, their causes, and fixes:</p>
 <ul>
 <li>If your server does not start (such as crashing or otherwise shutting down automatically), see <strong><a href="server-wont-start.html">rippled Server Won't Start</a></strong>.</li>
-<li>If your server starts, but does not reliably sync or remain synced to the XRP Ledger network, see <strong><a href="server-doesnt-sync.html">rippled Server Doesn't Sync</a></strong>.</li>
+<li>If your server starts, but does not reliably sync or remain synced to the XAG Ledger network, see <strong><a href="server-doesnt-sync.html">rippled Server Doesn't Sync</a></strong>.</li>
 </ul>
 <p>The remainder of this document suggests steps for diagnosing problems that happen while your server is up and running (including if the process is active but unable to sync with the network).</p>
 <h2 id="get-the-server_info">Get the server_info</h2>
@@ -201,7 +201,7 @@ g2.xrpgen.com 51235
 <p><strong><code>amendment_blocked</code></strong> - This field is normally omitted from the <code>server_info</code> response. If this field appears with the value <code>true</code>, then the network has approved an <a href="amendments.html">amendment</a> for which your server doesn't have an implementation. Most likely, you can fix this by <a href="install-rippled.html">updating rippled</a> to the latest version. You can also use the <a href="feature.html">feature method</a> to see what amendment IDs are currently enabled and which one(s) your server does and does not support.</p>
 </li>
 <li>
-<p><strong><code>peers</code></strong> - This field indicates how many other servers in the XRP Ledger peer-to-peer network your server is connected to. Healthy servers typically show between 5 and 50 peers, unless explicitly configured to connect only to certain peers.</p>
+<p><strong><code>peers</code></strong> - This field indicates how many other servers in the XAG Ledger peer-to-peer network your server is connected to. Healthy servers typically show between 5 and 50 peers, unless explicitly configured to connect only to certain peers.</p>
 <ul>
 <li>
 <p>If you have 0 peers, your server may be unable to contact the network, or your system clock may be wrong. (Ripple recommends running an <a class="external-link" href="http://www.ntp.org/" target="_blank">NTP <i aria-hidden="true" class="fa fa-external-link"></i></a> daemon on all servers to keep their clocks synced.)</p>
@@ -323,7 +323,7 @@ g2.xrpgen.com 51235
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XRP Ledger APIs</a></li>
+                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XAG Ledger APIs</a></li>
                       <li><a class="nosubcat-page" href="set-up-secure-signing.html">Set Up Secure Signing</a></li>
                       <li><a class="nosubcat-page" href="get-started-with-rippleapi-for-javascript.html">Get Started with RippleAPI for JavaScript</a></li>
                       <li><a class="nosubcat-page" href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
@@ -341,14 +341,14 @@ g2.xrpgen.com 51235
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_8" aria-expanded="true" aria-controls="sidenav_collapse_8"></a>
               <h5 class="card-title">
                   <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Direct XAG Payments</a>
-                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XRP Payments</a> -->
+                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XAG Payments</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_8" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_8">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="send-xrp.html">Send XRP</a></li>
+                      <li><a class="nosubcat-page" href="send-xrp.html">Send XAG</a></li>
                       <li><a class="nosubcat-page" href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
 
                 </ul>
@@ -426,17 +426,17 @@ g2.xrpgen.com 51235
             <div class="card-header" role="tab" id="sidenav_cat_head_35">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_35" aria-expanded="true" aria-controls="sidenav_collapse_35"></a>
               <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a>
-                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a> -->
+                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XAG Ledger Businesses</a>
+                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XAG Ledger Businesses</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_35" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_35">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XRP as an Exchange</a></li>
-                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XRP Charts</a></li>
-                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XRP Ledger Gateway</a></li>
+                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XAG as an Exchange</a></li>
+                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XAG Charts</a></li>
+                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XAG Ledger Gateway</a></li>
 
                 </ul>
               </div><!-- /.card-body -->
@@ -475,7 +475,7 @@ g2.xrpgen.com 51235
                           <li><a class="subpage" href="run-rippled-as-a-validator.html">Run rippled as a Validator</a></li>
                           <li><a class="subpage" href="run-rippled-as-a-wallet-server.html">Run rippled as a Wallet Server</a></li>
                           <li><a class="subpage" href="configure-statsd.html">Configure StatsD</a></li>
-                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XRPL Altnet</a></li>
+                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XAGL Altnet</a></li>
                           <li><a class="subpage" href="configure-online-deletion.html">Configure Online Deletion</a></li>
                           <li><a class="subpage" href="configure-advisory-deletion.html">Configure Advisory Deletion</a></li>
                           <li><a class="subpage" href="configure-history-sharding.html">Configure History Sharding</a></li>
@@ -557,7 +557,7 @@ g2.xrpgen.com 51235
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

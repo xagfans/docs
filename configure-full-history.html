@@ -115,12 +115,12 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="configure-full-history">Configure Full History</h1>
-<p>In its default configuration, the <code>rippled</code> server automatically deletes outdated history of XRP Ledger state and transactions as new ledger versions become available. This is sufficient for most servers, which do not need older history to know the current state and process transactions. However, it can be useful for the network if some servers provide as much history of the XRP Ledger as possible.</p>
+<p>In its default configuration, the <code>rippled</code> server automatically deletes outdated history of XAG Ledger state and transactions as new ledger versions become available. This is sufficient for most servers, which do not need older history to know the current state and process transactions. However, it can be useful for the network if some servers provide as much history of the XAG Ledger as possible.</p>
 <h2 id="warnings">Warnings</h2>
-<p>Storing full history is expensive. As of 2018-12-11, the full history of the XRP Ledger occupies approximately <strong>9 terabytes</strong> of disk space, which must be entirely stored on fast solid state disk drives for proper server performance. Such a large amount of solid state storage is not cheap, and the total amount of history you must store increases by approximately 12 GB per day.</p>
+<p>Storing full history is expensive. As of 2018-12-11, the full history of the XAG Ledger occupies approximately <strong>9 terabytes</strong> of disk space, which must be entirely stored on fast solid state disk drives for proper server performance. Such a large amount of solid state storage is not cheap, and the total amount of history you must store increases by approximately 12 GB per day.</p>
 <p>Acquiring full history from the peer-to-peer network takes a long time (several months) and requires that your server has sufficient system and network resources to acquire older history while keeping up with new ledger progress. To get a faster start on acquiring ledger history, you may want to find another server operator who has a large amount of history already downloaded, who can give you a database dump or at least allow your server to explicitly peer with theirs for a long time to acquire history. The server can load ledger history from a file and verify the integrity of the historical ledgers it imports.</p>
 <p>You do not need a full history server to participate in the network, validate transactions, or know the current state of the network. Full history is only useful for knowing the outcome of transactions that occurred in the past, or the state of the ledger at a given time in the past. To get such information, you must rely on other servers having the history you need.</p>
-<p>If you want to contribute to storing the history of the XRP Ledger network without storing the full history, you can <a href="configure-history-sharding.html">configure history sharding</a> to store randomly-selected chunks of ledger history instead.</p>
+<p>If you want to contribute to storing the history of the XAG Ledger network without storing the full history, you can <a href="configure-history-sharding.html">configure history sharding</a> to store randomly-selected chunks of ledger history instead.</p>
 <h2 id="configuration-steps">Configuration Steps</h2>
 <p>To configure your server to acquire and store full history, complete the following steps:</p>
 <ol>
@@ -187,7 +187,7 @@ path=/tmp/full_history_dump/
 <li>
 <p>Monitor your server's available history with the <a href="server_info.html">server_info method</a>.</p>
 <p>The range of available ledgers reported in the <code>complete_ledgers</code> field should increase over time.</p>
-<p>The earliest available ledger version in the production XRP Ledger's history is ledger index <strong>32570</strong>. The first two weeks or so of ledger history was lost due to a bug in the server at the time. <a href="parallel-networks.html">Test nets and other chains</a> generally have history going back to ledger index <strong>1</strong>.</p>
+<p>The earliest available ledger version in the production XAG Ledger's history is ledger index <strong>32570</strong>. The first two weeks or so of ledger history was lost due to a bug in the server at the time. <a href="parallel-networks.html">Test nets and other chains</a> generally have history going back to ledger index <strong>1</strong>.</p>
 </li>
 </ol>
 <h2 id="see-also">See Also</h2>
@@ -249,7 +249,7 @@ path=/tmp/full_history_dump/
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XRP Ledger APIs</a></li>
+                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XAG Ledger APIs</a></li>
                       <li><a class="nosubcat-page" href="set-up-secure-signing.html">Set Up Secure Signing</a></li>
                       <li><a class="nosubcat-page" href="get-started-with-rippleapi-for-javascript.html">Get Started with RippleAPI for JavaScript</a></li>
                       <li><a class="nosubcat-page" href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
@@ -267,14 +267,14 @@ path=/tmp/full_history_dump/
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_8" aria-expanded="true" aria-controls="sidenav_collapse_8"></a>
               <h5 class="card-title">
                   <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Direct XAG Payments</a>
-                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XRP Payments</a> -->
+                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XAG Payments</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_8" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_8">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="send-xrp.html">Send XRP</a></li>
+                      <li><a class="nosubcat-page" href="send-xrp.html">Send XAG</a></li>
                       <li><a class="nosubcat-page" href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
 
                 </ul>
@@ -352,17 +352,17 @@ path=/tmp/full_history_dump/
             <div class="card-header" role="tab" id="sidenav_cat_head_35">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_35" aria-expanded="true" aria-controls="sidenav_collapse_35"></a>
               <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a>
-                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a> -->
+                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XAG Ledger Businesses</a>
+                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XAG Ledger Businesses</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_35" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_35">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XRP as an Exchange</a></li>
-                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XRP Charts</a></li>
-                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XRP Ledger Gateway</a></li>
+                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XAG as an Exchange</a></li>
+                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XAG Charts</a></li>
+                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XAG Ledger Gateway</a></li>
 
                 </ul>
               </div><!-- /.card-body -->
@@ -401,7 +401,7 @@ path=/tmp/full_history_dump/
                           <li><a class="subpage" href="run-rippled-as-a-validator.html">Run rippled as a Validator</a></li>
                           <li><a class="subpage" href="run-rippled-as-a-wallet-server.html">Run rippled as a Wallet Server</a></li>
                           <li><a class="subpage" href="configure-statsd.html">Configure StatsD</a></li>
-                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XRPL Altnet</a></li>
+                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XAGL Altnet</a></li>
                           <li><a class="subpage" href="configure-online-deletion.html">Configure Online Deletion</a></li>
                           <li><a class="subpage" href="configure-advisory-deletion.html">Configure Advisory Deletion</a></li>
                           <li><a class="subpage" href="configure-history-sharding.html">Configure History Sharding</a></li>
@@ -483,7 +483,7 @@ path=/tmp/full_history_dump/
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

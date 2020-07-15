@@ -136,7 +136,7 @@ console.log(release_date_ripple);
 </div>
 <p class="devportal-callout warning"><strong>Warning:</strong> If you use a UNIX time in the <code>FinishAfter</code> field without converting to the equivalent Ripple time first, that sets the unlock time to an extra <strong>30 years</strong> in the future!</p>
 <h2 id="2-submit-escrowcreate-transaction">2. Submit EscrowCreate transaction</h2>
-<p><a href="transaction-basics.html#signing-and-submitting-transactions">Sign and submit</a> an <a href="escrowcreate.html">EscrowCreate transaction</a>. Set the <code>FinishAfter</code> field of the transaction to the time when the held payment should be released. Omit the <code>Condition</code> field to make time the only condition for releasing the held payment. Set the <code>Destination</code> to the recipient, which may be the same address as the sender. Set the <code>Amount</code> to the total amount of <a href="basic-data-types.html#specifying-currency-amounts">XRP, in drops</a>, to escrow.</p>
+<p><a href="transaction-basics.html#signing-and-submitting-transactions">Sign and submit</a> an <a href="escrowcreate.html">EscrowCreate transaction</a>. Set the <code>FinishAfter</code> field of the transaction to the time when the held payment should be released. Omit the <code>Condition</code> field to make time the only condition for releasing the held payment. Set the <code>Destination</code> to the recipient, which may be the same address as the sender. Set the <code>Amount</code> to the total amount of <a href="basic-data-types.html#specifying-currency-amounts">XAG, in drops</a>, to escrow.</p>
 <p class="devportal-callout caution"><strong>Caution:</strong> Never submit a secret key to a server you do not control. Do not send a secret key unencrypted over the network. <!--#{ fix md highlighting_ #}--></p>
 <p>Request:</p>
 <div class="multicode" id="code-1"><ul class="codetabs"><li><a href="#code-1-0">Websocket</a></li></ul>
@@ -331,7 +331,7 @@ console.log(release_date_ripple);
 </div>
 <h2 id="6-submit-escrowfinish-transaction">6. Submit EscrowFinish transaction</h2>
 <p><a href="transaction-basics.html#signing-and-submitting-transactions">Sign and submit</a> an <a href="escrowfinish.html">EscrowFinish transaction</a> to execute the release of the funds after the <code>FinishAfter</code> time has passed. Set the <code>Owner</code> field of the transaction to the <code>Account</code> address from the EscrowCreate transaction, and the <code>OfferSequence</code> to the <code>Sequence</code> number from the EscrowCreate transaction. For an escrow held only by time, omit the <code>Condition</code> and <code>Fulfillment</code> fields.</p>
-<p class="devportal-callout tip"><strong>Tip:</strong> The EscrowFinish transaction is necessary because the XRP Ledger's state can only be modified by transactions. The sender of this transaction may be the recipient of the escrow, the original sender of the escrow, or any other XRP Ledger address.</p>
+<p class="devportal-callout tip"><strong>Tip:</strong> The EscrowFinish transaction is necessary because the XAG Ledger's state can only be modified by transactions. The sender of this transaction may be the recipient of the escrow, the original sender of the escrow, or any other XAG Ledger address.</p>
 <p>If the escrow has expired, you can only <a href="cancel-an-expired-escrow.html">cancel the escrow</a> instead.</p>
 <p class="devportal-callout caution"><strong>Caution:</strong> Never submit a secret key to a server you do not control. Do not send a secret key unencrypted over the network. <!--#{ fix md highlighting_ #}--></p>
 <p>Request:</p>
@@ -383,7 +383,7 @@ console.log(release_date_ripple);
 <p>On the live network or the Ripple Test Net, you can wait 4-7 seconds for the ledger to close automatically.</p>
 <p>If you're running <code>rippled</code> in stand-alone mode, use the <a href="ledger_accept.html">ledger_accept method</a> to manually close the ledger. <!--#{ fix md highlighting_ #}--></p>
 <h2 id="8-confirm-final-result">8. Confirm final result</h2>
-<p>Use the <a href="tx.html">tx method</a> with the EscrowFinish transaction's identifying hash to check its final status. In particular, look in the transaction metadata for a <code>ModifiedNode</code> of type <code>AccountRoot</code> for the destination of the escrowed payment. The <code>FinalFields</code> of the object should show the increase in XRP in the <code>Balance</code> field.</p>
+<p>Use the <a href="tx.html">tx method</a> with the EscrowFinish transaction's identifying hash to check its final status. In particular, look in the transaction metadata for a <code>ModifiedNode</code> of type <code>AccountRoot</code> for the destination of the escrowed payment. The <code>FinalFields</code> of the object should show the increase in XAG in the <code>Balance</code> field.</p>
 <p>Request:</p>
 <div class="multicode" id="code-9"><ul class="codetabs"><li><a href="#code-9-0">Websocket</a></li></ul>
 
@@ -494,7 +494,7 @@ console.log(release_date_ripple);
 <h2 id="see-also">See Also</h2>
 <ul>
 <li><strong>Concepts:</strong><ul>
-<li><a href="xag.html">XRP</a></li>
+<li><a href="xag.html">XAG</a></li>
 <li><a href="payment-types.html">Payment Types</a><ul>
 <li><a href="escrow.html">Escrow</a></li>
 </ul>
@@ -502,7 +502,7 @@ console.log(release_date_ripple);
 </ul>
 </li>
 <li><strong>Tutorials:</strong><ul>
-<li><a href="send-xrp.html">Send XRP</a></li>
+<li><a href="send-xrp.html">Send XAG</a></li>
 <li><a href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
 <li><a href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
 </ul>
@@ -553,7 +553,7 @@ console.log(release_date_ripple);
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XRP Ledger APIs</a></li>
+                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XAG Ledger APIs</a></li>
                       <li><a class="nosubcat-page" href="set-up-secure-signing.html">Set Up Secure Signing</a></li>
                       <li><a class="nosubcat-page" href="get-started-with-rippleapi-for-javascript.html">Get Started with RippleAPI for JavaScript</a></li>
                       <li><a class="nosubcat-page" href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
@@ -571,14 +571,14 @@ console.log(release_date_ripple);
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_8" aria-expanded="true" aria-controls="sidenav_collapse_8"></a>
               <h5 class="card-title">
                   <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Direct XAG Payments</a>
-                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XRP Payments</a> -->
+                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XAG Payments</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_8" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_8">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="send-xrp.html">Send XRP</a></li>
+                      <li><a class="nosubcat-page" href="send-xrp.html">Send XAG</a></li>
                       <li><a class="nosubcat-page" href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
 
                 </ul>
@@ -656,17 +656,17 @@ console.log(release_date_ripple);
             <div class="card-header" role="tab" id="sidenav_cat_head_35">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_35" aria-expanded="true" aria-controls="sidenav_collapse_35"></a>
               <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a>
-                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a> -->
+                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XAG Ledger Businesses</a>
+                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XAG Ledger Businesses</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_35" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_35">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XRP as an Exchange</a></li>
-                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XRP Charts</a></li>
-                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XRP Ledger Gateway</a></li>
+                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XAG as an Exchange</a></li>
+                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XAG Charts</a></li>
+                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XAG Ledger Gateway</a></li>
 
                 </ul>
               </div><!-- /.card-body -->
@@ -705,7 +705,7 @@ console.log(release_date_ripple);
                           <li><a class="subpage" href="run-rippled-as-a-validator.html">Run rippled as a Validator</a></li>
                           <li><a class="subpage" href="run-rippled-as-a-wallet-server.html">Run rippled as a Wallet Server</a></li>
                           <li><a class="subpage" href="configure-statsd.html">Configure StatsD</a></li>
-                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XRPL Altnet</a></li>
+                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XAGL Altnet</a></li>
                           <li><a class="subpage" href="configure-online-deletion.html">Configure Online Deletion</a></li>
                           <li><a class="subpage" href="configure-advisory-deletion.html">Configure Advisory Deletion</a></li>
                           <li><a class="subpage" href="configure-history-sharding.html">Configure History Sharding</a></li>
@@ -787,7 +787,7 @@ console.log(release_date_ripple);
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

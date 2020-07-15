@@ -152,7 +152,7 @@
 <td align="left"><code>BaseFee</code></td>
 <td align="left">String</td>
 <td align="left">UInt64</td>
-<td align="left">The <a href="transaction-cost.html">transaction cost</a> of the "reference transaction" in drops of XRP as hexadecimal.</td>
+<td align="left">The <a href="transaction-cost.html">transaction cost</a> of the "reference transaction" in drops of XAG as hexadecimal.</td>
 </tr>
 <tr>
 <td align="left"><code>ReferenceFeeUnits</code></td>
@@ -164,13 +164,13 @@
 <td align="left"><code>ReserveBase</code></td>
 <td align="left">Number</td>
 <td align="left">UInt32</td>
-<td align="left">The <a href="reserves.html#base-reserve-and-owner-reserve">base reserve</a> for an account in the XRP Ledger, as drops of XRP.</td>
+<td align="left">The <a href="reserves.html#base-reserve-and-owner-reserve">base reserve</a> for an account in the XAG Ledger, as drops of XAG.</td>
 </tr>
 <tr>
 <td align="left"><code>ReserveIncrement</code></td>
 <td align="left">Number</td>
 <td align="left">UInt32</td>
-<td align="left">The incremental <a href="reserves.html#base-reserve-and-owner-reserve">owner reserve</a> for owning objects, as drops of XRP.</td>
+<td align="left">The incremental <a href="reserves.html#base-reserve-and-owner-reserve">owner reserve</a> for owning objects, as drops of XAG.</td>
 </tr>
 <tr>
 <td align="left"><code>Flags</code></td>
@@ -180,7 +180,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Warning:*<em> The JSON format for this ledger object type is unusual. The <code>BaseFee</code>, <code>ReserveBase</code>, and <code>ReserveIncrement</code> indicate drops of XRP but </em></strong>not*** in the usual format for <a href="basic-data-types.html#specifying-currency-amounts">specifying XRP</a>.</p>
+<p><strong>Warning:*<em> The JSON format for this ledger object type is unusual. The <code>BaseFee</code>, <code>ReserveBase</code>, and <code>ReserveIncrement</code> indicate drops of XAG but </em></strong>not*** in the usual format for <a href="basic-data-types.html#specifying-currency-amounts">specifying XAG</a>.</p>
 <h2 id="feesettings-id-format">FeeSettings ID Format</h2>
 <p>The <code>FeeSettings</code> object ID is the hash of the <code>FeeSettings</code> space key (<code>0x0065</code>) only. This means that the ID of the <code>FeeSettings</code> object in a ledger is always:</p>
 <pre><code>4BC50C9B0D8515D3EAAE1E74B29A95804346C491EE1A95BF25E4AAB854A6A651
@@ -387,14 +387,14 @@
 
                             <li><a class="subpage" href="accountroot.html">AccountRoot</a></li>
                             <li><a class="subpage" href="amendments-object.html">Amendments</a></li>
-                            <li><a class="subpage" href="check.html">Check</a></li>
+                            
                             <li><a class="subpage" href="depositpreauth-object.html">DepositPreauth</a></li>
                             <li><a class="subpage" href="directorynode.html">DirectoryNode</a></li>
-                            <li><a class="subpage" href="escrow-object.html">Escrow</a></li>
+                            
                             <li><a class="active subpage" href="#main_content_body">FeeSettings</a></li>
                             <li><a class="subpage" href="ledgerhashes.html">LedgerHashes</a></li>
                             <li><a class="subpage" href="offer.html">Offer</a></li>
-                            <li><a class="subpage" href="paychannel.html">PayChannel</a></li>
+                           
                             <li><a class="subpage" href="ripplestate.html">RippleState</a></li>
                             <li><a class="subpage" href="signerlist.html">SignerList</a></li>
 
@@ -458,54 +458,7 @@
               </div><!-- /#sidenav_collapse18 -->
 
             </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_19">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="commandline-usage.html">rippled Commandline Usage Reference</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_19" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_19">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse19 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_20">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="peer-crawler.html">Peer Crawler</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse20 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_21">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="validator-list.html">Validator List Method</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_21" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_21">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse21 -->
-
-            </div><!-- /.panel -->
+            <!-- /.panel -->
     </div><!-- /#sidenav -->
 
 </div><!-- /.tree_nav -->      </aside>
@@ -550,7 +503,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

@@ -144,7 +144,7 @@
 <td align="left">BaseFee</td>
 <td align="left">String</td>
 <td align="left">UInt64</td>
-<td align="left">The charge, in drops of XRP, for the reference transaction, as hex. (This is the <a href="transaction-cost.html">transaction cost</a> before scaling for load.)</td>
+<td align="left">The charge, in drops of XAG, for the reference transaction, as hex. (This is the <a href="transaction-cost.html">transaction cost</a> before scaling for load.)</td>
 </tr>
 <tr>
 <td align="left">ReferenceFeeUnits</td>
@@ -172,7 +172,7 @@
 </tr>
 </tbody>
 </table>
-<p class="devportal-callout note"><strong>Note:</strong> In the full history of the XRP Ledger, there is an exception to the rule that transaction hashes are unique. Two early <a href="setfee.html">SetFee pseudo-transactions</a> had the exact same fields, resulting in the same hash, <code>1C15FEA3E1D50F96B6598607FC773FF1F6E0125F30160144BE0C5CBC52F5151B</code>. The first of these transactions appears <a href="websocket-api-tool.html?server=wss%3A%2F%2Fg2.xrpgen.com%2F&amp;req=%7B%22id%22%3A%22setfee_nonunique_hash_1%22%2C%22command%22%3A%22transaction_entry%22%2C%22tx_hash%22%3A%221C15FEA3E1D50F96B6598607FC773FF1F6E0125F30160144BE0C5CBC52F5151B%22%2C%22ledger_index%22%3A3715073%7D">in ledger 3715073</a> and the second is <a href="websocket-api-tool.html?server=wss%3A%2F%2Fg2.xrpgen.com%2F&amp;req=%7B%22id%22%3A%22setfee_nonunique_hash_1%22%2C%22command%22%3A%22transaction_entry%22%2C%22tx_hash%22%3A%221C15FEA3E1D50F96B6598607FC773FF1F6E0125F30160144BE0C5CBC52F5151B%22%2C%22ledger_index%22%3A3721729%7D">in ledger 3721729</a>. Newer <a href="setfee.html">SetFee pseudo-transactions</a> include a <code>LedgerSequence</code> field so that they are guaranteed to be unique.</p>
+<p class="devportal-callout note"><strong>Note:</strong> In the full history of the XAG Ledger, there is an exception to the rule that transaction hashes are unique. Two early <a href="setfee.html">SetFee pseudo-transactions</a> had the exact same fields, resulting in the same hash, <code>1C15FEA3E1D50F96B6598607FC773FF1F6E0125F30160144BE0C5CBC52F5151B</code>. The first of these transactions appears <a href="websocket-api-tool.html?server=wss%3A%2F%2Fg2.xrpgen.com%2F&amp;req=%7B%22id%22%3A%22setfee_nonunique_hash_1%22%2C%22command%22%3A%22transaction_entry%22%2C%22tx_hash%22%3A%221C15FEA3E1D50F96B6598607FC773FF1F6E0125F30160144BE0C5CBC52F5151B%22%2C%22ledger_index%22%3A3715073%7D">in ledger 3715073</a> and the second is <a href="websocket-api-tool.html?server=wss%3A%2F%2Fg2.xrpgen.com%2F&amp;req=%7B%22id%22%3A%22setfee_nonunique_hash_1%22%2C%22command%22%3A%22transaction_entry%22%2C%22tx_hash%22%3A%221C15FEA3E1D50F96B6598607FC773FF1F6E0125F30160144BE0C5CBC52F5151B%22%2C%22ledger_index%22%3A3721729%7D">in ledger 3721729</a>. Newer <a href="setfee.html">SetFee pseudo-transactions</a> include a <code>LedgerSequence</code> field so that they are guaranteed to be unique.</p>
 <!-- -->
 <!-- -->
 <!-- API object types -->
@@ -375,14 +375,14 @@
 
                             <li><a class="subpage" href="accountroot.html">AccountRoot</a></li>
                             <li><a class="subpage" href="amendments-object.html">Amendments</a></li>
-                            <li><a class="subpage" href="check.html">Check</a></li>
+                            
                             <li><a class="subpage" href="depositpreauth-object.html">DepositPreauth</a></li>
                             <li><a class="subpage" href="directorynode.html">DirectoryNode</a></li>
-                            <li><a class="subpage" href="escrow-object.html">Escrow</a></li>
+                            
                             <li><a class="subpage" href="feesettings.html">FeeSettings</a></li>
                             <li><a class="subpage" href="ledgerhashes.html">LedgerHashes</a></li>
                             <li><a class="subpage" href="offer.html">Offer</a></li>
-                            <li><a class="subpage" href="paychannel.html">PayChannel</a></li>
+                           
                             <li><a class="subpage" href="ripplestate.html">RippleState</a></li>
                             <li><a class="subpage" href="signerlist.html">SignerList</a></li>
 
@@ -446,54 +446,7 @@
               </div><!-- /#sidenav_collapse18 -->
 
             </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_19">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="commandline-usage.html">rippled Commandline Usage Reference</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_19" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_19">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse19 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_20">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="peer-crawler.html">Peer Crawler</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse20 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_21">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="validator-list.html">Validator List Method</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_21" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_21">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse21 -->
-
-            </div><!-- /.panel -->
+            <!-- /.panel -->
     </div><!-- /#sidenav -->
 
 </div><!-- /.tree_nav -->      </aside>
@@ -538,7 +491,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

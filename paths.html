@@ -118,9 +118,9 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="paths">Paths</h1>
-<p>In the XRP Ledger, paths define a way for <a href="issued-currencies-overview.html">issued currency</a> payments to flow through intermediary steps on their way from sender to receiver. Paths enable <a href="cross-currency-payments.html">cross-currency payments</a> by connecting sender and receiver through orders in the XRP Ledger's <a href="decentralized-exchange.html">decentralized exchange</a>. Paths also enable complex settlement of offsetting debts.</p>
-<p>A single Payment transaction in the XRP Ledger can use multiple paths, combining liquidity from different sources to deliver the desired amount. Thus, a transaction includes a <em>path set</em>, which is a collection of possible paths to take. The paths in a path set must start and end with the same currency.</p>
-<p>Since XRP can be sent directly to any address, an <a href="direct-xrp-payments.html">XRP-to-XRP transaction</a> does not use any paths.</p>
+<p>In the XAG Ledger, paths define a way for <a href="issued-currencies-overview.html">issued currency</a> payments to flow through intermediary steps on their way from sender to receiver. Paths enable <a href="cross-currency-payments.html">cross-currency payments</a> by connecting sender and receiver through orders in the XAG Ledger's <a href="decentralized-exchange.html">decentralized exchange</a>. Paths also enable complex settlement of offsetting debts.</p>
+<p>A single Payment transaction in the XAG Ledger can use multiple paths, combining liquidity from different sources to deliver the desired amount. Thus, a transaction includes a <em>path set</em>, which is a collection of possible paths to take. The paths in a path set must start and end with the same currency.</p>
+<p>Since XAG can be sent directly to any address, an <a href="direct-xrp-payments.html">XAG-to-XAG transaction</a> does not use any paths.</p>
 <h2 id="path-steps">Path Steps</h2>
 <p>A path is made of steps that connect the sender to the receiver of the payment. Every step is either:</p>
 <ul>
@@ -186,7 +186,7 @@
 <tr>
 <td align="left"><code>issuer</code></td>
 <td align="left">String - Address</td>
-<td align="left"><em>(Optional)</em> If present, this path step represents changing currencies and this address defines the issuer of the new currency. If omitted in a step with a non-XRP <code>currency</code>, a previous step of the path defines the issuer. If present when <code>currency</code> is omitted, indicates a path step that uses an order book between same-named currencies with different issuers. MUST be omitted if the <code>currency</code> is XRP. MUST NOT be provided if this step specifies the <code>account</code> field.</td>
+<td align="left"><em>(Optional)</em> If present, this path step represents changing currencies and this address defines the issuer of the new currency. If omitted in a step with a non-XAG <code>currency</code>, a previous step of the path defines the issuer. If present when <code>currency</code> is omitted, indicates a path step that uses an order book between same-named currencies with different issuers. MUST be omitted if the <code>currency</code> is XAG. MUST NOT be provided if this step specifies the <code>account</code> field.</td>
 </tr>
 <tr>
 <td align="left"><code>type</code></td>
@@ -204,7 +204,7 @@
 <ul>
 <li><code>account</code> by itself</li>
 <li><code>currency</code> by itself</li>
-<li><code>currency</code> and <code>issuer</code> as long as the <code>currency</code> is not XRP</li>
+<li><code>currency</code> and <code>issuer</code> as long as the <code>currency</code> is not XAG</li>
 <li><code>issuer</code> by itself</li>
 </ul>
 <p>Any other use of <code>account</code>, <code>currency</code>, and <code>issuer</code> fields in a path step is invalid.</p>
@@ -286,9 +286,9 @@
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -515,7 +515,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

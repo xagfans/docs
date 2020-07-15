@@ -114,40 +114,40 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="issued-currencies-overview">Issued Currencies Overview</h1>
-<p>All currencies other than XRP can be represented in the XRP Ledger as <strong>issued currencies</strong>. These digital assets (sometimes called "issuances" or "IOUs") are tracked in accounting relationships, called "trust lines," between addresses. Issued currencies are typically considered as liabilities from one perspective and assets from the other, so the balance of a trust line is negative or positive depending on which side you view it from. Any address may freely issue (non-XRP) currencies, limited only by how much other addresses are willing to hold.</p>
+<p>All currencies other than XAG can be represented in the XAG Ledger as <strong>issued currencies</strong>. These digital assets (sometimes called "issuances" or "IOUs") are tracked in accounting relationships, called "trust lines," between addresses. Issued currencies are typically considered as liabilities from one perspective and assets from the other, so the balance of a trust line is negative or positive depending on which side you view it from. Any address may freely issue (non-XAG) currencies, limited only by how much other addresses are willing to hold.</p>
 <p>Issued currencies can "ripple" through multiple issuers and holders if they use the same currency code. This is useful in some cases, but can cause unexpected and undesirable behavior in others. You can use the <a href="rippling.html">NoRipple flag</a> on trust lines to prevent those trust lines from rippling.</p>
-<p>Issued currencies can be traded with XRP or each other in the XRP Ledger's decentralized exchange.</p>
-<p>In the typical model, an issued currency is tied to holdings of currency or other assets outside the XRP Ledger. The issuer of the currency, called a <em>gateway</em>, handles deposits and withdrawals to exchange currency outside the XRP Ledger for equivalent balances of issued currency in the XRP Ledger. For more information on how to run a gateway, see the <a href="become-an-xrp-ledger-gateway.html">Becoming an XRP Ledger Gateway</a>.</p>
-<p>There are other use cases for issued currencies in the XRP Ledger. For example, you can create an "Initial Coin Offering" (ICO) by issuing a fixed amount of currency to a secondary address, then "throwing away the key" to the issuer.</p>
+<p>Issued currencies can be traded with XAG or each other in the XAG Ledger's decentralized exchange.</p>
+<p>In the typical model, an issued currency is tied to holdings of currency or other assets outside the XAG Ledger. The issuer of the currency, called a <em>gateway</em>, handles deposits and withdrawals to exchange currency outside the XAG Ledger for equivalent balances of issued currency in the XAG Ledger. For more information on how to run a gateway, see the <a href="become-an-xrp-ledger-gateway.html">Becoming an XAG Ledger Gateway</a>.</p>
+<p>There are other use cases for issued currencies in the XAG Ledger. For example, you can create an "Initial Coin Offering" (ICO) by issuing a fixed amount of currency to a secondary address, then "throwing away the key" to the issuer.</p>
 <p class="devportal-callout warning"><strong>Warning:</strong> ICOs may be <a class="external-link" href="https://www.sec.gov/oiea/investor-alerts-and-bulletins/ib_coinofferings" target="_blank">regulated as securities <i aria-hidden="true" class="fa fa-external-link"></i></a> in the USA.</p>
 <p>Ripple strongly recommends researching the relevant regulations before engaging in any financial service business.</p>
 <h2 id="issued-currency-usage">Issued Currency Usage</h2>
-<p>A trust line represents an explicit statement of willingness to hold gateway debt obligations. (In other words: "I'll allow you to owe me up to this much money outside the XRP Ledger.")</p>
-<p>The intended model for issued currency usage is with <em>gateways</em>, trusted financial institutions that custody outside-world assets and allow them to be used in the XRP Ledger for <a href="cross-currency-payments.html">cross-currency payments</a> and trading in the <a href="decentralized-exchange.html">decentralized exchange</a>. The flow looks something like this:</p>
+<p>A trust line represents an explicit statement of willingness to hold gateway debt obligations. (In other words: "I'll allow you to owe me up to this much money outside the XAG Ledger.")</p>
+<p>The intended model for issued currency usage is with <em>gateways</em>, trusted financial institutions that custody outside-world assets and allow them to be used in the XAG Ledger for <a href="cross-currency-payments.html">cross-currency payments</a> and trading in the <a href="decentralized-exchange.html">decentralized exchange</a>. The flow looks something like this:</p>
 <ol>
-<li>A customer sends money to a gateway. This could be fiat money, Bitcoin, or any other assets that aren't native to the XRP Ledger.</li>
+<li>A customer sends money to a gateway. This could be fiat money, Bitcoin, or any other assets that aren't native to the XAG Ledger.</li>
 <li>The gateway takes custody of the money and records it.</li>
-<li>The gateway issues a balance in the XRP Ledger, denominated in the same currency, to an address belonging to the customer.</li>
-<li>The customer uses the issued currency in the XRP Ledger however they want, such as by sending <a href="cross-currency-payments.html">cross-currency payments</a> or by trading in the <a href="decentralized-exchange.html">decentralized exchange</a>.</li>
-<li>A customer (not necessarily the one who deposited the money initially) sends the issued currency to the gateway's XRP Ledger address.</li>
-<li>The gateway confirms the identity of the customer who sent the balance in the XRP Ledger funds, and gives the corresponding amount of money <em>outside the XRP Ledger</em> to that customer.</li>
+<li>The gateway issues a balance in the XAG Ledger, denominated in the same currency, to an address belonging to the customer.</li>
+<li>The customer uses the issued currency in the XAG Ledger however they want, such as by sending <a href="cross-currency-payments.html">cross-currency payments</a> or by trading in the <a href="decentralized-exchange.html">decentralized exchange</a>.</li>
+<li>A customer (not necessarily the one who deposited the money initially) sends the issued currency to the gateway's XAG Ledger address.</li>
+<li>The gateway confirms the identity of the customer who sent the balance in the XAG Ledger funds, and gives the corresponding amount of money <em>outside the XAG Ledger</em> to that customer.</li>
 </ol>
-<p>The details of the process of sending money "into" and "out of" the XRP Ledger can vary based on the gateway, the jurisdiction, the type of assets involved, and other factors.</p>
+<p>The details of the process of sending money "into" and "out of" the XAG Ledger can vary based on the gateway, the jurisdiction, the type of assets involved, and other factors.</p>
 <h2 id="issued-currency-properties">Issued Currency Properties</h2>
-<p>All issued currencies in the XRP Ledger exist in trust lines, represented in the ledger's data as <a href="ripplestate.html">RippleState objects</a>. To create an issued currency, the issuing address sends a <a href="payment.html">Payment transaction</a> to an address which has a trust line to the issuer with a nonzero limit for that currency. (You can also create issued currency by rippling "through" such a trust line.) You can erase issued currency by sending it back to the issuer.</p>
+<p>All issued currencies in the XAG Ledger exist in trust lines, represented in the ledger's data as <a href="ripplestate.html">RippleState objects</a>. To create an issued currency, the issuing address sends a <a href="payment.html">Payment transaction</a> to an address which has a trust line to the issuer with a nonzero limit for that currency. (You can also create issued currency by rippling "through" such a trust line.) You can erase issued currency by sending it back to the issuer.</p>
 <p>The issuer of a currency can define a percentage <a href="transfer-fees.html">transfer fee</a> to deduct when two parties transact in its issued currencies.</p>
-<p>Addresses can also <a href="freezes.html">freeze</a> issued currencies, which may be useful for businesses to comply with financial regulations in their jurisdiction. If you do not need this feature and do not want to freeze currencies, you can give up your address's ability to freeze individual trust lines and to undo a global freeze. XRP cannot be frozen.</p>
+<p>Addresses can also <a href="freezes.html">freeze</a> issued currencies, which may be useful for businesses to comply with financial regulations in their jurisdiction. If you do not need this feature and do not want to freeze currencies, you can give up your address's ability to freeze individual trust lines and to undo a global freeze. XAG cannot be frozen.</p>
 <p>Issued currencies are designed to be able to represent any kind of currency or asset, including those with very small or very large nominal values. For detailed technical information on the types of currency codes and the numeric limits of issued currency representation, see the <a href="currency-formats.html">currency format reference</a>.</p>
 <h2 id="see-also">See Also</h2>
 <ul>
 <li><strong>Concepts:</strong><ul>
-<li><a href="xag.html">XRP</a></li>
+<li><a href="xag.html">XAG</a></li>
 <li><a href="cross-currency-payments.html">Cross-Currency Payments</a></li>
 <li><a href="decentralized-exchange.html">Decentralized Exchange</a></li>
 </ul>
 </li>
 <li><strong>Tutorials:</strong><ul>
-<li><a href="become-an-xrp-ledger-gateway.html">Become an XRP Ledger Gateway</a></li>
+<li><a href="become-an-xrp-ledger-gateway.html">Become an XAG Ledger Gateway</a></li>
 <li><a href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
 <li><a href="use-specialized-payment-types.html">Use Specialized Payment Types</a></li>
 </ul>
@@ -198,9 +198,9 @@
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -427,7 +427,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

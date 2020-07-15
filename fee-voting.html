@@ -114,9 +114,9 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="fee-voting">Fee Voting</h1>
-<p>Validators can vote for changes to basic <a href="transaction-cost.html">transaction cost</a> as well as <a href="reserves.html">reserve requirements</a>. If the preferences in a validator's configuration are different than the network's current settings, the validator expresses its preferences to the network periodically. If a quorum of validators agrees on a change, they can apply a change that takes effect thereafter. Validators may do this for various reasons, especially to adjust to long-term changes in the value of XRP.</p>
+<p>Validators can vote for changes to basic <a href="transaction-cost.html">transaction cost</a> as well as <a href="reserves.html">reserve requirements</a>. If the preferences in a validator's configuration are different than the network's current settings, the validator expresses its preferences to the network periodically. If a quorum of validators agrees on a change, they can apply a change that takes effect thereafter. Validators may do this for various reasons, especially to adjust to long-term changes in the value of XAG.</p>
 <p>Operators of <a href="run-rippled-as-a-validator.html"><code>rippled</code> validators</a> can set their preferences for the transaction cost and reserve requirements in the <code>[voting]</code> stanza of the <code>rippled.cfg</code> file.</p>
-<p class="devportal-callout caution"><strong>Caution:</strong> Insufficient requirements, if adopted by a consensus of trusted validators, could expose the XRP Ledger peer-to-peer network to denial-of-service attacks.</p>
+<p class="devportal-callout caution"><strong>Caution:</strong> Insufficient requirements, if adopted by a consensus of trusted validators, could expose the XAG Ledger peer-to-peer network to denial-of-service attacks.</p>
 <p>The parameters you can set are as follows:</p>
 <table>
 <thead>
@@ -129,18 +129,18 @@
 <tbody>
 <tr>
 <td><code>reference_fee</code></td>
-<td>Amount of XRP, in <em>drops</em>, that must be destroyed to send the reference transaction, the cheapest possible transaction. (1 XRP = 1 million drops.) The actual transaction cost is a multiple of this value, scaled dynamically based on the load of individual servers.</td>
-<td><code>10</code> (0.00001 XRP)</td>
+<td>Amount of XAG, in <em>drops</em>, that must be destroyed to send the reference transaction, the cheapest possible transaction. (1 XAG = 1 million drops.) The actual transaction cost is a multiple of this value, scaled dynamically based on the load of individual servers.</td>
+<td><code>10</code> (0.00001 XAG)</td>
 </tr>
 <tr>
 <td><code>account_reserve</code></td>
-<td>Minimum amount of XRP, in <em>drops</em>, that an account must have on reserve. This is the smallest amount that can be sent to fund a new account in the ledger.</td>
-<td><code>20000000</code> (20 XRP)</td>
+<td>Minimum amount of XAG, in <em>drops</em>, that an account must have on reserve. This is the smallest amount that can be sent to fund a new account in the ledger.</td>
+<td><code>20000000</code> (20 XAG)</td>
 </tr>
 <tr>
 <td><code>owner_reserve</code></td>
-<td>How much more XRP, in <em>drops</em>, that an address must hold for <em>each</em> object it owns in the ledger.</td>
-<td><code>5000000</code> (5 XRP)</td>
+<td>How much more XAG, in <em>drops</em>, that an address must hold for <em>each</em> object it owns in the ledger.</td>
+<td><code>5000000</code> (5 XAG)</td>
 </tr>
 </tbody>
 </table>
@@ -162,24 +162,24 @@
 <tr>
 <th>Parameter</th>
 <th>Maximum Value (drops)</th>
-<th>Maximum Value (XRP)</th>
+<th>Maximum Value (XAG)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>reference_fee</code></td>
 <td>2**64</td>
-<td>(More XRP than has ever existed.)</td>
+<td>(More XAG than has ever existed.)</td>
 </tr>
 <tr>
 <td><code>account_reserve</code></td>
 <td>2^32 drops</td>
-<td>Approximately 4294 XRP</td>
+<td>Approximately 4294 XAG</td>
 </tr>
 <tr>
 <td><code>owner_reserve</code></td>
 <td>2^32 drops</td>
-<td>Approximately 4294 XRP</td>
+<td>Approximately 4294 XAG</td>
 </tr>
 </tbody>
 </table>
@@ -240,9 +240,9 @@
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -469,7 +469,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

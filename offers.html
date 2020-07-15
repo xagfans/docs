@@ -117,7 +117,7 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="offers">Offers</h1>
-<p>In the XRP Ledger's decentralized exchange, orders to trade currency are called "Offers". Offers can trade XRP with issued currencies, or issued currencies with each other, including issued currencies with the same currency code but different issuers. (Currencies with the same code but different issuers can also sometimes be exchanged through <a href="rippling.html">rippling</a>.)</p>
+<p>In the XAG Ledger's decentralized exchange, orders to trade currency are called "Offers". Offers can trade XAG with issued currencies, or issued currencies with each other, including issued currencies with the same currency code but different issuers. (Currencies with the same code but different issuers can also sometimes be exchanged through <a href="rippling.html">rippling</a>.)</p>
 <ul>
 <li>To create an Offer, send an <a href="offercreate.html">OfferCreate transaction</a>.</li>
 <li>Offers that aren't fully filled immediately become <a href="offer.html">Offer objects</a> in the ledger data. Later Offers and Payments can consume the Offer object from the ledger.</li>
@@ -138,8 +138,8 @@
 <li>The offer becomes funded again when the trust line is no longer frozen.</li>
 </ul>
 </li>
-<li>If the creator does not have enough XRP for the reserve amount of a new trust line required by the offer. (See <a href="#offers-and-trust">Offers and Trust</a>.)<ul>
-<li>The offer becomes funded again when the creator obtains more XRP, or the reserve requirements decrease.</li>
+<li>If the creator does not have enough XAG for the reserve amount of a new trust line required by the offer. (See <a href="#offers-and-trust">Offers and Trust</a>.)<ul>
+<li>The offer becomes funded again when the creator obtains more XAG, or the reserve requirements decrease.</li>
 </ul>
 </li>
 <li>If the Expiration time included in the offer is before the close time of the most recently-closed ledger. (See <a href="#offer-expiration">Offer Expiration</a>.)</li>
@@ -159,7 +159,7 @@
 <p>A client application can locally track the funding status of offers. To do this, first retreive an order book using the <a href="book_offers.html">book_offers method</a> and check the <code>taker_gets_funded</code> field of offers. Then, <a href="subscribe.html">subscribe</a> to the <code>transactions</code> stream and watch the transaction metadata to see which offers are modified.</p>
 <h2 id="offers-and-trust">Offers and Trust</h2>
 <p>The limit values of trust lines (See <a href="trustset.html">TrustSet</a>) do not affect offers. In other words, you can use an offer to acquire more than the maximum amount you trust an issuer to redeem.</p>
-<p>However, holding non-XRP balances still requires a trust line to the address issuing those balances. When an offer is taken, it automatically creates any necessary trust lines, setting their limits to 0. Because <a href="reserves.html">trust lines increase the reserve an account must hold</a>, any offers that would require a new trust line also require the address to have enough XRP to meet the reserve for that trust line.</p>
+<p>However, holding non-XAG balances still requires a trust line to the address issuing those balances. When an offer is taken, it automatically creates any necessary trust lines, setting their limits to 0. Because <a href="reserves.html">trust lines increase the reserve an account must hold</a>, any offers that would require a new trust line also require the address to have enough XAG to meet the reserve for that trust line.</p>
 <p>A trust line indicates an issuer you trust enough to accept their issuances as payment, within limits. Offers are explicit instructions to acquire certain issuances, so they are allowed to go beyond those limits.</p>
 <h2 id="offer-preference">Offer Preference</h2>
 <p>Existing offers are grouped by exchange rate (sometimes called "offer quality"), which is measured as the ratio between <code>TakerGets</code> and <code>TakerPays</code>. Offers with a higher exchange rate are taken preferentially. (That is, the person accepting the offer receives as much as possible for the amount of currency they pay out.) Offers with the same exchange rate are taken on the basis of which offer was placed in the earliest ledger version.</p>
@@ -168,7 +168,7 @@
 <p>Since transactions can take time to propagate and confirm, the timestamp of a ledger is used to determine offer validity. An offer only expires when its Expiration time is before the most-recently validated ledger. In other words, an offer with an <code>Expiration</code> field is still considered "active" if its expiration time is later than the timestamp of the most-recently validated ledger, regardless of what your local clock says.</p>
 <p>You can determine the final disposition of an offer with an <code>Expiration</code> as soon as you see a fully-validated ledger with a close time equal to or greater than the expiration time.</p>
 <p class="devportal-callout note"><strong>Note:</strong> Since only new transactions can modify the ledger, an expired offer can stay on the ledger after it becomes inactive. The offer is treated as unfunded and has no effect, but it can continue to appear in results (for example, from the <a href="ledger_entry.html">ledger_entry</a> command). Later on, the expired offer can get finally deleted as a result of another transaction (such as another OfferCreate) if the server finds it while processing.</p>
-<p>If an OfferCreate transaction has an <code>Expiration</code> time that has already passed when the transaction first gets included in a ledger, the transaction does not execute the offer. The result code of such a transaction depends on whether the <a href="known-amendments.html#checks">Checks amendment</a> is enabled. With the Checks amendment enabled, the transaction has the <code>tecEXPIRED</code> result code. Otherwise, the transaction has the <code>tesSUCCESS</code> transaction code. In either case, the transaction has no effect except to destroy the XRP paid as a <a href="transaction-cost.html">transaction cost</a>.</p>
+<p>If an OfferCreate transaction has an <code>Expiration</code> time that has already passed when the transaction first gets included in a ledger, the transaction does not execute the offer. The result code of such a transaction depends on whether the <a href="known-amendments.html#checks">Checks amendment</a> is enabled. With the Checks amendment enabled, the transaction has the <code>tecEXPIRED</code> result code. Otherwise, the transaction has the <code>tesSUCCESS</code> transaction code. In either case, the transaction has no effect except to destroy the XAG paid as a <a href="transaction-cost.html">transaction cost</a>.</p>
 <h2 id="see-also">See Also</h2>
 <ul>
 <li><strong>Concepts:</strong><ul>
@@ -177,7 +177,7 @@
 </ul>
 </li>
 <li><strong>Tutorials:</strong><ul>
-<li><a href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XRP Charts</a> - for off-ledger exchanges</li>
+<li><a href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XAG Charts</a> - for off-ledger exchanges</li>
 </ul>
 </li>
 <li><strong>References:</strong><ul>
@@ -224,9 +224,9 @@
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -453,7 +453,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

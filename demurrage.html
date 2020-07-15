@@ -118,9 +118,9 @@
     <div class="content">
         <h1 id="demurrage">Demurrage</h1>
 <p class="devportal-callout warning"><strong>Warning:</strong> Demurrage is a deprecated feature with no ongoing support. This page describes historical behavior of older versions of Ripple software.</p>
-<p><a class="external-link" href="http://en.wikipedia.org/wiki/Demurrage_%28currency%29" target="_blank">Demurrage <i aria-hidden="true" class="fa fa-external-link"></i></a> is a negative interest rate on assets held that represents the cost of holding those assets. To represent the demurrage on an issued currency in the XRP Ledger, you can track it using a custom <a href="currency-formats.html#currency-codes">currency code</a> that indicates the demurrage rate. This effectively creates separate versions of the currency for each varying amount of demurrage. Client applications can support this by representing the demurraging currency code with an annual percentage rate alongside the currency code. For example: "XAU (-0.5%pa)".</p>
+<p><a class="external-link" href="http://en.wikipedia.org/wiki/Demurrage_%28currency%29" target="_blank">Demurrage <i aria-hidden="true" class="fa fa-external-link"></i></a> is a negative interest rate on assets held that represents the cost of holding those assets. To represent the demurrage on an issued currency in the XAG Ledger, you can track it using a custom <a href="currency-formats.html#currency-codes">currency code</a> that indicates the demurrage rate. This effectively creates separate versions of the currency for each varying amount of demurrage. Client applications can support this by representing the demurraging currency code with an annual percentage rate alongside the currency code. For example: "XAU (-0.5%pa)".</p>
 <h2 id="representing-demurraging-currency-amounts">Representing Demurraging Currency Amounts</h2>
-<p>Rather than continuously update all amounts in the XRP Ledger, this approach divides amounts of interest-bearing or demurraging currency into two types of amount: "ledger values" recorded in the XRP Ledger, and "display values" shown to people. The "ledger values" represent the value of the currency at a fixed point, namely the "Ripple Epoch" of midnight January 1, 2000. The "display values" represent the amount at a later point in time (usually the current time) after calculating continuous interest or demurrage from the Ripple Epoch until that time.</p>
+<p>Rather than continuously update all amounts in the XAG Ledger, this approach divides amounts of interest-bearing or demurraging currency into two types of amount: "ledger values" recorded in the XAG Ledger, and "display values" shown to people. The "ledger values" represent the value of the currency at a fixed point, namely the "Ripple Epoch" of midnight January 1, 2000. The "display values" represent the amount at a later point in time (usually the current time) after calculating continuous interest or demurrage from the Ripple Epoch until that time.</p>
 <p class="devportal-callout tip"><strong>Tip:</strong> You can think of demurrage as similar to inflation, where the value of all assets affected by it decreases over time, but the ledger always holds amounts in year-2000 values. This does not reflect actual real-world inflation; demurrage is more like hypothetical inflation at a constant rate.</p>
 <p>Thus, client software must apply two conversions:</p>
 <ul>
@@ -146,7 +146,7 @@
 <li>To convert display values to ledger values, divide by the demurrage coefficient.</li>
 </ul>
 </li>
-<li>If necessary, adjust the resulting value so that it can be represented to the desired accuracy. Ledger values are limited to 15 decimal digits of precision, according to the XRP Ledger's <a href="currency-formats.html#issued-currency-precision">issued currency format</a>.</li>
+<li>If necessary, adjust the resulting value so that it can be represented to the desired accuracy. Ledger values are limited to 15 decimal digits of precision, according to the XAG Ledger's <a href="currency-formats.html#issued-currency-precision">issued currency format</a>.</li>
 </ol>
 <h2 id="interest-bearing-currency-code-format">Interest-Bearing Currency Code Format</h2>
 <p>Rather than using the <a href="currency-formats.html#currency-codes">standard currency code format</a>, currencies that have positive interest or negative interest (demurrage) use a 160-bit currency code in the following format:</p>
@@ -168,7 +168,7 @@
 <li>Take the natural log of that number. For example, <strong>ln(0.995) = -0.005012541823544286</strong>. (This number is positive if the initial interest rate was positive, and negative if the interest rate was negative.)</li>
 <li>Take the number of seconds in one year (31536000) and divide by the natural log result from the previous step. For example, <strong>31536000 ÷ -0.005012541823544286 = -6291418827.045599</strong>. This result is the e-folding time in seconds.</li>
 </ol>
-<p class="devportal-callout note"><strong>Note:</strong> By convention, the XRP Ledger's interest/demurrage rules use a fixed number of seconds per year (31536000), which is not adjusted for leap days or leap seconds.</p>
+<p class="devportal-callout note"><strong>Note:</strong> By convention, the XAG Ledger's interest/demurrage rules use a fixed number of seconds per year (31536000), which is not adjusted for leap days or leap seconds.</p>
 <h2 id="client-support">Client Support</h2>
 <p>To support interest-bearing and demurraging currencies, client applications must implement several features:</p>
 <ul>
@@ -248,9 +248,9 @@ console.log(displayAmount.to_json());
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -477,7 +477,7 @@ console.log(displayAmount.to_json());
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

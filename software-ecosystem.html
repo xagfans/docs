@@ -117,44 +117,44 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="software-ecosystem">Software Ecosystem</h1>
-<p>The XRP Ledger is home to a deep, layered ecosystem of software projects powering and enabling an Internet of Value. It's impossible to list every project, tool, and business that interacts with the XRP Ledger, so this page only lists a few categories and highlights some central projects that are documented here on <a class="external-link" href="https://xrpl.org" target="_blank">xrpl.org <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>The XAG Ledger is home to a deep, layered ecosystem of software projects powering and enabling an Internet of Value. It's impossible to list every project, tool, and business that interacts with the XAG Ledger, so this page only lists a few categories and highlights some central projects that are documented here on <a class="external-link" href="https://xrpl.org" target="_blank">xrpl.org <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <h2 id="stack-levels">Stack Levels</h2>
-<p><a href="img/ecosystem.png"><img alt="Ecosystem diagram with the four layers: XRP Ledger peer-to-peer network on the bottom, Programming Libraries above that, Middleware next, and Apps and Services at the top" src="img/ecosystem.png"/></a></p>
+<p><a href="img/ecosystem.png"><img alt="Ecosystem diagram with the four layers: XAG Ledger peer-to-peer network on the bottom, Programming Libraries above that, Middleware next, and Apps and Services at the top" src="img/ecosystem.png"/></a></p>
 <ul>
 <li>
-<p>The <a href="#rippled-the-core-server">basis of the XRP Ledger</a> is a peer-to-peer network of always-on servers sharing transactions, engaging in the <a href="consensus.html">consensus process</a> and processing <a href="transaction-basics.html">transactions</a>. Everything else in the XRP Ledger ecosystem is ultimately built on top of this peer-to-peer network, directly or indirectly.</p>
+<p>The <a href="#rippled-the-core-server">basis of the XAG Ledger</a> is a peer-to-peer network of always-on servers sharing transactions, engaging in the <a href="consensus.html">consensus process</a> and processing <a href="transaction-basics.html">transactions</a>. Everything else in the XAG Ledger ecosystem is ultimately built on top of this peer-to-peer network, directly or indirectly.</p>
 </li>
 <li>
-<p><a href="#programming-libraries"><em>Programming Libraries</em></a> exist in higher level software, where they are imported directly into program code, and contain premade implementations of routines to access the XRP Ledger.</p>
+<p><a href="#programming-libraries"><em>Programming Libraries</em></a> exist in higher level software, where they are imported directly into program code, and contain premade implementations of routines to access the XAG Ledger.</p>
 </li>
 <li>
-<p><a href="#middleware"><em>Middleware</em></a> provides indirect access to XRP Ledger data. Applications in this layer frequently have their own data storage and processing.</p>
+<p><a href="#middleware"><em>Middleware</em></a> provides indirect access to XAG Ledger data. Applications in this layer frequently have their own data storage and processing.</p>
 </li>
 <li>
-<p><a href="#apps-and-services"><em>Apps and Services</em></a> provide user-level interaction with the XRP Ledger, or provide a basis for even higher-level apps and services.</p>
+<p><a href="#apps-and-services"><em>Apps and Services</em></a> provide user-level interaction with the XAG Ledger, or provide a basis for even higher-level apps and services.</p>
 </li>
 </ul>
 <h3 id="rippled-the-core-server">rippled: The Core Server</h3>
-<p>The peer-to-peer network at the heart of the XRP Ledger requires a highly-reliable, efficient server to enforce the rules of consensus and transaction processing. Ripple manages and publishes a reference implementation of this server software, called <a href="the-rippled-server.html"><strong><code>rippled</code></strong></a> (pronounced "ripple-dee"). The server is available under <a class="external-link" href="https://github.com/ripple/rippled/blob/develop/LICENSE" target="_blank">a permissive open-source license <i aria-hidden="true" class="fa fa-external-link"></i></a>, so anyone can inspect and modify their own instance of the server, and re-publish with few restrictions.</p>
-<p>Every instance of <code>rippled</code> syncs to the same network (unless it's configured to follow a <a href="parallel-networks.html">parallel network such as a test net</a>) and has access to all communications across the network. Every <code>rippled</code> server on the network keeps a complete copy of the latest state data for the entire XRP Ledger, along with a slice of recent transactions and a record of the changes those transactions made, and every server processes every transaction independently while verifying that its outcome matches the rest of the network. Servers can be configured to keep more <a href="ledger-history.html">ledger history</a> and to participate in the consensus process as a <a href="rippled-server-modes.html#reasons-to-run-a-validator">validator</a>.</p>
+<p>The peer-to-peer network at the heart of the XAG Ledger requires a highly-reliable, efficient server to enforce the rules of consensus and transaction processing. Ripple manages and publishes a reference implementation of this server software, called <a href="the-rippled-server.html"><strong><code>rippled</code></strong></a> (pronounced "ripple-dee"). The server is available under <a class="external-link" href="https://github.com/ripple/rippled/blob/develop/LICENSE" target="_blank">a permissive open-source license <i aria-hidden="true" class="fa fa-external-link"></i></a>, so anyone can inspect and modify their own instance of the server, and re-publish with few restrictions.</p>
+<p>Every instance of <code>rippled</code> syncs to the same network (unless it's configured to follow a <a href="parallel-networks.html">parallel network such as a test net</a>) and has access to all communications across the network. Every <code>rippled</code> server on the network keeps a complete copy of the latest state data for the entire XAG Ledger, along with a slice of recent transactions and a record of the changes those transactions made, and every server processes every transaction independently while verifying that its outcome matches the rest of the network. Servers can be configured to keep more <a href="ledger-history.html">ledger history</a> and to participate in the consensus process as a <a href="rippled-server-modes.html#reasons-to-run-a-validator">validator</a>.</p>
 <p>This server exposes <a href="rippled-api.html"><code>rippled</code> APIs</a> for users to look up data, administer the server, and submit transactions.</p>
 <h3 id="programming-libraries">Programming Libraries</h3>
-<p>Programming libraries are not strictly required to access XRP Ledger data, since you can use HTTP or WebSocket to connect to the <a href="rippled-api.html"><code>rippled</code> APIs</a> directly. Libraries simplify some of the common work of accessing the <code>rippled</code> APIs, and convert the data into forms that are easier to understand and program with in the programming language of the library.</p>
-<p><a href="get-started-with-rippleapi-for-javascript.html">RippleAPI for JavaScript</a> (also called "ripple-lib") is the longest-standing, most well-supported library for accessing the XRP Ledger. Many <a href="#middleware">middleware services</a> use programming libraries like RippleAPI internally.</p>
+<p>Programming libraries are not strictly required to access XAG Ledger data, since you can use HTTP or WebSocket to connect to the <a href="rippled-api.html"><code>rippled</code> APIs</a> directly. Libraries simplify some of the common work of accessing the <code>rippled</code> APIs, and convert the data into forms that are easier to understand and program with in the programming language of the library.</p>
+<p><a href="get-started-with-rippleapi-for-javascript.html">RippleAPI for JavaScript</a> (also called "ripple-lib") is the longest-standing, most well-supported library for accessing the XAG Ledger. Many <a href="#middleware">middleware services</a> use programming libraries like RippleAPI internally.</p>
 <h3 id="middleware">Middleware</h3>
-<p>Middleware services are programs that consume the XRP Ledger APIs on one side and provide their own APIs on the other side. They provide a layer of abstraction to make it easier to build higher-level applications by providing some common functionality as a service.</p>
+<p>Middleware services are programs that consume the XAG Ledger APIs on one side and provide their own APIs on the other side. They provide a layer of abstraction to make it easier to build higher-level applications by providing some common functionality as a service.</p>
 <p>Unlike <a href="#programming-libraries">programming libraries</a>, which are instantiated fresh and shut down with the program that imports them, middleware services typically stay running indefinitely, and may have their own databases (relational SQL databases or otherwise) and configuration files.</p>
-<p>The <a href="data-api.html">Data API</a> is an example of a middleware service on top of the XRP Ledger. The Data API collects and transforms XRP Ledger data, so that you can query by time, filter by data type, or perform data analysis.</p>
-<p><a href="xrp-api.html">XRP-API</a> is another middleware service. XRP-API manages secret keys and provides a more convenient RESTful interface to the XRP Ledger for apps in any programming language.</p>
+<p>The <a href="data-api.html">Data API</a> is an example of a middleware service on top of the XAG Ledger. The Data API collects and transforms XAG Ledger data, so that you can query by time, filter by data type, or perform data analysis.</p>
+<p><a href="xrp-api.html">XAG-API</a> is another middleware service. XAG-API manages secret keys and provides a more convenient RESTful interface to the XAG Ledger for apps in any programming language.</p>
 <h3 id="apps-and-services">Apps and Services</h3>
-<p>Atop the stack is where the truly exciting things happen. Apps and services provide a way for users and devices to connect to the XRP Ledger. At this level, <a href="list-xrp-in-your-exchange.html">exchanges list XRP</a>, <a href="become-an-xrp-ledger-gateway.html">gateways issue other currencies</a> for use in the decentralized exchange, and wallets provide user interfaces for buying, selling, or just <s>HODLing</s> holding XRP. Many other possibilities exist, including additional services layered even higher.</p>
-<p>A great way to build applications that are compatible with not only XRP but lots of other ways of denominating value is to use the <a class="external-link" href="https://interledger.org/" target="_blank">Interledger Protocol <i aria-hidden="true" class="fa fa-external-link"></i></a> with settlement in XRP.</p>
-<p>There are numerous other examples of projects using XRP and adjacent technologies to interact with users. Ripple's enterprise customers already have the option to use XRP through <a class="external-link" href="https://www.ripple.com/ripplenet/on-demand-liquidity/" target="_blank">on-demand liquidity services <i aria-hidden="true" class="fa fa-external-link"></i></a>. For more examples of businesses and software built on the XRP Ledger, see <a class="external-link" href="https://xpring.io/#partners" target="_blank">Xpring Partners <i aria-hidden="true" class="fa fa-external-link"></i></a> or XRPChat's excellent <a class="external-link" href="https://www.xrpchat.com/links/" target="_blank">Links &amp; Resources <i aria-hidden="true" class="fa fa-external-link"></i></a> listing.</p>
+<p>Atop the stack is where the truly exciting things happen. Apps and services provide a way for users and devices to connect to the XAG Ledger. At this level, <a href="list-xrp-in-your-exchange.html">exchanges list XAG</a>, <a href="become-an-xrp-ledger-gateway.html">gateways issue other currencies</a> for use in the decentralized exchange, and wallets provide user interfaces for buying, selling, or just <s>HODLing</s> holding XAG. Many other possibilities exist, including additional services layered even higher.</p>
+<p>A great way to build applications that are compatible with not only XAG but lots of other ways of denominating value is to use the <a class="external-link" href="https://interledger.org/" target="_blank">Interledger Protocol <i aria-hidden="true" class="fa fa-external-link"></i></a> with settlement in XAG.</p>
+<p>There are numerous other examples of projects using XAG and adjacent technologies to interact with users. Ripple's enterprise customers already have the option to use XAG through <a class="external-link" href="https://www.ripple.com/ripplenet/on-demand-liquidity/" target="_blank">on-demand liquidity services <i aria-hidden="true" class="fa fa-external-link"></i></a>. For more examples of businesses and software built on the XAG Ledger, see <a class="external-link" href="https://xpring.io/#partners" target="_blank">Xpring Partners <i aria-hidden="true" class="fa fa-external-link"></i></a> or XAGChat's excellent <a class="external-link" href="https://www.xrpchat.com/links/" target="_blank">Links &amp; Resources <i aria-hidden="true" class="fa fa-external-link"></i></a> listing.</p>
 <h2 id="see-also">See Also</h2>
 <ul>
 <li><a class="external-link" href="https://xpring.io/#partners" target="_blank">Xpring Partners <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
 <li><a href="technical-faq.html">Technical FAQ</a></li>
-<li><a class="external-link" href="https://www.xrpchat.com/links/" target="_blank">XRPChat Links &amp; Resources <i aria-hidden="true" class="fa fa-external-link"></i></a> - Includes updated lists of gateways and exchanges, wallets and storage, apps, and more.</li>
+<li><a class="external-link" href="https://www.xrpchat.com/links/" target="_blank">XAGChat Links &amp; Resources <i aria-hidden="true" class="fa fa-external-link"></i></a> - Includes updated lists of gateways and exchanges, wallets and storage, apps, and more.</li>
 </ul>
 <!-- -->
 <!-- -->
@@ -192,9 +192,9 @@
             <div id="sidenav_collapse_2" class="collapse show" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="active nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -421,7 +421,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

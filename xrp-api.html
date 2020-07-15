@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
 
-    <title>XRP-API - XAG Ledger Dev Portal</title>
+    <title>XAG-API - XAG Ledger Dev Portal</title>
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
@@ -92,7 +92,7 @@
       <h4>In this document</h4>
     </div>
     <ul class="card-body">
-      <li class="level-1"><a href="#xrp-api-server">XRP API Server</a></li>
+      <li class="level-1"><a href="#xrp-api-server">XAG API Server</a></li>
 <li class="level-2"><a href="#building-with-typescript-javascript-or-nodejs">Building with TypeScript, JavaScript, or Node.js?</a></li>
 <li class="level-3"><a href="#requirements">Requirements</a></li>
 <li class="level-3"><a href="#initial-setup">Initial setup</a></li>
@@ -112,22 +112,22 @@
     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
     <li class="active breadcrumb-item"><a href="docs.html">Docs</a></li>
     <li class="active breadcrumb-item"><a href="references.html">References</a></li>
-    <li class="active breadcrumb-item">XRP-API</li>
+    <li class="active breadcrumb-item">XAG-API</li>
   </ul>
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
-        <h1 id="xrp-api-server">XRP API Server</h1>
-<p>An API server that provides a REST-like interface to the XRP Ledger.</p>
+        <h1 id="xrp-api-server">XAG API Server</h1>
+<p>An API server that provides a REST-like interface to the XAG Ledger.</p>
 <p><a class="external-link" href="https://github.com/xpring-eng/xrp-api" target="_blank" title="Source">[Source] <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
 <h2 id="building-with-typescript-javascript-or-nodejs">Building with TypeScript, JavaScript, or Node.js?</h2>
-<p>Instead of XRP API, you can use <a class="external-link" href="https://github.com/ripple/ripple-lib" target="_blank">ripple-lib <i aria-hidden="true" class="fa fa-external-link"></i></a> for a native integration experience and access to more advanced XRP Ledger features.</p>
+<p>Instead of XAG API, you can use <a class="external-link" href="https://github.com/ripple/ripple-lib" target="_blank">ripple-lib <i aria-hidden="true" class="fa fa-external-link"></i></a> for a native integration experience and access to more advanced XAG Ledger features.</p>
 <h3 id="requirements">Requirements</h3>
 <ul>
 <li><a class="external-link" href="https://nodejs.org/en/download/" target="_blank">Node v10.4.0 or higher <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
 <li><a class="external-link" href="https://yarnpkg.com/en/" target="_blank">yarn <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
 <li>
-<p>An XRP Ledger account with XRP</p>
-<p>For development, you can use the XRP Testnet and get some test XRP from the <a class="external-link" href="https://xrpl.org/xrp-testnet-faucet.html" target="_blank">XRP Testnet Faucet <i aria-hidden="true" class="fa fa-external-link"></i></a>. The setup script will do this for you automatically.</p>
+<p>An XAG Ledger account with XAG</p>
+<p>For development, you can use the XAG Testnet and get some test XAG from the <a class="external-link" href="https://xrpl.org/xrp-testnet-faucet.html" target="_blank">XAG Testnet Faucet <i aria-hidden="true" class="fa fa-external-link"></i></a>. The setup script will do this for you automatically.</p>
 </li>
 </ul>
 <h3 id="initial-setup">Initial setup</h3>
@@ -151,7 +151,7 @@
 </code></pre>
 </li>
 </ol>
-<p>For testing and development, you can use the <a class="external-link" href="https://xrpl.org/xrp-testnet-faucet.html" target="_blank">XRP Faucets <i aria-hidden="true" class="fa fa-external-link"></i></a>. At this time, the following public servers are available:</p>
+<p>For testing and development, you can use the <a class="external-link" href="https://xrpl.org/xrp-testnet-faucet.html" target="_blank">XAG Faucets <i aria-hidden="true" class="fa fa-external-link"></i></a>. At this time, the following public servers are available:</p>
 <ul>
 <li>
 <p>Testnet: <code>wss://s.altnet.rippletest.net:51233</code></p>
@@ -177,10 +177,10 @@
 <li>If an error occurs, the server will exit to protect security &amp; data integrity. We recommend using <a class="external-link" href="https://www.npmjs.com/package/pm2" target="_blank">PM2 <i aria-hidden="true" class="fa fa-external-link"></i></a>, <a class="external-link" href="https://www.npmjs.com/package/nodemon" target="_blank">nodemon <i aria-hidden="true" class="fa fa-external-link"></i></a>, or <a class="external-link" href="https://www.npmjs.com/package/forever" target="_blank">forever <i aria-hidden="true" class="fa fa-external-link"></i></a> to restart the server if it crashes in production.</li>
 </ul>
 <h3 id="tutorial">Tutorial</h3>
-<p>In this simple tutorial, we will get our account's XRP balance, send a payment, and check the status of our payment.</p>
+<p>In this simple tutorial, we will get our account's XAG balance, send a payment, and check the status of our payment.</p>
 <ol>
 <li>
-<p>Get our account's XRP balance.</p>
+<p>Get our account's XAG balance.</p>
 <p>In the following example, replace <code>{ACCOUNT_ADDRESS_HERE}</code> with your Address:</p>
 <pre><code>curl -X GET \
   http://localhost:3000/v3/accounts/{ACCOUNT_ADDRESS_HERE}/info
@@ -198,12 +198,12 @@
          "source_address": "{ACCOUNT_ADDRESS_HERE}",
          "source_amount": {
              "value": "20",
-             "currency": "XRP"
+             "currency": "XAG"
          },
          "destination_address": "{DESTINATION_ADDRESS_HERE}",
          "destination_amount": {
              "value": "20",
-             "currency": "XRP"
+             "currency": "XAG"
          }
      },
      "submit": true
@@ -257,7 +257,7 @@
 
   <!---->
     <div class="sidenav_parent">
-      <a  href="xrp-api.html">XRP-API</a>
+      <a  href="xrp-api.html">XAG-API</a>
     </div>
 
   <!---->
@@ -267,7 +267,7 @@
             <div class="card">
               <div class="card-header" role="tab" id="sidenav_cat_head_22">
                 <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="xrp-api-methods.html">All XRP-API Methods</a>
+                    <a class="sidenav_cat_title" href="xrp-api-methods.html">All XAG-API Methods</a>
                 </h5>
               </div><!-- /.card-header -->
 
@@ -345,7 +345,7 @@
               <div class="card-header" role="tab" id="sidenav_cat_head_26">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_26" aria-expanded="true" aria-controls="sidenav_collapse_26"></a>
                 <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="xrp-api-data-types.html">XRP-API Data Types</a>
+                    <a class="sidenav_cat_title" href="xrp-api-data-types.html">XAG-API Data Types</a>
                 </h5>
               </div><!-- /.card-header -->
 
@@ -429,7 +429,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

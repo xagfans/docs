@@ -122,7 +122,7 @@
     <div class="content">
         <h1 id="send-a-conditionally-held-escrow">Send a Conditionally-Held Escrow</h1>
 <h2 id="1-generate-condition-and-fulfillment">1. Generate condition and fulfillment</h2>
-<p>XRP Ledger escrows require PREIMAGE-SHA-256 <a class="external-link" href="https://tools.ietf.org/html/draft-thomas-crypto-conditions-04" target="_blank">crypto-conditions <i aria-hidden="true" class="fa fa-external-link"></i></a>. To calculate a condition and fulfillment in the proper format, you should use a crypto-conditions library such as <a class="external-link" href="https://github.com/interledgerjs/five-bells-condition" target="_blank">five-bells-condition <i aria-hidden="true" class="fa fa-external-link"></i></a>. For fulfillments, the following methods are recommended to generate the fulfillment:</p>
+<p>XAG Ledger escrows require PREIMAGE-SHA-256 <a class="external-link" href="https://tools.ietf.org/html/draft-thomas-crypto-conditions-04" target="_blank">crypto-conditions <i aria-hidden="true" class="fa fa-external-link"></i></a>. To calculate a condition and fulfillment in the proper format, you should use a crypto-conditions library such as <a class="external-link" href="https://github.com/interledgerjs/five-bells-condition" target="_blank">five-bells-condition <i aria-hidden="true" class="fa fa-external-link"></i></a>. For fulfillments, the following methods are recommended to generate the fulfillment:</p>
 <ul>
 <li>Use a cryptographically secure source of randomness to generate at least 32 random bytes.</li>
 <li>Follow Interledger Protocol's <a class="external-link" href="https://github.com/interledger/rfcs/blob/master/deprecated/0016-pre-shared-key/0016-pre-shared-key.md" target="_blank">PSK specification <i aria-hidden="true" class="fa fa-external-link"></i></a> and use an HMAC-SHA-256 of the ILP packet as the fulfillment.</li>
@@ -146,7 +146,7 @@ console.log('Fulfillment:', fulfillment)
 </code></pre>
 <p>Save the condition and the fulfillment for later. Be sure to keep the fulfillment secret until you want to finish executing the held payment. Anyone who knows the fulfillment can finish the escrow, releasing the held funds to their intended destination.</p>
 <h2 id="2-calculate-release-or-cancel-time">2. Calculate release or cancel time</h2>
-<p>A Conditional <code>Escrow</code> transaction must contain either a <code>CancelAfter</code> or <code>FinishAfter</code> field, or both. The <code>CancelAfter</code> field lets the XRP revert to the sender if the condition is not fulfilled before the specified time. The <code>FinishAfter</code> field specifies a time before which the escrow cannot execute, even if someone sends the correct fulfillment. Whichever field you provide, the time it specifies must be in the future.</p>
+<p>A Conditional <code>Escrow</code> transaction must contain either a <code>CancelAfter</code> or <code>FinishAfter</code> field, or both. The <code>CancelAfter</code> field lets the XAG revert to the sender if the condition is not fulfilled before the specified time. The <code>FinishAfter</code> field specifies a time before which the escrow cannot execute, even if someone sends the correct fulfillment. Whichever field you provide, the time it specifies must be in the future.</p>
 <p>Example for setting a <code>CancelAfter</code> time of 24 hours in the future:</p>
 <div class="multicode" id="code-0"><ul class="codetabs"><li><a href="#code-0-0">JavaScript</a></li></ul>
 
@@ -157,9 +157,9 @@ console.log(CancelAfter)
 </code></pre></div>
 <!-- -->
 </div>
-<p class="devportal-callout warning"><strong>Warning:</strong> In the XRP Ledger, you must specify time as <strong>seconds since the Ripple Epoch</strong> (2000-01-01T00:00:00Z). If you use a UNIX time in the <code>CancelAfter</code> or <code>FinishAfter</code> field without converting to the equivalent Ripple time first, that sets the unlock time to an extra <strong>30 years</strong> in the future!</p>
+<p class="devportal-callout warning"><strong>Warning:</strong> In the XAG Ledger, you must specify time as <strong>seconds since the Ripple Epoch</strong> (2000-01-01T00:00:00Z). If you use a UNIX time in the <code>CancelAfter</code> or <code>FinishAfter</code> field without converting to the equivalent Ripple time first, that sets the unlock time to an extra <strong>30 years</strong> in the future!</p>
 <h2 id="3-submit-escrowcreate-transaction">3. Submit EscrowCreate transaction</h2>
-<p><a href="transaction-basics.html#signing-and-submitting-transactions">Sign and submit</a> an <a href="escrowcreate.html">EscrowCreate transaction</a>. Set the <code>Condition</code> field of the transaction to the time when the held payment should be released. Set the <code>Destination</code> to the recipient, which can be the same address as the sender. Include the <code>CancelAfter</code> or <code>FinishAfter</code> time you calculated in the previous step. Set the <code>Amount</code> to the total amount of <a href="basic-data-types.html#specifying-currency-amounts">XRP, in drops</a>, to escrow.</p>
+<p><a href="transaction-basics.html#signing-and-submitting-transactions">Sign and submit</a> an <a href="escrowcreate.html">EscrowCreate transaction</a>. Set the <code>Condition</code> field of the transaction to the time when the held payment should be released. Set the <code>Destination</code> to the recipient, which can be the same address as the sender. Include the <code>CancelAfter</code> or <code>FinishAfter</code> time you calculated in the previous step. Set the <code>Amount</code> to the total amount of <a href="basic-data-types.html#specifying-currency-amounts">XAG, in drops</a>, to escrow.</p>
 <p class="devportal-callout caution"><strong>Caution:</strong> Never submit a secret key to a server you do not control. Do not send a secret key unencrypted over the network. <!--#{ fix md highlighting_ #}--></p>
 <p>Request:</p>
 <div class="multicode" id="code-1"><ul class="codetabs"><li><a href="#code-1-0">Websocket</a></li></ul>
@@ -311,7 +311,7 @@ console.log(CancelAfter)
 </code></pre></div>
 </div>
 <h2 id="6-submit-escrowfinish-transaction">6. Submit EscrowFinish transaction</h2>
-<p><a href="transaction-basics.html#signing-and-submitting-transactions">Sign and submit</a> an <a href="escrowfinish.html">EscrowFinish transaction</a> to execute the release of the funds after the <code>FinishAfter</code> time has passed. Set the <code>Owner</code> field of the transaction to the <code>Account</code> address from the EscrowCreate transaction, and the <code>OfferSequence</code> to the <code>Sequence</code> number from the EscrowCreate transaction. Set the <code>Condition</code> and <code>Fulfillment</code> fields to the condition and fulfillment values, in hexadecimal, that you generated in step 1. Set the <code>Fee</code> (<a href="transaction-cost.html">transaction cost</a>) value based on the size of the fulfillment in bytes: a conditional EscrowFinish requires at least 330 drops of XRP plus 10 drops per 16 bytes in the size of the fulfillment.</p>
+<p><a href="transaction-basics.html#signing-and-submitting-transactions">Sign and submit</a> an <a href="escrowfinish.html">EscrowFinish transaction</a> to execute the release of the funds after the <code>FinishAfter</code> time has passed. Set the <code>Owner</code> field of the transaction to the <code>Account</code> address from the EscrowCreate transaction, and the <code>OfferSequence</code> to the <code>Sequence</code> number from the EscrowCreate transaction. Set the <code>Condition</code> and <code>Fulfillment</code> fields to the condition and fulfillment values, in hexadecimal, that you generated in step 1. Set the <code>Fee</code> (<a href="transaction-cost.html">transaction cost</a>) value based on the size of the fulfillment in bytes: a conditional EscrowFinish requires at least 330 drops of XAG plus 10 drops per 16 bytes in the size of the fulfillment.</p>
 <p class="devportal-callout note"><strong>Note:</strong> If you included a <code>FinishAfter</code> field in the EscrowCreate transaction, you cannot execute it before that time has passed, even if you provide the correct fulfillment for the Escrow's condition. The EscrowFinish transaction fails with the <a href="transaction-results.html">result code</a> <code>tecNO_PERMISSION</code> if the previously-closed ledger's close time is before the <code>FinishAfter</code> time.</p>
 <p>If the escrow has expired, you can only <a href="cancel-an-expired-escrow.html">cancel the escrow</a> instead.</p>
 <p class="devportal-callout caution"><strong>Caution:</strong> Never submit a secret key to a server you do not control. Do not send a secret key unencrypted over the network. <!--#{ fix md highlighting_ #}--></p>
@@ -368,7 +368,7 @@ console.log(CancelAfter)
 <p>On the live network or the Ripple Test Net, you can wait 4-7 seconds for the ledger to close automatically.</p>
 <p>If you're running <code>rippled</code> in stand-alone mode, use the <a href="ledger_accept.html">ledger_accept method</a> to manually close the ledger. <!--#{ fix md highlighting_ #}--></p>
 <h2 id="8-confirm-final-result">8. Confirm final result</h2>
-<p>Use the <a href="tx.html">tx method</a> with the EscrowFinish transaction's identifying hash to check its final status. In particular, look in the transaction metadata for a <code>ModifiedNode</code> of type <code>AccountRoot</code> for the destination of the escrowed payment. The <code>FinalFields</code> of the object should show the increase in XRP in the <code>Balance</code> field.</p>
+<p>Use the <a href="tx.html">tx method</a> with the EscrowFinish transaction's identifying hash to check its final status. In particular, look in the transaction metadata for a <code>ModifiedNode</code> of type <code>AccountRoot</code> for the destination of the escrowed payment. The <code>FinalFields</code> of the object should show the increase in XAG in the <code>Balance</code> field.</p>
 <p>Request:</p>
 <pre><code class="json">{
   "id": 20,
@@ -477,7 +477,7 @@ console.log(CancelAfter)
 <ul>
 <li><a class="external-link" href="https://tools.ietf.org/html/draft-thomas-crypto-conditions-04" target="_blank">Crypto-Conditions Specification <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
 <li><strong>Concepts:</strong><ul>
-<li><a href="xag.html">XRP</a></li>
+<li><a href="xag.html">XAG</a></li>
 <li><a href="payment-types.html">Payment Types</a><ul>
 <li><a href="escrow.html">Escrow</a></li>
 </ul>
@@ -485,7 +485,7 @@ console.log(CancelAfter)
 </ul>
 </li>
 <li><strong>Tutorials:</strong><ul>
-<li><a href="send-xrp.html">Send XRP</a></li>
+<li><a href="send-xrp.html">Send XAG</a></li>
 <li><a href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
 <li><a href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
 </ul>
@@ -536,7 +536,7 @@ console.log(CancelAfter)
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XRP Ledger APIs</a></li>
+                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XAG Ledger APIs</a></li>
                       <li><a class="nosubcat-page" href="set-up-secure-signing.html">Set Up Secure Signing</a></li>
                       <li><a class="nosubcat-page" href="get-started-with-rippleapi-for-javascript.html">Get Started with RippleAPI for JavaScript</a></li>
                       <li><a class="nosubcat-page" href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
@@ -554,14 +554,14 @@ console.log(CancelAfter)
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_8" aria-expanded="true" aria-controls="sidenav_collapse_8"></a>
               <h5 class="card-title">
                   <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Direct XAG Payments</a>
-                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XRP Payments</a> -->
+                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XAG Payments</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_8" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_8">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="send-xrp.html">Send XRP</a></li>
+                      <li><a class="nosubcat-page" href="send-xrp.html">Send XAG</a></li>
                       <li><a class="nosubcat-page" href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
 
                 </ul>
@@ -639,17 +639,17 @@ console.log(CancelAfter)
             <div class="card-header" role="tab" id="sidenav_cat_head_35">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_35" aria-expanded="true" aria-controls="sidenav_collapse_35"></a>
               <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a>
-                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a> -->
+                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XAG Ledger Businesses</a>
+                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XAG Ledger Businesses</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_35" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_35">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XRP as an Exchange</a></li>
-                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XRP Charts</a></li>
-                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XRP Ledger Gateway</a></li>
+                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XAG as an Exchange</a></li>
+                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XAG Charts</a></li>
+                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XAG Ledger Gateway</a></li>
 
                 </ul>
               </div><!-- /.card-body -->
@@ -688,7 +688,7 @@ console.log(CancelAfter)
                           <li><a class="subpage" href="run-rippled-as-a-validator.html">Run rippled as a Validator</a></li>
                           <li><a class="subpage" href="run-rippled-as-a-wallet-server.html">Run rippled as a Wallet Server</a></li>
                           <li><a class="subpage" href="configure-statsd.html">Configure StatsD</a></li>
-                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XRPL Altnet</a></li>
+                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XAGL Altnet</a></li>
                           <li><a class="subpage" href="configure-online-deletion.html">Configure Online Deletion</a></li>
                           <li><a class="subpage" href="configure-advisory-deletion.html">Configure Advisory Deletion</a></li>
                           <li><a class="subpage" href="configure-history-sharding.html">Configure History Sharding</a></li>
@@ -770,7 +770,7 @@ console.log(CancelAfter)
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

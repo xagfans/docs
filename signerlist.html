@@ -233,7 +233,7 @@
 <td align="left"><code>Account</code></td>
 <td align="left">String</td>
 <td align="left">AccountID</td>
-<td align="left">An XRP Ledger address whose signature contributes to the multi-signature. It does not need to be a funded address in the ledger.</td>
+<td align="left">An XAG Ledger address whose signature contributes to the multi-signature. It does not need to be a funded address in the ledger.</td>
 </tr>
 <tr>
 <td align="left"><code>SignerWeight</code></td>
@@ -268,7 +268,7 @@
 <h2 id="signerlists-and-reserves">SignerLists and Reserves</h2>
 <p>A SignerList contributes to its owner's <a href="reserves.html">reserve requirement</a>.</p>
 <p>Without the <a href="known-amendments.html#multisignreserve">MultiSignReserve amendment</a>, the SignerList itself counts as two objects, and each member of the list counts as one. As a result, the total owner reserve associated with a SignerList is anywhere from 3 times to 10 times the reserve required by a single trust line (<a href="ripplestate.html">RippleState</a>) or <a href="offer.html">Offer</a> object in the ledger.</p>
-<p>With the <a href="known-amendments.html#multisignreserve">MultiSignReserve amendment</a> enabled, the SignerList counts as one object, regardless of how many members it has. As a result, the owner reserve associated with a SignerList is 5 XRP, regardless of how many members it has.</p>
+<p>With the <a href="known-amendments.html#multisignreserve">MultiSignReserve amendment</a> enabled, the SignerList counts as one object, regardless of how many members it has. As a result, the owner reserve associated with a SignerList is 5 XAG, regardless of how many members it has.</p>
 <p>The reserve requirement does not change for SignerLists created before the MultiSignReserve amendment. To take advantage of the new reserve, update the SignerList by sending a <a href="signerlistset.html">SignerListSet transaction</a>.</p>
 <h2 id="signerlist-id-format">SignerList ID Format</h2>
 <p>The ID of a SignerList object is the SHA-512Half of the following values, concatenated in order:</p>
@@ -437,7 +437,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

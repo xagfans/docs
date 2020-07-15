@@ -117,14 +117,14 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="transaction-malleability">Transaction Malleability</h1>
-<p>A transaction is "malleable" if it can be changed in any way after being signed, without the keys to sign it. In the XRP Ledger, the <strong>functionality</strong> of a signed transaction cannot change, but in some circumstances a third party <em>could</em> change the signature and identifying hash of a transaction.</p>
+<p>A transaction is "malleable" if it can be changed in any way after being signed, without the keys to sign it. In the XAG Ledger, the <strong>functionality</strong> of a signed transaction cannot change, but in some circumstances a third party <em>could</em> change the signature and identifying hash of a transaction.</p>
 <p>If vulnerable software submits malleable transactions and assumes they can only execute under the original hash, it may lose track of transactions. In the worst case, malicious actors could take advantage of this to steal money from the vulnerable system.</p>
 <p>There are two circumstances that could lead to transaction malleability:</p>
 <ol>
 <li>
 <p>The transaction does not specify the tfFullyCanonicalSig flag on a transaction signed using the default signing algorithm (ECDSA with the secp256k1 curve).</p>
 <p><strong>Use the <a href="transaction-common-fields.html#global-flags">tfFullyCanonicalSig flag</a></strong> to guarantee that a transaction is not malleable in this way. Although transactions <a href="cryptographic-keys.html#signing-algorithms">signed with Ed25519 keys</a> are not vulnerable to this problem, <strong>there is no downside</strong> to using this flag on <em>all</em> transactions.</p>
-<p>If the <a href="known-amendments.html#requirefullycanonicalsig">RequireFullyCanonicalSig amendment</a> <span class="status not_enabled" title="This feature is not currently enabled on the production XRP Ledger."><i class="fa fa-flask"></i></span> is enabled, all transactions are protected against malleability regardless of the tfFullyCanonicalSig flag.</p>
+<p>If the <a href="known-amendments.html#requirefullycanonicalsig">RequireFullyCanonicalSig amendment</a> <span class="status not_enabled" title="This feature is not currently enabled on the production XAG Ledger."><i class="fa fa-flask"></i></span> is enabled, all transactions are protected against malleability regardless of the tfFullyCanonicalSig flag.</p>
 </li>
 <li>
 <p>The transaction is <a href="multi-signing.html">multi-signed</a> and has more signatures than necessary. Even if the transaction originally did not have more signatures than necessary, it could be malleable if an authorized signer provides an additional signature.</p>
@@ -132,7 +132,7 @@
 </li>
 </ol>
 <h2 id="background">Background</h2>
-<p>In the XRP Ledger, a transaction cannot execute unless:</p>
+<p>In the XAG Ledger, a transaction cannot execute unless:</p>
 <ul>
 <li>All <a href="transaction-common-fields.html">fields of a transaction</a> are signed, except the signature itself.</li>
 <li>The key pair(s) used to sign the transaction are <a href="transaction-basics.html#authorizing-transactions">authorized to send transactions on behalf of that account</a>.</li>
@@ -147,13 +147,13 @@
 <li>The signature must not have any padding bytes outside the DER-encoded data.</li>
 <li>The signature's component integers must not be negative, and they must not be larger than the secp256k1 group order.</li>
 </ul>
-<p>Generally speaking, any standard ECDSA implementation handles these requirements automatically. However, with secp256k1, those requirements are insufficient to prevent malleability. Thus, the XRP Ledger has a concept of "fully canonical" signatures which do not have the same problem.</p>
+<p>Generally speaking, any standard ECDSA implementation handles these requirements automatically. However, with secp256k1, those requirements are insufficient to prevent malleability. Thus, the XAG Ledger has a concept of "fully canonical" signatures which do not have the same problem.</p>
 <p>An ECDSA signature consists of two integers, called R and S. The secp256k1 <em>group order</em>, called N, is a constant value for all secp256k1 signatures. Specifically, N is the value <code>0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141</code>. For any given signature <code>(R,S)</code>, the signature <code>(R, N-S)</code> (that is, using N minus S in place of S) is also valid.</p>
-<p>Thus, to have <em>fully</em> canonical signatures, one must choose which of the two possibilities is preferred and declare the other to be invalid. The creators of the XRP Ledger decided arbitrarily to prefer the <em>smaller</em> of the two possible values, <code>S</code> or <code>N-S</code>. A transaction is considered <em>fully canonical</em> if it uses the preferred (smaller) value of <code>S</code>, and follows all the normal rules for being canonical.</p>
-<p>To maintain compatibility with older software that did not always generate fully canonical signatures, the XRP Ledger accepts transactions that are not fully canonical. To protect new users from exploits, the XRP Ledger has a flag on transactions called <a href="transaction-common-fields.html#global-flags"><strong>tfFullyCanonicalSig</strong></a>, which requires that the transaction use a <em>fully-canonical</em> signature to be valid. If the <a href="known-amendments.html#requirefullycanonicalsig">RequireFullyCanonicalSig amendment</a> <span class="status not_enabled" title="This feature is not currently enabled on the production XRP Ledger."><i class="fa fa-flask"></i></span> is enabled, all transactions require fully-canonical signatures regardless of the tfFullyCanonicalSig flag, and legacy software that makes non-fully-canonical signatures is no longer compatible.</p>
+<p>Thus, to have <em>fully</em> canonical signatures, one must choose which of the two possibilities is preferred and declare the other to be invalid. The creators of the XAG Ledger decided arbitrarily to prefer the <em>smaller</em> of the two possible values, <code>S</code> or <code>N-S</code>. A transaction is considered <em>fully canonical</em> if it uses the preferred (smaller) value of <code>S</code>, and follows all the normal rules for being canonical.</p>
+<p>To maintain compatibility with older software that did not always generate fully canonical signatures, the XAG Ledger accepts transactions that are not fully canonical. To protect new users from exploits, the XAG Ledger has a flag on transactions called <a href="transaction-common-fields.html#global-flags"><strong>tfFullyCanonicalSig</strong></a>, which requires that the transaction use a <em>fully-canonical</em> signature to be valid. If the <a href="known-amendments.html#requirefullycanonicalsig">RequireFullyCanonicalSig amendment</a> <span class="status not_enabled" title="This feature is not currently enabled on the production XAG Ledger."><i class="fa fa-flask"></i></span> is enabled, all transactions require fully-canonical signatures regardless of the tfFullyCanonicalSig flag, and legacy software that makes non-fully-canonical signatures is no longer compatible.</p>
 <p>To calculate a fully-canonical ECDSA signature, one must compare S and N-S to determine which is smaller, then use that value in the <code>Signature</code> field of the transaction.</p>
-<p>All XRP Ledger software that Ripple publishes (including <code>rippled</code>, and ripple-lib/RippleAPI) generates only fully-canonical signatures. To further protect users, Ripple has configured its code to enable the <strong>tfFullyCanonicalSig</strong> flag by default where possible. Ripple strongly encourages third-party implementations of XRP Ledger software to generate only fully-canonical signatures, and enable tfFullyCanonicalSig on transactions by default.</p>
-<p>There are two cases where Ripple's signing implementations for the XRP Ledger do not automatically enable the tfFullyCanonicalSig flag. Users should take care to set the flag in these situations:</p>
+<p>All XAG Ledger software that Ripple publishes (including <code>rippled</code>, and ripple-lib/RippleAPI) generates only fully-canonical signatures. To further protect users, Ripple has configured its code to enable the <strong>tfFullyCanonicalSig</strong> flag by default where possible. Ripple strongly encourages third-party implementations of XAG Ledger software to generate only fully-canonical signatures, and enable tfFullyCanonicalSig on transactions by default.</p>
+<p>There are two cases where Ripple's signing implementations for the XAG Ledger do not automatically enable the tfFullyCanonicalSig flag. Users should take care to set the flag in these situations:</p>
 <ul>
 <li>When the user explicitly specifies the <code>Flags</code> field of the transaction. Use bitwise OR to apply tfFullyCanonicalSig <em>and</em> any other desired flags.</li>
 <li>When the user provides a multi-signature for a transaction. Since different participants in a multi-signature must sign <em>exactly</em> the same data, the signing code does not pre-process the transaction instructions to add the tfFullyCanonicalSig flag. For multi-signed transactions, always enable the tfFullyCanonicalSig flag explicitly.</li>
@@ -180,7 +180,7 @@
 </ul>
 <p>For greater security, these guidelines provide multiple layers of protection.</p>
 <h2 id="exploit-with-malleable-transactions">Exploit With Malleable Transactions</h2>
-<p>If the software you use to interface with the XRP Ledger sends malleable transactions, a malicious actor may be able to trick your software into losing track of a transaction's final outcome and potentially (in the worst case) sending equivalent payments multiple times.</p>
+<p>If the software you use to interface with the XAG Ledger sends malleable transactions, a malicious actor may be able to trick your software into losing track of a transaction's final outcome and potentially (in the worst case) sending equivalent payments multiple times.</p>
 <p>If you use single-signatures and always enable the tfFullyCanonicalSig flag, you are not vulnerable to this exploit. If you use multi-signatures, you may be vulnerable if you or your signers provide more signatures than necessary.</p>
 <h3 id="exploit-scenario-steps">Exploit Scenario Steps</h3>
 <p>The process to exploit a vulnerable system follows a series of steps similar to the following:</p>
@@ -197,7 +197,7 @@
 <p>Most likely, the vulnerable transaction uses a fully-canonical signature, but the flags indicate that the transaction would also be valid with a non-fully-canonical one. The transaction may also use <code>LastLedgerSequence</code> so that its final outcome is clear in a finite amount of time.</p>
 </li>
 <li>
-<p>The system notes the identifying hash of the vulnerable transaction, submits it to the XRP Ledger network, then begins monitoring for that hash to be included in a validated ledger version.</p>
+<p>The system notes the identifying hash of the vulnerable transaction, submits it to the XAG Ledger network, then begins monitoring for that hash to be included in a validated ledger version.</p>
 </li>
 <li>
 <p>A malicious actor sees the transaction propagating through the network before it becomes confirmed.</p>
@@ -216,8 +216,8 @@
 </li>
 <li>
 <p>The malicious actor's version of the transaction achieves consensus and becomes included in a validated ledger.</p>
-<p>At this point, the transaction has executed and cannot be reversed. Its effects (such as sending XRP) are final. The original version of the transaction is no longer valid because its <code>Sequence</code> number has been used.</p>
-<p>The effects of the transaction in the XRP Ledger are exactly the same as if the original version had executed.</p>
+<p>At this point, the transaction has executed and cannot be reversed. Its effects (such as sending XAG) are final. The original version of the transaction is no longer valid because its <code>Sequence</code> number has been used.</p>
+<p>The effects of the transaction in the XAG Ledger are exactly the same as if the original version had executed.</p>
 </li>
 <li>
 <p>The vulnerable system does not see the transaction hash it is expecting, and erroneously concludes that the transaction did not execute.</p>
@@ -226,7 +226,7 @@
 </li>
 <li>
 <p>The vulnerable system takes action assuming that the transaction has failed.</p>
-<p>For example, it may refund (or simply not debit) a customer's balance in its own system, to account for the funds that it thinks have not been sent in the XRP Ledger.</p>
+<p>For example, it may refund (or simply not debit) a customer's balance in its own system, to account for the funds that it thinks have not been sent in the XAG Ledger.</p>
 <p>Worse, the vulnerable system might construct a new transaction to replace the transaction, picking new <code>Sequence</code>, <code>LastLedgerSequence</code>, and <code>Fee</code> parameters based on the current state of the network, but keeping the rest of the transaction the same as the original. If this new transaction is also malleable, the system could be exploited in the same way an indefinite number of times.</p>
 </li>
 </ol>
@@ -286,9 +286,9 @@
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XRP Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
                       <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
-                      <li><a class="nosubcat-page" href="xag.html">XRP</a></li>
+                      <li><a class="nosubcat-page" href="xag.html">XAG</a></li>
                       <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
                       <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
 
@@ -515,7 +515,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

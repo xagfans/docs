@@ -114,7 +114,7 @@
     <div class="content">
         <h1 id="tec-codes">tec Codes</h1>
 <p>These codes indicate that the transaction failed, but it was applied to a ledger to apply the <a href="transaction-cost.html">transaction cost</a>. They have numerical values in the range 100 to 199. Ripple recommends using the text code, not the numeric value.</p>
-<p>For the most part, transactions with <code>tec</code> codes take no action other than to destroy the XRP paid as a <a href="transaction-cost.html">transaction cost</a>, but there are some exceptions. As an exception, a transaction that results in <code>tecOVERSIZE</code> still cleans up some <a href="offers.html#lifecycle-of-an-offer">unfunded offers</a>. Always look at the <a href="transaction-metadata.html">transaction metadata</a> to see precisely what a transaction did.</p>
+<p>For the most part, transactions with <code>tec</code> codes take no action other than to destroy the XAG paid as a <a href="transaction-cost.html">transaction cost</a>, but there are some exceptions. As an exception, a transaction that results in <code>tecOVERSIZE</code> still cleans up some <a href="offers.html#lifecycle-of-an-offer">unfunded offers</a>. Always look at the <a href="transaction-metadata.html">transaction metadata</a> to see precisely what a transaction did.</p>
 <p class="devportal-callout caution"><strong>Caution:</strong> A transaction that provisionally failed with a <code>tec</code> code may still succeed or fail with a different code after being reapplied. The result is final when it appears in a validated ledger version. For more information, see <a href="finality-of-results.html">Finality of Results</a> and <a href="reliable-transaction-submission.html">Reliable Transaction Submission</a>.</p>
 <table>
 <thead>
@@ -173,17 +173,17 @@
 <tr>
 <td align="left"><code>tecINSUF_RESERVE_LINE</code></td>
 <td align="left">122</td>
-<td align="left">The transaction failed because the sending account does not have enough XRP to create a new trust line. (See: <a href="reserves.html">Reserves</a>) This error occurs when the counterparty already has a trust line in a non-default state to the sending account for the same currency. (See <code>tecNO_LINE_INSUF_RESERVE</code> for the other case.)</td>
+<td align="left">The transaction failed because the sending account does not have enough XAG to create a new trust line. (See: <a href="reserves.html">Reserves</a>) This error occurs when the counterparty already has a trust line in a non-default state to the sending account for the same currency. (See <code>tecNO_LINE_INSUF_RESERVE</code> for the other case.)</td>
 </tr>
 <tr>
 <td align="left"><code>tecINSUF_RESERVE_OFFER</code></td>
 <td align="left">123</td>
-<td align="left">The transaction failed because the sending account does not have enough XRP to create a new Offer. (See: <a href="reserves.html">Reserves</a>)</td>
+<td align="left">The transaction failed because the sending account does not have enough XAG to create a new Offer. (See: <a href="reserves.html">Reserves</a>)</td>
 </tr>
 <tr>
 <td align="left"><code>tecINSUFF_FEE</code></td>
 <td align="left">136</td>
-<td align="left">The transaction failed because the sending account does not have enough XRP to pay the <a href="transaction-cost.html">transaction cost</a> that it specified. (In this case, the transaction processing destroys all of the sender's XRP even though that amount is lower than the specified transaction cost.) This result only occurs if the account's balance decreases <em>after</em> this transaction has been distributed to enough of the network to be included in a consensus set. Otherwise, the transaction fails with <a href="ter-codes.html"><code>terINSUF_FEE_B</code></a> before being distributed.</td>
+<td align="left">The transaction failed because the sending account does not have enough XAG to pay the <a href="transaction-cost.html">transaction cost</a> that it specified. (In this case, the transaction processing destroys all of the sender's XAG even though that amount is lower than the specified transaction cost.) This result only occurs if the account's balance decreases <em>after</em> this transaction has been distributed to enough of the network to be included in a consensus set. Otherwise, the transaction fails with <a href="ter-codes.html"><code>terINSUF_FEE_B</code></a> before being distributed.</td>
 </tr>
 <tr>
 <td align="left"><code>tecINSUFFICIENT_RESERVE</code></td>
@@ -218,12 +218,12 @@
 <tr>
 <td align="left"><code>tecNO_DST</code></td>
 <td align="left">124</td>
-<td align="left">The account on the receiving end of the transaction does not exist. This includes Payment and TrustSet transaction types. (It could be created if it received enough XRP.)</td>
+<td align="left">The account on the receiving end of the transaction does not exist. This includes Payment and TrustSet transaction types. (It could be created if it received enough XAG.)</td>
 </tr>
 <tr>
-<td align="left"><code>tecNO_DST_INSUF_XRP</code></td>
+<td align="left"><code>tecNO_DST_INSUF_XAG</code></td>
 <td align="left">125</td>
-<td align="left">The account on the receiving end of the transaction does not exist, and the transaction is not sending enough XRP to create it.</td>
+<td align="left">The account on the receiving end of the transaction does not exist, and the transaction is not sending enough XAG to create it.</td>
 </tr>
 <tr>
 <td align="left"><code>tecNO_ENTRY</code></td>
@@ -248,7 +248,7 @@
 <tr>
 <td align="left"><code>tecNO_LINE_INSUF_RESERVE</code></td>
 <td align="left">126</td>
-<td align="left">The transaction failed because the sending account does not have enough XRP to create a new trust line. (See: <a href="reserves.html">Reserves</a>) This error occurs when the counterparty does not have a trust line to this account for the same currency. (See <code>tecINSUF_RESERVE_LINE</code> for the other case.)</td>
+<td align="left">The transaction failed because the sending account does not have enough XAG to create a new trust line. (See: <a href="reserves.html">Reserves</a>) This error occurs when the counterparty does not have a trust line to this account for the same currency. (See <code>tecINSUF_RESERVE_LINE</code> for the other case.)</td>
 </tr>
 <tr>
 <td align="left"><code>tecNO_LINE_REDUNDANT</code></td>
@@ -268,7 +268,7 @@
 <tr>
 <td align="left"><code>tecNO_TARGET</code></td>
 <td align="left">138</td>
-<td align="left">The transaction referenced an Escrow or PayChannel ledger object that doesn't exist, either because it never existed or it has already been deleted. (For example, another <a href="escrowfinish.html">EscrowFinish transaction</a> has already executed the held payment.) Alternatively, the destination account has <code>asfDisallowXRP</code> set so it cannot be the destination of this <a href="paymentchannelcreate.html">PaymentChannelCreate</a> or <a href="escrowcreate.html">EscrowCreate</a> transaction.</td>
+<td align="left">The transaction referenced an Escrow or PayChannel ledger object that doesn't exist, either because it never existed or it has already been deleted. (For example, another <a href="escrowfinish.html">EscrowFinish transaction</a> has already executed the held payment.) Alternatively, the destination account has <code>asfDisallowXAG</code> set so it cannot be the destination of this <a href="paymentchannelcreate.html">PaymentChannelCreate</a> or <a href="escrowcreate.html">EscrowCreate</a> transaction.</td>
 </tr>
 <tr>
 <td align="left"><code>tecOVERSIZE</code></td>
@@ -298,7 +298,7 @@
 <tr>
 <td align="left"><code>tecUNFUNDED</code></td>
 <td align="left">129</td>
-<td align="left">The transaction failed because the account does not hold enough XRP to pay the amount in the transaction <em>and</em> satisfy the additional <a href="reserves.html">reserve</a> necessary to execute this transaction.</td>
+<td align="left">The transaction failed because the account does not hold enough XAG to pay the amount in the transaction <em>and</em> satisfy the additional <a href="reserves.html">reserve</a> necessary to execute this transaction.</td>
 </tr>
 <tr>
 <td align="left"><code>tecUNFUNDED_ADD</code></td>
@@ -308,7 +308,7 @@
 <tr>
 <td align="left"><code>tecUNFUNDED_PAYMENT</code></td>
 <td align="left">104</td>
-<td align="left">The transaction failed because the sending account is trying to send more XRP than it holds, not counting the <a href="reserves.html">reserve</a>.</td>
+<td align="left">The transaction failed because the sending account is trying to send more XAG than it holds, not counting the <a href="reserves.html">reserve</a>.</td>
 </tr>
 <tr>
 <td align="left"><code>tecUNFUNDED_OFFER</code></td>
@@ -519,14 +519,14 @@
 
                             <li><a class="subpage" href="accountroot.html">AccountRoot</a></li>
                             <li><a class="subpage" href="amendments-object.html">Amendments</a></li>
-                            <li><a class="subpage" href="check.html">Check</a></li>
+                            
                             <li><a class="subpage" href="depositpreauth-object.html">DepositPreauth</a></li>
                             <li><a class="subpage" href="directorynode.html">DirectoryNode</a></li>
-                            <li><a class="subpage" href="escrow-object.html">Escrow</a></li>
+                            
                             <li><a class="subpage" href="feesettings.html">FeeSettings</a></li>
                             <li><a class="subpage" href="ledgerhashes.html">LedgerHashes</a></li>
                             <li><a class="subpage" href="offer.html">Offer</a></li>
-                            <li><a class="subpage" href="paychannel.html">PayChannel</a></li>
+                           
                             <li><a class="subpage" href="ripplestate.html">RippleState</a></li>
                             <li><a class="subpage" href="signerlist.html">SignerList</a></li>
 
@@ -590,54 +590,7 @@
               </div><!-- /#sidenav_collapse18 -->
 
             </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_19">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="commandline-usage.html">rippled Commandline Usage Reference</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_19" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_19">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse19 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_20">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="peer-crawler.html">Peer Crawler</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse20 -->
-
-            </div><!-- /.panel -->
-            <div class="card">
-              <div class="card-header" role="tab" id="sidenav_cat_head_21">
-                <h5 class="card-title">
-                    <a class="sidenav_cat_title" href="validator-list.html">Validator List Method</a>
-                </h5>
-              </div><!-- /.card-header -->
-
-              <div id="sidenav_collapse_21" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_21">
-                <div class="card-body">
-                  <ul class="sidebar_pagelist">
-
-                  </ul>
-                </div><!-- /.card-body -->
-              </div><!-- /#sidenav_collapse21 -->
-
-            </div><!-- /.panel -->
+            <!-- /.panel -->
     </div><!-- /#sidenav -->
 
 </div><!-- /.tree_nav -->      </aside>
@@ -682,7 +635,7 @@
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 

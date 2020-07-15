@@ -229,7 +229,7 @@ type=RocksDB
 <p>The <code>state</code> indicates the <a href="rippled-server-states.html">server state</a>. The <code>age</code> indicates how many seconds since the last validated ledger was closed. (A healthy age for the last validated ledger is 7 seconds or less.)</p>
 <p>During startup, these messages are normal and can be safely ignored. At other times, messages like this usually indicate that the server does not meet the <a href="system-requirements.html">system requirements</a>, especially disk I/O, to run online deletion at the same time as everything else the server is doing.</p>
 <h2 id="potential-censorship">Potential Censorship</h2>
-<p>Log messages such as the following are issued when the XRP Ledger detects potential transaction censorship. For more information about these log messages and the transaction censorship detector, see <a href="transaction-censorship-detection.html">Transaction Censorship Detection</a>.</p>
+<p>Log messages such as the following are issued when the XAG Ledger detects potential transaction censorship. For more information about these log messages and the transaction censorship detector, see <a href="transaction-censorship-detection.html">Transaction Censorship Detection</a>.</p>
 <p><strong>Warning Message</strong></p>
 <pre><code class="text">LedgerConsensus:WRN Potential Censorship: Eligible tx E08D6E9754025BA2534A78707605E0601F03ACE063687A0CA1BDDACFCD1698C7, which we are tracking since ledger 18851530 has not been included as of ledger 18851545.
 </code></pre>
@@ -371,7 +371,7 @@ ShardStore:ERR shard 2236: No such file or directory
             <div id="sidenav_collapse_2" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XRP Ledger APIs</a></li>
+                      <li><a class="nosubcat-page" href="get-started-with-the-rippled-api.html">Get Started with XAG Ledger APIs</a></li>
                       <li><a class="nosubcat-page" href="set-up-secure-signing.html">Set Up Secure Signing</a></li>
                       <li><a class="nosubcat-page" href="get-started-with-rippleapi-for-javascript.html">Get Started with RippleAPI for JavaScript</a></li>
                       <li><a class="nosubcat-page" href="look-up-transaction-results.html">Look Up Transaction Results</a></li>
@@ -389,14 +389,14 @@ ShardStore:ERR shard 2236: No such file or directory
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_8" aria-expanded="true" aria-controls="sidenav_collapse_8"></a>
               <h5 class="card-title">
                   <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Direct XAG Payments</a>
-                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XRP Payments</a> -->
+                <!-- <a class="sidenav_cat_title" href="use-simple-xrp-payments.html">Use Simple XAG Payments</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_8" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_8">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="send-xrp.html">Send XRP</a></li>
+                      <li><a class="nosubcat-page" href="send-xrp.html">Send XAG</a></li>
                       <li><a class="nosubcat-page" href="reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
 
                 </ul>
@@ -474,17 +474,17 @@ ShardStore:ERR shard 2236: No such file or directory
             <div class="card-header" role="tab" id="sidenav_cat_head_35">
                 <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_35" aria-expanded="true" aria-controls="sidenav_collapse_35"></a>
               <h5 class="card-title">
-                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a>
-                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XRP Ledger Businesses</a> -->
+                  <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XAG Ledger Businesses</a>
+                <!-- <a class="sidenav_cat_title" href="xrp-ledger-businesses.html">XAG Ledger Businesses</a> -->
               </h5>
             </div><!-- /.card-header -->
 
             <div id="sidenav_collapse_35" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_35">
               <div class="card-body">
                 <ul class="sidebar_pagelist">
-                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XRP as an Exchange</a></li>
-                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XRP Charts</a></li>
-                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XRP Ledger Gateway</a></li>
+                      <li><a class="nosubcat-page" href="list-xrp-as-an-exchange.html">List XAG as an Exchange</a></li>
+                      <li><a class="nosubcat-page" href="list-your-exchange-on-xrp-charts.html">List Your Exchange on XAG Charts</a></li>
+                      <li><a class="nosubcat-page" href="become-an-xrp-ledger-gateway.html">Become an XAG Ledger Gateway</a></li>
 
                 </ul>
               </div><!-- /.card-body -->
@@ -523,7 +523,7 @@ ShardStore:ERR shard 2236: No such file or directory
                           <li><a class="subpage" href="run-rippled-as-a-validator.html">Run rippled as a Validator</a></li>
                           <li><a class="subpage" href="run-rippled-as-a-wallet-server.html">Run rippled as a Wallet Server</a></li>
                           <li><a class="subpage" href="configure-statsd.html">Configure StatsD</a></li>
-                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XRPL Altnet</a></li>
+                          <li><a class="subpage" href="connect-your-rippled-to-the-xrp-test-net.html">Connect Your rippled to an XAGL Altnet</a></li>
                           <li><a class="subpage" href="configure-online-deletion.html">Configure Online Deletion</a></li>
                           <li><a class="subpage" href="configure-advisory-deletion.html">Configure Advisory Deletion</a></li>
                           <li><a class="subpage" href="configure-history-sharding.html">Configure History Sharding</a></li>
@@ -605,7 +605,7 @@ ShardStore:ERR shard 2236: No such file or directory
   <ul>
             <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
 
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
+        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
 
         <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
 
