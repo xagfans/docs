@@ -23,19 +23,6 @@
     <!-- Stylesheet -->
     <link href="assets/css/devportal.css" rel="stylesheet" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45576805-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-45576805-2');
-      gtag('config', 'UA-157720658-3', { 'linker': {
-        'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
-        } }
-      );
-    </script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
@@ -69,28 +56,14 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
       <ul class="nav navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="docs.html">Docs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="use-cases.html">Use Cases</a>
-            </li>
-            <li class="nav-item active">
+          <li class="nav-item">
               <a class="nav-link" href="dev-tools.html">Dev Tools</a>
             </li>
+            
         <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-      </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/content/dev-tools/dev-tools.md" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      <form class="navbar-form navbar-right" id="navbar-search" role="search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">Search site...</label>
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="Search site...">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
+            <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+          </li>
+      </ul>
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -98,7 +71,7 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="language_selector_header_btn">
             <a class="dropdown-item" href="/dev-tools.html">English</a>
-            <a class="dropdown-item" href="/ja/dev-tools.html">日本語</a>
+            <a class="dropdown-item" href="/cn/dev-tools.html">中文</a>
           </div><!--/.dropdown-menu-->
         </div><!--/.dropdown-->
       </div><!--/.language-selector-->
@@ -131,42 +104,21 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="dev-tools">Dev Tools</h1>
-<p>Ripple provides a set of developer tools to help you test, explore, and validate XRP Ledger API requests and behavior.</p>
+<p>Ripple provides a set of developer tools to help you test, explore, and validate XAG Ledger API requests and behavior.</p>
 <ul>
 <li>
-<p><strong><a href="xrp-ledger-rpc-tool.html">XRP Ledger RPC Tool</a></strong></p>
-<p>Use this tool to print raw information about a XRP Ledger account, transaction, or ledger.</p>
+<p><strong><a href="xrp-ledger-rpc-tool.html">XAG Ledger RPC Tool</a></strong></p>
+<p>Use this tool to print raw information about a XAG Ledger account, transaction, or ledger.</p>
 </li>
 <li>
 <p><strong><a href="websocket-api-tool.html">WebSocket API Tool</a></strong></p>
 <p>Use this tool to send sample requests and get responses from the <code>rippled</code> API. No setup required.</p>
 </li>
-<li>
-<p><strong><a href="data-api-v2-tool.html">Data API v2 Tool</a></strong></p>
-<p>Try the Data API with example requests and get real responses. No setup required.</p>
-</li>
-<li>
-<p><strong><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></strong></p>
-<p>Use this tool to verify that your <a href="xrp-ledger-toml.html">xrp-ledger.toml file</a> is set up properly.</p>
-</li>
-<li>
-<p><strong><a href="validator-domain-verifier.html">Domain Verification Checker</a></strong></p>
-<p>Use this tool to check that your validator's domain can be verified.</p>
-</li>
-<li>
-<p><strong><a href="xrp-testnet-faucet.html">XRP Faucets</a></strong></p>
-<p>Get credentials and test-XRP for XRP Ledger Testnet or Devnet, and connect to servers in these parallel networks to test building software on the XRP Ledger without using real funds.</p>
-</li>
-<li>
-<p><strong><a href="tx-sender.html">Transaction Sender</a></strong></p>
-<p>Test how your code handles various XRP Ledger transactions by sending them over the Testnet to the address of your choice.</p>
-</li>
-<li>
-<p><strong><a class="external-link" href="https://scan.xrpgen.com/" target="_blank">XRP Ledger Explorer <i aria-hidden="true" class="fa fa-external-link"></i></a></strong></p>
-<p>View validations of new ledger versions in real-time, chart the geographic location of servers in the XRP Ledger network, and explore the state of the ledger. <a class="external-link" href="https://testnet.xrpl.org/" target="_blank">Testnet Explorer <i aria-hidden="true" class="fa fa-external-link"></i></a> also available!</p>
+<p><strong><a class="external-link" href="https://scan.xrpgen.com/" target="_blank">XAG Ledger Explorer <i aria-hidden="true" class="fa fa-external-link"></i></a></strong></p>
+<p>View validations of new ledger versions in real-time, chart the geographic location of servers in the XAG Ledger network, and explore the state of the ledger. </p>
 </li>
 </ul>
-<p>Have an idea for a tool not provided here? <a class="button" href="mailto:docs@ripple.com">Contact us</a></p>
+<p>Have an idea for a tool not provided here? <a class="button" href="http://xagfans.com">Contact us</a></p>
     </div>
   </article>
       </main>
@@ -188,12 +140,8 @@
           <ul class="sidebar_pagelist">
             <li><a class="nosubcat-page" href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
             <li><a class="nosubcat-page" href="websocket-api-tool.html">WebSocket API Tool</a></li>
-            <li><a class="nosubcat-page" href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-            <li><a class="nosubcat-page" href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-            <li><a class="nosubcat-page" href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-            <li><a class="nosubcat-page" href="xrp-testnet-faucet.html">XRP Faucets</a></li>
-            <li><a class="nosubcat-page" href="tx-sender.html">Transaction Sender</a></li>
-          <li><a class="nosubcat-page" href="https://scan.xrpgen.com/" target="_blank">XRP Ledger Explorer <i class="fa fa-external-link"></i></a></li>
+           
+          <li><a class="nosubcat-page" href="https://scan.xrpgen.com/" target="_blank">XAG Ledger Explorer <i class="fa fa-external-link"></i></a></li>
           </ul>
         </div><!-- /.card-body -->
       </div><!-- /.card -->
@@ -204,109 +152,7 @@
   </div>
 
 <footer class="xrpl-footer" role="contentinfo">
-  <section class="container-fluid card-grid card-grid-Nx1">
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XRP in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xrp-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        <li class="level-1"><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-
-        <li class="level-1"><a href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-
-        <li class="level-1"><a href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://scan.xrpgen.com/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">Ripple Careers <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">Ripple on GitHub <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">XRP Resources <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
-  </section>
-
+ 
   <section class="container-fluid p-5 pl-sm-0">
 
     <nav role="navigation" class="d-flex mb-3 language-selector">
@@ -316,13 +162,13 @@
           <a class="nav-link active" href="/dev-tools.html"><i class="fa fa-check-circle"></i> English</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/ja/dev-tools.html">日本語</a>
+          <a class="nav-link" href="/cn/dev-tools.html">中文</a>
         </li>
       </ul>
     </nav>
 
     <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
+      <span>&copy; XAG Ledger Project 2019</span>
       <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">License</a></span>
     </div><!-- /.absolute_bottom_footer -->
 
