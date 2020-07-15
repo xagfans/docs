@@ -301,7 +301,7 @@ const myOrder = {
 /* Milliseconds to wait between checks for a new ledger. */
 const INTERVAL = 1000;
 /* Instantiate RippleAPI. Uses s2 (full history server) */
-const api = new RippleAPI({server: 'wss://s2.ripple.com'});
+const api = new RippleAPI({server: 'wss://g2.xrpgen.com'});
 /* Number of ledgers to check for valid transaction before failing */
 const ledgerOffset = 5;
 const myInstructions = {maxLedgerVersionOffset: ledgerOffset};
@@ -369,7 +369,7 @@ api.connect().then(() =&gt; {
 </code></pre>
 <p>This code creates and submits an order transaction, although the same principles apply to other types of transactions as well. After submitting the transaction, the code uses a new Promise, which queries the ledger again after using setTimeout to wait a fixed amount of time, to see if the transaction has been verified. If it hasn't been verified, the process repeats until either the transaction is found in a validated ledger or the returned ledger is higher than the LastLedgerSequence parameter.</p>
 <p>In rare cases (particularly with a large delay or a loss of power), the <code>rippled</code> server may be missing a ledger version between when you submitted the transaction and when you determined that the network has passed the <code>maxLedgerVersion</code>. In this case, you cannot be definitively sure whether the transaction has failed, or has been included in one of the missing ledger versions. RippleAPI returns <code>MissingLedgerHistoryError</code> in this case.</p>
-<p>If you are the administrator of the <code>rippled</code> server, you can <a href="ledger_request.html">manually request the missing ledger(s)</a>. Otherwise, you can try checking the ledger history using a different server. (Ripple runs a public full-history server at <code>s2.ripple.com</code> for this purpose.)</p>
+<p>If you are the administrator of the <code>rippled</code> server, you can <a href="ledger_request.html">manually request the missing ledger(s)</a>. Otherwise, you can try checking the ledger history using a different server. (Ripple runs a public full-history server at <code>g2.xrpgen.com</code> for this purpose.)</p>
 <p>See <a href="reliable-transaction-submission.html">Reliable Transaction Submission</a> for a more thorough explanation.</p>
 <h1 id="rippleapi-in-web-browsers">RippleAPI in Web Browsers</h1>
 <p>RippleAPI can also be used in a web browser if you compile a browser-compatible version and include <a class="external-link" href="https://www.npmjs.com/package/lodash" target="_blank">lodash <i aria-hidden="true" class="fa fa-external-link"></i></a> as a dependency before the RippleAPI script.</p>

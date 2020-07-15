@@ -182,7 +182,7 @@
 <p>You must provide either <code>ledger_index</code> or <code>ledger_hash</code> but not both.</p>
 <h3 id="response-format">Response Format</h3>
 <p>The response follows the <a href="response-formatting.html">standard format</a>. However, the request returns a failure response if it does not have the specified ledger <em>even if it successfully instructed the <code>rippled</code> server to start retrieving the ledger</em>.</p>
-<p class="devportal-callout note"><strong>Note:</strong> To retrieve a ledger, the rippled server must have a direct peer with that ledger in its history. If none of the peers have the requested ledger, you can use the <a href="connect.html">connect method</a> or the <code>fixed_ips</code> section of the config file to add Ripple's full-history server at <code>s2.ripple.com</code> and then make the <code>ledger_request</code> request again.</p>
+<p class="devportal-callout note"><strong>Note:</strong> To retrieve a ledger, the rippled server must have a direct peer with that ledger in its history. If none of the peers have the requested ledger, you can use the <a href="connect.html">connect method</a> or the <code>fixed_ips</code> section of the config file to add Ripple's full-history server at <code>g2.xrpgen.com</code> and then make the <code>ledger_request</code> request again.</p>
 <p>A failure response indicates the status of fetching the ledger. A successful response contains the information for the ledger in a similar format to the <a href="ledger.html">ledger method</a>.</p>
 <div class="multicode" id="code-1"><ul class="codetabs"><li><a href="#code-1-0">Commandline (failure)</a></li><li><a href="#code-1-1">Commandline (in-progress)</a></li><li><a href="#code-1-2">Commandline (success)</a></li></ul>
 
@@ -749,7 +749,7 @@ Connecting to 127.0.0.1:5005
 
 
 
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
+  <li class="level-1"><a target="_blank" href="https://scan.xrpgen.com/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
 
   </ul>
 </div>          </div><!--/.card-body-->

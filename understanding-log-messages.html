@@ -212,7 +212,7 @@
 <p>This indicates that your server is having trouble requesting specific ledger data from its peers. If the <a href="basic-data-types.html#ledger-index">ledger index</a> is much lower than the most recent validated ledger's index as reported by the <a href="server_info.html">server_info method</a>, this probably indicates that your server is downloading a <a href="history-sharding.html">history shard</a>.</p>
 <p>This is not strictly a problem, but if you want to acquire ledger history faster, you can configure <code>rippled</code> to connect to peers with full history by adding or editing the <code>[ips_fixed]</code> config stanza and restarting the server. For example, to always try to connect to one of Ripple's full-history servers:</p>
 <pre><code>[ips_fixed]
-s2.ripple.com 51235
+g2.xrpgen.com 51235
 </code></pre>
 <h2 id="inboundledger-want-hash">InboundLedger Want hash</h2>
 <p>Log messages such as the following indicate that the server is requesting ledger data from other servers:</p>
@@ -669,7 +669,7 @@ ShardStore:ERR shard 2236: No such file or directory
 
 
 
-  <li class="level-1"><a target="_blank" href="https://livenet.xrpl.org/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
+  <li class="level-1"><a target="_blank" href="https://scan.xrpgen.com/">XRP Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
 
   </ul>
 </div>          </div><!--/.card-body-->
