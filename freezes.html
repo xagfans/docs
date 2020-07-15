@@ -86,37 +86,7 @@
   <div class="container-fluid" role="document" id="main_content_wrapper">
     <div class="row">
       <!-- Right sidebar first so it's at the beginning for mobile layouts -->
-      <aside class="right-sidebar col-lg-3 order-lg-4 p-0" role="complementary">
-  <div class="card" id="page-toc-wrapper">
-    <div class="card-header">
-      <h4>In this document</h4>
-    </div>
-    <ul class="card-body">
-      <li class="level-1"><a href="#freezing-issued-currencies">Freezing Issued Currencies</a></li>
-<li class="level-2"><a href="#individual-freeze">Individual Freeze</a></li>
-<li class="level-2"><a href="#global-freeze">Global Freeze</a></li>
-<li class="level-2"><a href="#no-freeze">No Freeze</a></li>
-<li class="level-1"><a href="#technical-details">Technical Details</a></li>
-<li class="level-2"><a href="#enabling-or-disabling-individual-freeze">Enabling or Disabling Individual Freeze</a></li>
-<li class="level-3"><a href="#using-rippled">Using rippled</a></li>
-<li class="level-3"><a href="#using-rippleapi">Using RippleAPI</a></li>
-<li class="level-2"><a href="#enabling-or-disabling-global-freeze">Enabling or Disabling Global Freeze</a></li>
-<li class="level-3"><a href="#using-rippled-1">Using rippled</a></li>
-<li class="level-3"><a href="#using-rippleapi-1">Using RippleAPI</a></li>
-<li class="level-2"><a href="#enabling-no-freeze">Enabling No Freeze</a></li>
-<li class="level-3"><a href="#using-rippled-2">Using rippled</a></li>
-<li class="level-3"><a href="#using-rippleapi-2">Using RippleAPI</a></li>
-<li class="level-2"><a href="#checking-for-individual-freeze">Checking for Individual Freeze</a></li>
-<li class="level-3"><a href="#using-rippled-3">Using rippled</a></li>
-<li class="level-3"><a href="#using-rippleapi-3">Using RippleAPI</a></li>
-<li class="level-2"><a href="#checking-for-global-freeze-and-no-freeze">Checking for Global Freeze and No Freeze</a></li>
-<li class="level-3"><a href="#using-rippled-4">Using rippled</a></li>
-<li class="level-3"><a href="#using-rippleapi-4">Using RippleAPI</a></li>
-<li class="level-1"><a href="#see-also">See Also</a></li>
 
-    </ul>
-  </div>
-      </aside>
 
       <!-- main column -->
       <main class="main col-md-7 col-lg-6 order-md-3  " role="main" id="main_content_body">
@@ -817,20 +787,7 @@ api.connect().then(() =&gt; {
   return api.disconnect();
 }).catch(console.error);
 </code></pre>
-<h1 id="see-also">See Also</h1>
-<ul>
-<li><a class="external-link" href="https://ripple.com/files/GB-2014-02.pdf" target="_blank">GB-2014-02 New Feature: Balance Freeze <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
-<li><a class="external-link" href="https://github.com/ripple/ripple-dev-portal/tree/master/content/_code-samples/freeze" target="_blank">Freeze Code Samples <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
-<li><strong>References:</strong><ul>
-<li><a href="account_lines.html">account_lines method</a></li>
-<li><a href="account_info.html">account_info method</a></li>
-<li><a href="accountset.html">AccountSet transaction</a></li>
-<li><a href="trustset.html">TrustSet transaction</a></li>
-<li><a href="accountroot.html#accountroot-flags">AccountRoot Flags</a></li>
-<li><a href="ripplestate.html#ripplestate-flags">RippleState (trust line) Flags</a></li>
-</ul>
-</li>
-</ul>
+
 <!-- -->
 <!-- -->
 <!-- API object types -->
@@ -1058,119 +1015,7 @@ api.connect().then(() =&gt; {
     </div><!--/.row (main layout)-->
   </div>
 
-<footer class="xrpl-footer" role="contentinfo">
-  <section class="container-fluid card-grid card-grid-Nx1">
 
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="docs.html">Docs</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-              <li class="level-1"><a href="concepts.html">Concepts</a></li>
-          <li class="level-1"><a href="tutorials.html">Tutorials</a></li>
-          <li class="level-1"><a href="references.html">References</a></li>
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">01</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="use-cases.html">Use Cases</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="run-a-rippled-validator.html">Run a rippled Validator</a></li>
-
-        <li class="level-1"><a href="list-xrp-in-your-exchange.html">List XAG in Your Exchange</a></li>
-
-        <li class="level-1"><a href="open-a-payment-channel-to-enable-an-inter-exchange-network.html">Open a Payment Channel to Enable an Inter-Exchange Network</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-rippled.html">Contribute Code to rippled</a></li>
-
-        <li class="level-1"><a href="contribute-code-to-ripple-lib.html">Contribute Code to ripple-lib</a></li>
-
-
-
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">02</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="dev-tools.html">Dev Tools</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-
-
-
-
-<div class="children-display">
-  <ul>
-            <li class="level-1"><a href="xag-ledger-rpc-tool.html">RPC Tool</a></li>
-
-        <li class="level-1"><a href="websocket-api-tool.html">WebSocket API Tool</a></li>
-
-        
-
-
-
-
-  <li class="level-1"><a target="_blank" href="https://scan.xrpgen.com/">XAG Ledger Explorer</a> <i class="fa fa-external-link"></i></li>
-
-  </ul>
-</div>          </div><!--/.card-body-->
-          <div class="flag-vertical">03</div>
-        </div><!--/.card -->
-
-
-        <div class="card">
-          <div class="card-header">
-           <h5><a href="https://xrpgen.com/" target="_blank">Xrpalike Gene<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <!--/.card-body-->
-          <div class="flag-vertical">04</div>
-        </div><!--/.card -->
-  </section>
-
-  <section class="container-fluid p-5 pl-sm-0">
-
-    <nav role="navigation" class="d-flex mb-3 language-selector">
-      <img class="language_selector_icon" src="assets/img/icon-language-selector.svg" width="32" height="40" alt="language selection icon" />
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="/freezes.html"><i class="fa fa-check-circle"></i> English</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/cn/freezes.html">中文</a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="absolute_bottom_footer">
-      <span>&copy; XAG Ledger Project 2020</span>
-      <span><a href="">License</a></span>
-    </div><!-- /.absolute_bottom_footer -->
-
-  </section>
-</footer>
 
 <!-- Jump to top button -->
 <a href="#main_content_wrapper" class="jump-to-top btn btn-primary btn-lg" role="button" title="Jump to top of page">Top</a>
