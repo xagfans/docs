@@ -52,10 +52,7 @@
         <li class="nav-item">
           <a class="nav-link" href="/blog/">Blog</a>
         </li>
-      </ul><!-- /.navbar-nav -->
-<div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/tool/template-tx-sender.html" target="_blank" class="github-edit">Edit</a>
-</div><!-- /.github-edit -->      
+      </ul>    
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -158,46 +155,7 @@
 
       <hr />
 
-      <div class="form-group" id="create_escrow">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text loader" style="display: none"><img class="throbber" src="assets/img/xrp-loader-96.png" /></span>
-          </div>
-          <button class="btn btn-primary form-control disabled needs-connection" type="button" id="create_escrow_btn" disabled="disabled">Create Escrow</button>
-          <input class="form-control" type="number" value="60" min="5" max="10000" id="create_escrow_duration_seconds" />
-          <div class="input-group-append">
-            <span class="input-group-text">seconds</span>
-          </div>
-          <span class="input-group-text">
-            (
-            <input type="checkbox" id="create_escrow_release_automatically" value="1" />
-            <label class="form-check-label" for="create_escrow_release_automatically">Finish automatically</label>)
-          </span>
-        </div>
-        <small class="form-text text-muted">Create a <a href="escrow.html">time-based escrow</a> of 1 XAG for the specified number of seconds.</small>
-        <div class="progress mb-1" style="display:none" id="escrow_progress">
-          <div class="progress-bar progress-bar-striped w-0">&nbsp;</div>
-          <small class="justify-content-center d-flex position-absolute w-100">(Waiting to release Escrow when it's ready)</small>
-        </div>
-      </div><!-- /.form group for create escrow -->
-
-      <hr />
-
-      <div class="form-group" id="create_payment_channel">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text loader" style="display: none"><img class="throbber" src="assets/img/xrp-loader-96.png" /></span>
-          </div>
-          <button class="btn btn-primary form-control disabled needs-connection" type="button" id="create_payment_channel_btn" disabled="disabled">Create Payment Channel</button>
-          <input id="create_payment_channel_amount" class="form-control" type="number" aria-describedby="create_payment_channel_amount_help" value="100000" min="1" max="10000000000" />
-          <div class="input-group-append">
-            <span class="input-group-text" id="create_payment_channel_amount_help">drops of XAG</span>
-          </div>
-        </div>
-        <small class="form-text text-muted">Create a <a href="payment-channels.html">payment channel</a> and fund it with the specified amount of XAG.</small>
-      </div><!-- /.form group for create paychan -->
-
-      <hr />
+      
 
       <div class="form-group" id="send_issued_currency">
         <div class="input-group mb-3">
@@ -252,8 +210,7 @@
             <li><a class="nosubcat-page" href="xag-ledger-rpc-tool.html">RPC Tool</a></li>
             <li><a class="nosubcat-page" href="websocket-api-tool.html">WebSocket API Tool</a></li>
             <li><a class="nosubcat-page" href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-            <li><a class="nosubcat-page" href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
-            <li><a class="nosubcat-page" href="validator-domain-verifier.html">Domain Verification Checker</a></li>
+          
             <li><a class="nosubcat-page" href="xrp-testnet-faucet.html">XAG Faucets</a></li>
             <li><a class="active nosubcat-page" href="tx-sender.html">Transaction Sender</a></li>
           <li><a class="nosubcat-page" href="https://scan.xrpgen.com/" target="_blank">XAG Ledger Explorer <i class="fa fa-external-link"></i></a></li>

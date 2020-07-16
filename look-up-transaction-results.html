@@ -387,75 +387,7 @@
 <p>Offers can create, delete, and modify both types of <a href="directorynode.html">DirectoryNode objects</a>, to keep track of who placed which Offers and which Offers are available at which exchange rates. Generally, users don't need to pay close attention to this bookkeeping.</p>
 <p>An <a href="offercancel.html">OfferCancel transaction</a> may have the code <code>tesSUCCESS</code> even if there was no Offer to delete. Look for a <code>DeletedNode</code> of LedgerEntryType <code>Offer</code> to confirm that the transaction actually deleted an Offer. If not, the Offer may already have been removed by a previous transaction, or the OfferCancel transaction may have used the wrong sequence number in the <code>OfferSequence</code> field.</p>
 <p>If an OfferCreate transaction shows a <code>CreatedNode</code> of type <code>RippleState</code>, that indicates that <a href="offers.html#offers-and-trust">the Offer created a trust line</a> to hold an issued currency received in the trade.</p>
-<h3 id="escrows">Escrows</h3>
-<p>A successful <a href="escrowcreate.html">EscrowCreate transaction</a> creates an <a href="escrow-object.html">Escrow object</a> in the ledger. Look for a <code>CreatedNode</code> entry of LedgerEntryType <code>Escrow</code>. The <code>NewFields</code> should show an <code>Amount</code> equal to the amount of XAG escrowed, and other properties as specified.</p>
-<p>A successful EscrowCreate transaction also debits the same amount of XAG from the sender. Look for a <code>ModifiedNode</code> of LedgerEntryType <code>AccountRoot</code>, where the <code>Account</code> in the final fields matches the address from the <code>Account</code> in the transaction instructions. The <code>Balance</code> should show the decrease in XAG due to the escrowed XAG (in addition to the XAG destroyed to pay the transaction cost).</p>
-<p>A successful <a href="escrowfinish.html">EscrowFinish transaction</a> modifies the <code>AccountRoot</code> of the recipient to increase their XAG balance (in the <code>Balance</code> field), deletes the <code>Escrow</code> object, and reduces the owner count of the escrow creator. Since the escrow's creator, recipient, and finisher may all be different accounts or the same, this can result in <em>one to three</em> <code>ModifiedNode</code> objects of LedgerEntryType <code>AccountRoot</code>. A successful <a href="escrowcancel.html">EscrowCancel transaction</a> is very similar, except it sends the XAG back to the original creator of the escrow.</p>
-<p>Of course, an EscrowFinish can only be successful if it meets the conditions of the escrow, and an EscrowCancel can only be successful if the expiration of the Escrow object is before the close time of the previous ledger.</p>
-<p>Escrow transactions also do normal <a href="#general-purpose-bookkeeping">bookkeeping</a> for adjusting the sender's owner reserve and the directories of the accounts involved.</p>
-<p>In the following excerpt, we see that r9UUEX...'s balance increases by 1 billion XAG and its owner count decreases by 1 because an escrow from that account to itself finished successfully. The <code>Sequence</code> number does not change because <a class="external-link" href="https://XAGcharts.ripple.com/#/transactions/C4FE7F5643E20E7C761D92A1B8C98320614DD8B8CD8A04CFD990EBC5A39DDEA2" target="_blank">a third party completed the escrow <i aria-hidden="true" class="fa fa-external-link"></i></a>:</p>
-<pre><code class="json">{
-  "ModifiedNode": {
-    "FinalFields": {
-      "Account": "r9UUEXn3cx2seufBkDa8F86usfjWM6HiYp",
-      "Balance": "1650000199898000",
-      "Flags": 1048576,
-      "OwnerCount": 11,
-      "Sequence": 23
-    },
-    "LedgerEntryType": "AccountRoot",
-    "LedgerIndex": "13FDBC39E87D9B02F50940F9FDDDBFF825050B05BE7BE09C98FB05E49DD53FCA",
-    "PreviousFields": {
-      "Balance": "650000199898000",
-      "OwnerCount": 12
-    },
-    "PreviousTxnID": "D853342BC27D8F548CE4D7CB688A8FECE3229177790453BA80BC79DE9AAC3316",
-    "PreviousTxnLgrSeq": 41005507
-  }
-},
-{
-  "DeletedNode": {
-    "FinalFields": {
-      "Account": "r9UUEXn3cx2seufBkDa8F86usfjWM6HiYp",
-      "Amount": "1000000000000000",
-      "Destination": "r9UUEXn3cx2seufBkDa8F86usfjWM6HiYp",
-      "FinishAfter": 589075200,
-      "Flags": 0,
-      "OwnerNode": "0000000000000000",
-      "PreviousTxnID": "D5FB1C7D18F931A4FBFA468606220560C17ADF6DE230DA549F4BD11A81F19DFC",
-      "PreviousTxnLgrSeq": 35059548
-    },
-    "LedgerEntryType": "Escrow",
-    "LedgerIndex": "62F0ABB58C874A443F01CDCCA18B12E6DA69C254D3FB17A8B71CD8C6C68DB74D"
-  }
-},
-</code></pre>
-<h3 id="payment-channels">Payment Channels</h3>
-<p>Look for a <code>CreatedNode</code> of LedgerEntryType <code>PayChannel</code> when creating a payment channel. You should also find a <code>ModifiedNode</code> of LedgerEntryType <code>AccountRoot</code> showing the decrease in the sender's balance. Look for an <code>Account</code> field in the <code>FinalFields</code> to confirm that the address matches the sender, and look at the difference in the <code>Balance</code> fields to see the change in XAG balance.</p>
-<p>The metadata also lists the newly-created payment channel in the destination's <a href="directorynode.html">owner directory</a>. This prevents an account from <a href="accounts.html#deletion-of-accounts">being deleted</a> if it is the destination of an open payment channel. (This behavior was added by the <a href="known-amendments.html#fixpaychanrecipientownerdir">fixPayChanRecipientOwnerDir amendment</a>.)</p>
-<p>There are several ways to request to close a payment channel, aside from the immutable <code>CancelAfter</code> time of the channel (which is only set on creation). If a transaction schedules a channel to close, there is  a <code>ModifiedNode</code> entry of LedgerEntryType <code>PayChannel</code> for the channel, with the newly-added close time in the <code>Expiration</code> field of the <code>FinalFields</code>. The following example shows the changes to a <code>PayChannel</code> in a case where the sender requested to close the channel without redeeming a claim:</p>
-<pre><code class="json">{
-  "ModifiedNode": {
-    "FinalFields": {
-      "Account": "rNn78XpaTXpgLPGNcLwAmrcS8FifRWMWB6",
-      "Amount": "1000000",
-      "Balance": "0",
-      "Destination": "rwWfYsWiKRhYSkLtm3Aad48MMqotjPkU1F",
-      "Expiration": 608432060,
-      "Flags": 0,
-      "OwnerNode": "0000000000000002",
-      "PublicKey": "EDEACA57575C6824FC844B1DB4BF4AF2B01F3602F6A9AD9CFB8A3E47E2FD23683B",
-      "SettleDelay": 3600,
-      "SourceTag": 1613739140
-    },
-    "LedgerEntryType": "PayChannel",
-    "LedgerIndex": "DC99821FAF6345A4A6C41D5BEE402A7EA9198550F08D59512A69BFC069DC9778",
-    "PreviousFields": {},
-    "PreviousTxnID": "A9D6469F3CB233795B330CC8A73D08C44B4723EFEE11426FEE8E7CECC611E18E",
-    "PreviousTxnLgrSeq": 41889092
-  }
-}
-</code></pre>
+
 <h3 id="trustset-transactions">TrustSet Transactions</h3>
 <p>TrustSet transactions create, modify, or delete <a href="trust-lines-and-issuing.html">trust lines</a>, which are represented as <a href="ripplestate.html"><code>RippleState</code> objects</a>. A single <code>RippleState</code> object contains settings for both parties involved, including their limits, <a href="rippling.html">rippling settings</a>, and more. Creating and modifying trust lines can also <a href="#general-purpose-bookkeeping">adjust the sender's owner reserve and owner directory</a>.</p>
 <p>The following example shows a new trust line, where <strong>rf1BiG...</strong> is willing to hold up to 110 USD issued by <strong>rsA2Lp...</strong>:</p>

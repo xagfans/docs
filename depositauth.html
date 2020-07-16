@@ -143,9 +143,6 @@
 <li>If the account's XAG balance is equal to or below the minimum account <a href="reserves.html">reserve requirement</a>, it can be the destination of an XAG Payment whose <code>Amount</code> is equal or less than the minimum account reserve (currently 20 XAG). This is to prevent an account from becoming "stuck" by being unable to send transactions but also unable to receive XAG. The account's owner reserve does not matter for this case.</li>
 </ul>
 </li>
-<li>Can receive XAG from <a href="paymentchannelclaim.html">PaymentChannelClaim transactions</a> <strong>only in the following cases</strong>:<ul>
-<li>The sender of the PaymentChannelClaim transaction is the destination of the payment channel.</li>
-<li>The destination of the PaymentChannelClaim transaction has <a href="#preauthorization">preauthorized</a> the sender of the PaymentChannelClaim. <em>(Added by the <a href="known-amendments.html#depositpreauth">DepositPreauth amendment</a>)</em></li>
 </ul>
 </li>
 <li>Can receive XAG from <a href="escrowfinish.html">EscrowFinish transactions</a> <strong>only in the following cases</strong>:<ul>
@@ -279,14 +276,7 @@
 <td class="depauth-no">No Permission</td>
 <td class="depauth-ok">OK</td>
 </tr>
-<tr>
-<td class="depauth-txtype">PaymentChannelCreate</td>
-<td class="depauth-na" colspan="6">(This transaction type can only debit XAG, not credit it.)</td>
-</tr>
-<tr>
-<td class="depauth-txtype">PaymentChannelFund</td>
-<td class="depauth-maybe" colspan="6">Can return XAG when closing a channel created by self</td>
-</tr>
+
 <tr>
 <td class="depauth-txtype">SetRegularKey</td>
 <td class="depauth-na" colspan="6">(This transaction type never sends money.)</td>
@@ -347,11 +337,7 @@ th.depauth-spacer {
 <p>To preauthorize a particular sender, send a <a href="depositpreauth.html">DepositPreauth transaction</a> with the address of another account to preauthorize in the <code>Authorize</code> field. To revoke preauthorization, provide the other account's address in the <code>Unauthorize</code> field instead. Specify your own address in the <code>Account</code> field as usual. You can preauthorize or unauthorize accounts even if you do not currently have DepositAuth enabled; the preauthorization status you set for other accounts is saved, but has no effect unless you enable DepositAuth. An account cannot preauthorize itself. Preauthorizations are one-directional, and have no effect on payments going the opposite direction.</p>
 <p>Preauthorizing another account adds a <a href="depositpreauth-object.html">DepositPreauth object</a> to the ledger, which increases the <a href="reserves.html#owner-reserves">owner reserve</a> of the account providing the authorization. If the account revokes this preauthorization, doing so removes the object and the reserve decreases accordingly.</p>
 <p>After the DepositPreauth transaction has been processed, the authorized account can send funds to your account, even if you have DepositAuth enabled, using any of the following transaction types:</p>
-<ul>
-<li><a href="payment.html">Payment</a></li>
-<li><a href="escrowfinish.html">EscrowFinish</a></li>
-<li><a href="paymentchannelclaim.html">PaymentChannelClaim</a></li>
-</ul>
+
 <p>Preauthorization has no effect on the other ways to send money to an account with DepositAuth enabled. See <a href="#precise-semantics">Precise Semantics</a> for the exact rules.</p>
 <h3 id="checking-for-authorization">Checking for Authorization</h3>
 <p>You can use the <a href="deposit_authorized.html">deposit_authorized method</a> to see if an account is authorized to deposit to another account. This method checks two things:</p>
