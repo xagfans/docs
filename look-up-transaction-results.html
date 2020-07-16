@@ -167,7 +167,7 @@
 <p>If the transaction <em>is</em> included in a validated ledger, then the <a href="transaction-metadata.html">transaction metadata</a> contains a full report of all changes that were made to the ledger state as a result of processing the transaction. The metadata's <code>TransactionResult</code> field contains a <a href="transaction-results.html">transaction result code</a> that summarizes the outcome:</p>
 <ul>
 <li>The code <code>tesSUCCESS</code> indicates that the transaction was, more or less, successful.</li>
-<li>A <code>tec</code>-class code indicates that the transaction failed, and its only effects on the ledger state are to destroy the XAG <a href="transaction-cost.html">transaction cost</a> and possibly perform some bookkeeping like removing <a href="offers.html#offer-expiration">expired Offers</a> and <a href="payment-channels.html#payment-channel-lifecycle">closed payment channels</a>.</li>
+<li>A <code>tec</code>-class code indicates that the transaction failed, and its only effects on the ledger state are to destroy the XAG <a href="transaction-cost.html">transaction cost</a> and possibly perform some bookkeeping like removing <a href="offers.html#offer-expiration">expired Offers</a> </li>
 <li>No other code can appear in any ledger.</li>
 </ul>
 <p>The result code is only a summary of the transaction's outcome. To understand in more detail what the transaction did, you must read the rest of the metadata in context of the transaction's instructions and the ledger state before the transaction executed.</p>
