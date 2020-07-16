@@ -446,21 +446,11 @@ WS_HANDLERS["transaction"] = log_tx
 <p><strong><a href="payment.html">Payment transactions</a></strong> can deliver XAG or <a href="issued-currencies.html">issued currencies</a>. Filter these by the <code>transaction.Destination</code> field, which contains the address of the recipient, and always use the <code>meta.delivered_amount</code> to see how much the payment actually delivered. XAG amounts are <a href="basic-data-types.html#specifying-currency-amounts">formatted as strings</a>.</p>
 <p class="devportal-callout warning"><strong>Warning:</strong> If you use the <code>transaction.Amount</code> field instead, you may be vulnerable to the <a href="partial-payments.html#partial-payments-exploit">partial payments exploit</a>. Malicious users can use this exploit to trick you into allowing the malicious user to trade or withdraw more money than they paid you.</p>
 </li>
-<li>
-<p><strong><a href="checkcash.html">CheckCash transactions</a></strong> allow an account to receive money authorized by a different account's <a href="checkcreate.html">CheckCreate transaction</a>. Look at the metadata of a <strong>CheckCash transaction</strong> to see how much currency the account received.</p>
-</li>
-<li>
-<p><strong><a href="escrowfinish.html">EscrowFinish transactions</a></strong> can deliver XAG by finishing an <a href="escrow.html">Escrow</a> created by a previous <a href="escrowcreate.html">EscrowCreate transaction</a>. Look at the metadata of the <strong>EscrowFinish transaction</strong> to see which account received XAG from the escrow and how much.</p>
-</li>
+
 <li>
 <p><strong><a href="offercreate.html">OfferCreate transactions</a></strong> can deliver XAG or issued currencies by consuming offers your account has previously placed in the XAG Ledger's <a href="decentralized-exchange.html">decentralized exchange</a>. If you never place offers, you cannot receive money this way. Look at the metadata to see what currency the account received, if any, and how much.</p>
 </li>
-<li>
-<p><strong><a href="paymentchannelclaim.html">PaymentChannelClaim transactions</a></strong> can deliver XAG from a <a href="payment-channels.html">payment channel</a>. Look at the metadata to see which accounts, if any, received XAG from the transaction.</p>
-</li>
-<li>
-<p><strong><a href="paymentchannelfund.html">PaymentChannelFund transactions</a></strong> can return XAG from a closed (expired) payment channel to the sender.</p>
-</li>
+
 </ul>
 </li>
 <li>
@@ -657,8 +647,7 @@ $("#tx_read").click((event) => {
 <ul>
 <li><a href="look-up-transaction-results.html">Look Up Transaction Results</a> to see exactly what a transaction did, and build your software to react appropriately.</li>
 <li>Try <a href="send-XAG.html">Sending XAG</a> from your own address.</li>
-<li>Try monitoring for transactions of advanced types like <a href="escrow.html">Escrows</a>, <a href="checks.html">Checks</a>, or <a href="payment-channels.html">Payment Channels</a>, and responding to incoming notifications.
-<!-- --></li>
+
 </ul>
 <h2 id="other-programming-languages">Other Programming Languages</h2>
 <p>Many programming languages have libraries for sending and receiving data over a WebSocket connection. If you want a head-start on communicating with <code>rippled</code>'s WebSocket API in a language other than JavaScript, the following examples demonstrate similar functionality:</p>

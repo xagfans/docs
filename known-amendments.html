@@ -447,7 +447,7 @@
 </table>
 <p>Makes it possible to delete <a href="accounts.html">accounts</a>.</p>
 <p>Without this amendment, new accounts always start with their <code>Sequence</code> numbers at 1, and there is no way to remove accounts from the state data of the ledger.</p>
-<p>With this amendment, new accounts start with their <code>Sequence</code> numbers equal to the <code>Sequence</code> number matching the <a href="basic-data-types.html#ledger-index">index of the ledger</a> in which the account is created. This change protects accounts that are deleted and later re-created from having their old transactions executed again. Adds a new <code>AccountDelete</code> transaction type, which deletes an account and certain objects that the account owns in the ledger. Certain types of objects cannot be deleted this way, so an account that is linked to any such objects cannot be deleted. Additionally, an account cannot be deleted if the current ledger index minus 256 is less than the account's current <code>Sequence</code> number. See <a class="external-link" href="https://github.com/xrp-community/standards-drafts/issues/8" target="_blank">XAG Community Standards Draft 7 <i aria-hidden="true" class="fa fa-external-link"></i></a> for a detailed discussion of this amendment.</p>
+<p>With this amendment, new accounts start with their <code>Sequence</code> numbers equal to the <code>Sequence</code> number matching the <a href="basic-data-types.html#ledger-index">index of the ledger</a> in which the account is created. This change protects accounts that are deleted and later re-created from having their old transactions executed again. </p>
 <h2 id="depositauth">DepositAuth</h2>
 <table>
 <thead>

@@ -149,8 +149,6 @@
 <li><code>directory</code> - Retrieve a <a href="directorynode.html">DirectoryNode</a>, which contains a list of other ledger objects.</li>
 <li><code>offer</code> - Retrieve an <a href="offer.html">Offer object</a>, which defines an offer to exchange currency.</li>
 <li><code>ripple_state</code> - Retrieve a <a href="ripplestate.html">RippleState object</a>, which tracks a (non-XAG ) currency balance between two accounts.</li>
-<li><code>check</code> - Retrieve a <a href="check.html">Check object</a>, which is a potential payment that can be cashed by its recipient. <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/1.0.0" target="_blank" title="New in: rippled 1.0.0"><img alt="New in: rippled 1.0.0" class="dactyl_badge" src="https://img.shields.io/badge/New%20in-rippled%201.0.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
-<li><code>escrow</code> - Retrieve an <a href="escrow-object.html">Escrow object</a>, which holds XAG  until a specific time or condition is met. <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/1.0.0" target="_blank" title="New in: rippled 1.0.0"><img alt="New in: rippled 1.0.0" class="dactyl_badge" src="https://img.shields.io/badge/New%20in-rippled%201.0.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
 <li><code>deposit_preauth</code> - Retrieve a <a href="depositpreauth-object.html">DepositPreauth object</a>, which tracks preauthorization for payments to accounts requiring <a href="depositauth.html">Deposit Authorization</a>. <a class="external-link" href="https://github.com/ripple/rippled/releases/tag/1.1.0" target="_blank" title="New in: rippled 1.1.0"><img alt="New in: rippled 1.1.0" class="dactyl_badge" src="https://img.shields.io/badge/New%20in-rippled%201.1.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
 </ol>
 <p>If you specify more than one of the above items, the server retrieves only one of them; it is undefined which it chooses.</p>
@@ -214,21 +212,7 @@
 <td align="left">String</td>
 <td align="left"><em>(Required if <code>directory</code> is specified as an object and <code>directory.dir_root</code> is not provided)</em> Unique address of the account associated with this directory.</td>
 </tr>
-<tr>
-<td align="left"><code>escrow</code></td>
-<td align="left">Object or String</td>
-<td align="left"><em>(Optional)</em> Specify an <a href="escrow-object.html">Escrow object</a> to retrieve. If a string, must be the <a href="ledger-object-ids.html">object ID</a> of the Escrow, as hexadecimal. If an object, requires <code>owner</code> and <code>seq</code> sub-fields.</td>
-</tr>
-<tr>
-<td align="left"><code>escrow.owner</code></td>
-<td align="left">String - <a href="basic-data-types.html#addresses">Address</a></td>
-<td align="left"><em>(Required if <code>escrow</code> is specified as an object)</em> The owner (sender) of the Escrow object.</td>
-</tr>
-<tr>
-<td align="left"><code>escrow.seq</code></td>
-<td align="left">Unsigned Integer</td>
-<td align="left"><em>(Required if <code>escrow</code> is specified as an object)</em> The sequence number of the transaction that created the Escrow object.</td>
-</tr>
+
 <tr>
 <td align="left"><code>offer</code></td>
 <td align="left">Object or String</td>
@@ -366,7 +350,6 @@
 <li><code>lgrNotFound</code> - The ledger specified by the <code>ledger_hash</code> or <code>ledger_index</code> does not exist, or it does exist but the server does not have it.</li>
 <li><code>malformedAddress</code> - The request improperly specified an <a href="basic-data-types.html#addresses">Address</a> field.</li>
 <li><code>malformedCurrency</code> - The request improperly specified a <a href="currency-formats.html#currency-codes">Currency Code</a> field.</li>
-<li><code>malformedOwner</code> - The request improperly specified the <code>escrow.owner</code> sub-field.</li>
 <li><code>malformedRequest</code> - The request provided an invalid combination of fields, or provided the wrong type for one or more fields.</li>
 <li><code>unknownOption</code> - The fields provided in the request did not match any of the expected request formats.</li>
 </ul>

@@ -218,17 +218,14 @@
 <ul>
 <li>The account's <code>Sequence</code> number plus 256 must be less than the current <a href="basic-data-types.html#ledger-index">Ledger Index</a>.</li>
 <li>The account must not be linked to any of the following types of <a href="ledger-object-types.html">ledger objects</a> (as a sender or receiver):<ul>
-<li><code>Escrow</code></li>
-<li><code>PayChannel</code></li>
+
 <li><code>RippleState</code></li>
-<li><code>Check</code></li>
+
 </ul>
 </li>
 <li>The account must own fewer than 1000 objects in the ledger.</li>
-<li>The <a href="accountdelete.html">AccountDelete transaction</a> must pay a special <a href="transaction-cost.html">transaction cost</a> equal to at least the <a href="reserves.html">owner reserve</a> for one item (currently 5 XAG).</li>
 </ul>
 <p>After an account has been deleted, it can be re-created in the ledger through the normal method of <a href="#creating-accounts">creating accounts</a>. An account that has been deleted and re-created is no different than an account that has been created for the first time.</p>
-<p class="devportal-callout warning"><strong>Warning:</strong> The <a href="accountdelete.html">AccountDelete transaction</a>'s transaction cost always applies when the transaction is included in a validated ledger, even if the transaction failed because the account does not meet the requirements to be deleted. To greatly reduce the chances of paying the high transaction cost if the account cannot be deleted, <a href="submit.html">submit the transaction</a> with <code>fail_hard</code> enabled.</p>
 <p>Unlike Bitcoin and many other cryptocurrencies, each new version of the XAG Ledger's public ledger chain contains the full state of the ledger, which increases in size with each new account. For that reason, you should not create new XAG Ledger accounts unless necessary. You can recover some of an account's 20 XAG <a href="reserves.html">reserve</a> by deleting the account, but you must still destroy at least 5 XAG to do so.</p>
 <p>Institutions who send and receive value on behalf of many users can use <a href="become-an-XAG-ledger-gateway.html#source-and-destination-tags"><strong>Source Tags</strong> and <strong>Destination Tags</strong></a> to distinguish payments from and to their customers while only using one (or a handful) of accounts in the XAG Ledger.</p>
 <h2 id="transaction-history">Transaction History</h2>

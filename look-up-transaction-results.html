@@ -324,8 +324,7 @@
 <p>Other things to look for when processing transaction metadata depend on the transaction type.</p>
 <h3 id="payments">Payments</h3>
 <p>A <a href="payment.html">Payment transaction</a> can represent a direct XAG-to-XAG transaction, a <a href="cross-currency-payments.html">cross-currency payment</a>, or a direct transaction in an <a href="issued-currencies.html">issued (non-XAG) currency</a>. Anything other than a direct XAG-to-XAG transaction can be a <a href="partial-payments.html">partial payment</a>, including issued currency to XAG or XAG to issued currency transactions.</p>
-<p>XAG amounts are tracked in the <code>Balance</code> field of <code>AccountRoot</code> objects. (XAG can also exist in <a href="escrow-object.html">Escrow objects</a> and <a href="paychannel.html">PayChannel objects</a>, but Payment transactions cannot affect those.)</p>
-<p>You should always use <a href="partial-payments.html#the-delivered_amount-field">the delivered_amount field</a> to see how much a payment delivered.</p>
+p>You should always use <a href="partial-payments.html#the-delivered_amount-field">the delivered_amount field</a> to see how much a payment delivered.</p>
 <p>If the payment contains a <code>CreatedNode</code> of LedgerEntryType <code>AccountRoot</code>, that means the payment <a href="accounts.html#creating-accounts">funded a new account</a> in the ledger.</p>
 <h4 id="issued-currency-payments">Issued Currency Payments</h4>
 <p>Payments involving issued currencies are a bit more complicated.</p>

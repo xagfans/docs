@@ -126,7 +126,6 @@
 <h2 id="background">Background</h2>
 <p>Financial services regulations and licenses may require that a business or entity must know the sender of all transactions it receives. This presents a challenge on a decentralized system like the XAG Ledger where participants are identified by pseudonyms which can be freely generated and the default behavior is for any address to be able to pay any other.</p>
 <p>The Deposit Authorization flag introduces an option for those using the XAG Ledger to comply with such regulations without changing the fundamental nature of the decentralized ledger. With Deposit Authorization enabled, an account can only receive funds it explicitly approves by sending a transaction. The owner of an account using Deposit Authorization can perform the due diligence necessary to identify the sender of any funds <em>before</em> sending the transaction that causes the account to receive the money.</p>
-<p>When you have Deposit Authorization enabled, you can receive money from <a href="known-amendments.html#checks">Checks</a>, <a href="escrow.html">Escrow</a>, and <a href="known-amendments.html#paychan">Payment Channels</a>. In these transactions' "two-step" model, first the source sends a transaction to authorize sending funds, then the destination sends a transaction to authorize receiving those funds.</p>
 <p>To receive money from <a href="payment.html">Payment transactions</a> when you have Deposit Authorization enabled, you must <a href="#preauthorization">preauthorize</a> the senders of those Payments. <em>(Added by the <a href="known-amendments.html#depositpreauth">DepositPreauth amendment</a>.)</em></p>
 <h2 id="recommended-usage">Recommended Usage</h2>
 <p>To get the full effect of Deposit Authorization, Ripple recommends also doing the following:</p>
@@ -145,8 +144,6 @@
 </li>
 </ul>
 </li>
-<li>Can receive XAG from <a href="escrowfinish.html">EscrowFinish transactions</a> <strong>only in the following cases</strong>:<ul>
-<li>The sender of the EscrowFinish transaction is the destination of the escrow.</li>
 <li>The destination of the EscrowFinish transaction has <a href="#preauthorization">preauthorized</a> the sender of the EscrowFinish. <em>(Added by the <a href="known-amendments.html#depositpreauth">DepositPreauth amendment</a>)</em></li>
 </ul>
 </li>
@@ -184,40 +181,7 @@
 <td class="depauth-txtype">AccountSet</td>
 <td class="depauth-na" colspan="6">(This transaction type never sends money.)</td>
 </tr>
-<tr>
-<td class="depauth-txtype">CheckCancel</td>
-<td class="depauth-na" colspan="6">(This transaction type never sends money.)</td>
-</tr>
-<tr>
-<td class="depauth-txtype">CheckCash</td>
-<td class="depauth-ok">OK</td>
-<td class="depauth-no">No Permission</td>
-<td class="depauth-spacer"> </td>
-<td class="depauth-ok">OK</td>
-<td class="depauth-no">No Permission</td>
-<td class="depauth-no">No Permission</td>
-</tr>
-<tr>
-<td class="depauth-txtype">CheckCreate</td>
-<td class="depauth-na" colspan="6">(This transaction type never sends money.)</td>
-</tr>
-<tr>
-<td class="depauth-txtype">EscrowCancel</td>
-<td class="depauth-maybe" colspan="6">Can return XAG from an expired escrow</td>
-</tr>
-<tr>
-<td class="depauth-txtype">EscrowCreate</td>
-<td class="depauth-na" colspan="6">(This transaction type can only debit XAG, not credit it.)</td>
-</tr>
-<tr>
-<td class="depauth-txtype">EscrowFinish</td>
-<td class="depauth-ok">OK</td>
-<td class="depauth-ok">OK</td>
-<td class="depauth-spacer"> </td>
-<td class="depauth-ok">OK</td>
-<td class="depauth-no">No Permission</td>
-<td class="depauth-ok">OK</td>
-</tr>
+
 <tr>
 <td class="depauth-txtype">OfferCancel</td>
 <td class="depauth-na" colspan="6">This transaction type never sends money.</td>

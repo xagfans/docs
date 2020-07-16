@@ -191,10 +191,7 @@
 <td align="left"><code>tefPAST_SEQ</code></td>
 <td align="left">The sequence number of the transaction is lower than the current sequence number of the account sending the transaction.</td>
 </tr>
-<tr>
-<td align="left"><code>tefTOO_BIG</code></td>
-<td align="left">The transaction would affect too many objects in the ledger. For example, this was an <a href="accountdelete.html">AccountDelete transaction</a> but the account to be deleted owns over 1000 objects in the ledger.</td>
-</tr>
+
 <tr>
 <td align="left"><code>tefWRONG_PRIOR</code></td>
 <td align="left">The transaction contained an <code>AccountTxnID</code> field (or the deprecated <code>PreviousTxnID</code> field), but the transaction specified there does not match the account's previous transaction.</td>
