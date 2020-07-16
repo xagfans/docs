@@ -252,7 +252,6 @@
 <li class="level-3"><a href="#parameters-30">Parameters</a></li>
 <li class="level-3"><a href="#return-value-32">Return Value</a></li>
 <li class="level-3"><a href="#example-46">Example</a></li>
-<
 <li class="level-2"><a href="#sign">sign</a></li>
 <li class="level-3"><a href="#parameters-39">Parameters</a></li>
 <li class="level-3"><a href="#return-value-41">Return Value</a></li>
@@ -496,7 +495,6 @@ const api = new RippleAPI();
 <li><a href="#prepareorder">prepareOrder</a></li>
 <li><a href="#prepareordercancellation">prepareOrderCancellation</a></li>
 <li><a href="#preparesettings">prepareSettings</a></li>
-
 <li><a href="#sign">sign</a></li>
 <li><a href="#generateaddress">generateAddress</a></li>
 <li><a href="#computeledgerhash">computeLedgerHash</a></li>
@@ -6789,17 +6787,8 @@ return api.submit(signedTransaction)
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>xAddress</td>
-<td><a href="#x-address">xAddress</a></td>
-<td>A randomly generated XAG Ledger address in X-address format.</td>
-</tr>
-<tr>
-<td>classicAddress</td>
-<td><a href="#classic-address">classicAddress</a></td>
-<td>A randomly generated XAG Ledger Account ID (classic address).</td>
-</tr>
-<tr>
+
+
 <td>address</td>
 <td><a href="#classic-address">classicAddress</a></td>
 <td>Deprecated: Use <code>classicAddress</code> instead.</td>
@@ -6815,8 +6804,7 @@ return api.submit(signedTransaction)
 <pre><code class="javascript">return api.generateAddress();
 </code></pre>
 <pre><code class="json">{
-  "xAddress": "XVLcsWWNiFdUEqoDmSwgxh1abfddG1LtbGFk7omPgYpbyE8",
-  "classicAddress": "rGCkuB7PBr5tNy68tPEABEtcdno4hE6Y7f",
+  
   "address": "rGCkuB7PBr5tNy68tPEABEtcdno4hE6Y7f",
   "secret": "sp6JS7f14BuwFY8Mw6bTtLKWauoUs"
 }

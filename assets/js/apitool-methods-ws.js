@@ -1,16 +1,6 @@
 Request("Account Methods")
 
-Request('account_channels', {
-    description: "Returns information about an account's <a href='payment-channels.html'>payment channels</a>.",
-    link: "account_channels.html",
-    body: {
-      "id": 1,
-      "command": "account_channels",
-      "account": "rN7n7otQDd6FczFgLdSqtcsAUxDkw6fzRH",
-      "destination_account": "rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn",
-      "ledger_index": "validated"
-    }
-})
+
 
 Request('account_currencies', {
   description: "Retrieves a list of currencies that an account can send or receive, based on its trust lines.",
@@ -325,33 +315,6 @@ Request('ripple_path_find', {
         "currency": "USD",
         "issuer": "rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B"
     }
-  }
-})
-
-Request("Payment Channel Methods")
-
-Request('channel_authorize', {
-  description: "Creates a signature that can be used to redeem a specific amount of XRP from a payment channel.",
-  link: "channel_authorize.html",
-  body: {
-    "id": "channel_authorize_example_id1",
-    "command": "channel_authorize",
-    "channel_id": "5DB01B7FFED6B67E6B0414DED11E051D2EE2B7619CE0EAA6286D67A3A4D5BDB3",
-    "secret": "s████████████████████████████",
-    "amount": "1000000"
-  }
-})
-
-Request('channel_verify', {
-  description: "Checks the validity of a signature that can be used to redeem a specific amount of XRP from a payment channel.",
-  link: "channel_verify.html",
-  body: {
-    "id": 1,
-    "command": "channel_verify",
-    "channel_id": "5DB01B7FFED6B67E6B0414DED11E051D2EE2B7619CE0EAA6286D67A3A4D5BDB3",
-    "signature": "304402204EF0AFB78AC23ED1C472E74F4299C0C21F1B21D07EFC0A3838A420F76D783A400220154FB11B6F54320666E4C36CA7F686C16A3A0456800BBC43746F34AF50290064",
-    "public_key": "aB44YfzW24VDEJQ2UuLPV2PvqcPCSoLnL7y5M1EzhdW4LnK5xMS3",
-    "amount": "1000000"
   }
 })
 
