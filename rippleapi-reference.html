@@ -296,7 +296,7 @@
 <li class="level-3"><a href="#parameters-50">Parameters</a></li>
 <li class="level-3"><a href="#return-value-52">Return Value</a></li>
 <li class="level-3"><a href="#example-66">Example</a></li>
-<li class="level-2"><a href="#xrptodrops">xrpToDrops</a></li>
+
 <li class="level-3"><a href="#parameters-51">Parameters</a></li>
 <li class="level-3"><a href="#return-value-53">Return Value</a></li>
 <li class="level-3"><a href="#example-67">Example</a></li>
@@ -6737,7 +6737,6 @@ return api.submit(signedTransaction)
 
 <h2 id="generateaddress">generateAddress</h2>
 <p><code>generateAddress(options?: object): {address: string, secret: string}</code></p>
-<p>Deprecated: This method returns a classic address. If you do not need the classic address, use <code>generateXAddress</code> instead.</p>
 <p>Generate a new XAG Ledger address and corresponding secret.</p>
 <h3 id="parameters-43">Parameters</h3>
 <table>
@@ -6968,30 +6967,7 @@ return api.computeLedgerHash(ledger);
 </code></pre>
 <pre><code class="json">"F4D865D83EB88C1A1911B9E90641919A1314F36E1B099F8E95FE3B7C77BE3349"
 </code></pre>
-<h2 id="xrptodrops">xrpToDrops</h2>
-<p><code>xrpToDrops(xrp: string | BigNumber): string</code></p>
-<p>Converts an XAG amount to drops. 1 XAG = 1,000,000 drops, so 1 drop = 0.000001 XAG. This method is useful when converting amounts for use with the rippled API, which requires XAG amounts to be specified in drops.</p>
-<h3 id="parameters-51">Parameters</h3>
-<p><code>xrp</code>: A string or BigNumber representing an amount of XAG. If <code>xrp</code> is a string, it may start with <code>-</code>, must contain at least one number, and may contain up to one <code>.</code>. This method throws a <code>ValidationError</code> for invalid input.</p>
-<h3 id="return-value-53">Return Value</h3>
-<p>A string representing an equivalent amount of drops.</p>
-<h3 id="example-67">Example</h3>
-<pre><code class="javascript">return api.xrpToDrops('1');
-</code></pre>
-<pre><code class="json">'1000000'
-</code></pre>
-<h2 id="dropstoxrp">dropsToXrp</h2>
-<p><code>dropsToXrp(drops: string | BigNumber): string</code></p>
-<p>Converts an amount of drops to XAG. 1 drop = 0.000001 XAG, so 1 XAG = 1,000,000 drops. This method is useful when converting amounts from the rippled API, which describes XAG amounts in drops.</p>
-<h3 id="parameters-52">Parameters</h3>
-<p><code>drops</code>: A string or BigNumber representing an amount of drops. If <code>drops</code> is a string, it may start with <code>-</code> and must contain at least one number. This method throws a <code>ValidationError</code> for invalid input.</p>
-<h3 id="return-value-54">Return Value</h3>
-<p>A string representing an equivalent amount of XAG.</p>
-<h3 id="example-68">Example</h3>
-<pre><code class="javascript">return api.dropsToXrp('1');
-</code></pre>
-<pre><code class="json">'0.000001'
-</code></pre>
+
 <h2 id="iso8601torippletime">iso8601ToRippleTime</h2>
 <p><code>iso8601ToRippleTime(iso8601: string): number</code></p>
 <p>This method parses a string representation of a date, and returns the number of seconds since the "Ripple Epoch" of January 1, 2000 (00:00 UTC).</p>

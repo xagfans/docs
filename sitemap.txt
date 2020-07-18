@@ -69,7 +69,7 @@ https://api.xrpgen.com/get-started-with-rippleapi-for-javascript.html
 https://api.xrpgen.com/look-up-transaction-results.html
 https://api.xrpgen.com/monitor-incoming-payments-with-websocket.html
 https://api.xrpgen.com/use-simple-xrp-payments.html
-https://api.xrpgen.com/send-xrp.html
+https://api.xrpgen.com/send-xag.html
 https://api.xrpgen.com/reliable-transaction-submission.html
 https://api.xrpgen.com/cancel-or-skip-a-transaction.html
 https://api.xrpgen.com/manage-account-settings.html
