@@ -2,7 +2,7 @@ https://api.xrpgen.com/index.html
 https://api.xrpgen.com/docs.html
 https://api.xrpgen.com/concepts.html
 https://api.xrpgen.com/introduction.html
-https://api.xrpgen.com/xrp-ledger-overview.html
+https://api.xrpgen.com/xag-ledger-overview.html
 https://api.xrpgen.com/intro-to-consensus.html
 https://api.xrpgen.com/xrp.html
 https://api.xrpgen.com/software-ecosystem.html
@@ -96,9 +96,9 @@ https://api.xrpgen.com/cancel-a-check.html
 https://api.xrpgen.com/look-up-checks-by-sender.html
 https://api.xrpgen.com/look-up-checks-by-recipient.html
 https://api.xrpgen.com/xrp-ledger-businesses.html
-https://api.xrpgen.com/list-xrp-as-an-exchange.html
-https://api.xrpgen.com/list-your-exchange-on-xrp-charts.html
-https://api.xrpgen.com/become-an-xrp-ledger-gateway.html
+https://api.xrpgen.com/xag-test-net-faucet.html.html
+https://api.xrpgen.com/list-your-exchange-on-xag-charts.html
+https://api.xrpgen.com/become-an-xag-ledger-gateway.html
 https://api.xrpgen.com/manage-the-rippled-server.html
 https://api.xrpgen.com/install-rippled.html
 https://api.xrpgen.com/system-requirements.html
@@ -117,7 +117,7 @@ https://api.xrpgen.com/configure-rippled.html
 https://api.xrpgen.com/run-rippled-as-a-validator.html
 https://api.xrpgen.com/run-rippled-as-a-wallet-server.html
 https://api.xrpgen.com/configure-statsd.html
-https://api.xrpgen.com/connect-your-rippled-to-the-xrp-test-net.html
+https://api.xrpgen.com/connect-your-rippled-to-the-xag-test-net.html
 https://api.xrpgen.com/configure-online-deletion.html
 https://api.xrpgen.com/configure-advisory-deletion.html
 https://api.xrpgen.com/configure-history-sharding.html
@@ -273,7 +273,7 @@ https://api.xrpgen.com/transaction-metadata.html
 https://api.xrpgen.com/commandline-usage.html
 https://api.xrpgen.com/peer-crawler.html
 https://api.xrpgen.com/validator-list.html
-https://api.xrpgen.com/xrp-api.html
+https://api.xrpgen.com/xag-api.html
 https://api.xrpgen.com/xrp-api-methods.html
 https://api.xrpgen.com/xrp-api-Query-methods.html
 https://api.xrpgen.com/xrp-api-getAccountInfo.html
@@ -318,7 +318,7 @@ https://api.xrpgen.com/xrp-api-data-types-transactionid.html
 https://api.xrpgen.com/xrp-api-data-types-validatedledger.html
 https://api.xrpgen.com/rippleapi-reference.html
 https://api.xrpgen.com/data-api.html
-https://api.xrpgen.com/xrp-ledger-toml.html
+https://api.xrpgen.com/xag-ledger-toml.html
 https://api.xrpgen.com/use-cases.html
 https://api.xrpgen.com/run-a-rippled-validator.html
 https://api.xrpgen.com/list-xrp-in-your-exchange.html
@@ -333,6 +333,6 @@ https://api.xrpgen.com/data-api-v2-tool.html
 https://api.xrpgen.com/ripple-txt-validator.html
 https://api.xrpgen.com/validator-domain-verifier.html
 https://api.xrpgen.com/xrp-testnet-faucet.html
-https://api.xrpgen.com/xrp-test-net-faucet.html
+https://api.xrpgen.com/xag-test-net-faucet.html
 https://api.xrpgen.com/tx-sender.html
 https://api.xrpgen.com/404.html

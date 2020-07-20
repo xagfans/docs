@@ -117,7 +117,7 @@
     <div class="content">
         <h1 id="transaction-censorship-detection">Transaction Censorship Detection</h1>
 <p><a class="external-link" href="https://github.com/ripple/rippled/releases/tag/1.2.0" target="_blank" title="New in: rippled 1.2.0"><img alt="New in: rippled 1.2.0" class="dactyl_badge" src="https://img.shields.io/badge/New%20in-rippled%201.2.0-blue.svg"/> <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
-<p>The XAG Ledger is designed to be <a href="xrp-ledger-overview.html#censorship-resistant-transaction-processing">censorship resistant</a>. In support of this design, the XAG Ledger provides an automated transaction censorship detector that is available on all <code>rippled</code> servers, enabling all participants to see if censorship is affecting the network.</p>
+<p>The XAG Ledger is designed to be <a href="xag-ledger-overview.html#censorship-resistant-transaction-processing">censorship resistant</a>. In support of this design, the XAG Ledger provides an automated transaction censorship detector that is available on all <code>rippled</code> servers, enabling all participants to see if censorship is affecting the network.</p>
 <p>While a <code>rippled</code> server is in sync with the network, the detector tracks all transactions that, in the view of the <code>rippled</code> server, should have been accepted in the last round of <a href="intro-to-consensus.html">consensus</a> and included in the last validated ledger. The detector issues log messages of increasing severity for transactions that have not been included in a validated ledger after several rounds of consensus.</p>
 <h2 id="how-it-works">How It Works</h2>
 <p>At a high-level, here’s how the transaction censorship detector works:</p>

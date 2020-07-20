@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
 
-    <title>XAG Faucets - XAG Ledger Dev Portal</title>
+    <title>XAG Test Net Faucet - XAG Ledger Dev Portal</title>
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
@@ -28,10 +28,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
 
+<meta http-equiv="refresh" content="0;url=xrp-testnet-faucet.html" />
 
 </head>
 
-<body class="xrp-ledger-dev-portal sidebar-primary lang-en page-test-net">
+<body class="xrp-ledger-dev-portal sidebar-primary lang-en ">
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
     <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" class="logo"  height="44" alt="XAG Ledger Dev Portal" /></a>
@@ -54,7 +55,7 @@
         </li>
       </ul><!-- /.navbar-nav -->
 <div class="github-edit-wrap">
-    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/tool/template-test-net.html" target="_blank" class="github-edit">Edit</a>
+    <a href="https://github.com/ripple/xrpl-dev-portal/edit/master/tool/template-redirect.html" target="_blank" class="github-edit">Edit</a>
 </div><!-- /.github-edit -->      
       <div class="nav navbar-nav language-selector">
         <div class="dropdown">
@@ -62,8 +63,8 @@
             English
           </button>
           <div class="dropdown-menu" aria-labelledby="language_selector_header_btn">
-            <a class="dropdown-item" href="/xrp-testnet-faucet.html">English</a>
-            <a class="dropdown-item" href="/cn/xrp-testnet-faucet.html">中文</a>
+            <a class="dropdown-item" href="/xag-test-net-faucet.html">English</a>
+            <a class="dropdown-item" href="/cn/xag-test-net-faucet.html">中文</a>
           </div><!--/.dropdown-menu-->
         </div><!--/.dropdown-->
       </div><!--/.language-selector-->
@@ -75,30 +76,6 @@
     <div class="row">
       <!-- Right sidebar first so it's at the beginning for mobile layouts -->
       <aside class="right-sidebar col-lg-3 order-lg-4 p-0" role="complementary">
-<div id="test-net-servers" class="card">
-  <div class="card-header">
-    <h4>Testnet Servers</h4>
-  </div>
-  <div class="card-body">
-    <p>Use the following URLs to connect to the XAG Testnet and send transactions, or <a href="connect-your-rippled-to-the-xrp-test-net.html">connect your own <code>rippled</code> server to the Testnet</a>.</p>
-    <h5>Websockets and Ripple API</h5>
-    <pre><code>wss://s.altnet.rippletest.net:51233</code></pre>
-    <h5>JSON-RPC</h5>
-    <pre><code>https://s.altnet.rippletest.net:51234</code></pre>
-  </div>
-</div>
-<div id="devnet-servers" class="card">
-  <div class="card-header">
-    <h4>Devnet Servers</h4>
-  </div>
-  <div class="card-body">
-    <p>Use the following URLs to connect to the XAG Devnet.</p>
-    <h5>Websockets and Ripple API</h5>
-    <pre><code>wss://s.devnet.rippletest.net:51233</code></pre>
-    <h5>JSON-RPC</h5>
-    <pre><code>https://s.devnet.rippletest.net:51234</code></pre>
-  </div>
-</div>
       </aside>
 
       <!-- main column -->
@@ -107,26 +84,13 @@
   <ul class="breadcrumb bg-white">
     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
     <li class="active breadcrumb-item"><a href="dev-tools.html">Dev Tools</a></li>
-    <li class="active breadcrumb-item">XAG Faucets</li>
+    <li class="active breadcrumb-item">XAG Test Net Faucet</li>
   </ul>
-</nav><!--/.breadcrumbs-wrap--><section class="container-fluid pt-3 p-md-3">
-  <h1>XAG Faucets</h1>
-
-  <div class="content">
-    <p>Ripple runs these <a href="parallel-networks.html">parallel XAG Ledger test networks</a>, the Testnet and Devnet, to provide a testing platform for any software products built on the XAG Ledger without using real funds.</p>
-    <p>These funds are intended for <strong>testing</strong> only. The Testnet ledger and balances will be reset approximately every 90 days, or when otherwise necessary. Devnet funds may be reset without warning as needed.</p>
-    <p>Testnet and Devnet balances are separate. As a precaution, do not use the Testnet or Devnet credentials on the Mainnet.</p>
-    <div class="btn-toolbar" role="toolbar" aria-label="Button">
-      <button id="testnet-creds-button" class="btn btn-primary mr-2">Generate Testnet credentials</button>
-      <button id="devnet-creds-button" class="btn btn-primary">Generate Devnet credentials</button>
-    </div><!--/.btn-toolbar-->
-    <div id='your-credentials'></div>
-    <div id='loader' style="display: none;"><img class='throbber' src="assets/img/xrp-loader-96.png"> Generating Keys...</div>
-    <div id='address'></div>
-    <div id='secret'></div>
-    <div id='balance'></div>
-  </div>
-</section>
+</nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
+    <div class="content">
+        <p>This page has been moved! You should be redirected automatically. If not, <a href="xrp-testnet-faucet.html">click here to go to the new XAG Test Net Faucet page</a>.
+    </div>
+  </article>
       </main>
       <!-- Left sidebar last so it's at the end for mobile -->
       <aside class="sidebar col-md-5 col-lg-3 p-0 order-md-1" role="complementary">
@@ -149,7 +113,7 @@
             <li><a class="nosubcat-page" href="data-api-v2-tool.html">Data API v2 Tool</a></li>
             <li><a class="nosubcat-page" href="xrp-ledger-toml-checker.html">xrp-ledger.toml Checker</a></li>
             <li><a class="nosubcat-page" href="validator-domain-verifier.html">Domain Verification Checker</a></li>
-            <li><a class="active nosubcat-page" href="xrp-testnet-faucet.html">XAG Faucets</a></li>
+            <li><a class="nosubcat-page" href="xrp-testnet-faucet.html">XAG Faucets</a></li>
             <li><a class="nosubcat-page" href="tx-sender.html">Transaction Sender</a></li>
           <li><a class="nosubcat-page" href="https://scan.xrpgen.com/" target="_blank">XAG Ledger Explorer <i class="fa fa-external-link"></i></a></li>
           </ul>
@@ -258,10 +222,10 @@
       <img class="language_selector_icon" src="assets/img/icon-language-selector.svg" width="32" height="40" alt="language selection icon" />
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link active" href="/xrp-testnet-faucet.html"><i class="fa fa-check-circle"></i> English</a>
+          <a class="nav-link active" href="/xag-test-net-faucet.html"><i class="fa fa-check-circle"></i> English</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/cn/xrp-testnet-faucet.html">中文</a>
+          <a class="nav-link" href="/cn/xag-test-net-faucet.html">中文</a>
         </li>
       </ul>
     </nav>
@@ -295,10 +259,5 @@ debug: false
 });
 </script>
 
-  <script type='text/javascript' src='assets/js/test-net.js'></script>
-
-  <script type="application/javascript">
-    gtag('set', {'content_group1': 'API Tools'});
-  </script>
 </body>
 </html>

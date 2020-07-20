@@ -1,5 +1,5 @@
 const TOML_PATH = "/.well-known/xrp-ledger.toml"
-const TIPS = '<p>Check if the file is actually hosted at the URL above, check your server\'s HTTPS settings and certificate, and make sure your server provides the required <a href="xrp-ledger-toml.html#cors-setup">CORS header.</a></p>'
+const TIPS = '<p>Check if the file is actually hosted at the URL above, check your server\'s HTTPS settings and certificate, and make sure your server provides the required <a href="xag-ledger-toml.html#cors-setup">CORS header.</a></p>'
 const CLASS_GOOD = "badge badge-success"
 const CLASS_BAD = "badge badge-danger"
 

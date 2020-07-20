@@ -316,7 +316,7 @@ th.depauth-spacer {
 <li>The <a href="deposit_authorized.html">deposit_authorized method</a> of the <a href="rippled-api.html"><code>rippled</code> API</a>.</li>
 <li>The <a href="authorized-trust-lines.html">Authorized Trust Lines</a> feature (<code>RequireAuth</code> flag) limits which counterparties can hold non-XAG currencies issued by an account.</li>
 <li>The <code>DisallowXAG</code> flag indicates that an account should not receive XAG. This is a softer protection than Deposit Authorization, and is not enforced by the XAG Ledger. (Client applications should honor this flag or at least warn about it.)</li>
-<li>The <code>RequireDest</code> flag indicates that an account can only receive currency amounts if the sending transaction specifies a <a href="become-an-xrp-ledger-gateway.html#source-and-destination-tags">Destination Tag</a>. This protects users from forgetting to indicate the purpose of a payment, but does not protect recipients from unknown senders, who can make up arbitrary destination tags.</li>
+<li>The <code>RequireDest</code> flag indicates that an account can only receive currency amounts if the sending transaction specifies a <a href="become-an-xag-ledger-gateway.html#source-and-destination-tags">Destination Tag</a>. This protects users from forgetting to indicate the purpose of a payment, but does not protect recipients from unknown senders, who can make up arbitrary destination tags.</li>
 <li><a href="partial-payments.html">Partial Payments</a> provide a way for accounts to return unwanted payments while subtracting <a href="transfer-fees.html">transfer fees</a> and exchange rates from the amount delivered instead of adding them to the amount sent.
 <!-- --></li>
 </ul>
