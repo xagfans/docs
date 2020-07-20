@@ -99,9 +99,9 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="get-started-with-xrp-ledger-apis">Get Started with XAG Ledger APIs</h1>
-<p>The XAG Ledger's core server software is <a href="the-rippled-server.html"><code>rippled</code></a>. You can jump straight into developing on the XAG Ledger by accessing the API of a <code>rippled</code> server.</p>
+<p>The XAG Ledger's core server software is rippled</code>. You can jump straight into developing on the XAG Ledger by accessing the API of a <code>rippled</code> server.</p>
 <p>The quickest way to dive into the API is with the <a href="websocket-api-tool.html"><strong>WebSocket API Tool</strong></a>, or use the <a class="external-link" href="https://scan.xrpgen.com/" target="_blank">XAG Ledger Explorer <i aria-hidden="true" class="fa fa-external-link"></i></a> to watch the progress of the ledger live.</p>
-<p>You can also <a href="install-rippled.html">run your own instance of <code>rippled</code></a> or use a <a href="#public-servers">public server</a>.</p>
+<p>You can also run your own instance of <code>rippled</code> or use a <a href="#public-servers">public server</a>.</p>
 <h2 id="public-servers">Public Servers</h2>
 <p>Xrpgen provides several public servers for the benefit of the XAG Ledger community:</p>
 <table>
@@ -133,10 +133,10 @@
 </table>
 <p>These public servers are not for sustained or business use, and they may become unavailable at any time. For regular use, you should run your own <code>rippled</code> server or contract someone you trust to do so.</p>
 <h2 id="admin-access">Admin Access</h2>
-<p><code>rippled</code> API methods are divided into <a href="public-rippled-methods.html">Public Methods</a> and <a href="admin-rippled-methods.html">Admin Methods</a> so that organizations can offer public servers for the benefit of the community. To access admin methods, or admin functionality of public methods, you must connect to the API on a <strong>port and IP address marked as admin</strong> in the server's config file.</p>
-<p>The <a class="external-link" href="https://github.com/ripple/rippled/blob/f00f263852c472938bf8e993e26c7f96f435935c/cfg/rippled-example.cfg#L1154-L1179" target="_blank">example config file <i aria-hidden="true" class="fa fa-external-link"></i></a> listens for connections on the local loopback network (127.0.0.1), with JSON-RPC (HTTP) on port 5005 and WebSocket (WS) on port 6006, and treats all connected clients as admin.</p>
+<p><code>rippled</code> API methods are divided into Public Methods and Admin Methods so that organizations can offer public servers for the benefit of the community. To access admin methods, or admin functionality of public methods, you must connect to the API on a <strong>port and IP address marked as admin</strong> in the server's config file.</p>
+<p>The example config file <i aria-hidden="true" class="fa fa-external-link"></i> listens for connections on the local loopback network (127.0.0.1), with JSON-RPC (HTTP) on port 5005 and WebSocket (WS) on port 6006, and treats all connected clients as admin.</p>
 <h2 id="websocket-api">WebSocket API</h2>
-<p>If you are looking to try out some methods on the XAG Ledger, you can skip writing your own WebSocket code and go straight to using the API at the <a href="websocket-api-tool.html">Ripple WebSocket API Tool</a>. Later on, when you want to connect to your own <code>rippled</code> server, you can <a href="monitor-incoming-payments-with-websocket.html">build your own client in the browser</a> or <a class="external-link" href="https://www.npmjs.com/package/ws" target="_blank">in Node.js <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>If you are looking to try out some methods on the XAG Ledger, you can skip writing your own WebSocket code and go straight to using the API at the Ripple WebSocket API Tool. Later on, when you want to connect to your own <code>rippled</code> server, you can build your own client in the browser or in Node.js .</p>
 <p>Example WebSocket API request:</p>
 <pre><code class="json">{
   "id": "my_first_request",
@@ -144,9 +144,9 @@
   "api_version": 1
 }
 </code></pre>
-<p>The response to <a href="server_info.html">this command</a> shows you the current status of the server. Or, read more about <a href="request-formatting.html">Request Formatting</a> and <a href="response-formatting.html">Response Formatting</a>.</p>
+
 <h2 id="json-rpc">JSON-RPC</h2>
-<p>You can use any HTTP client (like <a class="external-link" href="https://addons.mozilla.org/en-US/firefox/addon/rested/" target="_blank">RESTED for Firefox <i aria-hidden="true" class="fa fa-external-link"></i></a>, <a class="external-link" href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en" target="_blank">Postman for Chrome <i aria-hidden="true" class="fa fa-external-link"></i></a> or <a class="external-link" href="https://extendsclass.com/rest-client-online.html" target="_blank">Online HTTP client ExtendsClass <i aria-hidden="true" class="fa fa-external-link"></i></a>) to make JSON-RPC calls a <code>rippled</code> server. Most programming languages have a library for making HTTP requests built in.</p>
+<p>You can use any HTTP client (like RESTED for Firefox , Postman for Chrome or Online HTTP client ExtendsClass) to make JSON-RPC calls a <code>rippled</code> server. Most programming languages have a library for making HTTP requests built in.</p>
 <p>Example JSON-RPC request:</p>
 <pre><code class="json">POST https://g1.xrpgen.com:5005/
 Content-Type: application/json
@@ -160,23 +160,15 @@ Content-Type: application/json
     ]
 }
 </code></pre>
-<p>The response to this command shows you the current status of the server. For more information, see the <a href="server_info.html">server_info method</a>.</p>
+<p>The response to this command shows you the current status of the server. For more information, see the server_info method.</p>
 <h2 id="commandline">Commandline</h2>
 <p>The commandline interface connects to the same service as the JSON-RPC one, so the public servers and server configuration are the same. By default, the commandline connects to a <code>rippled</code> server running on the same machine.</p>
 <p>Example commandline request:</p>
 <pre><code>rippled --conf=/etc/opt/ripple/rippled.cfg server_info
 </code></pre>
-<p>For more information on <code>rippled</code>'s commandline usage, see <a class="external-link" href="https://xrpl.org/commandline-usage.html" target="_blank">Commandline Usage Reference <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>For more information on <code>rippled</code>'s commandline usage, see Commandline Usage Reference </p>
 <p class="devportal-callout caution"><strong>Caution:</strong> The commandline interface is intended for administrative purposes only and is <em>not a supported API</em>.  New versions of <code>rippled</code> may introduce breaking changes to the commandline API without warning!</p>
-<h2 id="available-methods">Available Methods</h2>
-<p>For a full list of API methods, see:</p>
-<ul>
-<li><a href="public-rippled-methods.html">Public <code>rippled</code> Methods</a>: Methods available on public servers, including looking up data from the ledger and submitting transactions.</li>
-<li><a href="admin-rippled-methods.html">Admin <code>rippled</code> Methods</a>: Methods for <a href="manage-the-rippled-server.html">managing</a> the <code>rippled</code> server.</li>
-</ul>
 
-</li>
-</ul>
 <!-- -->
 <!-- -->
 <!-- API object types -->

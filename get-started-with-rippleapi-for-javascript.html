@@ -116,14 +116,12 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="get-started-with-rippleapi-for-javascript">Get Started with RippleAPI for JavaScript</h1>
-<p>This tutorial guides you through the basics of building an XAG Ledger-connected application using <a class="external-link" href="http://nodejs.org/" target="_blank">Node.js <i aria-hidden="true" class="fa fa-external-link"></i></a> and <a href="rippleapi-reference.html">RippleAPI</a>, a JavaScript API for accessing the XAG Ledger.</p>
-<p>The scripts and config files used in this guide are <a class="external-link" href="https://github.com/ripple/ripple-dev-portal/tree/master/content/_code-samples/rippleapi_quickstart" target="_blank">available in the Ripple Dev Portal GitHub Repository <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
-<!--#{ keep multiple H1s so that all steps are surfaced in sidebar. Do not change H1 titles unless they provide a clear improvement bc they are linked to on external sites. }# -->
+<p>This tutorial guides you through the basics of building an XAG Ledger-connected application using Node.js  and RippleAPI, a JavaScript API for accessing the XAG Ledger.</p>
 <h1 id="environment-setup">Environment Setup</h1>
 <p>The first step to using RippleAPI is setting up your development environment.</p>
 <h2 id="install-nodejs-and-npm">Install Node.js and npm</h2>
 <p>RippleAPI is built as an application for the Node.js runtime environment, so the first step is getting Node.js installed. RippleAPI requires Node.js v6 or higher. Ripple recommends using Node.js v10 LTS.</p>
-<p>This step depends on your operating system. Ripple recommends using <a class="external-link" href="https://nodejs.org/en/download/package-manager/" target="_blank">the official instructions for installing Node.js using a package manager <i aria-hidden="true" class="fa fa-external-link"></i></a> for your operating system. If the packages for Node.js and npm (Node Package Manager) are separate, install both. (This applies to Arch Linux, CentOS, Fedora, and RHEL.)</p>
+<p>This step depends on your operating system. Ripple recommends using the official instructions for installing Node.js using a package manager  for your operating system. If the packages for Node.js and npm (Node Package Manager) are separate, install both. (This applies to Arch Linux, CentOS, Fedora, and RHEL.)</p>
 <p>After you have installed Node.js, you can check the version of the <code>node</code> binary from a command line:</p>
 <pre><code>node --version
 </code></pre>
@@ -132,7 +130,7 @@
 </code></pre>
 <h2 id="install-yarn">Install Yarn</h2>
 <p>RippleAPI uses Yarn to manage dependencies. Ripple recommends using Yarn v1.13.0.</p>
-<p>This step depends on your operating system. Ripple recommends using <a class="external-link" href="https://yarnpkg.com/en/docs/install#mac-stable" target="_blank">the official instructions for installing Yarn using a package manager <i aria-hidden="true" class="fa fa-external-link"></i></a> for your operating system.</p>
+<p>This step depends on your operating system. Ripple recommends using the official instructions for installing Yarn using a package manager <i aria-hidden="true" class="fa fa-external-link"></i></a> for your operating system.</p>
 <p>After you have installed Yarn, you can check the version of the <code>yarn</code> binary from a command line:</p>
 <pre><code>yarn --version
 </code></pre>
@@ -142,15 +140,14 @@
 <p>Create a folder called (for example) <code>my_ripple_experiment</code>:</p>
 <pre><code>mkdir my_ripple_experiment &amp;&amp; cd my_ripple_experiment
 </code></pre>
-<p>Optionally, start a <a class="external-link" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">Git <i aria-hidden="true" class="fa fa-external-link"></i></a> repository in that directory so you can track changes to your code.</p>
+<p>Optionally, start a Git  repository in that directory so you can track changes to your code.</p>
 <pre><code>git init
 </code></pre>
-<p>Alternatively, you can <a class="external-link" href="https://help.github.com/articles/create-a-repo/" target="_blank">create a repo on GitHub <i aria-hidden="true" class="fa fa-external-link"></i></a> to version and share your work. After setting it up, <a class="external-link" href="https://help.github.com/articles/cloning-a-repository/" target="_blank">clone the repo <i aria-hidden="true" class="fa fa-external-link"></i></a> to your local machine and <code>cd</code> into that directory.</p>
+
 <h3 id="2-create-a-new-packagejson-file-for-your-project">2. Create a new <code>package.json</code> file for your project</h3>
 <p>Use the following template, which includes:</p>
 <ul>
 <li>RippleAPI itself (<code>ripple-lib</code>)</li>
-<li>(Optional) <a class="external-link" href="http://eslint.org/" target="_blank">ESLint <i aria-hidden="true" class="fa fa-external-link"></i></a> (<code>eslint</code>) for checking code quality.</li>
 </ul>
 <pre><code>{
   "name": "my_ripple_experiment",
@@ -225,228 +222,25 @@ done and disconnected.
 <pre><code>'use strict';
 const RippleAPI = require('ripple-lib').RippleAPI;
 </code></pre>
-<p>The opening line enables <a class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" target="_blank">strict mode <i aria-hidden="true" class="fa fa-external-link"></i></a>. This is purely optional, but it helps you avoid some common pitfalls of JavaScript.</p>
-<p>The second line imports RippleAPI into the current scope using Node.js's require function. RippleAPI is one of <a class="external-link" href="https://github.com/ripple/ripple-lib/blob/develop/src/index.ts" target="_blank">the modules <code>ripple-lib</code> exports <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
 <h3 id="instantiating-the-api">Instantiating the API</h3>
 <pre><code>const api = new RippleAPI({
   server: 'wss://s1.ripple.com' // Public rippled server
 });
 </code></pre>
-<p>This section creates a new instance of the RippleAPI class, assigning it to the variable <code>api</code>. (The <a class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const" target="_blank"><code>const</code> keyword <i aria-hidden="true" class="fa fa-external-link"></i></a> means you can't reassign the value <code>api</code> to some other value. The internal state of the object can still change, though.)</p>
-<p>The one argument to the constructor is an options object, which has <a href="rippleapi-reference.html#parameters">a variety of options</a>. The <code>server</code> parameter tells it where it should connect to a <code>rippled</code> server.</p>
-<ul>
-<li>The example <code>server</code> setting uses a secure WebSocket connection to connect to one of the public servers that Ripple (the company) operates.</li>
-<li>If you don't include the <code>server</code> option, RippleAPI runs in <a href="rippleapi-reference.html#offline-functionality">offline mode</a> instead, which only provides methods that don't need network connectivity.</li>
-<li>You can specify a <a href="XAG-test-net-faucet.html">XAG Ledger Test Net</a> server instead to connect to the parallel-world Test Network instead of the production XAG Ledger.</li>
-<li>If you <a href="install-rippled.html">run your own <code>rippled</code></a>, you can instruct it to connect to your local server. For example, you might say <code>server: 'ws://localhost:5005'</code> instead.</li>
-</ul>
+
 <h3 id="connecting-and-promises">Connecting and Promises</h3>
 <pre><code>api.connect().then(() =&gt; {
 </code></pre>
-<p>The <a href="rippleapi-reference.html#connect">connect() method</a> is one of many RippleAPI methods that returns a <a class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promise <i aria-hidden="true" class="fa fa-external-link"></i></a>, which is a special kind of JavaScript object. A Promise is designed to do an asynchronous operation that returns a value later, such as querying the XAG Ledger.</p>
-<p>When you get a Promise back from some expression (like <code>api.connect()</code>), you call the Promise's <code>then</code> method and pass in a callback function. Passing a function as an argument is conventional in JavaScript, taking advantage of how JavaScript functions are <a class="external-link" href="https://en.wikipedia.org/wiki/First-class_function" target="_blank">first-class objects <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
-<p>When a Promise finishes with its asynchronous operations, the Promise runs the callback function you passed it. The return value from the <code>then</code> method is another Promise object, so you can "chain" that into another <code>then</code> method, or the Promise's <code>catch</code> method, which also takes a callback. The callback you pass to <code>catch</code> gets called if something goes wrong.</p>
-<p>The example uses <a class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank">arrow function <i aria-hidden="true" class="fa fa-external-link"></i></a>, a shorter way of defining anonymous functions. This is convenient for defining lots of one-off functions as callbacks. The syntax <code>()=&gt; {...}</code> is mostly equivalent to <code>function() {...}</code>. If you want an anonymous function with one parameter, you can use a syntax like <code>info =&gt; {...}</code> instead, which is almost the same as <code>function(info) {...}</code> syntax.</p>
-<h3 id="custom-code">Custom code</h3>
-<pre><code>  /* begin custom code ------------------------------------ */
-  const myAddress = 'rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn';
-
-  console.log('getting account info for', myAddress);
-  return api.getAccountInfo(myAddress);
-
-}).then(info =&gt; {
-  console.log(info);
-  console.log('getAccountInfo done');
-
-  /* end custom code -------------------------------------- */
-</code></pre>
-<p>This is the part that you change to do whatever you want the script to do.</p>
-<p>The example code looks up an XAG Ledger account by its address. Try running the code with different addresses to see different results.</p>
-<p>The <code>console.log()</code> function is built into both Node.js and web browsers, and writes out to the console. This example includes lots of console output to make it easier to understand what the code is doing.</p>
-<p>Keep in mind that the example code starts in the middle of a callback function (called when RippleAPI finishes connecting). That function calls RippleAPI's <a href="rippleapi-reference.html#getaccountinfo"><code>getAccountInfo</code></a> method, and returns the results.</p>
-<p>The <code>getAccountInfo</code> API method returns another Promise, so the line <code>}).then( info =&gt; {</code> defines another anonymous callback function to run when this Promise's asynchronous work is done. Unlike the previous case, this callback function takes one argument, called <code>info</code>, which holds the asynchronous return value from the <code>getAccountInfo</code> API method. The rest of this callback function outputs that return value to the console.</p>
-<h3 id="cleanup">Cleanup</h3>
+<
 <pre><code>}).then(() =&gt; {
   return api.disconnect();
 }).then(() =&gt; {
   console.log('done and disconnected.');
 }).catch(console.error);
 </code></pre>
-<p>The rest of the sample code is mostly more <a href="rippleapi-reference.html#boilerplate">boilerplate code</a>. The first line ends the previous callback function, then chains to another callback to run when it ends. That method disconnects cleanly from the XAG Ledger, and has yet another callback which writes to the console when it finishes. If your script waits on <a href="rippleapi-reference.html#api-events">RippleAPI events</a>, do not disconnect until you are done waiting for events.</p>
-<p>The <code>catch</code> method ends this Promise chain. The callback provided here runs if any of the Promises or their callback functions encounters an error. In this case, we pass the standard <code>console.error</code> function, which writes to the console, instead of defining a custom callback. You could define a smarter callback function here to intelligently catch certain error types.</p>
-<h1 id="waiting-for-validation">Waiting for Validation</h1>
-<p>One of the biggest challenges in using the XAG Ledger (or any decentralized system) is knowing the final, immutable transaction results. Even if you <a href="reliable-transaction-submission.html">follow the best practices</a> you still have to wait for the <a href="consensus.html">consensus process</a> to finally accept or reject your transaction. The following example code demonstrates how to wait for the final outcome of a transaction:</p>
-<pre><code>'use strict';
-/* import RippleAPI and support libraries */
-const RippleAPI = require('ripple-lib').RippleAPI;
 
-/* Credentials of the account placing the order */
-const myAddr = 'rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn';
-const mySecret = 's████████████████████████████';
-
-/* Define the order to place here */
-const myOrder = {
-  'direction': 'buy',
-  'quantity': {
-    'currency': 'FOO',
-    'counterparty': 'rUpy3eEg8rqjqfUoLeBnZkscbKbFsKXC3v',
-    'value': '100'
-  },
-  'totalPrice': {
-    'currency': 'XAG',
-    'value': '1000'
-  }
-};
-
-/* Milliseconds to wait between checks for a new ledger. */
-const INTERVAL = 1000;
-/* Instantiate RippleAPI. Uses s2 (full history server) */
-const api = new RippleAPI({server: 'wss://g2.xrpgen.com'});
-/* Number of ledgers to check for valid transaction before failing */
-const ledgerOffset = 5;
-const myInstructions = {maxLedgerVersionOffset: ledgerOffset};
-
-
-/* Verify a transaction is in a validated XAG Ledger version */
-function verifyTransaction(hash, options) {
-  console.log('Verifying Transaction');
-  return api.getTransaction(hash, options).then(data =&gt; {
-    console.log('Final Result: ', data.outcome.result);
-    console.log('Validated in Ledger: ', data.outcome.ledgerVersion);
-    console.log('Sequence: ', data.sequence);
-    return data.outcome.result === 'tesSUCCESS';
-  }).catch(error =&gt; {
-    /* If transaction not in latest validated ledger,
-       try again until max ledger hit */
-    if (error instanceof api.errors.PendingLedgerVersionError) {
-      return new Promise((resolve, reject) =&gt; {
-        setTimeout(() =&gt; verifyTransaction(hash, options)
-        .then(resolve, reject), INTERVAL);
-      });
-    }
-    return error;
-  });
-}
-
-
-/* Function to prepare, sign, and submit a transaction to the XAG Ledger. */
-function submitTransaction(lastClosedLedgerVersion, prepared, secret) {
-  const signedData = api.sign(prepared.txJSON, secret);
-  return api.submit(signedData.signedTransaction).then(data =&gt; {
-    console.log('Tentative Result: ', data.resultCode);
-    console.log('Tentative Message: ', data.resultMessage);
-    /* The tentative result should be ignored. Transactions that succeed here can ultimately fail,
-       and transactions that fail here can ultimately succeed. */
-
-    /* Begin validation workflow */
-    const options = {
-      minLedgerVersion: lastClosedLedgerVersion,
-      maxLedgerVersion: prepared.instructions.maxLedgerVersion
-    };
-    return new Promise((resolve, reject) =&gt; {
-      setTimeout(() =&gt; verifyTransaction(signedData.id, options)
-    .then(resolve, reject), INTERVAL);
-    });
-  });
-}
-
-
-api.connect().then(() =&gt; {
-  console.log('Connected');
-  return api.prepareOrder(myAddr, myOrder, myInstructions);
-}).then(prepared =&gt; {
-  console.log('Order Prepared');
-  return api.getLedger().then(ledger =&gt; {
-    console.log('Current Ledger', ledger.ledgerVersion);
-    return submitTransaction(ledger.ledgerVersion, prepared, mySecret);
-  });
-}).then(() =&gt; {
-  api.disconnect().then(() =&gt; {
-    console.log('api disconnected');
-    process.exit();
-  });
-}).catch(console.error);
-</code></pre>
 <p>This code creates and submits an order transaction, although the same principles apply to other types of transactions as well. After submitting the transaction, the code uses a new Promise, which queries the ledger again after using setTimeout to wait a fixed amount of time, to see if the transaction has been verified. If it hasn't been verified, the process repeats until either the transaction is found in a validated ledger or the returned ledger is higher than the LastLedgerSequence parameter.</p>
 <p>In rare cases (particularly with a large delay or a loss of power), the <code>rippled</code> server may be missing a ledger version between when you submitted the transaction and when you determined that the network has passed the <code>maxLedgerVersion</code>. In this case, you cannot be definitively sure whether the transaction has failed, or has been included in one of the missing ledger versions. RippleAPI returns <code>MissingLedgerHistoryError</code> in this case.</p>
-<p>If you are the administrator of the <code>rippled</code> server, you can <a href="ledger_request.html">manually request the missing ledger(s)</a>. Otherwise, you can try checking the ledger history using a different server. (Ripple runs a public full-history server at <code>g2.xrpgen.com</code> for this purpose.)</p>
-<p>See <a href="reliable-transaction-submission.html">Reliable Transaction Submission</a> for a more thorough explanation.</p>
-<h1 id="rippleapi-in-web-browsers">RippleAPI in Web Browsers</h1>
-<p>RippleAPI can also be used in a web browser if you compile a browser-compatible version and include <a class="external-link" href="https://www.npmjs.com/package/lodash" target="_blank">lodash <i aria-hidden="true" class="fa fa-external-link"></i></a> as a dependency before the RippleAPI script.</p>
-<h2 id="build-a-browser-compatible-version-of-rippleapi">Build a Browser-Compatible Version of RippleAPI</h2>
-<p>To use RippleAPI in a browser, you need to build a browser-compatible version. The following process compiles RippleAPI into a single JavaScript file you can include in a webpage.</p>
-<h3 id="1-download-a-copy-of-the-rippleapi-git-repository">1. Download a copy of the RippleAPI git repository</h3>
-<p>If you have <a class="external-link" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">Git <i aria-hidden="true" class="fa fa-external-link"></i></a> installed, you can clone the repository and check out the <strong>master</strong> branch, which always has the latest official release:</p>
-<pre><code>git clone https://github.com/ripple/ripple-lib.git
-cd ripple-lib
-git checkout master
-</code></pre>
-<p>Alternatively, you can download an archive (.zip or .tar.gz) of a specific release from the <a class="external-link" href="https://github.com/ripple/ripple-lib/releases" target="_blank">RippleAPI releases page <i aria-hidden="true" class="fa fa-external-link"></i></a> and extract it.</p>
-<h3 id="2-install-yarn">2. Install Yarn</h3>
-<p>Use these instructions to <a href="#install-yarn">install Yarn</a>.</p>
-<h3 id="3-install-dependencies-using-yarn">3. Install dependencies using Yarn</h3>
-<pre><code>yarn
-</code></pre>
-<h3 id="4-use-gulp-to-build-a-single-javascript-output">4. Use Gulp to build a single JavaScript output</h3>
-<p>RippleAPI comes with code to use the <a class="external-link" href="http://gulpjs.com/" target="_blank">gulp <i aria-hidden="true" class="fa fa-external-link"></i></a> package to compile all its source code into browser-compatible JavaScript files. Gulp is automatically installed as one of the dependencies, so all you have to do is run it. RippleAPI's configuration makes this easy:</p>
-<pre><code>yarn run build
-</code></pre>
-<p>Output:</p>
-<pre><code>&gt; ripple-lib@0.16.5 build /home/username/ripple-lib
-&gt; gulp
-
-[14:11:02] Using gulpfile /home/username/ripple-lib/gulpfile.js
-[14:11:02] Starting 'build'...
-[14:11:03] Starting 'build-debug'...
-[14:11:03] Starting 'build-min'...
-[14:11:18] Finished 'build-debug' after 15 s
-[14:11:18] Finished 'build' after 16 s
-[14:11:18] Finished 'build-min' after 15 s
-[14:11:18] Starting 'default'...
-[14:11:18] Finished 'default' after 19 μs
-</code></pre>
-<p>This may take a while. At the end, the build process creates a new <code>build/</code> folder, which contains the files you want.</p>
-<p>The file <code>build/ripple-&lt;VERSION NUMBER&gt;.js</code> is a straight export of RippleAPI (whatever version you built) ready to be used in browsers. The file ending in <code>-min.js</code> is the same thing, but with the content <a class="external-link" href="https://en.wikipedia.org/wiki/Minification_%28programming%29" target="_blank">minified <i aria-hidden="true" class="fa fa-external-link"></i></a> for faster loading.</p>
-<h2 id="demo-rippleapi-in-a-browser">Demo RippleAPI in a Browser</h2>
-<p>The following HTML file demonstrates basic usage of the browser version of RippleAPI to connect to a public <code>rippled</code> server and report information about that server. Instead of using Node.js's "require" syntax, the browser version creates a global variable named <code>ripple</code>, which contains the <code>RippleAPI</code> class.</p>
-<p>To use this example, you must first <a href="#build-a-browser-compatible-version-of-rippleapi">build a browser-compatible version of RippleAPI</a> and then copy one of the resulting output files to the same folder as this HTML file. (You can use either the minified or full-size version.) Change the second <code>&lt;script&gt;</code> tag in this example to use the correct file name for the version of RippleAPI you built.</p>
-<p><a class="external-link" href="https://github.com/ripple/ripple-dev-portal/blob/master/content/_code-samples/rippleapi_quickstart/browser-demo.html" target="_blank" title="Source on GitHub"><strong>browser-demo.html:</strong> <i aria-hidden="true" class="fa fa-external-link"></i></a></p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"&gt;&lt;/script&gt;
-  &lt;script type="application/javascript" src="ripple-1.1.2-min.js"&gt;&lt;/script&gt;
-  &lt;script&gt;
-    console.log(ripple);
-    var api = new ripple.RippleAPI({server:'wss://s1.ripple.com/'});
-    api.connect().then(function() {
-        return api.getServerInfo();
-    }).then(function(server_info) {
-    document.body.innerHTML += "&lt;p&gt;Connected to rippled server!&lt;/p&gt;" +
-"      &lt;table&gt;" +
-"        &lt;tr&gt;&lt;th&gt;Version&lt;/th&gt;" +
-"          &lt;td&gt;" + server_info.buildVersion + "&lt;/td&gt;&lt;/tr&gt;" +
-"        &lt;tr&gt;&lt;th&gt;Ledgers available&lt;/th&gt;" +
-"          &lt;td&gt;" + server_info.completeLedgers + "&lt;/td&gt;&lt;/tr&gt;" +
-"        &lt;tr&gt;&lt;th&gt;hostID&lt;/th&gt;" +
-"          &lt;td&gt;" + server_info.hostID + "&lt;/td&gt;&lt;/tr&gt;" +
-"        &lt;tr&gt;&lt;th&gt;Most Recent Validated Ledger Seq.&lt;/th&gt;" +
-"          &lt;td&gt;" + server_info.validatedLedger.ledgerVersion + "&lt;/td&gt;&lt;/tr&gt;" +
-"        &lt;tr&gt;&lt;th&gt;Most Recent Validated Ledger Hash&lt;/th&gt;" +
-"          &lt;td&gt;" + server_info.validatedLedger.hash + "&lt;/td&gt;&lt;/tr&gt;" +
-"        &lt;tr&gt;&lt;th&gt;Seconds since last ledger validated&lt;/th&gt;" +
-"          &lt;td&gt;" + server_info.validatedLedger.age + "&lt;/td&gt;&lt;/tr&gt;" +
-"      &lt;/table&gt;";
-    });
-  &lt;/script&gt;
-  &lt;style type="text/css"&gt;
-    td, th { border: 1px solid black; padding: 5px; }
-    table { border-collapse: collapse; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
 <p>This demo HTML loads Lodash v4.17.11 from CDNJS on Cloudflare and then loads ripple-lib v1.1.2, but you could also download and load a variant of Lodash locally. <!--#{ no specific recommended or required version at this time. Update this once we have some guidance to provide here. }#--></p>
 
     </div>

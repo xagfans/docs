@@ -111,58 +111,17 @@
 </nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
     <div class="content">
         <h1 id="set-up-secure-signing">Set Up Secure Signing</h1>
-<p>To submit <a href="transaction-basics.html">transactions</a> to the XAG Ledger, you need a way to digitally sign them without compromising the security of your <a href="cryptographic-keys.html">secret keys</a>. (If others gain access to your secret keys, they have as much control over your accounts as you do, and can steal or destroy all your money.) This page summarizes how to set up such an environment so you can sign transactions securely.</p>
+<p>To submit transactions to the XAG Ledger, you need a way to digitally sign them without compromising the security of your secret keys. (If others gain access to your secret keys, they have as much control over your accounts as you do, and can steal or destroy all your money.) This page summarizes how to set up such an environment so you can sign transactions securely.</p>
 <p class="devportal-callout tip"><strong>Tip:</strong> If you are not submitting transactions to the network, you can safely use a trustworthy public server, such as the ones run by Ripple, to monitor for incoming transactions or just to read other network activity. All transactions, balances, and data in the XAG Ledger are public.</p>
 <p>There are several configurations with varying levels of security that may be acceptable for your situation. Choose one of the following that best fits your needs:</p>
-<ul>
-<li><a href="#run-rippled-locally">Run <code>rippled</code> locally</a>, or <a href="#run-rippled-on-the-same-lan">in the same LAN</a>.</li>
-<li><a href="#use-a-client-library-with-local-signing">Use a client library</a> that can do local signing.</li>
-<li><a href="#use-a-secure-vpn-with-a-remote-rippled-server">Use a secure VPN to connect to a remote <code>rippled</code> machine</a> you trust.</li>
-</ul>
+
 <!-- Source for all diagrams in this article: https://docs.google.com/presentation/d/1BfGyWgC0njoPiKUZz3gXHMVSUINE3Q-_lHqY_D0TGwg/ -->
 <h2 id="insecure-configurations">Insecure Configurations</h2>
 <p><a href="img/insecure-signing-options.png"><img alt="Diagram of insecure configurations" src="img/insecure-signing-options.png"/></a></p>
-<p>Any configuration in which outside sources may gain access to your secret key is dangerous, and is likely to result in a malicious user stealing all your XAG (and anything else your XAG Ledger address has). Examples of such configurations include ones where you use the <a href="sign.html">sign method</a> of someone else's <code>rippled</code> server over the internet, or you transmit your secret key in plain text over the internet to your own server.</p>
+<p>Any configuration in which outside sources may gain access to your secret key is dangerous, and is likely to result in a malicious user stealing all your XAG (and anything else your XAG Ledger address has). Examples of such configurations include ones where you use the sign method of someone else's <code>rippled</code> server over the internet, or you transmit your secret key in plain text over the internet to your own server.</p>
 <p>You should maintain the secrecy of your secret keys at all times, which includes things like not emailing them to yourself, not typing them visibly in public, and saving them encrypted—never in plain text—when you are not using them. The balance between security and convenience depends in part on the value of your addresses' holdings, so you may want to use multiple addresses with different security configurations for different purposes.</p>
 <!-- Note: I'd link "issuing and operational addresses" for an explanation of hot/cold wallet security, but it's particularly gateway/issued-currency centric, which is not appropriate for this context. -->
-<h2 id="run-rippled-locally">Run rippled Locally</h2>
-<p><a href="img/secure-signing-local-rippled.png"><img alt="Diagram of using a local rippled server for signing" src="img/secure-signing-local-rippled.png"/></a></p>
-<p>In this configuration, you run <code>rippled</code> on the machine that generates the transactions.  Since the secret key never leaves your machine, no one without access to your machine can get access to the secret key. You should, of course, follow industry-standard practices for securing your machine. To use this configuration:</p>
-<ol>
-<li>
-<p><a href="install-rippled.html">Install <code>rippled</code></a>.</p>
-<p>Be sure that your local machine meets the minimum <a href="system-requirements.html">system requirements for <code>rippled</code></a>.</p>
-</li>
-<li>
-<p>When you need to sign transactions, connect to your server on <code>localhost</code> or <code>127.0.0.1</code>. Use the <a href="sign.html">sign method</a> (for single signatures) or <a href="sign_for.html">sign_for method</a> (for multi-signatures).</p>
-<p>The <a class="external-link" href="https://github.com/ripple/rippled/blob/8429dd67e60ba360da591bfa905b58a35638fda1/cfg/rippled-example.cfg#L1050-L1073" target="_blank">example config file <i aria-hidden="true" class="fa fa-external-link"></i></a> listens for connections on the local loopback network (127.0.0.1), with JSON-RPC (HTTP) on port 5005 and WebSocket (WS) on port 6006, and treats all connected clients as admin.</p>
-<p class="devportal-callout caution"><strong>Caution:</strong> Using the <a href="request-formatting.html#commandline-format">commandline API</a> for signatures is less secure than <a href="get-started-with-the-rippled-api.html">using the Websocket or JSON-RPC APIs</a> through non-commandline clients. When using the commandline syntax, your secret key may be visible to other users in the system's process listing, and your shell history may save the key in plaintext.</p>
-</li>
-<li>
-<p>Maintain the server to keep it running, updated, and in sync with the network while you're using it.</p>
-<p class="devportal-callout note"><strong>Note:</strong> You <em>can</em> turn off your <code>rippled</code> server when you're not sending transactions, but it can take up to 15 minutes to sync with the network when you start it up again.</p>
-</li>
-</ol>
-<h2 id="run-rippled-on-the-same-lan">Run rippled on the same LAN</h2>
-<p><a href="img/secure-signing-lan-rippled.png"><img alt="Diagram of using a rippled server over LAN for signing" src="img/secure-signing-lan-rippled.png"/></a></p>
-<p>In this configuration, you run a <code>rippled</code> server on a dedicated machine in the same private local area network (LAN) as the machine that generates the transactions to be signed. This configuration lets you assemble transaction instructions on one or more machines with very modest system specs, while using a single dedicated machine for running <code>rippled</code>. This may appeal to you if you run your own datacenter or server room.</p>
-<p>To use this configuration, set the <code>rippled</code> server to accept <code>wss</code> and <code>https</code> connections within your LAN. You can use a self-signed certificate if you use <a class="external-link" href="https://en.wikipedia.org/wiki/Transport_Layer_Security#Certificate_pinning" target="_blank">certificate pinning <i aria-hidden="true" class="fa fa-external-link"></i></a>, or you can use a certificate signed by an in-house or well-known Certificate Authority. Some certificate authorities, such as <a class="external-link" href="https://letsencrypt.org/" target="_blank">Let's Encrypt <i aria-hidden="true" class="fa fa-external-link"></i></a> issue certificates automatically for free.</p>
-<!-- -->
-<p>As always, follow industry-standard practices for securing your machines, such as using a firewall, anti-virus, appropriate user permissions, and so on.</p>
-<h2 id="use-a-client-library-with-local-signing">Use a Client Library with Local Signing</h2>
-<p><a href="img/secure-signing-client-library.png"><img alt="Diagram of using a client library with local signing" src="img/secure-signing-client-library.png"/></a></p>
-<p>This configuration uses a client library in the programming language you are using to sign transactions locally. You need a client library for the programming language you use. Ripple publishes the following client libraries that can sign transactions for the XAG Ledger locally:</p>
-<ul>
-<li><strong>RippleAPI (ripple-lib) for JavaScript</strong><ul>
-<li><a href="get-started-with-rippleapi-for-javascript.html">Setup</a></li>
-<li><a href="rippleapi-reference.html">API Reference</a></li>
-</ul>
-</li>
-<li><strong>Signing Library for C++</strong> (included with <code>rippled</code>)<ul>
-<li><a class="external-link" href="https://github.com/ripple/rippled/tree/develop/Builds/linux#signing-library" target="_blank">Documentation <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
-</ul>
-</li>
-</ul>
+
 <p>If you use a client library not published by Ripple, make sure it uses proper, secure implementations of the signing algorithm(s) it implements. (For example, if it uses the default ECDSA algorithm, it should also use deterministic nonces as described in <a class="external-link" href="https://tools.ietf.org/html/rfc6979" target="_blank">RFC6979 <i aria-hidden="true" class="fa fa-external-link"></i></a>.) All of Ripple's published libraries listed above follow industry best practices.</p>
 <p>For best security, be sure to keep your client library updated to the latest stable version.</p>
 <h3 id="example-local-signing-with-rippleapi">Example Local Signing with RippleAPI</h3>
@@ -197,10 +156,7 @@ console.log("tx hash is:", signed.id)
 <h2 id="use-a-secure-vpn-with-a-remote-rippled-server">Use a Secure VPN with a Remote rippled Server</h2>
 <p><a href="img/secure-signing-over-vpn.png"><img alt="Diagram of connecting securely to a remote rippled over VPN" src="img/secure-signing-over-vpn.png"/></a></p>
 <p>This configuration uses a <code>rippled</code> server hosted remotely, such as in a colocation facility or a distant datacenter, but connects to it securely using an encrypted VPN.</p>
-<p>To use this configuration, follow the steps for <a href="#run-rippled-on-the-same-lan">running <code>rippled</code> on a private LAN</a>, but use a VPN to connect to the LAN of the remote <code>rippled</code> server. Instructions for setting up the VPN are specific to your environment and are not described in this guide.</p>
 
-<!-- -->
-<!-- -->
 <!-- API object types -->
 <!-- -->
 <!-- -->
