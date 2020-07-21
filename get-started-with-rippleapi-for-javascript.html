@@ -181,11 +181,11 @@ npm WARN notsup Not compatible with your operating system or architecture: fseve
 const RippleAPI = require('ripple-lib').RippleAPI;
 
 const api = new RippleAPI({
-  server: 'wss://s1.ripple.com' // Public rippled server
+  server: 'wss://g1.xrpgen.com' // Public rippled server
 });
 api.connect().then(() =&gt; {
   /* begin custom code ------------------------------------ */
-  const myAddress = 'rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn';
+  const myAddress = 'rpG9E7B3ocgaKqG7vmrsu3jmGwex8W4xAG';
 
   console.log('getting account info for', myAddress);
   return api.getAccountInfo(myAddress);
@@ -206,13 +206,12 @@ api.connect().then(() =&gt; {
 <pre><code>node get-account-info.js
 </code></pre>
 <p>Output:</p>
-<pre><code>getting account info for rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn
-{ sequence: 359,
-  XAGBalance: '75.181663',
-  ownerCount: 4,
-  previousInitiatedTransactionID: 'E5C6DD25B2DCF534056D98A2EFE3B7CFAE4EBC624854DE3FA436F733A56D8BD9',
-  previousAffectingTransactionID: 'E5C6DD25B2DCF534056D98A2EFE3B7CFAE4EBC624854DE3FA436F733A56D8BD9',
-  previousAffectingTransactionLedgerVersion: 18489336 }
+<pre><code>getting account info for rpG9E7B3ocgaKqG7vmrsu3jmGwex8W4xAG
+{ sequence: 1,
+  xrpBalance: '1000',
+  ownerCount: 0,
+  previousInitiatedTransactionID: 'AA7ED0685F0735CC68CA65BE457915483CE8ABCA32C117716C90B5DFC0CA4595',
+  previousAffectingTransactionLedgerVersion: 9985048 }
 getAccountInfo done
 done and disconnected.
 </code></pre>
@@ -224,7 +223,7 @@ const RippleAPI = require('ripple-lib').RippleAPI;
 </code></pre>
 <h3 id="instantiating-the-api">Instantiating the API</h3>
 <pre><code>const api = new RippleAPI({
-  server: 'wss://s1.ripple.com' // Public rippled server
+  server: 'wss://g1.xrpgen.com' // Public rippled server
 });
 </code></pre>
 
@@ -241,7 +240,7 @@ const RippleAPI = require('ripple-lib').RippleAPI;
 
 <p>This code creates and submits an order transaction, although the same principles apply to other types of transactions as well. After submitting the transaction, the code uses a new Promise, which queries the ledger again after using setTimeout to wait a fixed amount of time, to see if the transaction has been verified. If it hasn't been verified, the process repeats until either the transaction is found in a validated ledger or the returned ledger is higher than the LastLedgerSequence parameter.</p>
 <p>In rare cases (particularly with a large delay or a loss of power), the <code>rippled</code> server may be missing a ledger version between when you submitted the transaction and when you determined that the network has passed the <code>maxLedgerVersion</code>. In this case, you cannot be definitively sure whether the transaction has failed, or has been included in one of the missing ledger versions. RippleAPI returns <code>MissingLedgerHistoryError</code> in this case.</p>
-<p>This demo HTML loads Lodash v4.17.11 from CDNJS on Cloudflare and then loads ripple-lib v1.1.2, but you could also download and load a variant of Lodash locally. <!--#{ no specific recommended or required version at this time. Update this once we have some guidance to provide here. }#--></p>
+<p>The result returns xrpBalance value, and you should consider it as XAG balance.</p>
 
     </div>
   </article>
