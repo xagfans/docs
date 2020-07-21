@@ -136,8 +136,8 @@ function writeToConsole(console_selector, message) {
 </script>
 <h2 id="1-connect-to-the-XAG-ledger">1. Connect to the XAG Ledger</h2>
 <p>The first step of monitoring for incoming payments is to connect to the XAG Ledger, specifically a <code>rippled</code> server.</p>
-<p>The following JavaScript code connects to one of Ripple's public server clusters. It then logs a message to the console, sends a request using the <a href="ping.html">ping method</a> and sets up a handler to log to the console again when it receives any message from the server side.</p>
-<pre><code class="js">const socket = new WebSocket('wss://s.altnet.rippletest.net:51233')
+<p>The following JavaScript code connects to one of Xrpgen's public server clusters. It then logs a message to the console, sends a request using the <a href="ping.html">ping method</a> and sets up a handler to log to the console again when it receives any message from the server side.</p>
+<pre><code class="js">const socket = new WebSocket('wss://g1.xrpgen.com')
 socket.addEventListener('open', (event) =&gt; {
   // This callback runs when the connection is open
   console.log("Connected!")
@@ -156,7 +156,7 @@ socket.addEventListener('close', (event) =&gt; {
   console.log('Disconnected...')
 })
 </code></pre>
-<p>The above example opens a secure connection (<code>wss://</code>) to one of Ripple's public API servers on the <a href="XAG-test-net-faucet.html">Test Net</a>. To connect to a locally-running <code>rippled</code> server with the default configuration instead, open an <em>unsecured</em> connection (<code>ws://</code>) on port <strong>6006</strong> locally, using the following first line:</p>
+<p>The above example opens a secure connection (<code>wss://</code>) to one of Xrpgen's public API servers. To connect to a locally-running <code>rippled</code> server with the default configuration instead, open an <em>unsecured</em> connection (<code>ws://</code>) on port <strong>6006</strong> locally, using the following first line:</p>
 <pre><code class="js">const socket = new WebSocket('ws://localhost:6006')
 </code></pre>
 <p class="devportal-callout tip"><strong>Tip:</strong> By default, connecting to a local <code>rippled</code> server gives you access to the full set of <a href="admin-rippled-methods.html">admin methods</a> and admin-only data in some responses such as <a href="server_info.html">server_info</a>, in addition to the <a href="public-rippled-methods.html">public methods</a> that are available when you connect to public servers over the internet.</p>
@@ -181,7 +181,7 @@ socket.addEventListener('close', (event) =&gt; {
 <script type="application/javascript">
 let socket;
 $("#connect-button").click((event) => {
-  socket = new WebSocket('wss://s.altnet.rippletest.net:51233')
+  socket = new WebSocket('wss://g1.xrpgen.com')
   socket.addEventListener('open', (event) => {
     // This callback runs when the connection is open
     writeToConsole("#monitor-console-connect", "Connected!")
@@ -649,110 +649,7 @@ $("#tx_read").click((event) => {
 <li>Try <a href="send-XAG.html">Sending XAG</a> from your own address.</li>
 
 </ul>
-<h2 id="other-programming-languages">Other Programming Languages</h2>
-<p>Many programming languages have libraries for sending and receiving data over a WebSocket connection. If you want a head-start on communicating with <code>rippled</code>'s WebSocket API in a language other than JavaScript, the following examples demonstrate similar functionality:</p>
-<div class="multicode" id="code-0"><ul class="codetabs"><li><a href="#code-0-0">Go</a></li></ul>
 
-<div class="code_sample" id="code-0-0" style="position: static;"><pre><code class="go">package main
-
-// Connect to the XAGL Ledger using websocket and subscribe to an account
-// translation from the JavaScript example to Go
-// https://developers.ripple.com/monitor-incoming-payments-with-websocket.html
-// This example uses the Gorilla websocket library to create a websocket client
-// install: go get github.com/gorilla/websocket
-
-import (
-    "encoding/json"
-    "flag"
-    "log"
-    "net/url"
-    "os"
-    "os/signal"
-    "time"
-
-    "github.com/gorilla/websocket"
-)
-
-// websocket address
-var addr = flag.String("addr", "s.altnet.rippletest.net:51233", "http service address")
-
-// Payload object
-type message struct {
-    Command  string   `json:"command"`
-    Accounts []string `json:"accounts"`
-}
-
-func main() {
-    flag.Parse()
-    log.SetFlags(0)
-
-    var m message
-
-    // check for interrupts and cleanly close the connection
-    interrupt := make(chan os.Signal, 1)
-    signal.Notify(interrupt, os.Interrupt)
-
-    u := url.URL{Scheme: "ws", Host: *addr, Path: "/"}
-    log.Printf("connecting to %s", u.String())
-
-    // make the connection
-    c, _, err := websocket.DefaultDialer.Dial(u.String(), nil)
-    if err != nil {
-        log.Fatal("dial:", err)
-    }
-    // on exit close
-    defer c.Close()
-
-    done := make(chan struct{})
-
-    // send a subscribe command and a target XAGL account
-    m.Command = "subscribe"
-    m.Accounts = append(m.Accounts, "rUCzEr6jrEyMpjhs4wSdQdz4g8Y382NxfM")
-
-    // struct to JSON marshalling
-    msg, _ := json.Marshal(m)
-    // write to the websocket
-    err = c.WriteMessage(websocket.TextMessage, []byte(string(msg)))
-    if err != nil {
-        log.Println("write:", err)
-        return
-    }
-
-    // read from the websocket
-    _, message, err := c.ReadMessage()
-    if err != nil {
-        log.Println("read:", err)
-        return
-    }
-    // print the response from the XAG Ledger
-    log.Printf("recv: %s", message)
-
-    // handle interrupt
-    for {
-        select {
-        case &lt;-done:
-            return
-        case &lt;-interrupt:
-            log.Println("interrupt")
-
-            // Cleanly close the connection by sending a close message and then
-            // waiting (with timeout) for the server to close the connection.
-            err := c.WriteMessage(websocket.CloseMessage, websocket.FormatCloseMessage(websocket.CloseNormalClosure, ""))
-            if err != nil {
-                log.Println("write close:", err)
-                return
-            }
-            select {
-            case &lt;-done:
-            case &lt;-time.After(time.Second):
-            }
-            return
-        }
-    }
-}
-</code></pre></div>
-</div>
-<p class="devportal-callout tip"><strong>Tip:</strong> Don't see the programming language of your choice? Click the "Edit on GitHub" link at the top of this page and contribute your own sample code!</p>
 <h2 id="footnotes">Footnotes</h2>
 <p><a href="#from-footnote-1">1.</a> <a id="footnote-1"></a> In practice, when calling an HTTP-based API multiple times, the client and server may reuse the same connection for several requests and responses. This practice is called <a class="external-link" href="https://en.wikipedia.org/wiki/HTTP_persistent_connection" target="_blank">HTTP persistent connection, or keep-alive <i aria-hidden="true" class="fa fa-external-link"></i></a>. From a development standpoint, the code to use an HTTP-based API is the same regardless of whether the underlying connection is new or reused.</p>
 

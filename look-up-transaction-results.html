@@ -113,7 +113,7 @@
         <h1 id="look-up-transaction-results">Look Up Transaction Results</h1>
 <p>To use the XAG Ledger effectively, you need to be able to understand <a href="transaction-basics.html">transaction</a> outcomes: did the transaction succeed? What did it accomplish? If it failed, why?</p>
 <p>The XAG Ledger is a shared system, with all data recorded publicly and carefully, securely updated with each new <a href="ledgers.html">ledger version</a>. Anyone can look up the exact outcome of any transaction and read the <a href="transaction-metadata.html">transaction metadata</a> to see what it did.</p>
-<p>This document describes, at a low level, how to know why a transaction reached the outcome it did. For an end-user, it is easier to look at a processed view of a transaction. For example, you can <a class="external-link" href="https://XAGcharts.ripple.com/#/transactions/" target="_blank">use XAG Charts to get an English-language description of any recorded transaction <i aria-hidden="true" class="fa fa-external-link"></i></a>.</p>
+<p>This document describes, at a low level, how to know why a transaction reached the outcome it did.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>To understand the outcome of a transaction as described in these instructions, you must:</p>
 <ul>
@@ -324,7 +324,7 @@
 <p>Other things to look for when processing transaction metadata depend on the transaction type.</p>
 <h3 id="payments">Payments</h3>
 <p>A <a href="payment.html">Payment transaction</a> can represent a direct XAG-to-XAG transaction, a <a href="cross-currency-payments.html">cross-currency payment</a>, or a direct transaction in an <a href="issued-currencies.html">issued (non-XAG) currency</a>. Anything other than a direct XAG-to-XAG transaction can be a <a href="partial-payments.html">partial payment</a>, including issued currency to XAG or XAG to issued currency transactions.</p>
-p>You should always use <a href="partial-payments.html#the-delivered_amount-field">the delivered_amount field</a> to see how much a payment delivered.</p>
+<p>You <strong>should always</strong> use <a href="partial-payments.html#the-delivered_amount-field">the delivered_amount field</a> to see how much a payment delivered.</p>
 <p>If the payment contains a <code>CreatedNode</code> of LedgerEntryType <code>AccountRoot</code>, that means the payment <a href="accounts.html#creating-accounts">funded a new account</a> in the ledger.</p>
 <h4 id="issued-currency-payments">Issued Currency Payments</h4>
 <p>Payments involving issued currencies are a bit more complicated.</p>
