@@ -255,7 +255,7 @@
 <p>At the protocol level, this format is <a href="serialization.html#currency-codes">serialized</a> into a 160-bit binary value starting with <code>0x00</code>.</p>
 <h3 id="nonstandard-currency-codes">Nonstandard Currency Codes</h3>
 <p>You can also issue currency of other types by using a 160-bit (40-character) hexadecimal string such as <code>015841551A748AD2C1F76FF6ECB0CCCD00000000</code> as the currency code. To prevent this from being treated as a "standard" currency code, the first 8 bits MUST NOT be <code>0x00</code>.</p>
-<p><strong>Deprecated:</strong> Some previous versions of <a class="external-link" href="https://github.com/ripple/ripple-lib" target="_blank">ripple-lib <i aria-hidden="true" class="fa fa-external-link"></i></a> supported an "interest-bearing" or "demurraging" currency code type. These currencies have the first 8 bits <code>0x01</code>. Demurraging / interest-bearing currencies are no longer supported, but you may encounter them in ledger data. For more information, see <a href="demurrage.html">Demurrage</a>.</p>
+
     </div>
   </article>
       </main>
