@@ -96,7 +96,7 @@ https://api.xrpgen.com/cancel-a-check.html
 https://api.xrpgen.com/look-up-checks-by-sender.html
 https://api.xrpgen.com/look-up-checks-by-recipient.html
 https://api.xrpgen.com/xrp-ledger-businesses.html
-https://api.xrpgen.com/xag-test-net-faucet.html
+https://api.xrpgen.com/list-xag-as-an-exchange.html
 https://api.xrpgen.com/list-your-exchange-on-xag-charts.html
 https://api.xrpgen.com/become-an-xag-ledger-gateway.html
 https://api.xrpgen.com/manage-the-rippled-server.html
@@ -332,7 +332,7 @@ https://api.xrpgen.com/websocket-api-tool.html
 https://api.xrpgen.com/data-api-v2-tool.html
 https://api.xrpgen.com/ripple-txt-validator.html
 https://api.xrpgen.com/validator-domain-verifier.html
-https://api.xrpgen.com/xrp-testnet-faucet.html
-https://api.xrpgen.com/xag-test-net-faucet.html
+https://api.xrpgen.com/list-xag-as-an-exchange.html
+https://api.xrpgen.com/list-xag-as-an-exchange.html
 https://api.xrpgen.com/tx-sender.html
 https://api.xrpgen.com/404.html
