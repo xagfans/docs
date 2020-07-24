@@ -30,4 +30,16 @@ XAG在技术上源自于瑞波，因此可以复用瑞波应用代码或使用Ri
  2. 当前检查时间为t2，记录下t2的XAG数量和t1到t2之间发生的N个payments。
  3. 对每个payment里的meta.delivered_amount进行检查，与tx.Amount进行对比。如果不一致，说明是有人使用部分付款进行攻击。
  4. 将N个payments里的meta.delivered_amount进行加总，并与t1,t2的XAG数量差值进行对比。加总数量应当于差值一致。
- 
+
+## 用户进行XAG提现
+当用户Charlie提现50000 XAG时，步骤如下：
+
+ 1. Charlie发起50000 XAG提现，需提供提现的地址和标签（提到用户自己钱包时无需标签或随意填数字）。
+ 2. Alpha交易所的使用程序发送XAG，并附上标签号。
+
+交易所可以参考[发送XAG](https://dev.xagfans.com/send-xag.html)。或者采用发送XRP的代码，连接到XAG的网络进行发送。
+
+### 最佳实践
+
+ 1. 无论是否发送成功，都校验一下[HASH是否出现在总账中](https://dev.xagfans.com/reliable-transaction-submission.html#reliable-transactions-submission)。
+ 2. 和充值流程类似，隔一段时间，对发送的总和，与钱包的差值进行对比。多一重保护。
