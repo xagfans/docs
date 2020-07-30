@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+
+    <title>XAG - XAG Ledger Dev Portal</title>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="msapplication-TileColor" content="#25A768">
+    <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#25A768">
+
+    <!-- jQuery -->
+    <script src="assets/vendor/jquery-1.11.1.min.js"></script>
+
+    <!-- Stylesheet -->
+    <link href="assets/css/devportal.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
+
+    <!-- syntax highlighting -->
+    <link rel="stylesheet" href="assets/vendor/docco.min.css" />
+    <script src="assets/vendor/highlight.min.js"></script>
+
+    <!-- expandable code samples -->
+    <script src="assets/js/expandcode.js"></script>
+    <!-- multi-code selection tabs -->
+    <script src="assets/js/multicodetab.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".multicode").minitabs();
+            hljs.initHighlighting();
+            make_code_expandable();
+        });
+    </script>
+
+
+
+</head>
+
+<body class="xrp-ledger-dev-portal sidebar-primary lang-en ">
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+    <a href="index.html" class="navbar-brand"><img src="assets/img/XAGLedger_DevPortal-black.svg" class="logo"  height="44" alt="XAG Ledger Dev Portal" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="slide-collapse" data-target="#navbarHolder" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
+      <ul class="nav navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link" href="dev-tools.html">Dev Tools</a>
+            </li>
+            
+        <li class="nav-item">
+            <a class="nav-link" href="http://xagfans.com/" target="blank">BBS</a>
+          </li>
+
+      </ul>
+      <div class="nav navbar-nav language-selector">
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            English
+          </button>
+          <div class="dropdown-menu" aria-labelledby="language_selector_header_btn">
+            <a class="dropdown-item" href="/xrp.html">English</a>
+            <a class="dropdown-item" href="/cn/xrp.html">中文</a>
+          </div><!--/.dropdown-menu-->
+        </div><!--/.dropdown-->
+      </div><!--/.language-selector-->
+    </div><!--/#navbarHolder-->
+    <div class="menu-overlay"></div>
+  </nav>
+
+  <div class="container-fluid" role="document" id="main_content_wrapper">
+    <div class="row">
+      <!-- Right sidebar first so it's at the beginning for mobile layouts -->
+      <aside class="right-sidebar col-lg-3 order-lg-4 p-0" role="complementary">
+  <div class="card" id="page-toc-wrapper">
+    <div class="card-header">
+      <h4>In this document</h4>
+    </div>
+    <ul class="card-body">
+      <li class="level-1"><a href="#xrp">XAG</a></li>
+<li class="level-2"><a href="#xrp-properties">XAG Properties</a></li>
+<li class="level-2"><a href="#history">History</a></li>
+<li class="level-3"><a href="#xrp-sales">XAG Sales</a></li>
+<li class="level-3"><a href="#naming">Naming</a></li>
+<li class="level-2"><a href="#see-also">See Also</a></li>
+
+    </ul>
+  </div>
+      </aside>
+
+      <!-- main column -->
+      <main class="main col-md-7 col-lg-6 order-md-3  " role="main" id="main_content_body">
+<nav class="breadcrumbs-wrap p-0 p-md-3" aria-label="breadcrumb">
+  <ul class="breadcrumb bg-white">
+    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="active breadcrumb-item"><a href="docs.html">Docs</a></li>
+    <li class="active breadcrumb-item"><a href="concepts.html">Concepts</a></li>
+    <li class="active breadcrumb-item"><a href="introduction.html">Introduction</a></li>
+    <li class="active breadcrumb-item">XAG</li>
+  </ul>
+</nav><!--/.breadcrumbs-wrap-->  <article class="pt-3 p-md-3">
+    <div class="content">
+        <h1 id="xrp">XAG</h1>
+<p><strong>XAG</strong> is the native cryptocurrency of the XAG Ledger. All <a href="accounts.html">accounts</a> in the XAG Ledger can send XAG among one another and must hold a minimum amount of XAG as a <a href="reserves.html">reserve</a>. XAG can be sent directly from any XAG Ledger address to any other, without needing a gateway or liquidity provider. This helps make XAG a convenient bridge currency.</p>
+<p>XAG also serves as a protective measure against spamming the network. All XAG Ledger addresses need a small amount of XAG to offset the costs of maintaining the XAG Ledger. The <a href="transaction-cost.html">transaction cost</a> and <a href="reserves.html">reserve</a> are neutral fees denominated in XAG and not paid to any party. In the ledger's data format, XAG is stored in <a href="accountroot.html">AccountRoot objects</a>.</p>
+<p>Some of the desirable properties of XAG come from the nature of the XAG Ledger and its <a href="consensus.html">consensus process</a>. The XAG Ledger does not require mining and the consensus process does not require multiple confirmations for immutability, which makes the XAG Ledger faster and more efficient at processing transactions than Bitcoin and other top cryptocurrencies.</p>
+<h2 id="xrp-properties">XAG Properties</h2>
+<p>The very first ledger contained 100 billion XAG, and no new XAG can be created. XAG can be destroyed by <a href="transaction-cost.html">transaction costs</a> or lost by sending it to addresses for which no one holds a key, so XAG is slightly <a class="external-link" href="https://en.wikipedia.org/wiki/Deflation" target="_blank">deflationary <i aria-hidden="true" class="fa fa-external-link"></i></a> by nature. No need to worry about running out, though: at the current rate of destruction, it would take at least 70,000 years to destroy all XAG, and XAG <a href="fee-voting.html">prices and fees can be adjusted</a> as the total supply of XAG changes.</p>
+<p>In technical contexts, XAG is measured precisely to the nearest 0.000001 XAG, called a "drop" of XAG. The <a href="rippled-api.html"><code>rippled</code> APIs</a> require all XAG amounts to be specified in drops of XAG. For example, 1 XAG is represented as <code>1000000</code> drops. For more detailed information, see the <a href="currency-formats.html">currency format reference</a>.</p>
+<h2 id="history">History</h2>
+<h3 id="naming">Naming</h3>
+<p>Originally, the XAG Ledger was called "Ripple" for the way the technology allowed payments <a href="rippling.html">to ripple through multiple hops and currencies</a>. For the native asset built into the ledger, the creators chose the ticker symbol "XAG" from the term "ripple credits" or "ripples" and the X prefix for non-national currencies in the ISO 4217 standard. The company registered itself as "Ripple Labs". The name "XAG" came to be used to refer to the asset in all contexts, to avoid confusion with the similar names for the technology and company, and eventually the company shortened its own name to "Ripple". In May 2018, <a class="external-link" href="https://twitter.com/xrpsymbol/status/1006925937571713025" target="_blank">the community selected a new "X" symbol <i aria-hidden="true" class="fa fa-external-link"></i></a> to represent XAG to differentiate it from the triskelion logo that had previously been used for both the company and the digital asset.</p>
+<table>
+<thead>
+<tr>
+<th align="left">XAG "X" Logo</th>
+<th align="left">Ripple triskelion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><img alt='"X" logo' src="assets/img/xrp-x-logo.png"/></td>
+<td align="left"><img alt="Triskelion" src="img/ripple-triskelion.png"/></td>
+</tr>
+</tbody>
+</table>
+<p>The smallest, indivisible unit of XAG was named a "drop" at the suggestion of Ripple forum member ThePiachu. An early alternative term was a "jed", after Jed McCaleb.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="send-xag.html">Send XAG (Interactive Tutorial)</a></li>
+<li><a href="list-xrp-in-your-exchange.html">List XAG In Your Exchange</a></li>
+<li><a href="currency-formats.html#">Currency Formatting in rippled APIs</a></li>
+</ul>
+    </div>
+  </article>
+      </main>
+      <!-- Left sidebar last so it's at the end for mobile -->
+      <aside class="sidebar col-md-5 col-lg-3 p-0 order-md-1" role="complementary">
+<div class="tree_nav">
+
+  <!---->
+    <div class="sidenav_parent">
+      <a href="concepts.html"> Concepts</a>
+    </div>
+
+  <!---->
+
+    <!---->
+    <div id="sidenav" role="tablist" aria-multiselectable="true">
+        <!---->
+          <div class="card active">
+            <div class="card-header" role="tab" id="sidenav_cat_head_2">
+                <a class="sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_2" aria-expanded="true" aria-controls="sidenav_collapse_2"></a>
+              <h5 class="card-title">
+                  <a class="sidenav_cat_title active-parent" href="introduction.html">Introduction</a>
+                <!-- <a class="sidenav_cat_title" href="introduction.html">Introduction</a> -->
+              </h5>
+            </div><!-- /.card-header -->
+
+            <div id="sidenav_collapse_2" class="collapse show" role="tabpanel" aria-labelledby="sidenav_cat_head_2">
+              <div class="card-body">
+                <ul class="sidebar_pagelist">
+                      <li><a class="nosubcat-page" href="xag-ledger-overview.html">XAG Ledger Overview</a></li>
+                      <li><a class="nosubcat-page" href="intro-to-consensus.html">Introduction to Consensus</a></li>
+                      <li><a class="active nosubcat-page" href="xag.html">XAG</a></li>
+                      <li><a class="nosubcat-page" href="software-ecosystem.html">Software Ecosystem</a></li>
+                      <li><a class="nosubcat-page" href="technical-faq.html">Technical FAQ</a></li>
+
+                </ul>
+              </div><!-- /.card-body -->
+            </div><!-- /#sidenav_collapse2 -->
+
+          </div><!-- /.card -->
+
+        <!---->
+          <div class="card">
+            <div class="card-header" role="tab" id="sidenav_cat_head_8">
+                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_8" aria-expanded="true" aria-controls="sidenav_collapse_8"></a>
+              <h5 class="card-title">
+                  <a class="sidenav_cat_title" href="payment-system-basics.html">Payment System Basics</a>
+                <!-- <a class="sidenav_cat_title" href="payment-system-basics.html">Payment System Basics</a> -->
+              </h5>
+            </div><!-- /.card-header -->
+
+            <div id="sidenav_collapse_8" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_8">
+              <div class="card-body">
+                <ul class="sidebar_pagelist">
+                      <li><a class="subcat-title" href="accounts.html">Accounts</a></li>
+
+                          <li><a class="subpage" href="cryptographic-keys.html">Cryptographic Keys</a></li>
+                          <li><a class="subpage" href="multi-signing.html">Multi-Signing</a></li>
+                          <li><a class="subpage" href="reserves.html">Reserves</a></li>
+                          <li><a class="subpage" href="depositauth.html">Deposit Authorization</a></li>
+
+                      <li><a class="nosubcat-page" href="fees.html">Fees (Disambiguation)</a></li>
+                      <li><a class="nosubcat-page" href="ledgers.html">Ledgers</a></li>
+                      <li><a class="subcat-title" href="transaction-basics.html">Transaction Basics</a></li>
+
+                          <li><a class="subpage" href="transaction-cost.html">Transaction Cost</a></li>
+                          <li><a class="subpage" href="finality-of-results.html">Finality of Results</a></li>
+                          <li><a class="subpage" href="source-and-destination-tags.html">Source and Destination Tags</a></li>
+
+
+                </ul>
+              </div><!-- /.card-body -->
+            </div><!-- /#sidenav_collapse8 -->
+
+          </div><!-- /.card -->
+
+        <!---->
+          <div class="card">
+            <div class="card-header" role="tab" id="sidenav_cat_head_20">
+                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_20" aria-expanded="true" aria-controls="sidenav_collapse_20"></a>
+              <h5 class="card-title">
+                  <a class="sidenav_cat_title" href="payment-types.html">Payment Types</a>
+                <!-- <a class="sidenav_cat_title" href="payment-types.html">Payment Types</a> -->
+              </h5>
+            </div><!-- /.card-header -->
+
+            <div id="sidenav_collapse_20" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_20">
+              <div class="card-body">
+                <ul class="sidebar_pagelist">
+                      <li><a class="nosubcat-page" href="direct-xrp-payments.html">Direct XAG Payments</a></li>
+                      <li><a class="nosubcat-page" href="cross-currency-payments.html">Cross-Currency Payments</a></li>
+                      
+                      <li><a class="nosubcat-page" href="partial-payments.html">Partial Payments</a></li>
+                      
+
+                </ul>
+              </div><!-- /.card-body -->
+            </div><!-- /#sidenav_collapse20 -->
+
+          </div><!-- /.card -->
+
+        <!---->
+          <div class="card">
+            <div class="card-header" role="tab" id="sidenav_cat_head_28">
+                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_28" aria-expanded="true" aria-controls="sidenav_collapse_28"></a>
+              <h5 class="card-title">
+                  <a class="sidenav_cat_title" href="issued-currencies.html">Issued Currencies</a>
+                <!-- <a class="sidenav_cat_title" href="issued-currencies.html">Issued Currencies</a> -->
+              </h5>
+            </div><!-- /.card-header -->
+
+            <div id="sidenav_collapse_28" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_28">
+              <div class="card-body">
+                <ul class="sidebar_pagelist">
+                      <li><a class="nosubcat-page" href="issued-currencies-overview.html">Issued Currencies Overview</a></li>
+                      <li><a class="nosubcat-page" href="trust-lines-and-issuing.html">Trust Lines and Issuing</a></li>
+                      <li><a class="nosubcat-page" href="authorized-trust-lines.html">Authorized Trust Lines</a></li>
+                      <li><a class="nosubcat-page" href="freezes.html">Freezing Issued Currencies</a></li>
+                      <li><a class="nosubcat-page" href="rippling.html">Rippling</a></li>
+                      <li><a class="nosubcat-page" href="transfer-fees.html">Transfer Fees</a></li>
+                      <li><a class="nosubcat-page" href="issuing-and-operational-addresses.html">Issuing and Operational Addresses</a></li>
+                      <li><a class="nosubcat-page" href="paths.html">Paths</a></li>
+                      <li><a class="nosubcat-page" href="demurrage.html">Demurrage</a></li>
+
+                </ul>
+              </div><!-- /.card-body -->
+            </div><!-- /#sidenav_collapse28 -->
+
+          </div><!-- /.card -->
+
+        <!---->
+          <div class="card">
+            <div class="card-header" role="tab" id="sidenav_cat_head_38">
+                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_38" aria-expanded="true" aria-controls="sidenav_collapse_38"></a>
+              <h5 class="card-title">
+                  <a class="sidenav_cat_title" href="decentralized-exchange.html">Decentralized Exchange</a>
+                <!-- <a class="sidenav_cat_title" href="decentralized-exchange.html">Decentralized Exchange</a> -->
+              </h5>
+            </div><!-- /.card-header -->
+
+            <div id="sidenav_collapse_38" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_38">
+              <div class="card-body">
+                <ul class="sidebar_pagelist">
+                      <li><a class="nosubcat-page" href="offers.html">Offers</a></li>
+                      <li><a class="nosubcat-page" href="autobridging.html">Auto-Bridging</a></li>
+                      <li><a class="nosubcat-page" href="ticksize.html">Tick Size</a></li>
+
+                </ul>
+              </div><!-- /.card-body -->
+            </div><!-- /#sidenav_collapse38 -->
+
+          </div><!-- /.card -->
+
+        <!---->
+          <div class="card">
+            <div class="card-header" role="tab" id="sidenav_cat_head_42">
+                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_42" aria-expanded="true" aria-controls="sidenav_collapse_42"></a>
+              <h5 class="card-title">
+                  <a class="sidenav_cat_title" href="consensus-network.html">Consensus Network</a>
+                <!-- <a class="sidenav_cat_title" href="consensus-network.html">Consensus Network</a> -->
+              </h5>
+            </div><!-- /.card-header -->
+
+            <div id="sidenav_collapse_42" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_42">
+              <div class="card-body">
+                <ul class="sidebar_pagelist">
+                      <li><a class="nosubcat-page" href="consensus.html">Consensus</a></li>
+                      <li><a class="nosubcat-page" href="consensus-principles-and-rules.html">Consensus Principles and Rules</a></li>
+                      <li><a class="nosubcat-page" href="consensus-protections.html">Consensus Protections Against Attacks and Failure Modes</a></li>
+                      <li><a class="nosubcat-page" href="transaction-queue.html">Transaction Queue</a></li>
+                      <li><a class="nosubcat-page" href="about-canceling-a-transaction.html">About Canceling a Transaction</a></li>
+                      <li><a class="nosubcat-page" href="transaction-malleability.html">Transaction Malleability</a></li>
+                      <li><a class="subcat-title" href="amendments.html">Amendments</a></li>
+
+                          <li><a class="subpage" href="known-amendments.html">Known Amendments</a></li>
+
+                      <li><a class="nosubcat-page" href="fee-voting.html">Fee Voting</a></li>
+                      <li><a class="nosubcat-page" href="consensus-research.html">Consensus Research</a></li>
+                      <li><a class="nosubcat-page" href="parallel-networks.html">Parallel Networks</a></li>
+
+                </ul>
+              </div><!-- /.card-body -->
+            </div><!-- /#sidenav_collapse42 -->
+
+          </div><!-- /.card -->
+
+        <!---->
+          <div class="card">
+            <div class="card-header" role="tab" id="sidenav_cat_head_54">
+                <a class="collapsed sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_54" aria-expanded="true" aria-controls="sidenav_collapse_54"></a>
+              <h5 class="card-title">
+                  <a class="sidenav_cat_title" href="the-rippled-server.html">The rippled Server</a>
+                <!-- <a class="sidenav_cat_title" href="the-rippled-server.html">The rippled Server</a> -->
+              </h5>
+            </div><!-- /.card-header -->
+
+            <div id="sidenav_collapse_54" class="collapse" role="tabpanel" aria-labelledby="sidenav_cat_head_54">
+              <div class="card-body">
+                <ul class="sidebar_pagelist">
+                      <li><a class="nosubcat-page" href="rippled-server-modes.html">rippled Server Modes</a></li>
+                      <li><a class="nosubcat-page" href="clustering.html">Clustering</a></li>
+                      <li><a class="subcat-title" href="ledger-history.html">Ledger History</a></li>
+
+                          <li><a class="subpage" href="online-deletion.html">Online Deletion</a></li>
+                          <li><a class="subpage" href="history-sharding.html">History Sharding</a></li>
+
+                      <li><a class="nosubcat-page" href="peer-protocol.html">Peer Protocol</a></li>
+                      <li><a class="nosubcat-page" href="transaction-censorship-detection.html">Transaction Censorship Detection</a></li>
+
+                </ul>
+              </div><!-- /.card-body -->
+            </div><!-- /#sidenav_collapse54 -->
+
+          </div><!-- /.card -->
+
+    </div><!-- /#sidenav -->
+</div><!-- /.tree_nav -->      </aside>
+    </div><!--/.row (main layout)-->
+  </div>
+
+<footer class="xrpl-footer" role="contentinfo">
+ 
+
+  <section class="container-fluid p-5 pl-sm-0">
+
+    <nav role="navigation" class="d-flex mb-3 language-selector">
+      <img class="language_selector_icon" src="assets/img/icon-language-selector.svg" width="32" height="40" alt="language selection icon" />
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="/xag.html"><i class="fa fa-check-circle"></i> English</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cn/xag.html">中文</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="absolute_bottom_footer">
+      <span>&copy; XAG Ledger Project 2020</span>
+     
+    </div><!-- /.absolute_bottom_footer -->
+
+  </section>
+</footer>
+
+<!-- Jump to top button -->
+<a href="#main_content_wrapper" class="jump-to-top btn btn-primary btn-lg" role="button" title="Jump to top of page">Top</a>
+<script type="text/javascript" src="assets/js/jump-to-top.js"></script>
+
+<!-- Non-blocking resources -->
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap.min.js"></script>
+<!-- fontawesome icons -->
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/font-awesome.min.css" />
+
+<!-- Algolia DocSearch -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '70de5b9b8ef95460f3c6e04054b325b2',
+indexName: 'xrpl',
+inputSelector: '#topsearchbar',
+algoliaOptions: { 'facetFilters': ["lang:en"] },
+debug: false
+});
+</script>
+
+<script type="application/javascript">
+  gtag('set', {'content_group1': 'Content Docs'});
+</script>
+</body>
+</html>
